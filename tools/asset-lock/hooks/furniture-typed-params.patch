@@ -1,0 +1,171 @@
+diff --git a/assets/furniture/manifest.json b/assets/furniture/manifest.json
+index 37452b7..714ed4d 100644
+--- a/assets/furniture/manifest.json
++++ b/assets/furniture/manifest.json
+@@ -685,10 +685,16 @@
+         "front": "+z",
+         "class": "hero",
+         "tier": "regular",
+-        "states": {
+-          "broken": "ViewFurniture.broken === true (every starter workbench begins broken)",
+-          "repaired": "otherwise"
+-        },
++        "states": [
++          {
++            "variant": "broken",
++            "when": "broken"
++          },
++          {
++            "variant": null,
++            "when": "always"
++          }
++        ],
+         "bake": {
+           "uv": 1,
+           "normal": "tangent space, OpenGL (+Y), MikkTSpace on TEXCOORD_1 with the mesh normals: the glTF TANGENT attribute",
+@@ -1226,11 +1232,21 @@
+         "front": "+z",
+         "class": "furniture",
+         "tier": "hero",
+-        "states": {
+-          "broken": "ViewFurniture.broken === true or data.breached",
+-          "damaged": "not broken and hp / maxHp <= 0.5",
+-          "intact": "otherwise (the entry's own files)"
+-        },
++        "states": [
++          {
++            "variant": "broken",
++            "when": "broken"
++          },
++          {
++            "variant": "damaged",
++            "when": "hpRatio",
++            "atMost": 0.5
++          },
++          {
++            "variant": null,
++            "when": "always"
++          }
++        ],
+         "opening": {
+           "widthM": 0.9,
+           "sillM": 0.9,
+@@ -1392,11 +1408,21 @@
+         "front": "+z",
+         "class": "hero",
+         "tier": "hero",
+-        "states": {
+-          "broken": "ViewFurniture.broken === true or data.breached",
+-          "damaged": "not broken and hp / maxHp <= 0.5",
+-          "intact": "otherwise (the entry's own files)"
+-        },
++        "states": [
++          {
++            "variant": "broken",
++            "when": "broken"
++          },
++          {
++            "variant": "damaged",
++            "when": "hpRatio",
++            "atMost": 0.5
++          },
++          {
++            "variant": null,
++            "when": "always"
++          }
++        ],
+         "opening": {
+           "widthM": 1.4,
+           "headM": 2.4,
+@@ -1407,8 +1433,12 @@
+           "wallM": 0.2,
+           "note": "docs/ART.md §2: the frame spills 0.2 m into the wall on each side of its 1 m door tile"
+         },
+-        "nodes": {
+-          "leaf": "the door leaf hangs under the node 'leaf_hinge' (hinge axis, left jamb seen from the room): rotate it about +Y to open, inwards"
++        "pivots": {
++          "leaf": {
++            "node": "leaf_hinge",
++            "axis": "-y",
++            "openDeg": 90
++          }
+         },
+         "bake": {
+           "uv": 1,
+diff --git a/tools/blender/furniture/catalog.json b/tools/blender/furniture/catalog.json
+index 9539bb2..dc78947 100644
+--- a/tools/blender/furniture/catalog.json
++++ b/tools/blender/furniture/catalog.json
+@@ -296,10 +296,10 @@
+       "aliases": {
+         "repaired": "the entry's own files: the bench once repaired (a new pine leg, steel repair plates)"
+       },
+-      "states": {
+-        "broken": "ViewFurniture.broken === true (every starter workbench begins broken)",
+-        "repaired": "otherwise"
+-      },
++      "states": [
++        { "variant": "broken", "when": "broken" },
++        { "variant": null, "when": "always" }
++      ],
+       "lod": 0.45,
+       "tierNote": "hero triangle budget, regular texel density: 256 px/m keeps a texel per pixel at the closest zoom (docs/ART.md §3); 512 px/m would need a 4096 x 2048 atlas"
+     },
+@@ -513,11 +513,11 @@
+           "state": "broken"
+         }
+       },
+-      "states": {
+-        "broken": "ViewFurniture.broken === true or data.breached",
+-        "damaged": "not broken and hp / maxHp <= 0.5",
+-        "intact": "otherwise (the entry's own files)"
+-      },
++      "states": [
++        { "variant": "broken", "when": "broken" },
++        { "variant": "damaged", "when": "hpRatio", "atMost": 0.5 },
++        { "variant": null, "when": "always" }
++      ],
+       "opening": {
+         "widthM": 0.9,
+         "sillM": 0.9,
+@@ -580,11 +580,11 @@
+           "state": "broken"
+         }
+       },
+-      "states": {
+-        "broken": "ViewFurniture.broken === true or data.breached",
+-        "damaged": "not broken and hp / maxHp <= 0.5",
+-        "intact": "otherwise (the entry's own files)"
+-      },
++      "states": [
++        { "variant": "broken", "when": "broken" },
++        { "variant": "damaged", "when": "hpRatio", "atMost": 0.5 },
++        { "variant": null, "when": "always" }
++      ],
+       "opening": {
+         "widthM": 1.4,
+         "headM": 2.4,
+@@ -595,8 +595,8 @@
+         "wallM": 0.2,
+         "note": "docs/ART.md §2: the frame spills 0.2 m into the wall on each side of its 1 m door tile"
+       },
+-      "nodes": {
+-        "leaf": "the door leaf hangs under the node 'leaf_hinge' (hinge axis, left jamb seen from the room): rotate it about +Y to open, inwards"
++      "pivots": {
++        "leaf": { "node": "leaf_hinge", "axis": "-y", "openDeg": 90 }
+       }
+     }
+   ]
+diff --git a/tools/blender/furniture/finish.mjs b/tools/blender/furniture/finish.mjs
+index 933aed9..b10f9f0 100644
+--- a/tools/blender/furniture/finish.mjs
++++ b/tools/blender/furniture/finish.mjs
+@@ -159,7 +159,7 @@ async function entryFor(cat, piece, report) {
+     ...(piece.states ? { states: piece.states } : {}),
+     ...(piece.opening ? { opening: piece.opening } : {}),
+     ...(piece.screen ? { screen: piece.screen } : {}),
+-    ...(piece.nodes ? { nodes: piece.nodes } : {}),
++    ...(piece.pivots ? { pivots: piece.pivots } : {}),
+     ...(piece.plant ? { plant: piece.plant } : {}),
+     bake: {
+       uv: 1,

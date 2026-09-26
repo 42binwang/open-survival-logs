@@ -1,0 +1,5 @@
+# Python 3.14 venv for the WP-P0-04 measurement scripts (tools/targets/*.py); install into tools/targets/.venv
+numpy==2.5.3
+opencv-python-headless~=5.0.0
+pillow==12.3.0
+scipy==1.18.1

@@ -1,0 +1,110 @@
+diff --git a/src/ui/explorePanel.js b/src/ui/explorePanel.js
+index 847f292..25107ad 100644
+--- a/src/ui/explorePanel.js
++++ b/src/ui/explorePanel.js
+@@ -4,7 +4,7 @@
+ import { h, openWindow, closeWindow, refreshWindows, refreshWindow, isOpen, toast } from './dom.js';
+ import { registerPanel, openPanel, quickUse, reasonText } from './panels.js';
+ import { registerToolbarButton } from './hud.js';
+-import { registerView } from './view.js';
++import { registerView, playerMotion } from './view.js';
+ import { renderGrid, weightLine } from './invgrid.js';
+ import { game, setSpeed } from '../game.js';
+ import { on } from '../engine/bus.js';
+@@ -105,7 +105,7 @@ registerView('explore', (state) => {
+       exclaim: spotter && fx.kind === 'box' && fx.hidden && !fx.searched,
+     }));
+   const entities = [];
+-  if (onSite) entities.push({ x: px, y: py, color: CHARACTERS[state.meta.character]?.color, head: '#e8c9a0', sleeping: p.sleeping, kind: 'player' });
++  if (onSite) entities.push({ x: px, y: py, color: CHARACTERS[state.meta.character]?.color, head: '#e8c9a0', sleeping: p.sleeping, kind: 'player', ...playerMotion(state) });
+   for (const z of run?.zombies || []) {
+     if (!zombieVisible(state, def, z)) continue;
+     if (z.human) entities.push({ x: z.x, y: z.y, color: z.stance === 'hostile' ? '#8a3b2e' : '#6b5a44', head: '#d8b48c', hp: z.hp, maxHp: z.maxHp, kind: 'raider', label: z.stance === 'hostile' ? t('Raider', '劫匪') : t('Survivor?', '幸存者？') });
+diff --git a/src/ui/shopPanel.js b/src/ui/shopPanel.js
+index 123c8f0..8213a49 100644
+--- a/src/ui/shopPanel.js
++++ b/src/ui/shopPanel.js
+@@ -4,7 +4,7 @@
+ import { h, openWindow, closeWindow, refreshWindows, toast } from './dom.js';
+ import { registerPanel, openPanel, reasonText, quickUse } from './panels.js';
+ import { renderGrid, weightLine, itemIcon, itemColor, itemTooltip } from './invgrid.js';
+-import { registerView } from './view.js';
++import { registerView, playerMotion } from './view.js';
+ import { game } from '../game.js';
+ import { pickLang, tr, loc } from '../engine/i18n.js';
+ import { on } from '../engine/bus.js';
+@@ -98,7 +98,7 @@ registerView('shop', (state) => {
+   const npcs = shopNpcs(state, shopId);
+   const p = state.player;
+   const entities = npcs.map((n) => ({ x: n.x, y: n.y, color: n.color, head: '#e8c9a0', label: n.label, kind: 'npc' }));
+-  entities.push({ x: p.px ?? p.x, y: p.py ?? p.y, color: CHARACTERS[state.meta.character].color, head: '#e8c9a0', kind: 'player' });
++  entities.push({ x: p.px ?? p.x, y: p.py ?? p.y, color: CHARACTERS[state.meta.character].color, head: '#e8c9a0', kind: 'player', ...playerMotion(state) });
+   const boxes = [];
+   if (groundInv(state, shopId)?.items.length) boxes.push({ x: shop.ground[0], y: shop.ground[1] });
+   // cargo piled on the shopping cart grows with the trunk load (patch 08-16)
+diff --git a/src/ui/view.js b/src/ui/view.js
+index 1c71b39..9ec8373 100644
+--- a/src/ui/view.js
++++ b/src/ui/view.js
+@@ -4,6 +4,7 @@ import { footprint } from '../sim/scene.js';
+ import { sceneProvider } from '../sim/scenes.js';
+ import { CHARACTERS } from '../content/characters.js';
+ import { isNight } from '../sim/time.js';
++import { actionTimeMult } from '../sim/stats.js';
+ 
+ const viewBuilders = new Map();
+ 
+@@ -11,6 +12,28 @@ export function registerView(prefix, builder) {
+   viewBuilders.set(prefix, builder);
+ }
+ 
++// The survivor's motion and action as the sim runs them (src/contracts/view.js ViewEntity): the next tile of the walk
++// phase, and the current action's kind, phase and work progress.
++export function playerMotion(state) {
++  const a = state.actions?.current;
++  if (!a) return { moving: false };
++  const p = state.player;
++  const next = a.phase === 'walk' ? a.legs?.[0]?.path?.[0] : null;
++  const heading = next ? [Math.sign(next[0] - p.x), Math.sign(next[1] - p.y)] : null;
++  const moving = !!heading && (heading[0] !== 0 || heading[1] !== 0);
++  const action = { kind: a.kind, phase: a.phase };
++  const total = (a.dur || 0) * (a.noSlow ? 1 : actionTimeMult(state));
++  if (a.phase === 'work' && Number.isFinite(total) && total > 0) action.progress = Math.min(1, Math.max(0, a.elapsed / total));
++  return { moving, ...(moving ? { heading } : {}), action };
++}
++
++// A zombie's step between tiles (src/sim/horde.js: cx, cy -> nx, ny while mt is set).
++function zombieMotion(z) {
++  const heading = z.mt != null ? [Math.sign(z.nx - z.cx), Math.sign(z.ny - z.cy)] : null;
++  const moving = !!heading && (heading[0] !== 0 || heading[1] !== 0);
++  return moving ? { moving, heading } : { moving: false };
++}
++
+ export function buildView(state) {
+   const scene = state.player.scene || 'home';
+   if (scene !== 'home') {
+@@ -35,10 +58,11 @@ export function homeView(state) {
+       head: '#e8c9a0',
+       sleeping: state.player.sleeping,
+       kind: 'player',
++      ...playerMotion(state),
+     });
+   }
+   for (const z of state.zombies || []) {
+-    if (z.floor === floorId) entities.push({ x: z.x, y: z.y, color: '#5f7a4a', head: '#8aa26a', hp: z.hp, maxHp: z.maxHp, kind: z.big ? 'big' : 'zombie' });
++    if (z.floor === floorId) entities.push({ x: z.x, y: z.y, color: '#5f7a4a', head: '#8aa26a', hp: z.hp, maxHp: z.maxHp, kind: z.big ? 'big' : 'zombie', ...zombieMotion(z) });
+   }
+   for (const npc of state.ui.npcs || []) if (npc.floor === floorId) entities.push(npc);
+   const lightsOn = state.power?.homePowered && !state.power?.lightsOff;
+@@ -62,6 +86,11 @@ export function homeView(state) {
+     clock: state.clock,
+     weather: floorId === 'B1' ? null : state.weather?.today,
+     lightsOn: lightsOn && isNight(state.clock),
++    // facts for a renderer with its own lamp schedule (src/contracts/view.js); the sim defaults both power flags to true
++    home: state.home.id,
++    powered: state.power?.homePowered !== false,
++    lightsPowered: state.power?.lightsPowered !== false,
++    lightsSwitchedOff: !!state.power?.lightsOff,
+     basement: floorId === 'B1',
+     indoorDark: floorId === 'B1' && !lightsOn,
+     roomAt: (x, y) => fl.rooms.find((r) => x >= r.x && x < r.x + r.w && y >= r.y && y < r.y + r.h),

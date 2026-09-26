@@ -1,0 +1,99 @@
+{
+ "about": "Lamp pools on the lit surface (see LAMP_PATCHES). Each patch sits outside the emitter + bloom mask; the\ndisplay values are inverted through three.js AgX (lut.agx_inverse_grey) to scene-referred ratios against the\nambient patch. Distances: screen offset from the emitter converted to metres at the emitter's depth, with the\nwall's foreshortening undone (vertical / cos 40 deg, horizontal / cos 30 deg).",
+ "lamps": [
+  {
+   "id": "lamp-t069",
+   "frame": "t069",
+   "what": "table lamp on the bedroom back wall, Day 1 11:50 (native)",
+   "emitter_px": [
+    1318,
+    240
+   ],
+   "mask_radius_px": 34,
+   "bulb_height_m_decided": 0.95,
+   "m_per_px_at_emitter": 0.012,
+   "ambient_rect": [
+    1570,
+    160,
+    1625,
+    240
+   ],
+   "ambient_display_srgb_lum": 90.2,
+   "patches": [
+    {
+     "label": "wall, beside the shade",
+     "rect": [
+      1256,
+      212,
+      1276,
+      240
+     ],
+     "display_srgb_lum": 117.6,
+     "distance_from_bulb_m": 0.76,
+     "scene_contrast_vs_ambient": 1.82
+    },
+    {
+     "label": "wall, upper left",
+     "rect": [
+      1215,
+      110,
+      1255,
+      190
+     ],
+     "display_srgb_lum": 101.7,
+     "distance_from_bulb_m": 1.83,
+     "scene_contrast_vs_ambient": 1.29
+    }
+   ],
+   "emitter_hex": "#daa850",
+   "emitter_px_within_14": 550
+  },
+  {
+   "id": "lamp-t033",
+   "frame": "t033",
+   "what": "same table lamp at night, Day 18 (native); the far patch is still inside the pool",
+   "emitter_px": [
+    815,
+    323
+   ],
+   "mask_radius_px": 34,
+   "bulb_height_m_decided": 0.95,
+   "m_per_px_at_emitter": 0.014,
+   "ambient_rect": [
+    670,
+    160,
+    700,
+    190
+   ],
+   "ambient_display_srgb_lum": 46.5,
+   "patches": [
+    {
+     "label": "wall, above the shade",
+     "rect": [
+      790,
+      258,
+      815,
+      276
+     ],
+     "display_srgb_lum": 47.5,
+     "distance_from_bulb_m": 1.04,
+     "scene_contrast_vs_ambient": 1.03
+    },
+    {
+     "label": "wall, beside the racket",
+     "rect": [
+      760,
+      195,
+      790,
+      225
+     ],
+     "display_srgb_lum": 49.5,
+     "distance_from_bulb_m": 2.16,
+     "scene_contrast_vs_ambient": 1.09
+    }
+   ],
+   "emitter_hex": "#3e3729",
+   "emitter_px_within_14": 609
+  }
+ ]
+}

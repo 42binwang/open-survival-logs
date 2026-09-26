@@ -1,0 +1,1116 @@
+{
+ "schema": "survival-logs/music-report@1",
+ "targetLufs": -16,
+ "stems": [
+  {
+   "id": "night",
+   "title": "Night",
+   "layer": "night",
+   "file": "assets/audio/music/night.ogg",
+   "midi": "assets/audio/music/midi/night.mid",
+   "bpm": 64,
+   "meter": [
+    4,
+    4
+   ],
+   "bars": 16,
+   "barSeconds": 3.75,
+   "loop": true,
+   "lengthSeconds": 60,
+   "loopEndSample": 2880000,
+   "loudness": {
+    "integrated": -16,
+    "truePeak": -1.9,
+    "lra": 3.2
+   },
+   "tracks": [
+    {
+     "track": "piano",
+     "notes": 129,
+     "lufs": -27.5,
+     "gainDb": 12.5
+    },
+    {
+     "track": "piano#rh",
+     "notes": 48,
+     "lufs": -24,
+     "gainDb": 18.4
+    },
+    {
+     "track": "celli-sus",
+     "notes": 30,
+     "lufs": -29,
+     "gainDb": 14.8
+    },
+    {
+     "track": "violas-sus",
+     "notes": 14,
+     "lufs": -31,
+     "gainDb": 17.7
+    },
+    {
+     "track": "basses-sus",
+     "notes": 16,
+     "lufs": -31,
+     "gainDb": 9.8
+    },
+    {
+     "track": "violins-sus",
+     "notes": 7,
+     "lufs": -30,
+     "gainDb": 12.1
+    },
+    {
+     "track": "bowed-vibraphone",
+     "notes": 5,
+     "lufs": -32,
+     "gainDb": -1.5
+    },
+    {
+     "track": "timpani",
+     "notes": 24,
+     "lufs": -33,
+     "gainDb": 15.4
+    }
+   ],
+   "samples": [
+    "assets/cache/vcsl/bowed-vibraphone/Vibes_bowed_D4_rr1_Main.wav",
+    "assets/cache/vcsl/bowed-vibraphone/Vibes_bowed_G3_rr1_Main.wav",
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_000.wav",
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_001.wav",
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_002.wav",
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_003.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_000.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_001.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_002.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_003.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A0.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A3.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A4.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_B0.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_B2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#3.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#4.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_D#1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_D#2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_D#3.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_D#4.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_F1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_F2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_F3.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_F4.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_G0.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_G1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_G2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_G3.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_G4.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_A#0_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_C1_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_D1_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_G0_v1_rr1.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_A2_v1_1.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_F2_v1_1.wav",
+    "assets/cache/vsco2ce/timpani/Timpani3_Hit_v1_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani3_Hit_v1_rr2_Sum.wav",
+    "assets/cache/vsco2ce/violas-sus/ViolaEns_susvib_D3_v1_1.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_E4_v1.wav"
+   ]
+  },
+  {
+   "id": "night-to-horde",
+   "title": "Night to horde",
+   "layer": "transition",
+   "file": "assets/audio/music/night-to-horde.ogg",
+   "midi": "assets/audio/music/midi/night-to-horde.mid",
+   "bpm": 128,
+   "meter": [
+    4,
+    4
+   ],
+   "bars": 2,
+   "barSeconds": 1.875,
+   "loop": false,
+   "lengthSeconds": 7.25,
+   "loopEndSample": null,
+   "loudness": {
+    "integrated": -16.1,
+    "truePeak": -1.8,
+    "lra": 6.9
+   },
+   "tracks": [
+    {
+     "track": "celli-trem",
+     "notes": 2,
+     "lufs": -24,
+     "gainDb": 7.3
+    },
+    {
+     "track": "violins-trem",
+     "notes": 3,
+     "lufs": -25,
+     "gainDb": 6
+    },
+    {
+     "track": "timpani-roll",
+     "notes": 1,
+     "lufs": -24,
+     "gainDb": 2
+    },
+    {
+     "track": "horn-sus",
+     "notes": 3,
+     "lufs": -25,
+     "gainDb": -0.4
+    },
+    {
+     "track": "trombone-sus",
+     "notes": 2,
+     "lufs": -26,
+     "gainDb": 3.3
+    },
+    {
+     "track": "cymbal",
+     "notes": 2,
+     "lufs": -26,
+     "gainDb": -0.3
+    },
+    {
+     "track": "bass-drum",
+     "notes": 1,
+     "lufs": -20,
+     "gainDb": 5.4
+    },
+    {
+     "track": "timpani",
+     "notes": 2,
+     "lufs": -22,
+     "gainDb": 1.1
+    },
+    {
+     "track": "horn-stac",
+     "notes": 3,
+     "lufs": -22,
+     "gainDb": -7.9
+    },
+    {
+     "track": "trombone-stac",
+     "notes": 2,
+     "lufs": -23,
+     "gainDb": -7.6
+    },
+    {
+     "track": "tuba-stac",
+     "notes": 1,
+     "lufs": -24,
+     "gainDb": -4.5
+    },
+    {
+     "track": "celli-spic",
+     "notes": 1,
+     "lufs": -24,
+     "gainDb": 2.7
+    },
+    {
+     "track": "basses-spic",
+     "notes": 1,
+     "lufs": -25,
+     "gainDb": 3.4
+    },
+    {
+     "track": "piano",
+     "notes": 4,
+     "lufs": -22,
+     "gainDb": -0.8
+    }
+   ],
+   "samples": [
+    "assets/cache/vcsl/bass-drum/bassdrum_hit_ff.wav",
+    "assets/cache/vcsl/cymbal/susCymb1_cresc_2s.wav",
+    "assets/cache/vcsl/cymbal/susCymb1_hit_fff1.wav",
+    "assets/cache/vcsl/piano/Player_vl2_rr1_A1.wav",
+    "assets/cache/vcsl/piano/Player_vl2_rr1_C#0.wav",
+    "assets/cache/vcsl/piano/Player_vl2_rr1_C#1.wav",
+    "assets/cache/vcsl/piano/Player_vl2_rr1_C#2.wav",
+    "assets/cache/vsco2ce/basses-spic/BKCtbss_Spic_D1_v3_rr1.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_D2_v2_RR1.wav",
+    "assets/cache/vsco2ce/celli-trem/trem_A2_v1_1.wav",
+    "assets/cache/vsco2ce/celli-trem/trem_A2_v2_1.wav",
+    "assets/cache/vsco2ce/celli-trem/trem_D2_v1_1.wav",
+    "assets/cache/vsco2ce/celli-trem/trem_D2_v2_1.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_C3_v3_rr1.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_C3_v3_rr2.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_D4_v3_rr1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v2_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v3_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v4_1.wav",
+    "assets/cache/vsco2ce/timpani-roll/Timpani3_Roll_v3_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani-roll/Timpani3_Roll_v5_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani2_Hit_v4_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani3_Hit_v4_rr1_Sum.wav",
+    "assets/cache/vsco2ce/trombone-stac/tenortbn_stac_A#2_v4_rr1.wav",
+    "assets/cache/vsco2ce/trombone-stac/tenortbn_stac_F2_v4_rr1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_C3_v2_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_C3_v3_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_D2_v2_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_D2_v3_1.wav",
+    "assets/cache/vsco2ce/tuba-stac/Tuba3_stac_D#1_v2_rr1_Sum.wav",
+    "assets/cache/vsco2ce/violins-trem/VlnEns_Trem_C4_v1.wav",
+    "assets/cache/vsco2ce/violins-trem/VlnEns_Trem_C4_v2.wav",
+    "assets/cache/vsco2ce/violins-trem/VlnEns_Trem_E4_v1.wav",
+    "assets/cache/vsco2ce/violins-trem/VlnEns_Trem_E4_v2.wav",
+    "assets/cache/vsco2ce/violins-trem/VlnEns_Trem_G4_v1.wav",
+    "assets/cache/vsco2ce/violins-trem/VlnEns_Trem_G4_v2.wav"
+   ]
+  },
+  {
+   "id": "horde",
+   "title": "Horde",
+   "layer": "horde",
+   "file": "assets/audio/music/horde.ogg",
+   "midi": "assets/audio/music/midi/horde.mid",
+   "bpm": 128,
+   "meter": [
+    4,
+    4
+   ],
+   "bars": 16,
+   "barSeconds": 1.875,
+   "loop": true,
+   "lengthSeconds": 30,
+   "loopEndSample": 1440000,
+   "loudness": {
+    "integrated": -16.1,
+    "truePeak": -1.8,
+    "lra": 3.2
+   },
+   "tracks": [
+    {
+     "track": "celli-spic",
+     "notes": 256,
+     "lufs": -22,
+     "gainDb": 1.6
+    },
+    {
+     "track": "basses-spic",
+     "notes": 96,
+     "lufs": -24,
+     "gainDb": -1.2
+    },
+    {
+     "track": "violas-spic",
+     "notes": 48,
+     "lufs": -27,
+     "gainDb": -1.8
+    },
+    {
+     "track": "violins-spic",
+     "notes": 64,
+     "lufs": -24,
+     "gainDb": -3.9
+    },
+    {
+     "track": "violins-trem",
+     "notes": 4,
+     "lufs": -27,
+     "gainDb": 7.3
+    },
+    {
+     "track": "horn-sus",
+     "notes": 26,
+     "lufs": -23,
+     "gainDb": 1.4
+    },
+    {
+     "track": "trombone-sus",
+     "notes": 22,
+     "lufs": -25,
+     "gainDb": 7.1
+    },
+    {
+     "track": "horn-stac",
+     "notes": 60,
+     "lufs": -24,
+     "gainDb": -10.5
+    },
+    {
+     "track": "trombone-stac",
+     "notes": 40,
+     "lufs": -25,
+     "gainDb": -4.6
+    },
+    {
+     "track": "tuba-stac",
+     "notes": 30,
+     "lufs": -26,
+     "gainDb": -5.3
+    },
+    {
+     "track": "timpani",
+     "notes": 28,
+     "lufs": -25,
+     "gainDb": 4.1
+    },
+    {
+     "track": "timpani-roll",
+     "notes": 2,
+     "lufs": -27,
+     "gainDb": 0.9
+    },
+    {
+     "track": "bass-drum",
+     "notes": 64,
+     "lufs": -20,
+     "gainDb": 3.3
+    },
+    {
+     "track": "toms",
+     "notes": 44,
+     "lufs": -24,
+     "gainDb": 2.8
+    },
+    {
+     "track": "anvil",
+     "notes": 24,
+     "lufs": -30,
+     "gainDb": 7.6
+    },
+    {
+     "track": "brake-drum",
+     "notes": 32,
+     "lufs": -29,
+     "gainDb": -4.1
+    },
+    {
+     "track": "snare",
+     "notes": 16,
+     "lufs": -29,
+     "gainDb": -1.6
+    },
+    {
+     "track": "cymbal",
+     "notes": 6,
+     "lufs": -28,
+     "gainDb": 0.6
+    },
+    {
+     "track": "piano",
+     "notes": 12,
+     "lufs": -25,
+     "gainDb": -1.7
+    }
+   ],
+   "samples": [
+    "assets/cache/vcsl/anvil/Anvil_Hit1_v2_rr1_Mid.wav",
+    "assets/cache/vcsl/anvil/Anvil_Hit1_v3_rr1_Mid.wav",
+    "assets/cache/vcsl/anvil/Anvil_Hit2_v2_rr1_Mid.wav",
+    "assets/cache/vcsl/anvil/Anvil_Hit3_v2_rr1_Mid.wav",
+    "assets/cache/vcsl/bass-drum/bassdrum_hit_f.wav",
+    "assets/cache/vcsl/bass-drum/bassdrum_hit_ff.wav",
+    "assets/cache/vcsl/bass-drum/bassdrum_hit_mf1.wav",
+    "assets/cache/vcsl/bass-drum/bassdrum_hit_mf2.wav",
+    "assets/cache/vcsl/brake-drum/BrakeDrum1_Hammer_v2_rr1_Mid.wav",
+    "assets/cache/vcsl/brake-drum/BrakeDrum2_Hammer1_v2_rr1_Mid.wav",
+    "assets/cache/vcsl/brake-drum/BrakeDrum2_Hammer3_v2_rr1_Mid.wav",
+    "assets/cache/vcsl/brake-drum/BrakeDrum2_Hammer3_v3_rr1_Mid.wav",
+    "assets/cache/vcsl/cymbal/susCymb1_cresc_2s.wav",
+    "assets/cache/vcsl/cymbal/susCymb1_hit_f1.wav",
+    "assets/cache/vcsl/cymbal/susCymb1_hit_fff1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#0.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#1.wav",
+    "assets/cache/vcsl/piano/Player_vl2_rr1_A1.wav",
+    "assets/cache/vcsl/piano/Player_vl2_rr1_C#0.wav",
+    "assets/cache/vcsl/piano/Player_vl2_rr1_C#1.wav",
+    "assets/cache/vcsl/toms/Tom 1__Mallet__TomH_HitM_v3_rr1_Mid.wav",
+    "assets/cache/vcsl/toms/Tom 1__Mallet__TomH_HitM_v3_rr2_Mid.wav",
+    "assets/cache/vcsl/toms/Tom 1__Mallet__TomH_HitM_v4_rr1_Mid.wav",
+    "assets/cache/vcsl/toms/Tom 1__Mallet__TomH_HitM_v4_rr2_Mid.wav",
+    "assets/cache/vcsl/toms/Tom 2__Mallet__TomL_HitM_v3_rr1_Mid.wav",
+    "assets/cache/vcsl/toms/Tom 2__Mallet__TomL_HitM_v3_rr2_Mid.wav",
+    "assets/cache/vcsl/toms/Tom 2__Mallet__TomL_HitM_v4_rr1_Mid.wav",
+    "assets/cache/vcsl/toms/Tom 2__Mallet__TomL_HitM_v4_rr2_Mid.wav",
+    "assets/cache/vsco2ce/basses-spic/BKCtbss_Spic_A#0_v3_rr1.wav",
+    "assets/cache/vsco2ce/basses-spic/BKCtbss_Spic_A#0_v3_rr2.wav",
+    "assets/cache/vsco2ce/basses-spic/BKCtbss_Spic_C1_v3_rr1.wav",
+    "assets/cache/vsco2ce/basses-spic/BKCtbss_Spic_C1_v3_rr2.wav",
+    "assets/cache/vsco2ce/basses-spic/BKCtbss_Spic_D1_v3_rr1.wav",
+    "assets/cache/vsco2ce/basses-spic/BKCtbss_Spic_D1_v3_rr2.wav",
+    "assets/cache/vsco2ce/basses-spic/BKCtbss_Spic_E1_v3_rr1.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_B1_v1_RR1.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_B1_v1_RR2.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_B1_v2_RR1.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_B1_v2_RR2.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_D2_v1_RR1.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_D2_v1_RR2.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_D2_v2_RR1.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_D2_v2_RR2.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_F2_v2_RR1.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_G1_v1_RR1.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_G1_v1_RR2.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_G1_v2_RR1.wav",
+    "assets/cache/vsco2ce/celli-spic/spic_G1_v2_RR2.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_A2_v3_rr1.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_A2_v3_rr2.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_C3_v2_rr1.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_C3_v2_rr2.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_C3_v3_rr1.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_C3_v3_rr2.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_D4_v2_rr1.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_D4_v2_rr2.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_D4_v3_rr1.wav",
+    "assets/cache/vsco2ce/horn-stac/MOHorn_stac_D4_v3_rr2.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_A2_v2_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_A2_v3_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v2_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v3_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v4_1.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v3_rr1_Sum.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v3_rr2_Sum.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v5_rr1_Sum.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v5_rr2_Sum.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v7_rr1_Sum.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v7_rr2_Sum.wav",
+    "assets/cache/vsco2ce/timpani-roll/Timpani3_Roll_v3_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani-roll/Timpani3_Roll_v5_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani2_Hit_v3_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani2_Hit_v3_rr2_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani2_Hit_v4_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani2_Hit_v4_rr2_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani3_Hit_v3_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani3_Hit_v3_rr2_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani3_Hit_v4_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani3_Hit_v4_rr2_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani4_Hit_v4_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani4_Hit_v4_rr2_Sum.wav",
+    "assets/cache/vsco2ce/trombone-stac/tenortbn_stac_A#1_v3_rr1.wav",
+    "assets/cache/vsco2ce/trombone-stac/tenortbn_stac_A#1_v3_rr2.wav",
+    "assets/cache/vsco2ce/trombone-stac/tenortbn_stac_A#1_v4_rr1.wav",
+    "assets/cache/vsco2ce/trombone-stac/tenortbn_stac_A#1_v4_rr2.wav",
+    "assets/cache/vsco2ce/trombone-stac/tenortbn_stac_F2_v3_rr1.wav",
+    "assets/cache/vsco2ce/trombone-stac/tenortbn_stac_F2_v3_rr2.wav",
+    "assets/cache/vsco2ce/trombone-stac/tenortbn_stac_F2_v4_rr1.wav",
+    "assets/cache/vsco2ce/trombone-stac/tenortbn_stac_F2_v4_rr2.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_A#1_v2_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_A#1_v3_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_C3_v2_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_C3_v3_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_D2_v2_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_D2_v3_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_F2_v2_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_F2_v3_1.wav",
+    "assets/cache/vsco2ce/tuba-stac/Tuba3_stac_A#0_v2_rr1_Sum.wav",
+    "assets/cache/vsco2ce/tuba-stac/Tuba3_stac_A#0_v2_rr2_Sum.wav",
+    "assets/cache/vsco2ce/tuba-stac/Tuba3_stac_A#0_v2_rr3_Sum.wav",
+    "assets/cache/vsco2ce/tuba-stac/Tuba3_stac_A#0_v2_rr4_Sum.wav",
+    "assets/cache/vsco2ce/tuba-stac/Tuba3_stac_D#1_v2_rr1_Sum.wav",
+    "assets/cache/vsco2ce/tuba-stac/Tuba3_stac_D#1_v2_rr2_Sum.wav",
+    "assets/cache/vsco2ce/tuba-stac/Tuba3_stac_D#1_v2_rr3_Sum.wav",
+    "assets/cache/vsco2ce/tuba-stac/Tuba3_stac_D#1_v2_rr4_Sum.wav",
+    "assets/cache/vsco2ce/violas-spic/Violas_spic_B2_v2_rr1.wav",
+    "assets/cache/vsco2ce/violas-spic/Violas_spic_B2_v2_rr2.wav",
+    "assets/cache/vsco2ce/violas-spic/Violas_spic_D3_v2_rr1.wav",
+    "assets/cache/vsco2ce/violas-spic/Violas_spic_D3_v2_rr2.wav",
+    "assets/cache/vsco2ce/violas-spic/Violas_spic_G2_v2_rr1.wav",
+    "assets/cache/vsco2ce/violas-spic/Violas_spic_G2_v2_rr2.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_B4_v2_rr1.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_B4_v2_rr2.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_C4_v1_rr1.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_C4_v1_rr2.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_C4_v2_rr1.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_C4_v2_rr2.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_E4_v1_rr1.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_E4_v1_rr2.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_E4_v2_rr1.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_E4_v2_rr2.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_G4_v1_rr1.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_G4_v2_rr1.wav",
+    "assets/cache/vsco2ce/violins-spic/VlnEns_Spic_G4_v2_rr2.wav",
+    "assets/cache/vsco2ce/violins-trem/VlnEns_Trem_C4_v1.wav",
+    "assets/cache/vsco2ce/violins-trem/VlnEns_Trem_C4_v2.wav",
+    "assets/cache/vsco2ce/violins-trem/VlnEns_Trem_G4_v1.wav",
+    "assets/cache/vsco2ce/violins-trem/VlnEns_Trem_G4_v2.wav"
+   ]
+  },
+  {
+   "id": "horde-end",
+   "title": "Horde end",
+   "layer": "transition",
+   "file": "assets/audio/music/horde-end.ogg",
+   "midi": "assets/audio/music/midi/horde-end.mid",
+   "bpm": 128,
+   "meter": [
+    4,
+    4
+   ],
+   "bars": 1,
+   "barSeconds": 1.875,
+   "loop": false,
+   "lengthSeconds": 8.075,
+   "loopEndSample": null,
+   "loudness": {
+    "integrated": -16.1,
+    "truePeak": -1.8,
+    "lra": 17.3
+   },
+   "tracks": [
+    {
+     "track": "gong",
+     "notes": 1,
+     "lufs": -20,
+     "gainDb": 7.8
+    },
+    {
+     "track": "bass-drum",
+     "notes": 1,
+     "lufs": -21,
+     "gainDb": 7.3
+    },
+    {
+     "track": "timpani",
+     "notes": 2,
+     "lufs": -22,
+     "gainDb": 5.3
+    },
+    {
+     "track": "cymbal",
+     "notes": 1,
+     "lufs": -27,
+     "gainDb": 1.1
+    },
+    {
+     "track": "horn-sus",
+     "notes": 3,
+     "lufs": -24,
+     "gainDb": 0.3
+    },
+    {
+     "track": "trombone-sus",
+     "notes": 2,
+     "lufs": -25,
+     "gainDb": 4.7
+    },
+    {
+     "track": "tuba-stac",
+     "notes": 1,
+     "lufs": -24,
+     "gainDb": -5.4
+    },
+    {
+     "track": "celli-sus",
+     "notes": 2,
+     "lufs": -25,
+     "gainDb": 1.4
+    },
+    {
+     "track": "basses-sus",
+     "notes": 1,
+     "lufs": -26,
+     "gainDb": 5
+    },
+    {
+     "track": "piano",
+     "notes": 5,
+     "lufs": -24,
+     "gainDb": 2.8
+    }
+   ],
+   "samples": [
+    "assets/cache/vcsl/bass-drum/bassdrum_hit_ff.wav",
+    "assets/cache/vcsl/cymbal/susCymb1_hit_fff1.wav",
+    "assets/cache/vcsl/gong/gong_fff.wav",
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_000.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_000.wav",
+    "assets/cache/vcsl/piano/Player_vl2_rr1_A1.wav",
+    "assets/cache/vcsl/piano/Player_vl2_rr1_C#0.wav",
+    "assets/cache/vcsl/piano/Player_vl2_rr1_C#1.wav",
+    "assets/cache/vcsl/piano/Player_vl2_rr1_C#2.wav",
+    "assets/cache/vcsl/piano/Player_vl2_rr1_F2.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_D1_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_D1_v3_rr1.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_A2_v1_1.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_A2_v3_1.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_D2_v1_1.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_D2_v3_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v2_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v3_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v4_1.wav",
+    "assets/cache/vsco2ce/timpani/Timpani2_Hit_v4_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani/Timpani3_Hit_v4_rr1_Sum.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_C3_v2_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_C3_v3_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_D2_v2_1.wav",
+    "assets/cache/vsco2ce/trombone-sus/tenortbn_sus_D2_v3_1.wav",
+    "assets/cache/vsco2ce/tuba-stac/Tuba3_stac_D#1_v2_rr1_Sum.wav"
+   ]
+  },
+  {
+   "id": "pre-outbreak",
+   "title": "Pre-outbreak",
+   "layer": "pre-outbreak",
+   "file": "assets/audio/music/pre-outbreak.ogg",
+   "midi": "assets/audio/music/midi/pre-outbreak.mid",
+   "bpm": 120,
+   "meter": [
+    4,
+    4
+   ],
+   "bars": 16,
+   "barSeconds": 2,
+   "loop": true,
+   "lengthSeconds": 32,
+   "loopEndSample": 1536000,
+   "loudness": {
+    "integrated": -16,
+    "truePeak": -1.8,
+    "lra": 4.3
+   },
+   "tracks": [
+    {
+     "track": "claves",
+     "notes": 128,
+     "lufs": -33,
+     "gainDb": 1.8
+    },
+    {
+     "track": "celli-pizz",
+     "notes": 64,
+     "lufs": -26,
+     "gainDb": -0.3
+    },
+    {
+     "track": "violins-pizz",
+     "notes": 128,
+     "lufs": -29,
+     "gainDb": 1
+    },
+    {
+     "track": "marimba",
+     "notes": 224,
+     "lufs": -28,
+     "gainDb": -2
+    },
+    {
+     "track": "clarinet-stac",
+     "notes": 57,
+     "lufs": -24,
+     "gainDb": 0.4
+    },
+    {
+     "track": "bassoon-stac",
+     "notes": 48,
+     "lufs": -28,
+     "gainDb": -6.1
+    },
+    {
+     "track": "xylophone",
+     "notes": 24,
+     "lufs": -25,
+     "gainDb": -1.7
+    },
+    {
+     "track": "snare",
+     "notes": 104,
+     "lufs": -33,
+     "gainDb": 3.9
+    },
+    {
+     "track": "glockenspiel",
+     "notes": 3,
+     "lufs": -32,
+     "gainDb": 1.9
+    }
+   ],
+   "samples": [
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_A2_v1_rr1.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_A2_v1_rr2.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_A2_v2_rr1.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_A2_v2_rr2.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_C2_v2_rr1.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_C3_v1_rr1.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_C3_v1_rr2.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_C3_v2_rr1.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_C3_v2_rr2.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_E2_v1_rr1.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_E2_v1_rr2.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_E2_v2_rr1.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_E2_v2_rr2.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_E3_v1_rr1.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_E3_v1_rr2.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_E3_v2_rr1.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_E3_v2_rr2.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_G2_v2_rr1.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_G2_v2_rr2.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_G3_v1_rr1.wav",
+    "assets/cache/vsco2ce/bassoon-stac/PSBassoon_G3_v1_rr2.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_A2_v1_RR1.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_A2_v1_RR2.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_A2_v2_RR1.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_A2_v2_RR2.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_B1_v1_RR1.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_B1_v1_RR2.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_B1_v2_RR1.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_B1_v2_RR2.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_C3_v1_RR1.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_C3_v2_RR1.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_C3_v2_RR2.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_D2_v1_RR1.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_D2_v1_RR2.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_D2_v2_RR1.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_D2_v2_RR2.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_E1_v2_RR1.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_F2_v1_RR1.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_F2_v1_RR2.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_F2_v2_RR1.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_F2_v2_RR2.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_G1_v2_RR1.wav",
+    "assets/cache/vsco2ce/celli-pizz/pizzT_G1_v2_RR2.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_A#3_v2_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_A#3_v2_rr2_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_A#3_v3_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_A#3_v3_rr2_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_A#4_v2_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_A#4_v2_rr2_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_A#4_v3_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_A#4_v3_rr2_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_D4_v2_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_D4_v2_rr2_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_D4_v3_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_D4_v3_rr2_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_F4_v2_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_F4_v2_rr2_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_F4_v3_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-stac/DCClar_stac_F4_v3_rr2_sum.wav",
+    "assets/cache/vsco2ce/claves/Claves1_Hit_v1_rr1_Sum.wav",
+    "assets/cache/vsco2ce/claves/Claves1_Hit_v1_rr2_Sum.wav",
+    "assets/cache/vsco2ce/claves/Claves1_Hit_v2_rr1_Sum.wav",
+    "assets/cache/vsco2ce/claves/Claves1_Hit_v2_rr2_Sum.wav",
+    "assets/cache/vsco2ce/glockenspiel/glock_medium_C5.wav",
+    "assets/cache/vsco2ce/glockenspiel/glock_medium_G4.wav",
+    "assets/cache/vsco2ce/marimba/Marimba_hit_Outrigger_B2_loud_01.wav",
+    "assets/cache/vsco2ce/marimba/Marimba_hit_Outrigger_B4_loud_01.wav",
+    "assets/cache/vsco2ce/marimba/Marimba_hit_Outrigger_C4_loud_01.wav",
+    "assets/cache/vsco2ce/marimba/Marimba_hit_Outrigger_F3_loud_01.wav",
+    "assets/cache/vsco2ce/marimba/Marimba_hit_Outrigger_G4_loud_01.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v1_rr1_Sum.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v1_rr2_Sum.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v3_rr1_Sum.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v3_rr2_Sum.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v5_rr1_Sum.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v5_rr2_Sum.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v7_rr1_Sum.wav",
+    "assets/cache/vsco2ce/snare/Snare2-HitSN_v7_rr2_Sum.wav",
+    "assets/cache/vsco2ce/violins-pizz/VlnEns_Pizz_A3_v1_rr1.wav",
+    "assets/cache/vsco2ce/violins-pizz/VlnEns_Pizz_A3_v1_rr2.wav",
+    "assets/cache/vsco2ce/violins-pizz/VlnEns_Pizz_A3_v2_rr1.wav",
+    "assets/cache/vsco2ce/violins-pizz/VlnEns_Pizz_A3_v2_rr2.wav",
+    "assets/cache/vsco2ce/violins-pizz/VlnEns_Pizz_C4_v1_rr1.wav",
+    "assets/cache/vsco2ce/violins-pizz/VlnEns_Pizz_C4_v1_rr2.wav",
+    "assets/cache/vsco2ce/violins-pizz/VlnEns_Pizz_C4_v2_rr1.wav",
+    "assets/cache/vsco2ce/violins-pizz/VlnEns_Pizz_C4_v2_rr2.wav",
+    "assets/cache/vsco2ce/violins-pizz/VlnEns_Pizz_F#3_v1_rr1.wav",
+    "assets/cache/vsco2ce/violins-pizz/VlnEns_Pizz_F#3_v1_rr2.wav",
+    "assets/cache/vsco2ce/violins-pizz/VlnEns_Pizz_F#3_v2_rr1.wav",
+    "assets/cache/vsco2ce/violins-pizz/VlnEns_Pizz_F#3_v2_rr2.wav",
+    "assets/cache/vsco2ce/xylophone/Xylo_Medium_C4_ff_01_far.wav",
+    "assets/cache/vsco2ce/xylophone/Xylo_Medium_C5_ff_01_far.wav",
+    "assets/cache/vsco2ce/xylophone/Xylo_Medium_G4_ff_01_far.wav",
+    "assets/cache/vsco2ce/xylophone/Xylo_Medium_G5_ff_01_far.wav"
+   ]
+  },
+  {
+   "id": "day",
+   "title": "Day",
+   "layer": "day",
+   "file": "assets/audio/music/day.ogg",
+   "midi": "assets/audio/music/midi/day.mid",
+   "bpm": 80,
+   "meter": [
+    4,
+    4
+   ],
+   "bars": 16,
+   "barSeconds": 3,
+   "loop": true,
+   "lengthSeconds": 48,
+   "loopEndSample": 2304000,
+   "loudness": {
+    "integrated": -16,
+    "truePeak": -2.7,
+    "lra": 2.7
+   },
+   "tracks": [
+    {
+     "track": "piano",
+     "notes": 128,
+     "lufs": -28,
+     "gainDb": 13.4
+    },
+    {
+     "track": "harp",
+     "notes": 52,
+     "lufs": -29,
+     "gainDb": 3.2
+    },
+    {
+     "track": "clarinet-sus",
+     "notes": 32,
+     "lufs": -26,
+     "gainDb": 9.9
+    },
+    {
+     "track": "flute-sus",
+     "notes": 23,
+     "lufs": -25,
+     "gainDb": 11
+    },
+    {
+     "track": "violas-sus",
+     "notes": 16,
+     "lufs": -32,
+     "gainDb": 16.5
+    },
+    {
+     "track": "celli-sus",
+     "notes": 16,
+     "lufs": -31,
+     "gainDb": 12.6
+    },
+    {
+     "track": "basses-pizz",
+     "notes": 16,
+     "lufs": -31,
+     "gainDb": 8.9
+    },
+    {
+     "track": "glockenspiel",
+     "notes": 4,
+     "lufs": -32,
+     "gainDb": 4.4
+    }
+   ],
+   "samples": [
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_000.wav",
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_001.wav",
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_002.wav",
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_003.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_000.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_001.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_002.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_003.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_B1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_B2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#3.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_D#2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_D#3.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_F2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_F3.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_G1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_G2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_G3.wav",
+    "assets/cache/vsco2ce/basses-pizz/BKCtbss_Pizz_A#0_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-pizz/BKCtbss_Pizz_A#0_v1_rr2.wav",
+    "assets/cache/vsco2ce/basses-pizz/BKCtbss_Pizz_C1_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-pizz/BKCtbss_Pizz_C1_v1_rr2.wav",
+    "assets/cache/vsco2ce/basses-pizz/BKCtbss_Pizz_D1_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-pizz/BKCtbss_Pizz_D1_v1_rr2.wav",
+    "assets/cache/vsco2ce/basses-pizz/BKCtbss_Pizz_E1_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-pizz/BKCtbss_Pizz_E1_v1_rr2.wav",
+    "assets/cache/vsco2ce/basses-pizz/BKCtbss_Pizz_G0_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-pizz/BKCtbss_Pizz_G0_v1_rr2.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_B1_v1_1.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_D2_v1_1.wav",
+    "assets/cache/vsco2ce/clarinet-sus/DCClar_susLong_A#2_v1_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-sus/DCClar_susLong_A#2_v2_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-sus/DCClar_susLong_A#3_v1_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-sus/DCClar_susLong_A#3_v2_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-sus/DCClar_susLong_D3_v1_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-sus/DCClar_susLong_D3_v2_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-sus/DCClar_susLong_D4_v1_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-sus/DCClar_susLong_D4_v2_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-sus/DCClar_susLong_F3_v1_rr1_sum.wav",
+    "assets/cache/vsco2ce/clarinet-sus/DCClar_susLong_F3_v2_rr1_sum.wav",
+    "assets/cache/vsco2ce/flute-sus/LDFlute_susNV_A4_v1_1.wav",
+    "assets/cache/vsco2ce/flute-sus/LDFlute_susNV_C4_v1_1.wav",
+    "assets/cache/vsco2ce/flute-sus/LDFlute_susNV_C5_v2_1.wav",
+    "assets/cache/vsco2ce/flute-sus/LDFlute_susNV_E4_v1_1.wav",
+    "assets/cache/vsco2ce/glockenspiel/glock_medium_C5.wav",
+    "assets/cache/vsco2ce/glockenspiel/glock_medium_G4.wav",
+    "assets/cache/vsco2ce/harp/KSHarp_A2_mf.wav",
+    "assets/cache/vsco2ce/harp/KSHarp_A4_mf.wav",
+    "assets/cache/vsco2ce/harp/KSHarp_B3_mf.wav",
+    "assets/cache/vsco2ce/harp/KSHarp_C3_mf.wav",
+    "assets/cache/vsco2ce/harp/KSHarp_D4_mf.wav",
+    "assets/cache/vsco2ce/harp/KSHarp_E3_mf.wav",
+    "assets/cache/vsco2ce/harp/KSHarp_F2_mf.wav",
+    "assets/cache/vsco2ce/harp/KSHarp_F4_mf.wav",
+    "assets/cache/vsco2ce/violas-sus/ViolaEns_susvib_F3_v1_1.wav",
+    "assets/cache/vsco2ce/violas-sus/ViolaEns_susvib_F3_v2_1.wav"
+   ]
+  },
+  {
+   "id": "ending",
+   "title": "Ending",
+   "layer": "ending",
+   "file": "assets/audio/music/ending.ogg",
+   "midi": "assets/audio/music/midi/ending.mid",
+   "bpm": 72,
+   "meter": [
+    4,
+    4
+   ],
+   "bars": 18,
+   "barSeconds": 3.3333333333333335,
+   "loop": false,
+   "lengthSeconds": 66.59595833333333,
+   "loopEndSample": null,
+   "loudness": {
+    "integrated": -16,
+    "truePeak": -2.1,
+    "lra": 9.4
+   },
+   "tracks": [
+    {
+     "track": "piano",
+     "notes": 142,
+     "lufs": -28,
+     "gainDb": 12
+    },
+    {
+     "track": "piano#rh",
+     "notes": 11,
+     "lufs": -27,
+     "gainDb": 21.6
+    },
+    {
+     "track": "violins-sus",
+     "notes": 30,
+     "lufs": -25,
+     "gainDb": 9.7
+    },
+    {
+     "track": "violas-sus",
+     "notes": 14,
+     "lufs": -31,
+     "gainDb": 17.3
+    },
+    {
+     "track": "celli-sus",
+     "notes": 28,
+     "lufs": -29,
+     "gainDb": 13.4
+    },
+    {
+     "track": "basses-sus",
+     "notes": 14,
+     "lufs": -30,
+     "gainDb": 10.4
+    },
+    {
+     "track": "horn-sus",
+     "notes": 21,
+     "lufs": -26,
+     "gainDb": 2.9
+    },
+    {
+     "track": "timpani-roll",
+     "notes": 1,
+     "lufs": -28,
+     "gainDb": 4
+    },
+    {
+     "track": "cymbal",
+     "notes": 1,
+     "lufs": -32,
+     "gainDb": 2.6
+    },
+    {
+     "track": "glockenspiel",
+     "notes": 3,
+     "lufs": -30,
+     "gainDb": 2.5
+    }
+   ],
+   "samples": [
+    "assets/cache/vcsl/cymbal/susCymb1_cresc_4s.wav",
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_000.wav",
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_001.wav",
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_002.wav",
+    "assets/cache/vcsl/piano-pedal/Off__Player_PedOff_003.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_000.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_001.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_002.wav",
+    "assets/cache/vcsl/piano-pedal/On__Player_PedOn_003.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A0.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A3.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_A4.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_B0.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_B1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_B2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#0.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#3.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_C#4.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_D#1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_D#2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_D#4.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_F1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_F2.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_F3.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_F4.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_G0.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_G1.wav",
+    "assets/cache/vcsl/piano/Player_vl1_rr1_G2.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_A#0_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_C1_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_D1_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_E1_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_F#1_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_G0_v1_rr1.wav",
+    "assets/cache/vsco2ce/basses-sus/BKCtbss_SusNV_G0_v3_rr1.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_A2_v1_1.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_D2_v1_1.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_D2_v3_1.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_F2_v1_1.wav",
+    "assets/cache/vsco2ce/celli-sus/susvib_F2_v3_1.wav",
+    "assets/cache/vsco2ce/glockenspiel/glock_medium_C6.wav",
+    "assets/cache/vsco2ce/glockenspiel/glock_medium_G5.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_A2_v1_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_A2_v2_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v1_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v2_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v3_1.wav",
+    "assets/cache/vsco2ce/horn-sus/MOHorn_sus_C3_v4_1.wav",
+    "assets/cache/vsco2ce/timpani-roll/Timpani3_Roll_v3_rr1_Sum.wav",
+    "assets/cache/vsco2ce/timpani-roll/Timpani3_Roll_v5_rr1_Sum.wav",
+    "assets/cache/vsco2ce/violas-sus/ViolaEns_susvib_B2_v1_1.wav",
+    "assets/cache/vsco2ce/violas-sus/ViolaEns_susvib_B2_v2_1.wav",
+    "assets/cache/vsco2ce/violas-sus/ViolaEns_susvib_D3_v1_1.wav",
+    "assets/cache/vsco2ce/violas-sus/ViolaEns_susvib_D3_v2_1.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_A3_v1.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_A3_v2.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_B4_v1.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_B4_v2.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_C4_v1.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_C4_v2.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_D3_v1.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_D3_v2.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_E4_v1.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_E4_v2.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_F#3_v1.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_F#3_v2.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_G4_v1.wav",
+    "assets/cache/vsco2ce/violins-sus/VlnEns_susVib_G4_v2.wav"
+   ]
+  }
+ ]
+}

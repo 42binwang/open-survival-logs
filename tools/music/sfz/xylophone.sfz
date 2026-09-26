@@ -1,0 +1,14 @@
+// Xylophone: VSCO 2 Community Edition (CC0), sgossner/VSCO-2-CE@440300901d, folder 'Percussion/Xylo'.
+// Written by tools/music/build.mjs (tools/music/instruments.mjs); played by tools/music/sampler.mjs.
+// Gain staging: loudest layer calibrated to -20 LUFS-M on Xylo_Medium_G5_ff_01_far.wav (measured -18.7).
+<control> default_path=../../../assets/cache/vsco2ce/xylophone/
+<global> ampeg_release=0.4 amp_veltrack=75 loop_mode=one_shot fil_type=lpf_2p cutoff=4000 fil_veltrack=5000 offset_auto=1 volume=-1.3
+<group> lovel=1 hivel=127
+<region> lokey=0 hikey=69 pitch_keycenter=67 sample=Xylo_Medium_G3_ff_01_far.wav
+<region> lokey=70 hikey=75 pitch_keycenter=72 sample=Xylo_Medium_C4_ff_01_far.wav
+<region> lokey=76 hikey=81 pitch_keycenter=79 sample=Xylo_Medium_G4_ff_01_far.wav
+<region> lokey=82 hikey=87 pitch_keycenter=84 sample=Xylo_Medium_C5_ff_01_far.wav
+<region> lokey=88 hikey=93 pitch_keycenter=91 sample=Xylo_Medium_G5_ff_01_far.wav
+<region> lokey=94 hikey=99 pitch_keycenter=96 sample=Xylo_Medium_C6_ff_01_far.wav
+<region> lokey=100 hikey=105 pitch_keycenter=103 sample=Xylo_Medium_G6_ff_01_far.wav
+<region> lokey=106 hikey=127 pitch_keycenter=108 sample=Xylo_Medium_C7_ff_01_far.wav

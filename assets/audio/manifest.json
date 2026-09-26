@@ -1,0 +1,2216 @@
+{
+ "schema": "survival-logs/asset-manifest@1",
+ "wp": "WP-P0-06",
+ "rebuild": {
+  "music": {
+   "entry": "tools/music/build.mjs",
+   "args": [
+    "{name}"
+   ],
+   "inputs": [
+    "tools/audio/lib/",
+    "tools/audio/manifest.mjs",
+    "tools/audio/spaces.mjs",
+    "tools/audio/fetch.mjs",
+    "tools/audio/lock.mjs",
+    "tools/music/build.mjs",
+    "tools/music/instruments.mjs",
+    "tools/music/midi.mjs",
+    "tools/music/pitch.mjs",
+    "tools/music/sampler.mjs",
+    "tools/music/score.mjs",
+    "tools/music/sfz.mjs",
+    "tools/music/theory.mjs",
+    "tools/music/catalog.json",
+    "tools/music/compositions/",
+    "assets/lock/",
+    "assets/sources.lock.json",
+    "assets/audio/music/music.json"
+   ],
+   "shared": [
+    "assets/cache",
+    "tools/audio/.build/decoded"
+   ],
+   "tools": {
+    "node": "24.15.0",
+    "ffmpeg": "9.0.2",
+    "sox": "14.4.2",
+    "libvorbis": "1.3.7"
+   },
+   "seeds": {
+    "score.pre-outbreak": 12001,
+    "score.day": 8001,
+    "score.night": 6401,
+    "score.horde": 12801,
+    "score.night-to-horde": 12802,
+    "score.horde-end": 12803,
+    "score.ending": 7201,
+    "sampler.track": 1,
+    "wav.dither": 305419896
+   },
+   "cost": 20,
+   "timeoutSec": 600
+  },
+  "sfx": {
+   "entry": "tools/audio/build-sfx.mjs",
+   "args": [
+    "{name}"
+   ],
+   "inputs": [
+    "tools/audio/lib/",
+    "tools/audio/manifest.mjs",
+    "tools/audio/spaces.mjs",
+    "tools/audio/build-sfx.mjs",
+    "tools/audio/chain.mjs",
+    "tools/audio/fetch.mjs",
+    "tools/audio/lock.mjs",
+    "tools/audio/sources.mjs",
+    "tools/audio/sfx/",
+    "assets/lock/",
+    "assets/sources.lock.json"
+   ],
+   "shared": [
+    "assets/cache",
+    "tools/audio/.build/decoded"
+   ],
+   "tools": {
+    "node": "24.15.0",
+    "ffmpeg": "9.0.2",
+    "sox": "14.4.2",
+    "libvorbis": "1.3.7"
+   },
+   "seeds": {
+    "take.fnv1a-basis": 2166136261,
+    "wav.dither": 305419896
+   },
+   "cost": 8
+  },
+  "ir": {
+   "entry": "tools/audio/build-ir.mjs",
+   "args": [
+    "{name}"
+   ],
+   "inputs": [
+    "tools/audio/lib/",
+    "tools/audio/manifest.mjs",
+    "tools/audio/spaces.mjs",
+    "tools/audio/build-ir.mjs"
+   ],
+   "shared": [
+    "assets/cache",
+    "tools/audio/.build/decoded"
+   ],
+   "tools": {
+    "node": "24.15.0",
+    "ffmpeg": "9.0.2",
+    "sox": "14.4.2",
+    "libvorbis": "1.3.7"
+   },
+   "seeds": {
+    "ir.space": 7
+   },
+   "cost": 2
+  },
+  "test": {
+   "entry": "tools/audio/mix.mjs",
+   "inputs": [
+    "tools/audio/lib/",
+    "tools/audio/manifest.mjs",
+    "tools/audio/spaces.mjs",
+    "tools/audio/build-ir.mjs",
+    "tools/audio/chain.mjs",
+    "tools/audio/mix.mjs",
+    "tools/audio/scene.mjs",
+    "assets/audio/music/",
+    "assets/audio/sfx/",
+    "assets/audio/ui/",
+    "assets/audio/amb/"
+   ],
+   "shared": [
+    "assets/cache",
+    "tools/audio/.build/decoded"
+   ],
+   "tools": {
+    "node": "24.15.0",
+    "ffmpeg": "9.0.2",
+    "sox": "14.4.2",
+    "libvorbis": "1.3.7"
+   },
+   "seeds": {
+    "scene": 224136742,
+    "ir.space": 7,
+    "wav.dither": 305419896
+   },
+   "cost": 15,
+   "timeoutSec": 300
+  }
+ },
+ "assets": [
+  {
+   "id": "audio/amb-horde-crowd",
+   "kind": "audio",
+   "path": "assets/audio/amb/amb-horde-crowd/amb-horde-crowd-01.ogg",
+   "license": "LicenseRef-Original",
+   "variants": {
+    "01": {
+     "path": "assets/audio/amb/amb-horde-crowd/amb-horde-crowd-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/amb/amb-horde-crowd/amb-horde-crowd-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/amb/amb-horde-crowd/amb-horde-crowd-03.ogg"
+    }
+   },
+   "params": {
+    "title": "The horde outside: a crowd of zombies (stereo loop)",
+    "category": "ambience",
+    "bus": "ambience",
+    "spatial": false,
+    "loop": true,
+    "space": "outdoors",
+    "tags": [
+     "horde"
+    ],
+    "pitchCents": 0,
+    "gainDb": 1.5,
+    "noRepeat": true,
+    "maxVoices": 2,
+    "cooldown": 0
+   },
+   "meta": {
+    "target": {
+     "lufs": -22
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 16,
+      "channels": 2,
+      "truePeak": -6.4,
+      "lufs": -22,
+      "recipe": "synth crowd of 12 zombie voices at 4-30 m, shuffling, street acoustics"
+     },
+     {
+      "variant": "02",
+      "seconds": 16,
+      "channels": 2,
+      "truePeak": -7.6,
+      "lufs": -22.1,
+      "recipe": "synth crowd of 16 zombie voices at 4-30 m, shuffling, street acoustics"
+     },
+     {
+      "variant": "03",
+      "seconds": 16,
+      "channels": 2,
+      "truePeak": -8.6,
+      "lufs": -22.1,
+      "recipe": "synth crowd of 20 zombie voices at 4-30 m, shuffling, street acoustics"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/amb/amb-horde-crowd/amb-horde-crowd-01.ogg": "33640904cb8ead574dc6caa3cdcfac3e15d2d48c854ef5429ea0becc9e97a542",
+    "assets/audio/amb/amb-horde-crowd/amb-horde-crowd-02.ogg": "bd3c1feafad1046279ae6c6aa7941c5c3b6b98703791ebab7044c2da5ccb07f1",
+    "assets/audio/amb/amb-horde-crowd/amb-horde-crowd-03.ogg": "b3545bb21aa4a281dc9f91475b4c0b0231f530c429140af1c23f5cb57594c7b5"
+   }
+  },
+  {
+   "id": "audio/amb-night-street",
+   "kind": "audio",
+   "path": "assets/audio/amb/amb-night-street/amb-night-street-01.ogg",
+   "license": "LicenseRef-Original",
+   "variants": {
+    "01": {
+     "path": "assets/audio/amb/amb-night-street/amb-night-street-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/amb/amb-night-street/amb-night-street-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/amb/amb-night-street/amb-night-street-03.ogg"
+    }
+   },
+   "params": {
+    "title": "The street at night: wind and far-off moans (stereo loop)",
+    "category": "ambience",
+    "bus": "ambience",
+    "spatial": false,
+    "loop": true,
+    "space": "outdoors",
+    "tags": [],
+    "pitchCents": 0,
+    "gainDb": 1,
+    "noRepeat": true,
+    "maxVoices": 1,
+    "cooldown": 0
+   },
+   "meta": {
+    "target": {
+     "lufs": -30
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 20,
+      "channels": 2,
+      "truePeak": -9.1,
+      "lufs": -30.1,
+      "recipe": "synth wind gusts + distant synthesized moans in street acoustics"
+     },
+     {
+      "variant": "02",
+      "seconds": 20,
+      "channels": 2,
+      "truePeak": -14.2,
+      "lufs": -30.2,
+      "recipe": "synth wind gusts + distant synthesized moans in street acoustics"
+     },
+     {
+      "variant": "03",
+      "seconds": 20,
+      "channels": 2,
+      "truePeak": -13.6,
+      "lufs": -30.1,
+      "recipe": "synth wind gusts + distant synthesized moans in street acoustics"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/amb/amb-night-street/amb-night-street-01.ogg": "9bc4b11d2129d2568854a8c577755040c8d510a01e6dca0128090769c81268b1",
+    "assets/audio/amb/amb-night-street/amb-night-street-02.ogg": "7e1ada3e8cc031a6b05772442b543f866b6cf42c53d7afe6258ba4f27f3b7096",
+    "assets/audio/amb/amb-night-street/amb-night-street-03.ogg": "291a2f388ac2dd554cbb7c567d848f841f392853a8de519991ad6e2bc29ce954"
+   }
+  },
+  {
+   "id": "audio/amb-roomtone",
+   "kind": "audio",
+   "path": "assets/audio/amb/amb-roomtone/amb-roomtone-01.ogg",
+   "license": "LicenseRef-Original",
+   "variants": {
+    "01": {
+     "path": "assets/audio/amb/amb-roomtone/amb-roomtone-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/amb/amb-roomtone/amb-roomtone-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/amb/amb-roomtone/amb-roomtone-03.ogg"
+    }
+   },
+   "params": {
+    "title": "Apartment room tone at night (stereo loop)",
+    "category": "ambience",
+    "bus": "ambience",
+    "spatial": false,
+    "loop": true,
+    "space": "apartment",
+    "tags": [],
+    "pitchCents": 0,
+    "gainDb": 1,
+    "noRepeat": true,
+    "maxVoices": 1,
+    "cooldown": 0
+   },
+   "meta": {
+    "target": {
+     "lufs": -40
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 20,
+      "channels": 2,
+      "truePeak": -24.4,
+      "lufs": -40,
+      "recipe": "synth room tone, fridge hum 0.6"
+     },
+     {
+      "variant": "02",
+      "seconds": 20,
+      "channels": 2,
+      "truePeak": -24.5,
+      "lufs": -40,
+      "recipe": "synth room tone, fridge hum 0.85"
+     },
+     {
+      "variant": "03",
+      "seconds": 20,
+      "channels": 2,
+      "truePeak": -24.8,
+      "lufs": -40,
+      "recipe": "synth room tone, fridge hum 0.4"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/amb/amb-roomtone/amb-roomtone-01.ogg": "1be9b2cf058f13b281e1c7fdd361f10dd48ae53fd14fee2050e082f7075d48a8",
+    "assets/audio/amb/amb-roomtone/amb-roomtone-02.ogg": "574a152ce92ebdc3f6b53a7a02382ee5a9ed71e120b2f9b827688a17ff213f8d",
+    "assets/audio/amb/amb-roomtone/amb-roomtone-03.ogg": "a75a0ca68e63a3cefa58d4adf301b5faad83a2607480d415ba01e2d0e1d288ce"
+   }
+  },
+  {
+   "id": "audio/cooking-sizzle",
+   "kind": "audio",
+   "path": "assets/audio/sfx/cooking-sizzle/cooking-sizzle-01.ogg",
+   "license": "LicenseRef-Original",
+   "variants": {
+    "01": {
+     "path": "assets/audio/sfx/cooking-sizzle/cooking-sizzle-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/sfx/cooking-sizzle/cooking-sizzle-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/sfx/cooking-sizzle/cooking-sizzle-03.ogg"
+    }
+   },
+   "params": {
+    "title": "Food sizzling in a pan (loop)",
+    "category": "sfx",
+    "bus": "sfx",
+    "spatial": true,
+    "loop": true,
+    "space": "apartment",
+    "tags": [],
+    "pitchCents": 60,
+    "gainDb": 2,
+    "noRepeat": true,
+    "maxVoices": 1,
+    "cooldown": 0
+   },
+   "meta": {
+    "target": {
+     "lufs": -26
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 8,
+      "channels": 1,
+      "truePeak": -3.6,
+      "lufs": -26,
+      "recipe": "synth sizzle, intensity 0.45"
+     },
+     {
+      "variant": "02",
+      "seconds": 8,
+      "channels": 1,
+      "truePeak": -3.4,
+      "lufs": -26,
+      "recipe": "synth sizzle, intensity 0.65"
+     },
+     {
+      "variant": "03",
+      "seconds": 8,
+      "channels": 1,
+      "truePeak": -4.8,
+      "lufs": -26,
+      "recipe": "synth sizzle, intensity 0.85"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/sfx/cooking-sizzle/cooking-sizzle-01.ogg": "48df4623a00fc7fdf01833eb36fa4394b63ae80248f5e00c47e64eb11ea6bff0",
+    "assets/audio/sfx/cooking-sizzle/cooking-sizzle-02.ogg": "2c3070b07be848e58c80cdc3e2c3df1767decc0598b9c549f977c3d5c1aa248f",
+    "assets/audio/sfx/cooking-sizzle/cooking-sizzle-03.ogg": "36e02742b3b239804161f1a8c02667c6c9954c7bc1ae6c02b1388a22eb1d1a4d"
+   }
+  },
+  {
+   "id": "audio/door-bang",
+   "kind": "audio",
+   "path": "assets/audio/sfx/door-bang/door-bang-01.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "kenney/impact-sounds",
+    "kenney/rpg-audio"
+   ],
+   "variants": {
+    "01": {
+     "path": "assets/audio/sfx/door-bang/door-bang-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/sfx/door-bang/door-bang-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/sfx/door-bang/door-bang-03.ogg"
+    },
+    "04": {
+     "path": "assets/audio/sfx/door-bang/door-bang-04.ogg"
+    },
+    "05": {
+     "path": "assets/audio/sfx/door-bang/door-bang-05.ogg"
+    }
+   },
+   "params": {
+    "title": "A zombie banging against the door",
+    "category": "sfx",
+    "bus": "sfx",
+    "spatial": true,
+    "loop": false,
+    "space": "stairwell",
+    "tags": [
+     "impact"
+    ],
+    "pitchCents": 60,
+    "gainDb": 2.5,
+    "noRepeat": true,
+    "maxVoices": 3,
+    "cooldown": 0.25
+   },
+   "meta": {
+    "target": {
+     "lufsM": -15
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 1.1,
+      "channels": 1,
+      "truePeak": -1.8,
+      "lufsM": -15.3,
+      "recipe": "one heavy blow: Kenney heavy wood and punch impacts, modal door panel, frame rattle and creak"
+     },
+     {
+      "variant": "02",
+      "seconds": 1.5,
+      "channels": 1,
+      "truePeak": -1.8,
+      "lufsM": -16.4,
+      "recipe": "a blow and a second one: Kenney heavy wood and punch impacts, modal door panel, frame rattle and creak"
+     },
+     {
+      "variant": "03",
+      "seconds": 1.1,
+      "channels": 1,
+      "truePeak": -1.8,
+      "lufsM": -15.9,
+      "recipe": "a shoulder against the door: Kenney heavy wood and punch impacts, modal door panel, frame rattle and creak"
+     },
+     {
+      "variant": "04",
+      "seconds": 1.65,
+      "channels": 1,
+      "truePeak": -1.9,
+      "lufsM": -15,
+      "recipe": "three blows: Kenney heavy wood and punch impacts, modal door panel, frame rattle and creak"
+     },
+     {
+      "variant": "05",
+      "seconds": 1.1,
+      "channels": 1,
+      "truePeak": -1.8,
+      "lufsM": -16.3,
+      "recipe": "one heavy blow, frame rattling: Kenney heavy wood and punch impacts, modal door panel, frame rattle and creak"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/sfx/door-bang/door-bang-01.ogg": "fc8b4539279a31253ca51ec21bff786e89c56f1378793576c76f929ac152ea5c",
+    "assets/audio/sfx/door-bang/door-bang-02.ogg": "d52c6f95c26ebc06802a18bdbe2787c27b1415e93a89af32d4aea23d923a94ad",
+    "assets/audio/sfx/door-bang/door-bang-03.ogg": "32fbb5eaef2e6115502e94ca926c8b164bbc4760daffa82d594daf479203e0c1",
+    "assets/audio/sfx/door-bang/door-bang-04.ogg": "fbbbd088cc1cdf5626e7e3a4b00fb240c9cf6fd3bb3f25cb09f085638ca5e2ca",
+    "assets/audio/sfx/door-bang/door-bang-05.ogg": "cb9cbc7d75a47d950996dde575ee9c9b6a50875bb93678911ecc3fa729cd5a00"
+   }
+  },
+  {
+   "id": "audio/door-knock",
+   "kind": "audio",
+   "path": "assets/audio/sfx/door-knock/door-knock-01.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "kenney/impact-sounds",
+    "kenney/rpg-audio"
+   ],
+   "variants": {
+    "01": {
+     "path": "assets/audio/sfx/door-knock/door-knock-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/sfx/door-knock/door-knock-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/sfx/door-knock/door-knock-03.ogg"
+    },
+    "04": {
+     "path": "assets/audio/sfx/door-knock/door-knock-04.ogg"
+    },
+    "05": {
+     "path": "assets/audio/sfx/door-knock/door-knock-05.ogg"
+    }
+   },
+   "params": {
+    "title": "Knocking on the apartment door",
+    "category": "sfx",
+    "bus": "sfx",
+    "spatial": true,
+    "loop": false,
+    "space": "stairwell",
+    "tags": [
+     "impact"
+    ],
+    "pitchCents": 50,
+    "gainDb": 2,
+    "noRepeat": true,
+    "maxVoices": 2,
+    "cooldown": 0.4
+   },
+   "meta": {
+    "target": {
+     "lufsM": -18
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 0.98,
+      "channels": 1,
+      "truePeak": -2.4,
+      "lufsM": -18,
+      "recipe": "three even knocks: Kenney wood impacts ringing a modal hollow-core door"
+     },
+     {
+      "variant": "02",
+      "seconds": 0.77,
+      "channels": 1,
+      "truePeak": -1.7,
+      "lufsM": -18.3,
+      "recipe": "two knocks: Kenney wood impacts ringing a modal hollow-core door"
+     },
+     {
+      "variant": "03",
+      "seconds": 1.03,
+      "channels": 1,
+      "truePeak": -3.9,
+      "lufsM": -18,
+      "recipe": "four quick knocks: Kenney wood impacts ringing a modal hollow-core door"
+     },
+     {
+      "variant": "04",
+      "seconds": 1.18,
+      "channels": 1,
+      "truePeak": -1.6,
+      "lufsM": -20,
+      "recipe": "two slow heavy thuds: Kenney wood impacts ringing a modal hollow-core door"
+     },
+     {
+      "variant": "05",
+      "seconds": 1.37,
+      "channels": 1,
+      "truePeak": -1.7,
+      "lufsM": -18.7,
+      "recipe": "knock-knock, pause, knock-knock: Kenney wood impacts ringing a modal hollow-core door"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/sfx/door-knock/door-knock-01.ogg": "9dce2e9965cb5bea48350577573a0494d2b14053934139b9e89fe1742c4cbdec",
+    "assets/audio/sfx/door-knock/door-knock-02.ogg": "ae805c0aef7cb1749b3f5a05b07002a393f7daf60384f82ba9f2b92a507ebc66",
+    "assets/audio/sfx/door-knock/door-knock-03.ogg": "0fac304a0b1d3bedc08d9e88d042fc8dc3ea3010970aa1a781e022d9ea5b0730",
+    "assets/audio/sfx/door-knock/door-knock-04.ogg": "d60c3efb0c66042fab0ccfd25f134139301d56614d139e5879827862a5f6f50a",
+    "assets/audio/sfx/door-knock/door-knock-05.ogg": "006ceecdb175818745bb49d080ab61b5a57d39d8e5b1aa43471532be76fe7860"
+   }
+  },
+  {
+   "id": "audio/footstep-tile",
+   "kind": "audio",
+   "path": "assets/audio/sfx/footstep-tile/footstep-tile-01.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "kenney/impact-sounds"
+   ],
+   "variants": {
+    "01": {
+     "path": "assets/audio/sfx/footstep-tile/footstep-tile-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/sfx/footstep-tile/footstep-tile-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/sfx/footstep-tile/footstep-tile-03.ogg"
+    },
+    "04": {
+     "path": "assets/audio/sfx/footstep-tile/footstep-tile-04.ogg"
+    },
+    "05": {
+     "path": "assets/audio/sfx/footstep-tile/footstep-tile-05.ogg"
+    },
+    "06": {
+     "path": "assets/audio/sfx/footstep-tile/footstep-tile-06.ogg"
+    }
+   },
+   "params": {
+    "title": "Footsteps on the kitchen tiles",
+    "category": "sfx",
+    "bus": "sfx",
+    "spatial": true,
+    "loop": false,
+    "space": "apartment",
+    "tags": [],
+    "pitchCents": 70,
+    "gainDb": 2.5,
+    "noRepeat": true,
+    "maxVoices": 4,
+    "cooldown": 0.08
+   },
+   "meta": {
+    "target": {
+     "lufsM": -25
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 0.153,
+      "channels": 1,
+      "truePeak": -2.8,
+      "lufsM": -25,
+      "recipe": "kenney/impact-sounds footstep_concrete_000.ogg + ceramic tick impactPlate_light_000.ogg"
+     },
+     {
+      "variant": "02",
+      "seconds": 0.155,
+      "channels": 1,
+      "truePeak": -2.2,
+      "lufsM": -25,
+      "recipe": "kenney/impact-sounds footstep_concrete_001.ogg + ceramic tick impactPlate_light_001.ogg"
+     },
+     {
+      "variant": "03",
+      "seconds": 0.16,
+      "channels": 1,
+      "truePeak": -2.9,
+      "lufsM": -25,
+      "recipe": "kenney/impact-sounds footstep_concrete_002.ogg + ceramic tick impactPlate_light_002.ogg"
+     },
+     {
+      "variant": "04",
+      "seconds": 0.158,
+      "channels": 1,
+      "truePeak": -2.6,
+      "lufsM": -25,
+      "recipe": "kenney/impact-sounds footstep_concrete_003.ogg + ceramic tick impactPlate_light_003.ogg"
+     },
+     {
+      "variant": "05",
+      "seconds": 0.161,
+      "channels": 1,
+      "truePeak": -3,
+      "lufsM": -25,
+      "recipe": "kenney/impact-sounds footstep_concrete_004.ogg + ceramic tick impactPlate_light_004.ogg"
+     },
+     {
+      "variant": "06",
+      "seconds": 0.146,
+      "channels": 1,
+      "truePeak": -2.6,
+      "lufsM": -25,
+      "recipe": "kenney/impact-sounds footstep_concrete_001.ogg + impactPlate_light_003.ogg, +1 semitone"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/sfx/footstep-tile/footstep-tile-01.ogg": "ba02da3970a17a3a23b410de82d44af69c4384f017b5a4b0ad002b67ed7bee41",
+    "assets/audio/sfx/footstep-tile/footstep-tile-02.ogg": "99996f6627e5831fd8d7e7d84b6003219635cbde2da286b36b0884077922a147",
+    "assets/audio/sfx/footstep-tile/footstep-tile-03.ogg": "cdd44605b4cde4f23dcc12673354c43df646fe7b8e11ca4a1d8db5306a5b6fbc",
+    "assets/audio/sfx/footstep-tile/footstep-tile-04.ogg": "b6aa8db687a9c3a4b1c030a5b69d42b49f6f44873e8a7d59702b05b29263f66e",
+    "assets/audio/sfx/footstep-tile/footstep-tile-05.ogg": "050a298c44047a6abf1deb41b13f2bab211b3aa15b30c82e151435cd87f558c8",
+    "assets/audio/sfx/footstep-tile/footstep-tile-06.ogg": "14c3c9c54f2ce8da7b1f1c834f273be5536c472ac24aef2f6b9f403ccb36b63d"
+   }
+  },
+  {
+   "id": "audio/footstep-wood",
+   "kind": "audio",
+   "path": "assets/audio/sfx/footstep-wood/footstep-wood-01.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "kenney/impact-sounds",
+    "kenney/rpg-audio"
+   ],
+   "variants": {
+    "01": {
+     "path": "assets/audio/sfx/footstep-wood/footstep-wood-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/sfx/footstep-wood/footstep-wood-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/sfx/footstep-wood/footstep-wood-03.ogg"
+    },
+    "04": {
+     "path": "assets/audio/sfx/footstep-wood/footstep-wood-04.ogg"
+    },
+    "05": {
+     "path": "assets/audio/sfx/footstep-wood/footstep-wood-05.ogg"
+    },
+    "06": {
+     "path": "assets/audio/sfx/footstep-wood/footstep-wood-06.ogg"
+    },
+    "07": {
+     "path": "assets/audio/sfx/footstep-wood/footstep-wood-07.ogg"
+    },
+    "08": {
+     "path": "assets/audio/sfx/footstep-wood/footstep-wood-08.ogg"
+    }
+   },
+   "params": {
+    "title": "Footsteps on the wooden floor (indoor shoes)",
+    "category": "sfx",
+    "bus": "sfx",
+    "spatial": true,
+    "loop": false,
+    "space": "apartment",
+    "tags": [],
+    "pitchCents": 80,
+    "gainDb": 2.5,
+    "noRepeat": true,
+    "maxVoices": 4,
+    "cooldown": 0.08
+   },
+   "meta": {
+    "target": {
+     "lufsM": -26
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 0.321,
+      "channels": 1,
+      "truePeak": -6.4,
+      "lufsM": -26,
+      "recipe": "kenney/impact-sounds footstep_wood_000.ogg"
+     },
+     {
+      "variant": "02",
+      "seconds": 0.299,
+      "channels": 1,
+      "truePeak": -6.4,
+      "lufsM": -26,
+      "recipe": "kenney/impact-sounds footstep_wood_001.ogg"
+     },
+     {
+      "variant": "03",
+      "seconds": 0.299,
+      "channels": 1,
+      "truePeak": -7,
+      "lufsM": -26,
+      "recipe": "kenney/impact-sounds footstep_wood_002.ogg"
+     },
+     {
+      "variant": "04",
+      "seconds": 0.299,
+      "channels": 1,
+      "truePeak": -6,
+      "lufsM": -26,
+      "recipe": "kenney/impact-sounds footstep_wood_003.ogg"
+     },
+     {
+      "variant": "05",
+      "seconds": 0.295,
+      "channels": 1,
+      "truePeak": -6.9,
+      "lufsM": -26,
+      "recipe": "kenney/impact-sounds footstep_wood_004.ogg"
+     },
+     {
+      "variant": "06",
+      "seconds": 0.321,
+      "channels": 1,
+      "truePeak": -6.4,
+      "lufsM": -26,
+      "recipe": "kenney/impact-sounds footstep_wood_000.ogg + floorboard creak from kenney/rpg-audio creak1.ogg"
+     },
+     {
+      "variant": "07",
+      "seconds": 0.299,
+      "channels": 1,
+      "truePeak": -6.9,
+      "lufsM": -26,
+      "recipe": "kenney/impact-sounds footstep_wood_002.ogg + floorboard creak from kenney/rpg-audio creak2.ogg"
+     },
+     {
+      "variant": "08",
+      "seconds": 0.295,
+      "channels": 1,
+      "truePeak": -6.9,
+      "lufsM": -26,
+      "recipe": "kenney/impact-sounds footstep_wood_004.ogg + floorboard creak from kenney/rpg-audio creak3.ogg"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/sfx/footstep-wood/footstep-wood-01.ogg": "23d0744971bd019ec604b49aaecfcae6c76181afded2a8edfe3fe6a86c5898eb",
+    "assets/audio/sfx/footstep-wood/footstep-wood-02.ogg": "e5ef1ec3ecb982dc62fc04dd97a9f18fe4af94bc2d167ea6b1f2f03432ea29a2",
+    "assets/audio/sfx/footstep-wood/footstep-wood-03.ogg": "5f31a80d7a9981aaed1be7347fea8c6ca8e15acce87ff8ad9867b7fabe30cefe",
+    "assets/audio/sfx/footstep-wood/footstep-wood-04.ogg": "81b0662435b3cebcee9a3dbbfb68d388cbd5f04732633580c71d748de0fe3a43",
+    "assets/audio/sfx/footstep-wood/footstep-wood-05.ogg": "ec23dd04f7977d43a8d3835edb7fca5d50afd6f2237da8594836bfaefd98631a",
+    "assets/audio/sfx/footstep-wood/footstep-wood-06.ogg": "32e9c72d0425d5f67dbd492c2a1374d163e0408a9993b7808c0a38c1f5420cd0",
+    "assets/audio/sfx/footstep-wood/footstep-wood-07.ogg": "3508bdcc46ae605e91199d9e5c0d28d89bcba2f821eea6e6971363548e8036c1",
+    "assets/audio/sfx/footstep-wood/footstep-wood-08.ogg": "33c27ec148f69baf6fc26e021c4c3b0b68b6206d81d7a981bec7043cbd153a2c"
+   }
+  },
+  {
+   "id": "audio/generator",
+   "kind": "audio",
+   "path": "assets/audio/sfx/generator/generator-01.ogg",
+   "license": "LicenseRef-Original",
+   "variants": {
+    "01": {
+     "path": "assets/audio/sfx/generator/generator-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/sfx/generator/generator-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/sfx/generator/generator-03.ogg"
+    }
+   },
+   "params": {
+    "title": "Petrol generator running (loop)",
+    "category": "sfx",
+    "bus": "sfx",
+    "spatial": true,
+    "loop": true,
+    "space": "outdoors",
+    "tags": [],
+    "pitchCents": 40,
+    "gainDb": 1.5,
+    "noRepeat": true,
+    "maxVoices": 1,
+    "cooldown": 0
+   },
+   "meta": {
+    "target": {
+     "lufs": -24
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 8,
+      "channels": 1,
+      "truePeak": -9.6,
+      "lufs": -24,
+      "recipe": "synth single-cylinder generator, 3600 rpm, load 0.5"
+     },
+     {
+      "variant": "02",
+      "seconds": 8,
+      "channels": 1,
+      "truePeak": -8.8,
+      "lufs": -24,
+      "recipe": "synth single-cylinder generator, 3450 rpm, load 0.85"
+     },
+     {
+      "variant": "03",
+      "seconds": 8,
+      "channels": 1,
+      "truePeak": -11.4,
+      "lufs": -24,
+      "recipe": "synth single-cylinder generator, 3720 rpm, load 0.25"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/sfx/generator/generator-01.ogg": "dbbc214d89a8759e2ef8d3dd263d62c8092c1dd532879aab2b3937c0edc439e7",
+    "assets/audio/sfx/generator/generator-02.ogg": "773b4b29245d2e6e77bdef08b70b3caa413a0074f6b0e8778a8a61dd947c36ba",
+    "assets/audio/sfx/generator/generator-03.ogg": "336e538fcf5e5f2a2db06296ec4a95dbd7a9a35efee789e199b361129bd13ca4"
+   }
+  },
+  {
+   "id": "audio/ir-apartment",
+   "kind": "audio",
+   "path": "assets/audio/ir/apartment.wav",
+   "license": "LicenseRef-Original",
+   "params": {
+    "title": "Room impulse response: Apartment living room (furnished, 5.2 × 4.0 × 2.6 m)",
+    "category": "ir",
+    "space": "apartment",
+    "rt60Bands": [
+     125,
+     250,
+     500,
+     1000,
+     2000,
+     4000,
+     8000
+    ],
+    "rt60": [
+     0.62,
+     0.55,
+     0.48,
+     0.44,
+     0.4,
+     0.34,
+     0.26
+    ]
+   },
+   "meta": {
+    "durationSec": 0.875,
+    "sampleRate": 48000,
+    "channels": 2,
+    "normalization": "unit energy"
+   },
+   "rebuild": "ir",
+   "digests": {
+    "assets/audio/ir/apartment.wav": "3deb9b7bc77ad3916cb87fc14cdf3d1fb141579ceb1a97bca2eeeb1f737f9240"
+   }
+  },
+  {
+   "id": "audio/ir-basement",
+   "kind": "audio",
+   "path": "assets/audio/ir/basement.wav",
+   "license": "LicenseRef-Original",
+   "params": {
+    "title": "Room impulse response: Concrete basement (9 × 7 m, 2.3 m ceiling)",
+    "category": "ir",
+    "space": "basement",
+    "rt60Bands": [
+     125,
+     250,
+     500,
+     1000,
+     2000,
+     4000,
+     8000
+    ],
+    "rt60": [
+     1.7,
+     1.55,
+     1.35,
+     1.15,
+     0.95,
+     0.75,
+     0.52
+    ]
+   },
+   "meta": {
+    "durationSec": 2.225,
+    "sampleRate": 48000,
+    "channels": 2,
+    "normalization": "unit energy"
+   },
+   "rebuild": "ir",
+   "digests": {
+    "assets/audio/ir/basement.wav": "22c774602169c6b55c1acb3ee631e17d249e954db2bd430a716eddff05f128d8"
+   }
+  },
+  {
+   "id": "audio/ir-outdoors",
+   "kind": "audio",
+   "path": "assets/audio/ir/outdoors.wav",
+   "license": "LicenseRef-Original",
+   "params": {
+    "title": "Room impulse response: Street between apartment blocks",
+    "category": "ir",
+    "space": "outdoors",
+    "rt60Bands": [
+     125,
+     250,
+     500,
+     1000,
+     2000,
+     4000,
+     8000
+    ],
+    "rt60": [
+     0.9,
+     0.8,
+     0.7,
+     0.55,
+     0.45,
+     0.35,
+     0.25
+    ]
+   },
+   "meta": {
+    "durationSec": 1.6,
+    "sampleRate": 48000,
+    "channels": 2,
+    "normalization": "unit energy"
+   },
+   "rebuild": "ir",
+   "digests": {
+    "assets/audio/ir/outdoors.wav": "d7dd8b4183bc507fcb39f6e251f86231b29ecc2a927ffd2357d3bb01aaa7a4dd"
+   }
+  },
+  {
+   "id": "audio/ir-shop",
+   "kind": "audio",
+   "path": "assets/audio/ir/shop.wav",
+   "license": "LicenseRef-Original",
+   "params": {
+    "title": "Room impulse response: Corner shop (16 × 11 × 3.6 m, shelving)",
+    "category": "ir",
+    "space": "shop",
+    "rt60Bands": [
+     125,
+     250,
+     500,
+     1000,
+     2000,
+     4000,
+     8000
+    ],
+    "rt60": [
+     1.05,
+     1,
+     0.92,
+     0.86,
+     0.8,
+     0.7,
+     0.55
+    ]
+   },
+   "meta": {
+    "durationSec": 1.413,
+    "sampleRate": 48000,
+    "channels": 2,
+    "normalization": "unit energy"
+   },
+   "rebuild": "ir",
+   "digests": {
+    "assets/audio/ir/shop.wav": "b2ba7bce323f466d5a9e18972595909216fef843e1874261cdf03b6b0be049de"
+   }
+  },
+  {
+   "id": "audio/ir-stairwell",
+   "kind": "audio",
+   "path": "assets/audio/ir/stairwell.wav",
+   "license": "LicenseRef-Original",
+   "params": {
+    "title": "Room impulse response: Concrete stairwell (3 × 6 m, 12 m high)",
+    "category": "ir",
+    "space": "stairwell",
+    "rt60Bands": [
+     125,
+     250,
+     500,
+     1000,
+     2000,
+     4000,
+     8000
+    ],
+    "rt60": [
+     2.4,
+     2.7,
+     2.6,
+     2.4,
+     2.1,
+     1.7,
+     1.2
+    ]
+   },
+   "meta": {
+    "durationSec": 3.475,
+    "sampleRate": 48000,
+    "channels": 2,
+    "normalization": "unit energy"
+   },
+   "rebuild": "ir",
+   "digests": {
+    "assets/audio/ir/stairwell.wav": "3ff63197b4925f46726b3db8a3dcd20f6c68655a5d4d119c9fb97d3a193e073d"
+   }
+  },
+  {
+   "id": "audio/music-day",
+   "kind": "audio",
+   "path": "assets/audio/music/day.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "vcsl/piano",
+    "vcsl/piano-pedal",
+    "vsco2ce/basses-pizz",
+    "vsco2ce/celli-sus",
+    "vsco2ce/clarinet-sus",
+    "vsco2ce/flute-sus",
+    "vsco2ce/glockenspiel",
+    "vsco2ce/harp",
+    "vsco2ce/violas-sus"
+   ],
+   "files": {
+    "midi": "assets/audio/music/midi/day.mid"
+   },
+   "params": {
+    "title": "Day",
+    "category": "music",
+    "bus": "music",
+    "layer": "day",
+    "loop": true,
+    "bpm": 80,
+    "meter": [
+     4,
+     4
+    ],
+    "bars": 16,
+    "barSeconds": 3,
+    "loopEndSample": 2304000
+   },
+   "meta": {
+    "durationSec": 48,
+    "lufs": -16,
+    "truePeak": -2.7,
+    "lra": 2.7,
+    "target": {
+     "lufs": -16
+    }
+   },
+   "rebuild": "music",
+   "digests": {
+    "assets/audio/music/day.ogg": "0238570c855fb5a356d805bde0e3c22128f7834ebf8f3aa6abd158929c561c3e",
+    "assets/audio/music/midi/day.mid": "0da7de5c6a0e5e37401fede2c4c520f9b6c30ac998c9c141f448b10fe3bd4f75"
+   }
+  },
+  {
+   "id": "audio/music-ending",
+   "kind": "audio",
+   "path": "assets/audio/music/ending.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "vcsl/cymbal",
+    "vcsl/piano",
+    "vcsl/piano-pedal",
+    "vsco2ce/basses-sus",
+    "vsco2ce/celli-sus",
+    "vsco2ce/glockenspiel",
+    "vsco2ce/horn-sus",
+    "vsco2ce/timpani-roll",
+    "vsco2ce/violas-sus",
+    "vsco2ce/violins-sus"
+   ],
+   "files": {
+    "midi": "assets/audio/music/midi/ending.mid"
+   },
+   "params": {
+    "title": "Ending",
+    "category": "music",
+    "bus": "music",
+    "layer": "ending",
+    "loop": false,
+    "bpm": 72,
+    "meter": [
+     4,
+     4
+    ],
+    "bars": 18,
+    "barSeconds": 3.3333333333333335,
+    "loopEndSample": null
+   },
+   "meta": {
+    "durationSec": 66.59595833333333,
+    "lufs": -16,
+    "truePeak": -2.1,
+    "lra": 9.4,
+    "target": {
+     "lufs": -16
+    }
+   },
+   "rebuild": "music",
+   "digests": {
+    "assets/audio/music/ending.ogg": "22be2c035b4cbc8f21a530798200ede54b0056dd708a1ef9bdfd6e348b48b9df",
+    "assets/audio/music/midi/ending.mid": "e87ec3b0ba47122bf76ab4d519b346c0eeb8b5323a911814d2b97d3507ef1562"
+   }
+  },
+  {
+   "id": "audio/music-horde",
+   "kind": "audio",
+   "path": "assets/audio/music/horde.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "vcsl/anvil",
+    "vcsl/bass-drum",
+    "vcsl/brake-drum",
+    "vcsl/cymbal",
+    "vcsl/piano",
+    "vcsl/toms",
+    "vsco2ce/basses-spic",
+    "vsco2ce/celli-spic",
+    "vsco2ce/horn-stac",
+    "vsco2ce/horn-sus",
+    "vsco2ce/snare",
+    "vsco2ce/timpani",
+    "vsco2ce/timpani-roll",
+    "vsco2ce/trombone-stac",
+    "vsco2ce/trombone-sus",
+    "vsco2ce/tuba-stac",
+    "vsco2ce/violas-spic",
+    "vsco2ce/violins-spic",
+    "vsco2ce/violins-trem"
+   ],
+   "files": {
+    "midi": "assets/audio/music/midi/horde.mid"
+   },
+   "params": {
+    "title": "Horde",
+    "category": "music",
+    "bus": "music",
+    "layer": "horde",
+    "loop": true,
+    "bpm": 128,
+    "meter": [
+     4,
+     4
+    ],
+    "bars": 16,
+    "barSeconds": 1.875,
+    "loopEndSample": 1440000
+   },
+   "meta": {
+    "durationSec": 30,
+    "lufs": -16.1,
+    "truePeak": -1.8,
+    "lra": 3.2,
+    "target": {
+     "lufs": -16
+    }
+   },
+   "rebuild": "music",
+   "digests": {
+    "assets/audio/music/horde.ogg": "b67b3c4c85f1b71b5d200f3fd95d2bc564fceff1c2ccafea5ca4515394273ea2",
+    "assets/audio/music/midi/horde.mid": "aeb46538e5894aa2258557d5d86e3028092f5d38b8da263d4d99f7d11e289700"
+   }
+  },
+  {
+   "id": "audio/music-horde-end",
+   "kind": "audio",
+   "path": "assets/audio/music/horde-end.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "vcsl/bass-drum",
+    "vcsl/cymbal",
+    "vcsl/gong",
+    "vcsl/piano",
+    "vcsl/piano-pedal",
+    "vsco2ce/basses-sus",
+    "vsco2ce/celli-sus",
+    "vsco2ce/horn-sus",
+    "vsco2ce/timpani",
+    "vsco2ce/trombone-sus",
+    "vsco2ce/tuba-stac"
+   ],
+   "files": {
+    "midi": "assets/audio/music/midi/horde-end.mid"
+   },
+   "params": {
+    "title": "Horde end",
+    "category": "music",
+    "bus": "music",
+    "layer": "transition",
+    "loop": false,
+    "bpm": 128,
+    "meter": [
+     4,
+     4
+    ],
+    "bars": 1,
+    "barSeconds": 1.875,
+    "loopEndSample": null
+   },
+   "meta": {
+    "durationSec": 8.075,
+    "lufs": -16.1,
+    "truePeak": -1.8,
+    "lra": 17.3,
+    "target": {
+     "lufs": -16
+    }
+   },
+   "rebuild": "music",
+   "digests": {
+    "assets/audio/music/horde-end.ogg": "f25bf89281b75c27ac18fa678bca2c4b1721d0da2ad69bb914f76438122fcb90",
+    "assets/audio/music/midi/horde-end.mid": "cde504b9d6f5c6c16ebb9c9d471cd641ddbe986476c11a20a0489e1f6837dcf8"
+   }
+  },
+  {
+   "id": "audio/music-night",
+   "kind": "audio",
+   "path": "assets/audio/music/night.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "vcsl/bowed-vibraphone",
+    "vcsl/piano",
+    "vcsl/piano-pedal",
+    "vsco2ce/basses-sus",
+    "vsco2ce/celli-sus",
+    "vsco2ce/timpani",
+    "vsco2ce/violas-sus",
+    "vsco2ce/violins-sus"
+   ],
+   "files": {
+    "midi": "assets/audio/music/midi/night.mid"
+   },
+   "params": {
+    "title": "Night",
+    "category": "music",
+    "bus": "music",
+    "layer": "night",
+    "loop": true,
+    "bpm": 64,
+    "meter": [
+     4,
+     4
+    ],
+    "bars": 16,
+    "barSeconds": 3.75,
+    "loopEndSample": 2880000
+   },
+   "meta": {
+    "durationSec": 60,
+    "lufs": -16,
+    "truePeak": -1.9,
+    "lra": 3.2,
+    "target": {
+     "lufs": -16
+    }
+   },
+   "rebuild": "music",
+   "digests": {
+    "assets/audio/music/midi/night.mid": "8e763091bcb3460fed08a3cce67c6af580cf501c8f46068be179cd12bc27e55c",
+    "assets/audio/music/night.ogg": "a336d577ea5338abf4efbf889ce21351a5777c677b46523d27359293dbba7687"
+   }
+  },
+  {
+   "id": "audio/music-night-to-horde",
+   "kind": "audio",
+   "path": "assets/audio/music/night-to-horde.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "vcsl/bass-drum",
+    "vcsl/cymbal",
+    "vcsl/piano",
+    "vsco2ce/basses-spic",
+    "vsco2ce/celli-spic",
+    "vsco2ce/celli-trem",
+    "vsco2ce/horn-stac",
+    "vsco2ce/horn-sus",
+    "vsco2ce/timpani",
+    "vsco2ce/timpani-roll",
+    "vsco2ce/trombone-stac",
+    "vsco2ce/trombone-sus",
+    "vsco2ce/tuba-stac",
+    "vsco2ce/violins-trem"
+   ],
+   "files": {
+    "midi": "assets/audio/music/midi/night-to-horde.mid"
+   },
+   "params": {
+    "title": "Night to horde",
+    "category": "music",
+    "bus": "music",
+    "layer": "transition",
+    "loop": false,
+    "bpm": 128,
+    "meter": [
+     4,
+     4
+    ],
+    "bars": 2,
+    "barSeconds": 1.875,
+    "loopEndSample": null
+   },
+   "meta": {
+    "durationSec": 7.25,
+    "lufs": -16.1,
+    "truePeak": -1.8,
+    "lra": 6.9,
+    "target": {
+     "lufs": -16
+    }
+   },
+   "rebuild": "music",
+   "digests": {
+    "assets/audio/music/midi/night-to-horde.mid": "165c4bfb04dc47e9e0727abd321ed3493de9d1d3bd0d89e89df67aff9dae74f2",
+    "assets/audio/music/night-to-horde.ogg": "fe107ee0271acac8fe8b74cc674193f24cf4b1980ff6ab55b196356e9e080982"
+   }
+  },
+  {
+   "id": "audio/music-pre-outbreak",
+   "kind": "audio",
+   "path": "assets/audio/music/pre-outbreak.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "vsco2ce/bassoon-stac",
+    "vsco2ce/celli-pizz",
+    "vsco2ce/clarinet-stac",
+    "vsco2ce/claves",
+    "vsco2ce/glockenspiel",
+    "vsco2ce/marimba",
+    "vsco2ce/snare",
+    "vsco2ce/violins-pizz",
+    "vsco2ce/xylophone"
+   ],
+   "files": {
+    "midi": "assets/audio/music/midi/pre-outbreak.mid"
+   },
+   "params": {
+    "title": "Pre-outbreak",
+    "category": "music",
+    "bus": "music",
+    "layer": "pre-outbreak",
+    "loop": true,
+    "bpm": 120,
+    "meter": [
+     4,
+     4
+    ],
+    "bars": 16,
+    "barSeconds": 2,
+    "loopEndSample": 1536000
+   },
+   "meta": {
+    "durationSec": 32,
+    "lufs": -16,
+    "truePeak": -1.8,
+    "lra": 4.3,
+    "target": {
+     "lufs": -16
+    }
+   },
+   "rebuild": "music",
+   "digests": {
+    "assets/audio/music/midi/pre-outbreak.mid": "74f6152e3da2642531bb762635baafd32fd5c7072d59a17ca35ff4e949007da6",
+    "assets/audio/music/pre-outbreak.ogg": "56c25f5a44996a20e273f7f5d056feff81ace91b3ae90b7eba90c62d09f6b744"
+   }
+  },
+  {
+   "id": "audio/pickup",
+   "kind": "audio",
+   "path": "assets/audio/sfx/pickup/pickup-01.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "kenney/rpg-audio",
+    "kenney/impact-sounds"
+   ],
+   "variants": {
+    "01": {
+     "path": "assets/audio/sfx/pickup/pickup-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/sfx/pickup/pickup-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/sfx/pickup/pickup-03.ogg"
+    },
+    "04": {
+     "path": "assets/audio/sfx/pickup/pickup-04.ogg"
+    },
+    "05": {
+     "path": "assets/audio/sfx/pickup/pickup-05.ogg"
+    }
+   },
+   "params": {
+    "title": "Picking up an item",
+    "category": "sfx",
+    "bus": "sfx",
+    "spatial": false,
+    "loop": false,
+    "space": null,
+    "tags": [],
+    "pitchCents": 60,
+    "gainDb": 2,
+    "noRepeat": true,
+    "maxVoices": 2,
+    "cooldown": 0.05
+   },
+   "meta": {
+    "target": {
+     "lufsM": -22
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 0.661,
+      "channels": 1,
+      "truePeak": -4.8,
+      "lufsM": -22,
+      "recipe": "cloth1 + impactGeneric_light_000 (a bag)"
+     },
+     {
+      "variant": "02",
+      "seconds": 0.338,
+      "channels": 1,
+      "truePeak": -2.2,
+      "lufsM": -22,
+      "recipe": "handleSmallLeather (a pouch)"
+     },
+     {
+      "variant": "03",
+      "seconds": 0.477,
+      "channels": 1,
+      "truePeak": -3.4,
+      "lufsM": -22,
+      "recipe": "cloth3 + impactTin_medium_000 (a tin can)"
+     },
+     {
+      "variant": "04",
+      "seconds": 0.846,
+      "channels": 1,
+      "truePeak": -2,
+      "lufsM": -22,
+      "recipe": "handleCoins (small metal items)"
+     },
+     {
+      "variant": "05",
+      "seconds": 0.829,
+      "channels": 1,
+      "truePeak": -7,
+      "lufsM": -22,
+      "recipe": "cloth2 + impactPlank_medium_000 (a wooden board)"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/sfx/pickup/pickup-01.ogg": "2db518539da126e439c1077efa2162f8a95e443e16f90fd263aeaa15bf6bea96",
+    "assets/audio/sfx/pickup/pickup-02.ogg": "51777b6c70dad358f3c19837973193193e5296e2f98b6a34cec6c26fa37748bd",
+    "assets/audio/sfx/pickup/pickup-03.ogg": "28e8b8156818f74f4402730e0e0f4910f555548ac97c3ce6d90b0c7b79b4c8fd",
+    "assets/audio/sfx/pickup/pickup-04.ogg": "be743d1fe1123fb2fec0d7e4056697a2d43246c18b0f3e187ded966cf881d853",
+    "assets/audio/sfx/pickup/pickup-05.ogg": "fb558519f75ef6a471179c3e1d1a3799442443ec8aee3793aeb9380c010ea1d9"
+   }
+  },
+  {
+   "id": "audio/rain",
+   "kind": "audio",
+   "path": "assets/audio/amb/rain/rain-01.ogg",
+   "license": "LicenseRef-Original",
+   "variants": {
+    "01": {
+     "path": "assets/audio/amb/rain/rain-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/amb/rain/rain-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/amb/rain/rain-03.ogg"
+    }
+   },
+   "params": {
+    "title": "Rain on the street (stereo loop)",
+    "category": "ambience",
+    "bus": "ambience",
+    "spatial": false,
+    "loop": true,
+    "space": "outdoors",
+    "tags": [],
+    "pitchCents": 40,
+    "gainDb": 1.5,
+    "noRepeat": true,
+    "maxVoices": 2,
+    "cooldown": 0
+   },
+   "meta": {
+    "target": {
+     "lufs": -24
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 20,
+      "channels": 2,
+      "truePeak": -8,
+      "lufs": -24,
+      "recipe": "synth rain, intensity 0.55"
+     },
+     {
+      "variant": "02",
+      "seconds": 20,
+      "channels": 2,
+      "truePeak": -8,
+      "lufs": -24,
+      "recipe": "synth rain, intensity 0.7"
+     },
+     {
+      "variant": "03",
+      "seconds": 20,
+      "channels": 2,
+      "truePeak": -9.4,
+      "lufs": -24,
+      "recipe": "synth rain, intensity 0.85"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/amb/rain/rain-01.ogg": "5cbbad9ef707172dc54a60f3e76b8238d5ae7e44d6cd2d8b54e98c1e0ec211a0",
+    "assets/audio/amb/rain/rain-02.ogg": "5e8634063b2f14074be7bc336aded4ba2832ab561035a63c30a813aec3a004e7",
+    "assets/audio/amb/rain/rain-03.ogg": "adec42fccf50229b1cea0c6d3bd240d47faa4e43542ade45e92ca3417089d411"
+   }
+  },
+  {
+   "id": "audio/test-60s",
+   "kind": "audio",
+   "path": "assets/audio/test/audio-test-60s.ogg",
+   "license": "LicenseRef-Original",
+   "files": {
+    "scene": "assets/audio/test/audio-test-60s.json"
+   },
+   "params": {
+    "title": "Survival Log — 60-second audio test",
+    "category": "test",
+    "sections": [
+     {
+      "t": 0,
+      "title": "Apartment at night"
+     },
+     {
+      "t": 10,
+      "title": "Rain"
+     },
+     {
+      "t": 20,
+      "title": "A zombie at the door"
+     },
+     {
+      "t": 30,
+      "title": "The horde"
+     },
+     {
+      "t": 45,
+      "title": "Quiet"
+     }
+    ],
+    "uses": [
+     "audio/amb-horde-crowd",
+     "audio/amb-night-street",
+     "audio/amb-roomtone",
+     "audio/cooking-sizzle",
+     "audio/door-bang",
+     "audio/door-knock",
+     "audio/footstep-tile",
+     "audio/footstep-wood",
+     "audio/generator",
+     "audio/music-horde",
+     "audio/music-horde-end",
+     "audio/music-night",
+     "audio/music-night-to-horde",
+     "audio/pickup",
+     "audio/rain",
+     "audio/thunder",
+     "audio/ui-click",
+     "audio/ui-confirm",
+     "audio/ui-error",
+     "audio/zombie-groan"
+    ]
+   },
+   "meta": {
+    "durationSec": 60,
+    "lufs": -16.1,
+    "truePeak": -1.7,
+    "lra": 7.5,
+    "target": {
+     "lufs": -16
+    },
+    "busLufs": {
+     "music": -23.6,
+     "sfx": -25.7,
+     "ambience": -28.2,
+     "ui": -26.3
+    }
+   },
+   "rebuild": "test",
+   "digests": {
+    "assets/audio/test/audio-test-60s.json": "7e0d19f2464aad9b3e68b2f76e0a66fe1177ebd221be519e1ebb4c256e80721f",
+    "assets/audio/test/audio-test-60s.ogg": "ec7623873dbee0b8a5c9a46df418a0092a611d15942abc6ec2c0694b12682992"
+   }
+  },
+  {
+   "id": "audio/thunder",
+   "kind": "audio",
+   "path": "assets/audio/amb/thunder/thunder-01.ogg",
+   "license": "LicenseRef-Original",
+   "variants": {
+    "01": {
+     "path": "assets/audio/amb/thunder/thunder-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/amb/thunder/thunder-02.ogg",
+     "params": {
+      "levelDb": -1
+     }
+    },
+    "03": {
+     "path": "assets/audio/amb/thunder/thunder-03.ogg",
+     "params": {
+      "levelDb": -3
+     }
+    },
+    "04": {
+     "path": "assets/audio/amb/thunder/thunder-04.ogg",
+     "params": {
+      "levelDb": -5
+     }
+    },
+    "05": {
+     "path": "assets/audio/amb/thunder/thunder-05.ogg",
+     "params": {
+      "levelDb": -7
+     }
+    }
+   },
+   "params": {
+    "title": "Thunder, near to distant (street acoustics baked in)",
+    "category": "ambience",
+    "bus": "ambience",
+    "spatial": false,
+    "loop": false,
+    "space": "outdoors",
+    "tags": [],
+    "pitchCents": 100,
+    "gainDb": 2,
+    "noRepeat": true,
+    "maxVoices": 2,
+    "cooldown": 4
+   },
+   "meta": {
+    "target": {
+     "lufsM": -14
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 11.426,
+      "channels": 2,
+      "truePeak": -2,
+      "lufsM": -14,
+      "recipe": "synth thunder, channel 650 m away"
+     },
+     {
+      "variant": "02",
+      "seconds": 10.786,
+      "channels": 2,
+      "truePeak": -2.8,
+      "lufsM": -15,
+      "recipe": "synth thunder, channel 1100 m away"
+     },
+     {
+      "variant": "03",
+      "seconds": 10.902,
+      "channels": 2,
+      "truePeak": -5.8,
+      "lufsM": -17,
+      "recipe": "synth thunder, channel 2400 m away"
+     },
+     {
+      "variant": "04",
+      "seconds": 9.511,
+      "channels": 2,
+      "truePeak": -5.5,
+      "lufsM": -19,
+      "recipe": "synth thunder, channel 4200 m away"
+     },
+     {
+      "variant": "05",
+      "seconds": 12.283,
+      "channels": 2,
+      "truePeak": -9.9,
+      "lufsM": -21,
+      "recipe": "synth thunder, channel 7000 m away"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/amb/thunder/thunder-01.ogg": "c369e445123a3cb28bc2d2ccf172da124e61c0699b68218822a29859cd2b691a",
+    "assets/audio/amb/thunder/thunder-02.ogg": "4ea29b5ac763c9ee2841b38245a5d9c184945af8f115fea55e2693373d2948f0",
+    "assets/audio/amb/thunder/thunder-03.ogg": "d59009546aa65fdb7a1f4c743c63b542a473f51c1744b1ed139c5106d93b93de",
+    "assets/audio/amb/thunder/thunder-04.ogg": "1e243082f235e545f7bd1ad28e4cb0d4d0cfcfe6d1f48b6d29b79228d6e2af5d",
+    "assets/audio/amb/thunder/thunder-05.ogg": "79f7842b9ba693ebcb2e23b3ae0aa73dcde9dcbfd712fbee2e7d67c0eefb55f0"
+   }
+  },
+  {
+   "id": "audio/ui-click",
+   "kind": "audio",
+   "path": "assets/audio/ui/ui-click/ui-click-01.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "kenney/ui-audio"
+   ],
+   "variants": {
+    "01": {
+     "path": "assets/audio/ui/ui-click/ui-click-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/ui/ui-click/ui-click-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/ui/ui-click/ui-click-03.ogg"
+    },
+    "04": {
+     "path": "assets/audio/ui/ui-click/ui-click-04.ogg"
+    },
+    "05": {
+     "path": "assets/audio/ui/ui-click/ui-click-05.ogg"
+    }
+   },
+   "params": {
+    "title": "Interface click",
+    "category": "ui",
+    "bus": "ui",
+    "spatial": false,
+    "loop": false,
+    "space": null,
+    "tags": [
+     "ui"
+    ],
+    "pitchCents": 40,
+    "gainDb": 1.5,
+    "noRepeat": true,
+    "maxVoices": 2,
+    "cooldown": 0.03
+   },
+   "meta": {
+    "target": {
+     "lufsM": -24
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 0.091,
+      "channels": 1,
+      "truePeak": -1.8,
+      "lufsM": -24.1,
+      "recipe": "kenney/ui-audio click1.ogg"
+     },
+     {
+      "variant": "02",
+      "seconds": 0.053,
+      "channels": 1,
+      "truePeak": -1.9,
+      "lufsM": -24.1,
+      "recipe": "kenney/ui-audio click2.ogg"
+     },
+     {
+      "variant": "03",
+      "seconds": 0.083,
+      "channels": 1,
+      "truePeak": -2.3,
+      "lufsM": -28.1,
+      "recipe": "kenney/ui-audio click3.ogg"
+     },
+     {
+      "variant": "04",
+      "seconds": 0.038,
+      "channels": 1,
+      "truePeak": -2.9,
+      "lufsM": -24.5,
+      "recipe": "kenney/ui-audio click4.ogg"
+     },
+     {
+      "variant": "05",
+      "seconds": 0.035,
+      "channels": 1,
+      "truePeak": -4.1,
+      "lufsM": -24,
+      "recipe": "kenney/ui-audio click5.ogg"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/ui/ui-click/ui-click-01.ogg": "24dbf29ea9c90ea106a73595a1a7779ed1078b61ed650e59bbaeea55e0cacdf0",
+    "assets/audio/ui/ui-click/ui-click-02.ogg": "d2c5a8fcc985985dce905171301129b828595e99517ef9645b24c1e324378843",
+    "assets/audio/ui/ui-click/ui-click-03.ogg": "0ea1e47f1db06bd69731b2db3e79ebd3d94c139528f6675bc2a5e7e8bb22cb5c",
+    "assets/audio/ui/ui-click/ui-click-04.ogg": "974b619c5920a5c5d4b6c436e0ee176cbcfbf247159c915213423f8b84da03c8",
+    "assets/audio/ui/ui-click/ui-click-05.ogg": "716d31a1ad9b3fcf9bb1818e8103bbc57bd32ffd8dc447a0a35f2c46ea70738d"
+   }
+  },
+  {
+   "id": "audio/ui-confirm",
+   "kind": "audio",
+   "path": "assets/audio/ui/ui-confirm/ui-confirm-01.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "kenney/interface-sounds"
+   ],
+   "variants": {
+    "01": {
+     "path": "assets/audio/ui/ui-confirm/ui-confirm-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/ui/ui-confirm/ui-confirm-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/ui/ui-confirm/ui-confirm-03.ogg"
+    },
+    "04": {
+     "path": "assets/audio/ui/ui-confirm/ui-confirm-04.ogg"
+    }
+   },
+   "params": {
+    "title": "Interface confirm",
+    "category": "ui",
+    "bus": "ui",
+    "spatial": false,
+    "loop": false,
+    "space": null,
+    "tags": [
+     "ui"
+    ],
+    "pitchCents": 30,
+    "gainDb": 1,
+    "noRepeat": true,
+    "maxVoices": 1,
+    "cooldown": 0.1
+   },
+   "meta": {
+    "target": {
+     "lufsM": -21
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 0.29,
+      "channels": 1,
+      "truePeak": -11.2,
+      "lufsM": -21,
+      "recipe": "kenney/interface-sounds confirmation_001.ogg"
+     },
+     {
+      "variant": "02",
+      "seconds": 0.539,
+      "channels": 1,
+      "truePeak": -12.7,
+      "lufsM": -21,
+      "recipe": "kenney/interface-sounds confirmation_002.ogg"
+     },
+     {
+      "variant": "03",
+      "seconds": 0.322,
+      "channels": 1,
+      "truePeak": -11.6,
+      "lufsM": -21,
+      "recipe": "kenney/interface-sounds confirmation_003.ogg"
+     },
+     {
+      "variant": "04",
+      "seconds": 0.49,
+      "channels": 1,
+      "truePeak": -14.6,
+      "lufsM": -21,
+      "recipe": "kenney/interface-sounds confirmation_004.ogg"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/ui/ui-confirm/ui-confirm-01.ogg": "5c3a57ebde06979205bd6334e4c63309ffc2c1c5e908c1360b49afa06a790688",
+    "assets/audio/ui/ui-confirm/ui-confirm-02.ogg": "0ae6e48a792a32292182097f94cac398428d780e71045f543812377e9126eea5",
+    "assets/audio/ui/ui-confirm/ui-confirm-03.ogg": "9b65eeeaaad56a21aae07e829c768ebc5f6818cf97aec73498e85e4d53e928f8",
+    "assets/audio/ui/ui-confirm/ui-confirm-04.ogg": "2529c1c2a368e96a20b64b450ed35b5c34619f3627e9759bcf7625166f708fa8"
+   }
+  },
+  {
+   "id": "audio/ui-error",
+   "kind": "audio",
+   "path": "assets/audio/ui/ui-error/ui-error-01.ogg",
+   "license": "LicenseRef-Original",
+   "sources": [
+    "kenney/interface-sounds"
+   ],
+   "variants": {
+    "01": {
+     "path": "assets/audio/ui/ui-error/ui-error-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/ui/ui-error/ui-error-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/ui/ui-error/ui-error-03.ogg"
+    },
+    "04": {
+     "path": "assets/audio/ui/ui-error/ui-error-04.ogg"
+    }
+   },
+   "params": {
+    "title": "Interface error",
+    "category": "ui",
+    "bus": "ui",
+    "spatial": false,
+    "loop": false,
+    "space": null,
+    "tags": [
+     "ui"
+    ],
+    "pitchCents": 30,
+    "gainDb": 1,
+    "noRepeat": true,
+    "maxVoices": 1,
+    "cooldown": 0.2
+   },
+   "meta": {
+    "target": {
+     "lufsM": -21
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 0.165,
+      "channels": 1,
+      "truePeak": -4.5,
+      "lufsM": -21,
+      "recipe": "kenney/interface-sounds error_002.ogg"
+     },
+     {
+      "variant": "02",
+      "seconds": 0.105,
+      "channels": 1,
+      "truePeak": -4.7,
+      "lufsM": -21,
+      "recipe": "kenney/interface-sounds error_004.ogg"
+     },
+     {
+      "variant": "03",
+      "seconds": 0.5,
+      "channels": 1,
+      "truePeak": -6.9,
+      "lufsM": -21,
+      "recipe": "kenney/interface-sounds error_006.ogg"
+     },
+     {
+      "variant": "04",
+      "seconds": 0.139,
+      "channels": 1,
+      "truePeak": -1.8,
+      "lufsM": -23.7,
+      "recipe": "kenney/interface-sounds error_008.ogg"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/ui/ui-error/ui-error-01.ogg": "1af5434bc8d757f4f61fd305ed425e93aecfaf58381549319749d7d56709fc3b",
+    "assets/audio/ui/ui-error/ui-error-02.ogg": "1221788efcc36e31c85c5f190b26476ce32eafaa48896bc3761eb62b1816a7b7",
+    "assets/audio/ui/ui-error/ui-error-03.ogg": "75b3316ad359bbdd21b3e17aa46788095e4eb24b81114039d0e02f0a567e5215",
+    "assets/audio/ui/ui-error/ui-error-04.ogg": "dac66fc4713d4dc999151bd790672cedf3f74f6a01732dfbbf4b289957c9fefb"
+   }
+  },
+  {
+   "id": "audio/zombie-groan",
+   "kind": "audio",
+   "path": "assets/audio/sfx/zombie-groan/zombie-groan-01.ogg",
+   "license": "LicenseRef-Original",
+   "variants": {
+    "01": {
+     "path": "assets/audio/sfx/zombie-groan/zombie-groan-01.ogg"
+    },
+    "02": {
+     "path": "assets/audio/sfx/zombie-groan/zombie-groan-02.ogg"
+    },
+    "03": {
+     "path": "assets/audio/sfx/zombie-groan/zombie-groan-03.ogg"
+    },
+    "04": {
+     "path": "assets/audio/sfx/zombie-groan/zombie-groan-04.ogg"
+    },
+    "05": {
+     "path": "assets/audio/sfx/zombie-groan/zombie-groan-05.ogg"
+    },
+    "06": {
+     "path": "assets/audio/sfx/zombie-groan/zombie-groan-06.ogg"
+    }
+   },
+   "params": {
+    "title": "Zombie groans (synthesized voice)",
+    "category": "sfx",
+    "bus": "sfx",
+    "spatial": true,
+    "loop": false,
+    "space": "stairwell",
+    "tags": [
+     "voice"
+    ],
+    "pitchCents": 150,
+    "gainDb": 3,
+    "noRepeat": true,
+    "maxVoices": 4,
+    "cooldown": 0.6
+   },
+   "meta": {
+    "target": {
+     "lufsM": -18
+    },
+    "sampleRate": 48000,
+    "takes": [
+     {
+      "variant": "01",
+      "seconds": 2.918,
+      "channels": 1,
+      "truePeak": -9.9,
+      "lufsM": -18,
+      "recipe": "source-filter voice 'groan-moan': f0 80>88>76>62 Hz, vowels u>uh>a>uh, growl 0.35, wet 0.25"
+     },
+     {
+      "variant": "02",
+      "seconds": 0.95,
+      "channels": 1,
+      "truePeak": -10.4,
+      "lufsM": -18,
+      "recipe": "source-filter voice 'groan-grunt': f0 105>98>70 Hz, vowels uh>aw, growl 0.6, wet 0.15"
+     },
+     {
+      "variant": "03",
+      "seconds": 1.9,
+      "channels": 1,
+      "truePeak": -10.5,
+      "lufsM": -18,
+      "recipe": "source-filter voice 'groan-rise': f0 68>96>72 Hz, vowels u>o>a>uh, growl 0.4, wet 0.2"
+     },
+     {
+      "variant": "04",
+      "seconds": 1.35,
+      "channels": 1,
+      "truePeak": -11.7,
+      "lufsM": -18,
+      "recipe": "source-filter voice 'groan-snarl': f0 118>132>94 Hz, vowels ae>a>er, growl 0.75, wet 0.1"
+     },
+     {
+      "variant": "05",
+      "seconds": 2.095,
+      "channels": 1,
+      "truePeak": -7.5,
+      "lufsM": -18,
+      "recipe": "source-filter voice 'groan-gurgle': f0 62>70>55 Hz, vowels o>uh>u, growl 0.5, wet 0.75"
+     },
+     {
+      "variant": "06",
+      "seconds": 3.228,
+      "channels": 1,
+      "truePeak": -9,
+      "lufsM": -18,
+      "recipe": "source-filter voice 'groan-breathy': f0 74>84>66 Hz, vowels uh>aw>u, growl 0.25, wet 0.3"
+     }
+    ]
+   },
+   "rebuild": "sfx",
+   "digests": {
+    "assets/audio/sfx/zombie-groan/zombie-groan-01.ogg": "99bc441872e22126105b66ae34b966108c9fea996ab018c0d81d002510a22417",
+    "assets/audio/sfx/zombie-groan/zombie-groan-02.ogg": "3aa490651c7ee6d0d133c5bb3fa2155a756e159b92635df0ff689a111e1ec932",
+    "assets/audio/sfx/zombie-groan/zombie-groan-03.ogg": "55e08d3d9090387f24eedb954252656fb93cf62bc5a2dc6f57e4c0496faaa97b",
+    "assets/audio/sfx/zombie-groan/zombie-groan-04.ogg": "21e202749f21c93c5bd9f9d2ea9abfe525b8a7b9c9014b45c727f8a04a11543a",
+    "assets/audio/sfx/zombie-groan/zombie-groan-05.ogg": "844dafa6c359a6338ec9fbc0e5441292ba9a027bdfb12522b9aee6df618bd837",
+    "assets/audio/sfx/zombie-groan/zombie-groan-06.ogg": "ea33f8d18217824df27fdea2ce2deedceae06d15f263b6dda45bb6658b1d0733"
+   }
+  }
+ ]
+}

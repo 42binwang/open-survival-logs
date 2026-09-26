@@ -1,0 +1,889 @@
+{
+  "about": "Hand-picked sample rectangles [x0, y0, x1, y1] in file pixels of assets/targets/source/<image>. select: absent = all pixels; 'bright' / 'dark' = top / bottom 35 % by HSV value (two-tone surfaces); 'text' = pixels with HSV S >= 0.3, brightest quarter of those (coloured glyphs); 'red' = red hues with S >= 0.35 (blood on mixed ground). Conditions name the light the sample is under.",
+  "images": {
+    "ss_01": "screenshots/ss_01_8f2609d8.jpg",
+    "ss_02": "screenshots/ss_02_dede236e.jpg",
+    "ss_03": "screenshots/ss_03_36037296.jpg",
+    "ss_04": "screenshots/ss_04_344f0472.jpg",
+    "ss_08": "screenshots/ss_08_1502124d.jpg",
+    "t025": "trailer/shot_15_t024.933s.jpg",
+    "t033": "trailer/shot_23_t033.500s.jpg",
+    "t035": "trailer/shot_24_t035.212s.jpg",
+    "t038": "trailer/shot_26_t038.333s.jpg",
+    "t041": "trailer/shot_27_t041.417s.jpg",
+    "t049": "trailer/shot_31_t049.038s.jpg",
+    "t059": "trailer/shot_35_t059.417s.jpg",
+    "t061": "trailer/shot_36_t061.150s.jpg",
+    "t069": "trailer/shot_41_t068.883s.jpg",
+    "t080": "trailer/shot_47_t079.713s.jpg"
+  },
+  "conditions": {
+    "ss_01": "shop-fluorescent",
+    "ss_02": "day-exterior",
+    "ss_03": "ui",
+    "ss_04": "dusk-interior",
+    "ss_08": "ui",
+    "t025": "interior-lamps",
+    "t033": "night-lamps",
+    "t035": "planning-time-unknown",
+    "t038": "night-rain",
+    "t041": "cold-snow",
+    "t049": "dusk-golden",
+    "t059": "day-exterior",
+    "t061": "ui",
+    "t069": "day-interior",
+    "t080": "interior-lamps"
+  },
+  "samples": [
+    {
+      "id": "plaster-ss04-a",
+      "family": "plaster",
+      "image": "ss_04",
+      "rect": [
+        1045,
+        20,
+        1095,
+        140
+      ],
+      "what": "storeroom back wall, lit side"
+    },
+    {
+      "id": "plaster-t069-a",
+      "family": "plaster",
+      "image": "t069",
+      "rect": [
+        1215,
+        110,
+        1255,
+        190
+      ],
+      "what": "bedroom back wall left of the table lamp"
+    },
+    {
+      "id": "plaster-t069-b",
+      "family": "plaster",
+      "image": "t069",
+      "rect": [
+        1570,
+        160,
+        1625,
+        240
+      ],
+      "what": "bedroom back wall right of the painting"
+    },
+    {
+      "id": "wood-t069-a",
+      "family": "wood-floor",
+      "image": "t069",
+      "rect": [
+        1500,
+        300,
+        1600,
+        325
+      ],
+      "what": "bedroom back-wall board panelling (wainscot), vertical; not the floor"
+    },
+    {
+      "id": "wood-t035-a",
+      "family": "wood-floor",
+      "image": "t035",
+      "rect": [
+        705,
+        398,
+        750,
+        430
+      ],
+      "what": "living-room plank floor by the chair"
+    },
+    {
+      "id": "wood-t035-b",
+      "family": "wood-floor",
+      "image": "t035",
+      "rect": [
+        765,
+        362,
+        830,
+        395
+      ],
+      "what": "living-room plank floor by the bean bag"
+    },
+    {
+      "id": "wood-ss02-a",
+      "family": "wood-floor",
+      "image": "ss_02",
+      "rect": [
+        545,
+        285,
+        625,
+        335
+      ],
+      "what": "terrace deck, sun through slats"
+    },
+    {
+      "id": "wood-t080-a",
+      "family": "wood-floor",
+      "image": "t080",
+      "rect": [
+        660,
+        700,
+        800,
+        800
+      ],
+      "what": "office floor, lamp-lit"
+    },
+    {
+      "id": "tiles-t035-a",
+      "family": "tiles",
+      "image": "t035",
+      "rect": [
+        1440,
+        115,
+        1505,
+        190
+      ],
+      "what": "kitchen wall tiles, white"
+    },
+    {
+      "id": "tiles-t041-a",
+      "family": "tiles",
+      "image": "t041",
+      "rect": [
+        1255,
+        75,
+        1290,
+        140
+      ],
+      "what": "kitchen wall tiles, white"
+    },
+    {
+      "id": "tiles-t041-b",
+      "family": "tiles",
+      "image": "t041",
+      "rect": [
+        1010,
+        290,
+        1060,
+        325
+      ],
+      "what": "bathroom floor, white marble"
+    },
+    {
+      "id": "tiles-t033-a",
+      "family": "tiles",
+      "image": "t033",
+      "rect": [
+        690,
+        520,
+        800,
+        575
+      ],
+      "what": "checker floor, light tiles",
+      "select": "bright"
+    },
+    {
+      "id": "tiles-t033-b",
+      "family": "tiles",
+      "image": "t033",
+      "rect": [
+        690,
+        520,
+        800,
+        575
+      ],
+      "what": "checker floor, dark tiles",
+      "select": "dark"
+    },
+    {
+      "id": "tiles-t049-a",
+      "family": "tiles",
+      "image": "t049",
+      "rect": [
+        250,
+        700,
+        400,
+        850
+      ],
+      "what": "terracotta yard tiles in low sun"
+    },
+    {
+      "id": "fabric-t035-a",
+      "family": "fabric",
+      "image": "t035",
+      "rect": [
+        695,
+        315,
+        745,
+        350
+      ],
+      "what": "orange bean bag"
+    },
+    {
+      "id": "fabric-t035-b",
+      "family": "fabric",
+      "image": "t035",
+      "rect": [
+        740,
+        485,
+        775,
+        515
+      ],
+      "what": "round rug, grey-violet"
+    },
+    {
+      "id": "fabric-t069-a",
+      "family": "fabric",
+      "image": "t069",
+      "rect": [
+        1320,
+        320,
+        1370,
+        370
+      ],
+      "what": "bed quilt, off-white"
+    },
+    {
+      "id": "fabric-t033-a",
+      "family": "fabric",
+      "image": "t033",
+      "rect": [
+        800,
+        400,
+        860,
+        440
+      ],
+      "what": "bed quilt, lamp-lit"
+    },
+    {
+      "id": "fabric-t033-b",
+      "family": "fabric",
+      "image": "t033",
+      "rect": [
+        745,
+        468,
+        800,
+        495
+      ],
+      "what": "orange bench cushion, lamp-lit"
+    },
+    {
+      "id": "fabric-t080-a",
+      "family": "fabric",
+      "image": "t080",
+      "rect": [
+        1215,
+        500,
+        1270,
+        560
+      ],
+      "what": "sofa cushion, beige"
+    },
+    {
+      "id": "metal-t035-a",
+      "family": "metal",
+      "image": "t035",
+      "rect": [
+        1000,
+        650,
+        1080,
+        760
+      ],
+      "what": "security door, dark painted steel"
+    },
+    {
+      "id": "metal-t035-b",
+      "family": "metal",
+      "image": "t035",
+      "rect": [
+        1226,
+        200,
+        1246,
+        250
+      ],
+      "what": "fridge door, white enamel"
+    },
+    {
+      "id": "metal-t041-a",
+      "family": "metal",
+      "image": "t041",
+      "rect": [
+        1095,
+        120,
+        1115,
+        185
+      ],
+      "what": "fridge door, white enamel"
+    },
+    {
+      "id": "metal-t059-a",
+      "family": "metal",
+      "image": "t059",
+      "rect": [
+        1470,
+        470,
+        1560,
+        530
+      ],
+      "what": "satellite dish, white painted, sun"
+    },
+    {
+      "id": "glass-t059-a",
+      "family": "glass",
+      "image": "t059",
+      "rect": [
+        1400,
+        300,
+        1450,
+        340
+      ],
+      "what": "roof skylight reflecting the sky"
+    },
+    {
+      "id": "glass-t059-b",
+      "family": "glass",
+      "image": "t059",
+      "rect": [
+        460,
+        500,
+        520,
+        540
+      ],
+      "what": "solar panel glass"
+    },
+    {
+      "id": "foliage-t059-a",
+      "family": "foliage",
+      "image": "t059",
+      "rect": [
+        1060,
+        90,
+        1130,
+        180
+      ],
+      "what": "street tree canopy"
+    },
+    {
+      "id": "foliage-t035-a",
+      "family": "foliage",
+      "image": "t035",
+      "rect": [
+        1470,
+        640,
+        1540,
+        700
+      ],
+      "what": "yard shrub"
+    },
+    {
+      "id": "foliage-t049-a",
+      "family": "foliage",
+      "image": "t049",
+      "rect": [
+        140,
+        60,
+        300,
+        160
+      ],
+      "what": "hedge in low orange sun"
+    },
+    {
+      "id": "skin-ss02-a",
+      "family": "skin",
+      "image": "ss_02",
+      "rect": [
+        853,
+        488,
+        865,
+        500
+      ],
+      "what": "student face, daylight"
+    },
+    {
+      "id": "skin-ss02-b",
+      "family": "skin",
+      "image": "ss_02",
+      "rect": [
+        834,
+        524,
+        840,
+        544
+      ],
+      "what": "student forearm, daylight"
+    },
+    {
+      "id": "skin-t025-a",
+      "family": "skin",
+      "image": "t025",
+      "rect": [
+        894,
+        752,
+        908,
+        762
+      ],
+      "what": "male neck, lamp-lit"
+    },
+    {
+      "id": "blood-t041-a",
+      "family": "blood",
+      "image": "t041",
+      "rect": [
+        1110,
+        630,
+        1210,
+        710
+      ],
+      "what": "blood pool on snow",
+      "select": "red"
+    },
+    {
+      "id": "blood-t041-b",
+      "family": "blood",
+      "image": "t041",
+      "rect": [
+        1180,
+        700,
+        1270,
+        830
+      ],
+      "what": "blood trail on snow, thin end",
+      "select": "red"
+    },
+    {
+      "id": "ui-ss03-confirm",
+      "family": "ui",
+      "image": "ss_03",
+      "rect": [
+        690,
+        845,
+        800,
+        885
+      ],
+      "what": "confirm button green"
+    },
+    {
+      "id": "ui-ss03-panel",
+      "family": "ui",
+      "image": "ss_03",
+      "rect": [
+        660,
+        790,
+        1240,
+        820
+      ],
+      "what": "panel background charcoal"
+    },
+    {
+      "id": "ui-ss03-price",
+      "family": "ui",
+      "image": "ss_03",
+      "rect": [
+        1128,
+        195,
+        1195,
+        225
+      ],
+      "what": "price text gold",
+      "select": "text"
+    },
+    {
+      "id": "ui-ss01-buy",
+      "family": "ui",
+      "image": "ss_01",
+      "rect": [
+        1462,
+        234,
+        1474,
+        256
+      ],
+      "what": "buy button green"
+    },
+    {
+      "id": "ui-ss01-load",
+      "family": "ui",
+      "image": "ss_01",
+      "rect": [
+        400,
+        204,
+        860,
+        210
+      ],
+      "what": "load bar red",
+      "select": "saturated"
+    },
+    {
+      "id": "ui-ss08-cancel",
+      "family": "ui",
+      "image": "ss_08",
+      "rect": [
+        1318,
+        800,
+        1380,
+        845
+      ],
+      "what": "cancel button orange-gold"
+    },
+    {
+      "id": "ui-t061-send",
+      "family": "ui",
+      "image": "t061",
+      "rect": [
+        1385,
+        560,
+        1410,
+        585
+      ],
+      "what": "send button yellow"
+    },
+    {
+      "id": "ui-ss04-time",
+      "family": "ui",
+      "image": "ss_04",
+      "rect": [
+        1760,
+        184,
+        1870,
+        220
+      ],
+      "what": "clock text blue",
+      "select": "text"
+    },
+    {
+      "id": "ui-ss01-prep",
+      "family": "ui",
+      "image": "ss_01",
+      "rect": [
+        70,
+        1000,
+        360,
+        1030
+      ],
+      "what": "objective text gold",
+      "select": "text"
+    },
+    {
+      "id": "ui-ss04-satiety",
+      "family": "ui",
+      "image": "ss_04",
+      "rect": [
+        1750,
+        872,
+        1785,
+        888
+      ],
+      "what": "HUD stat bar fill green"
+    },
+    {
+      "id": "ui-ss01-encumbered",
+      "family": "ui",
+      "image": "ss_01",
+      "rect": [
+        112,
+        900,
+        122,
+        926
+      ],
+      "what": "status badge red"
+    },
+    {
+      "id": "ui-t061-leaveall",
+      "family": "ui",
+      "image": "t061",
+      "rect": [
+        975,
+        532,
+        1000,
+        560
+      ],
+      "what": "secondary button yellow"
+    },
+    {
+      "id": "ui-ss04-day",
+      "family": "ui",
+      "image": "ss_04",
+      "rect": [
+        1530,
+        40,
+        1700,
+        90
+      ],
+      "what": "day counter text white",
+      "select": "bright"
+    },
+    {
+      "id": "char-hoodie-t035",
+      "family": "character",
+      "image": "t035",
+      "rect": [
+        868,
+        468,
+        892,
+        495
+      ],
+      "what": "Wage Slave survivor, hoodie"
+    },
+    {
+      "id": "char-jeans-t035",
+      "family": "character",
+      "image": "t035",
+      "rect": [
+        878,
+        512,
+        894,
+        535
+      ],
+      "what": "Wage Slave survivor, jeans"
+    },
+    {
+      "id": "char-hair-t035",
+      "family": "character",
+      "image": "t035",
+      "rect": [
+        873,
+        444,
+        887,
+        454
+      ],
+      "what": "Wage Slave survivor, hair"
+    },
+    {
+      "id": "char-face-t035",
+      "family": "character",
+      "image": "t035",
+      "rect": [
+        877,
+        458,
+        885,
+        465
+      ],
+      "what": "Wage Slave survivor, face"
+    },
+    {
+      "id": "char-sneakers-t035",
+      "family": "character",
+      "image": "t035",
+      "rect": [
+        900,
+        552,
+        916,
+        560
+      ],
+      "what": "Wage Slave survivor, sneakers"
+    },
+    {
+      "id": "char-hoodie-t069",
+      "family": "character",
+      "image": "t069",
+      "rect": [
+        665,
+        560,
+        705,
+        592
+      ],
+      "what": "Wage Slave survivor, hoodie"
+    },
+    {
+      "id": "char-jeans-t069",
+      "family": "character",
+      "image": "t069",
+      "rect": [
+        682,
+        608,
+        696,
+        640
+      ],
+      "what": "Wage Slave survivor, jeans"
+    },
+    {
+      "id": "char-hair-t069",
+      "family": "character",
+      "image": "t069",
+      "rect": [
+        662,
+        515,
+        678,
+        530
+      ],
+      "what": "Wage Slave survivor, hair"
+    },
+    {
+      "id": "char-sneakers-t069",
+      "family": "character",
+      "image": "t069",
+      "rect": [
+        684,
+        655,
+        700,
+        661
+      ],
+      "what": "Wage Slave survivor, sneakers"
+    },
+    {
+      "id": "char-hoodie-ss04",
+      "family": "character",
+      "image": "ss_04",
+      "rect": [
+        505,
+        500,
+        540,
+        545
+      ],
+      "what": "Wage Slave survivor, hoodie"
+    },
+    {
+      "id": "char-jeans-ss04",
+      "family": "character",
+      "image": "ss_04",
+      "rect": [
+        552,
+        570,
+        570,
+        595
+      ],
+      "what": "Wage Slave survivor, jeans"
+    },
+    {
+      "id": "char-hair-ss04",
+      "family": "character",
+      "image": "ss_04",
+      "rect": [
+        492,
+        472,
+        508,
+        485
+      ],
+      "what": "Wage Slave survivor, hair"
+    },
+    {
+      "id": "char-sneakers-ss04",
+      "family": "character",
+      "image": "ss_04",
+      "rect": [
+        562,
+        608,
+        576,
+        616
+      ],
+      "what": "Wage Slave survivor, sneakers"
+    },
+    {
+      "id": "mf-concrete-t069-1",
+      "family": "mf-concrete",
+      "image": "t069",
+      "rect": [
+        1080,
+        740,
+        1160,
+        800
+      ],
+      "what": "storeroom concrete floor"
+    },
+    {
+      "id": "mf-concrete-t069-2",
+      "family": "mf-concrete",
+      "image": "t069",
+      "rect": [
+        1150,
+        690,
+        1190,
+        730
+      ],
+      "what": "storeroom concrete floor, near the papers"
+    },
+    {
+      "id": "mf-concrete-ss04-3",
+      "family": "mf-concrete",
+      "image": "ss_04",
+      "rect": [
+        1000,
+        720,
+        1080,
+        800
+      ],
+      "what": "storeroom concrete floor, dusk"
+    },
+    {
+      "id": "mf-newsprint-t069-1",
+      "family": "mf-newsprint",
+      "image": "t069",
+      "rect": [
+        1045,
+        668,
+        1072,
+        690
+      ],
+      "what": "newspaper on the floor, blank area"
+    },
+    {
+      "id": "mf-newsprint-t069-2",
+      "family": "mf-newsprint",
+      "image": "t069",
+      "rect": [
+        1092,
+        650,
+        1110,
+        668
+      ],
+      "what": "loose sheet"
+    },
+    {
+      "id": "mf-cardboard-ss04-1",
+      "family": "mf-cardboard",
+      "image": "ss_04",
+      "rect": [
+        1246,
+        597,
+        1280,
+        617
+      ],
+      "what": "cardboard box, top"
+    },
+    {
+      "id": "mf-cardboard-ss04-2",
+      "family": "mf-cardboard",
+      "image": "ss_04",
+      "rect": [
+        1228,
+        636,
+        1275,
+        665
+      ],
+      "what": "cardboard box, side"
+    },
+    {
+      "id": "mf-rubber-t035-1",
+      "family": "mf-rubber",
+      "image": "t035",
+      "rect": [
+        1092,
+        232,
+        1115,
+        258
+      ],
+      "what": "tyre in the garage crate",
+      "select": "dark"
+    },
+    {
+      "id": "mf-soil-ss02-1",
+      "family": "mf-soil",
+      "image": "ss_02",
+      "rect": [
+        778,
+        605,
+        815,
+        635
+      ],
+      "what": "planter soil, terrace"
+    },
+    {
+      "id": "mf-plastic-t069-1",
+      "family": "mf-plastic",
+      "image": "t069",
+      "rect": [
+        500,
+        215,
+        560,
+        238
+      ],
+      "what": "wall AC unit, white plastic housing"
+    }
+  ]
+}

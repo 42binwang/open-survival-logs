@@ -1,0 +1,36 @@
+/*
+ * UI typefaces (docs/UI.md §3.2): Noto Sans and Noto Sans SC under the SIL Open Font License 1.1, built by
+ * tools/fonts/build.sh into assets/fonts/ (assets/fonts/manifest.json; OFL.txt beside each face). One variable file
+ * per face covers weights 400 … 700. Nothing is preloaded: a face downloads only when text on screen needs a
+ * character of its unicode-range, and font-display: swap shows the fallback stack until it arrives, so an English
+ * session never fetches the Chinese file for Latin text, symbols or emoji. The unicode-range values are the
+ * manifest's params.unicodeRange (tests/fonts.test.js compares them).
+ */
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('../../../assets/fonts/noto-sans/NotoSans.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+20-7E, U+A0-FF, U+3B2, U+3B8, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2122, U+2212;
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('../../../assets/fonts/noto-sans-sc/NotoSansSC.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+20-7E, U+A0-FF, U+2000-206F, U+2E80-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF;
+}
+
+/* The language names an English session shows (中文, 简体中文): a 2 KB slice of the same face. Declared after the full
+   face, so the browser tries it first for these four characters and English never fetches the full Chinese file. */
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('../../../assets/fonts/noto-sans-sc/NotoSansSC-lang.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+4E2D, U+4F53, U+6587, U+7B80;
+}

@@ -1,0 +1,56 @@
+{
+ "about": "Text line heights (px at 1080p) in native UI panels: rows of bright glyph pixels (V >= 170) inside each panel,\nsplit into lines by the horizontal projection; a line's height is its ink extent (ascender to descender).",
+ "panels": [
+  {
+   "frame": "ss_03",
+   "what": "shop detail panel",
+   "line_ink_heights_px": [
+    30,
+    13,
+    26,
+    15,
+    15,
+    14,
+    15,
+    19,
+    14,
+    12,
+    13,
+    9
+   ],
+   "median_px": 14.5
+  },
+  {
+   "frame": "ss_03",
+   "what": "home slots list",
+   "line_ink_heights_px": [],
+   "median_px": null
+  },
+  {
+   "frame": "ss_01",
+   "what": "groceries list",
+   "line_ink_heights_px": [
+    73,
+    45,
+    44,
+    45,
+    45,
+    18,
+    10,
+    23
+   ],
+   "median_px": 44.5
+  },
+  {
+   "frame": "ss_04",
+   "what": "HUD stat bars",
+   "line_ink_heights_px": [
+    19,
+    17,
+    16,
+    16
+   ],
+   "median_px": 16.5
+  }
+ ]
+}

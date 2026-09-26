@@ -1,0 +1,872 @@
+// The three safehouses. Each floor is a grid; rooms/terraces/locked areas are rectangles; furniture
+// goes into typed slots (Config_Furniture.SlotType). Coordinates are tile units, origin top-left.
+// Floors: '1F' ground, '2F' upstairs (+ terrace/balcony), 'B1' basement.
+import { SLOT, ELEC, furn } from '../data/db.js';
+
+const S = SLOT;
+
+// helpers -------------------------------------------------------------------------------
+function slots(floor, list) {
+  return list.map(([id, x, y, type, extra = {}]) => ({ id: `${floor}:${id}`, floor, x, y, type, ...extra }));
+}
+
+const SLOT_EXTRAS = ['outdoor', 'sunny', 'room'];
+
+// The scene's own pieces, each in a slot of its own along the walls of its room (BUG-0066): [slot id, x, y, SlotType,
+// Config_Furniture id, options]. The options `outdoor`, `sunny` and `room` go on the slot, the rest (clutter, rubble)
+// on the starter piece. An appliance that draws power whenever it is on (a TV, a computer) starts switched off.
+function scene(floor, list) {
+  return list.map(([id, x, y, type, cfg, opts = {}]) => {
+    const slotExtra = Object.fromEntries(Object.entries(opts).filter(([k]) => SLOT_EXTRAS.includes(k)));
+    const pieceExtra = Object.fromEntries(Object.entries(opts).filter(([k]) => !SLOT_EXTRAS.includes(k)));
+    const def = furn(cfg);
+    const off = def?.elec === ELEC.CONSUMER && def.pwMode !== 1;
+    return {
+      slot: { id: `${floor}:${id}`, floor, x, y, type, ...slotExtra },
+      starter: { slot: `${floor}:${id}`, furn: cfg, ...(off ? { off: true } : {}), ...pieceExtra },
+    };
+  });
+}
+
+// Wage Slave apartment ---------------------------------------------------------------------
+// Layout rule: furniture sits along walls; corridors, doorways, stairs and window tiles stay clear
+// (tests/homes.test.js fills every slot and checks everything is still reachable).
+// The ground floor is the source's width: its storage room (racks, freezer, washstand, the TV desk: ss_04, trailer
+// t069/t074) stands beside the living room, and the floor measures about 21 x 12 m from the recovered camera (the
+// living-room block 10 m, the storage room another 11 m; docs/bugs.jsonl BUG-0066). The recreation puts the storage
+// room east of the living room (x 14-19) so the rest of the floor keeps its coordinates.
+const APT_SCENE = [
+  ...scene('1F', [
+    // kitchen: the gas hob, a houseplant and the cupboard sink along the counter's end
+    ['ks1', 1, 4, S.SMALL, 9098],
+    ['ks3', 2, 4, S.SMALL, 9070],
+    ['ks2', 4, 4, S.SMALL, 9101],
+    // bathroom: the tissues
+    ['bs1', 8, 4, S.SMALL, 9086],
+    // bedroom: the nightstand
+    ['rs1', 10, 4, S.SMALL, 9057],
+    // living room: the TV, the survivor's notebook (story 1206) and the dartboard
+    ['lt2', 2, 7, S.TABLETOP, 9053],
+    ['lt3', 2, 8, S.TABLETOP, 306],
+    ['lw3', 0, 5, S.WALL, 9062],
+    // storage room: the home racks, the freezer, the washstand, the computer desk, the TV, cabinets and boxes, the
+    // wardrobe, the planning blackboard (story 1310) and the clock (story 1314) on the north wall, a backpack and a box
+    // of the survivor's (story 1006, 1207) and the mysterious notebook (story 1005)
+    ['w1', 14, 1, S.MEDIUM, 201],
+    ['w2', 16, 1, S.MEDIUM, 202],
+    ['ww1', 18, 0, S.WALL, 9064],
+    ['ww2', 19, 0, S.WALL, 9061],
+    ['wt1', 14, 3, S.TABLETOP, 9068],
+    ['ws2', 15, 3, S.SMALL, 9095],
+    ['wl1', 17, 3, S.LARGE, 9058],
+    ['ws3', 19, 3, S.SMALL, 9071],
+    ['ws4', 14, 4, S.SMALL, 9173],
+    ['wt2', 15, 4, S.TABLETOP, 9079],
+    ['ws5', 19, 4, S.SMALL, 308],
+    ['ws6', 19, 6, S.SMALL, 255],
+    ['wt6', 17, 5, S.TABLETOP, 254],
+    ['ws7', 14, 7, S.SMALL, 307],
+    ['wt3', 16, 7, S.TABLETOP, 9078],
+    ['wt4', 17, 7, S.TABLETOP, 9063],
+    ['ws8', 19, 7, S.SMALL, 9149, { clutter: true }],
+    ['ws9', 14, 8, S.SMALL, 9158, { clutter: true }],
+    ['wt5', 17, 8, S.TABLETOP, 222],
+    ['w3', 14, 9, S.MEDIUM, 203],
+    ['wm1', 16, 9, S.MEDIUM, 9056],
+    ['ws10', 18, 9, S.SMALL, 9110],
+    ['ws11', 19, 9, S.SMALL, 9125, { clutter: true }],
+  ]),
+  ...scene('2F', [
+    // storeroom: a potted shrub and an empty flowerpot
+    ['ss1', 5, 2, S.SMALL, 230],
+    ['ss2', 5, 4, S.SMALL, 229],
+    // bedroom: the survivor's phone, keys and photo frame (story 1201, 1203, 1205)
+    ['bt2', 8, 1, S.TABLETOP, 301],
+    ['bt3', 12, 3, S.TABLETOP, 303],
+    ['bt4', 10, 4, S.TABLETOP, 305],
+  ]),
+  ...scene('B1', [
+    // generator room: the knife block, a can, a chair, the bread, the kettle, the book pile, the survivor's backpack and
+    // wallet (story 1204, 1202) and a table of the loop's keepsakes (story 1001-1002)
+    ['gt1', 1, 3, S.TABLETOP, 9162],
+    ['gs1', 5, 1, S.SMALL, 224, { clutter: true }],
+    ['gs3', 1, 5, S.SMALL, 9083],
+    ['gt2', 3, 6, S.TABLETOP, 250],
+    ['gt3', 4, 6, S.TABLETOP, 251],
+    ['gs2', 3, 7, S.SMALL, 9152],
+    ['gs5', 1, 9, S.SMALL, 304],
+    ['gt4', 2, 9, S.TABLETOP, 302],
+    ['gs6', 4, 9, S.SMALL, 9170],
+    ['gs4', 5, 9, S.SMALL, 9155],
+    // cellar: the cupboard sink, the rest of the keepsakes (story 1003, 1004, 1007), the newspaper and the memo (story 1210,
+    // 1211), the low cabinet, a trash bag, a shoebox, the soup pot and the teapot
+    ['cs1', 12, 2, S.SMALL, 9089],
+    ['ct4', 7, 3, S.TABLETOP, 256],
+    ['ct5', 12, 3, S.TABLETOP, 310],
+    ['ct1', 9, 4, S.TABLETOP, 252],
+    ['ct2', 9, 5, S.TABLETOP, 253],
+    ['cs6', 7, 6, S.SMALL, 9052],
+    ['cs2', 12, 6, S.SMALL, 9131, { clutter: true }],
+    ['cs3', 12, 7, S.SMALL, 9116, { clutter: true }],
+    ['ct6', 7, 9, S.TABLETOP, 311],
+    ['cs5', 10, 9, S.SMALL, 9161],
+    ['ct7', 11, 9, S.TABLETOP, 9164],
+  ]),
+];
+
+const apartment = {
+  id: 'apartment',
+  name: { en: 'Rented Apartment', zh: '出租屋' },
+  floors: {
+    '1F': {
+      w: 21,
+      h: 11,
+      label: { en: 'Ground Floor', zh: '一楼' },
+      walls: [
+        [5, 1, 5, 4],
+        [9, 1, 9, 4],
+        [13, 1, 13, 9],
+      ],
+      gaps: [
+        [5, 3],
+        [9, 3],
+        [13, 6],
+      ],
+      yard: [0, 11, 21, 4],
+      door: [7, 10],
+      windows: [
+        [2, 10],
+        [12, 10],
+        [0, 6],
+      ],
+      stairsUp: [12, 1],
+      stairsDown: [1, 8],
+      rooms: [
+        { id: 'kitchen', x: 1, y: 1, w: 4, h: 4, label: { en: 'Kitchen', zh: '厨房' } },
+        { id: 'bath', x: 6, y: 1, w: 3, h: 4, label: { en: 'Bathroom', zh: '卫生间' } },
+        { id: 'bed', x: 10, y: 1, w: 3, h: 4, label: { en: 'Bedroom', zh: '卧室' } },
+        { id: 'living', x: 1, y: 5, w: 12, h: 5, label: { en: 'Living Room', zh: '客厅' } },
+        { id: 'storage', x: 14, y: 1, w: 6, h: 9, label: { en: 'Storage Room', zh: '储物间' } },
+      ],
+    },
+    '2F': {
+      w: 14,
+      h: 11,
+      label: { en: 'Upstairs', zh: '二楼' },
+      walls: [[7, 1, 7, 5]],
+      gaps: [[7, 2]],
+      terrace: [1, 6, 12, 4],
+      terraceWall: 5,
+      windows: [[0, 3]],
+      stairsDown: [12, 1],
+      basket: [12, 9],
+      rooms: [
+        { id: 'store', x: 1, y: 1, w: 6, h: 4, label: { en: 'Storeroom', zh: '储藏室' } },
+        { id: 'bed2', x: 8, y: 1, w: 5, h: 4, label: { en: 'Bedroom', zh: '卧室' } },
+        { id: 'terrace', x: 1, y: 6, w: 12, h: 4, label: { en: 'Terrace', zh: '露台' }, outdoor: true },
+      ],
+    },
+    B1: {
+      w: 14,
+      h: 11,
+      label: { en: 'Basement', zh: '地下室' },
+      walls: [[6, 1, 6, 9]],
+      gaps: [[6, 5]],
+      stairsUp: [1, 8],
+      rooms: [
+        { id: 'gen', x: 1, y: 1, w: 5, h: 9, label: { en: 'Generator Room', zh: '设备间' } },
+        { id: 'cellar', x: 7, y: 1, w: 6, h: 9, label: { en: 'Cellar', zh: '储藏间' } },
+      ],
+    },
+  },
+  slots: [
+    ...slots('1F', [
+      ['k1', 1, 1, S.MEDIUM],
+      ['k2', 3, 1, S.MEDIUM],
+      ['kt1', 1, 2, S.TABLETOP],
+      ['kt2', 1, 3, S.TABLETOP],
+      ['k3', 4, 2, S.SMALL],
+      ['kt3', 4, 3, S.TABLETOP],
+      ['b3', 6, 1, S.LARGE],
+      ['b1', 8, 1, S.SMALL],
+      ['b2', 6, 4, S.SMALL],
+      ['r1', 10, 1, S.BED],
+      ['r3', 11, 3, S.MEDIUM],
+      ['r2', 12, 4, S.SMALL],
+      ['l1', 3, 7, S.LARGE],
+      ['l2', 5, 9, S.MEDIUM],
+      ['l3', 8, 9, S.MEDIUM],
+      ['l4', 10, 7, S.LARGE],
+      ['l5', 8, 7, S.MEDIUM],
+      ['l6', 3, 9, S.MEDIUM],
+      ['l7', 10, 9, S.MEDIUM],
+      ['l8', 5, 7, S.SMALL],
+      ['l9', 12, 5, S.SMALL],
+      ['lt1', 6, 7, S.TABLETOP],
+      ['lw1', 0, 7, S.WALL],
+      ['lw2', 0, 9, S.WALL],
+      ['t1', 6, 8, S.SMALL, { trap: true }],
+      ['t2', 9, 8, S.SMALL, { trap: true }],
+    ]),
+    ...slots('2F', [
+      ['s1', 1, 1, S.LARGE],
+      ['s2', 3, 1, S.LARGE],
+      ['s3', 5, 1, S.MEDIUM],
+      ['s4', 3, 4, S.MEDIUM],
+      ['s5', 6, 4, S.SMALL],
+      ['t1', 1, 4, S.SMALL, { trap: true }],
+      ['b1', 9, 3, S.BED],
+      ['b2', 10, 1, S.MEDIUM],
+      ['b3', 8, 4, S.MEDIUM],
+      ['bt', 12, 4, S.TABLETOP],
+      ['bw', 9, 0, S.WALL],
+      ['p1', 1, 7, S.LARGE, { outdoor: true }],
+      ['p2', 4, 7, S.LARGE, { outdoor: true }],
+      ['p3', 7, 7, S.MEDIUM, { outdoor: true }],
+      ['p4', 10, 7, S.MEDIUM, { outdoor: true }],
+      ['p5', 7, 8, S.LARGE, { outdoor: true }],
+      ['p6', 1, 9, S.MEDIUM, { outdoor: true }],
+      ['p7', 4, 9, S.SMALL, { outdoor: true }],
+      ['p8', 6, 9, S.SMALL, { outdoor: true }],
+      ['p9', 10, 8, S.LARGE, { outdoor: true }],
+      ['t2', 9, 9, S.SMALL, { trap: true, outdoor: true }],
+    ]),
+    ...slots('B1', [
+      ['g1', 1, 1, S.LARGE],
+      ['g2', 3, 1, S.LARGE],
+      ['g3', 1, 4, S.MEDIUM],
+      ['g4', 3, 4, S.MEDIUM],
+      ['g5', 1, 6, S.LARGE],
+      ['g6', 4, 7, S.SMALL],
+      ['t2', 3, 9, S.SMALL, { trap: true }],
+      ['c1', 7, 1, S.LARGE],
+      ['c2', 9, 1, S.LARGE],
+      ['c3', 11, 1, S.MEDIUM],
+      ['c4', 7, 4, S.MEDIUM],
+      ['c5', 11, 4, S.LARGE],
+      ['c6', 7, 7, S.LARGE],
+      ['c7', 10, 7, S.MEDIUM],
+      ['t1', 12, 9, S.SMALL, { trap: true }],
+    ]),
+    { id: '1F:door', floor: '1F', x: 7, y: 10, type: S.DOOR },
+    { id: '1F:win1', floor: '1F', x: 2, y: 10, type: S.WINDOW },
+    { id: '1F:win2', floor: '1F', x: 12, y: 10, type: S.WINDOW },
+    { id: '1F:win3', floor: '1F', x: 0, y: 6, type: S.WINDOW },
+    ...slots('1F', [
+      ['d1', 6, 11, S.DEFENSE, { lv: 0, target: 'door' }],
+      ['d2', 8, 11, S.DEFENSE, { lv: 0, target: 'door' }],
+      ['d3', 7, 12, S.DEFENSE, { lv: 0, target: 'door' }],
+      ['d4', 2, 11, S.DEFENSE, { lv: 0, target: 'win1' }],
+      ['d5', 12, 11, S.DEFENSE, { lv: 0, target: 'win2' }],
+      ['d6', 5, 12, S.DEFENSE, { lv: 1, target: 'door' }],
+      ['d7', 9, 12, S.DEFENSE, { lv: 1, target: 'door' }],
+      ['d8', 1, 12, S.DEFENSE, { lv: 1, target: 'win1' }],
+      ['d9', 13, 12, S.DEFENSE, { lv: 1, target: 'win2' }],
+      ['d10', 6, 13, S.DEFENSE, { lv: 2, target: 'door' }],
+      ['d11', 8, 13, S.DEFENSE, { lv: 2, target: 'door' }],
+      ['d12', 3, 12, S.DEFENSE, { lv: 2, target: 'win1' }],
+      ['d13', 11, 12, S.DEFENSE, { lv: 2, target: 'win2' }],
+      ['d14', 7, 14, S.DEFENSE, { lv: 3, target: 'door' }],
+      ['d15', 2, 13, S.DEFENSE, { lv: 3, target: 'win1' }],
+      ['d16', 12, 13, S.DEFENSE, { lv: 3, target: 'win2' }],
+    ]),
+    ...APT_SCENE.map((p) => p.slot),
+  ],
+  // Config pieces of the Wage Slave's rented apartment scene (Config_Furniture 201–313, 871–879 NewHome01_after_*,
+  // 9052–9180; story codes 12xx personal items, 13xx home fixtures, 2001): the workbench (313, story 1317), the
+  // radio (213), the fuse box (9175, 1323), the scattered newspapers (9130, 2001) and the post-outbreak clutter of the
+  // upstairs storeroom (872–875) and of the basement. Every floor keeps free slots of each type for what the
+  // survivor buys.
+  starter: [
+    { slot: '1F:k1', furn: 15000 },
+    { slot: '1F:k2', furn: 55000 },
+    { slot: '1F:kt1', furn: 801 },
+    { slot: '1F:k3', furn: 21000 },
+    { slot: '1F:b1', furn: 21001 },
+    { slot: '1F:b2', furn: 21000 },
+    { slot: '1F:b3', furn: 21002 },
+    { slot: '1F:r1', furn: 20000 },
+    { slot: '1F:r3', furn: 10004 },
+    { slot: '1F:l1', furn: 313, broken: true },
+    { slot: '1F:l2', furn: 20002 },
+    { slot: '1F:l3', furn: 10001 },
+    { slot: '1F:l4', furn: 9130, clutter: true },
+    { slot: '1F:l5', furn: 21004 },
+    { slot: '1F:l6', furn: 9126, clutter: true },
+    { slot: '1F:l7', furn: 10002 },
+    { slot: '1F:l8', furn: 60000, starterPot: true },
+    { slot: '1F:lt1', furn: 213 },
+    { slot: '1F:lw1', furn: 70000 },
+    { slot: '1F:r2', furn: 9092 },
+    { slot: '1F:door', furn: 211 },
+    { slot: '1F:win1', furn: 212 },
+    { slot: '1F:win2', furn: 212 },
+    { slot: '1F:win3', furn: 212 },
+    { slot: '2F:s1', furn: 875, clutter: true },
+    { slot: '2F:s2', furn: 873, clutter: true },
+    { slot: '2F:s3', furn: 872, clutter: true },
+    { slot: '2F:s4', furn: 9129, clutter: true },
+    { slot: '2F:s5', furn: 874, clutter: true },
+    { slot: '2F:b1', furn: 20000 },
+    { slot: '2F:p1', furn: 9148, clutter: true },
+    { slot: 'B1:g1', furn: 9127, clutter: true, rubble: true },
+    { slot: 'B1:g3', furn: 9153, clutter: true },
+    { slot: 'B1:g5', furn: 9175 },
+    { slot: 'B1:c1', furn: 9128, clutter: true, rubble: true },
+    { slot: 'B1:c2', furn: 9139, clutter: true },
+    { slot: 'B1:c3', furn: 9169, clutter: true },
+    { slot: 'B1:c5', furn: 9172, clutter: true },
+    { slot: 'B1:c6', furn: 9160, clutter: true },
+    ...APT_SCENE.map((p) => p.starter),
+  ],
+  locks: {
+    '2F': { taskId: 'repairStairs', label: { en: 'The stairs are loose. Repair them to reach upstairs.', zh: '楼梯松动了，修好才能上楼。' } },
+    B1: { taskId: 'repairBasement', repairs: 2, label: { en: 'The basement entrance is blocked with rubble.', zh: '地下室入口被碎石堵住了。' } },
+  },
+  spawn: { floor: '1F', x: 7, y: 8 },
+  rooftopLine: { floor: '2F', x: 12, y: 9, to: 'student' },
+};
+
+// College Student duplex ---------------------------------------------------------------------
+// The duplex's rooms hold the rest of its Neighbor_Girl_* / P_* scene pieces along their walls (BUG-0066): the
+// kitchen's counter things, the bathroom's washstand and washing machine, the living room's flowerpots and plants, the
+// student's own things on the loft's tables (story 2012xx) and the storage level's safe, cabinets, fuse box and junk.
+const DUP_SCENE = [
+  ...scene('1F', [
+    // kitchen: the bread, a cup and the kitchenware at the counter's end
+    ['kt4', 1, 4, S.TABLETOP, 80060],
+    ['kt5', 3, 4, S.TABLETOP, 80076],
+    ['kt6', 5, 4, S.TABLETOP, 80065],
+    // bathroom: the cupboard sink, the washing machine, the washstand, the mirror and the clock
+    ['bs1', 8, 2, S.SMALL, 80043],
+    ['bs2', 11, 3, S.SMALL, 80044],
+    ['bs3', 9, 4, S.SMALL, 80116],
+    ['bs4', 7, 4, S.SMALL, 80070],
+    ['bw1', 9, 0, S.WALL, 80046],
+    // living room: two clay flowerpots, the tissues, a houseplant and the side table; a picture
+    ['ls1', 5, 5, S.SMALL, 80037],
+    ['lt2', 6, 5, S.TABLETOP, 80025],
+    ['ls2', 7, 5, S.SMALL, 80092],
+    ['ls3', 8, 5, S.SMALL, 80138],
+    ['ls4', 9, 7, S.SMALL, 80080],
+    ['lw3', 0, 5, S.WALL, 80184],
+  ]),
+  ...scene('2F', [
+    // loft: the student's notebook, phone, backpack and keys (story 201206, 201201, 201204, 201203) on the tables under
+    // the window wall; the flower bed on the west wall
+    ['bt2', 3, 3, S.TABLETOP, 80023],
+    ['bt3', 4, 3, S.TABLETOP, 80024],
+    ['bt4', 6, 3, S.TABLETOP, 80051],
+    ['bt5', 7, 3, S.TABLETOP, 80052],
+    ['bw2', 0, 3, S.WALL, 80085],
+  ]),
+  ...scene('B1', [
+    // storage level: the safe, the cabinets, the bookshelf and the book piles, a stool, the coat and drying racks, the
+    // cat tower, the sofa, the basement junk, the desktop computer, the student's wallet and newspaper (story 201202,
+    // 202001) and an old phone; the fuse box and the water pipe on the west wall
+    ['ss1', 11, 1, S.SMALL, 80128],
+    ['ss2', 10, 2, S.SMALL, 80091],
+    ['ss3', 11, 4, S.SMALL, 80156],
+    ['ss5', 6, 4, S.SMALL, 80152, { clutter: true }],
+    ['ss4', 11, 5, S.SMALL, 80148, { clutter: true }],
+    ['st1', 6, 5, S.TABLETOP, 80048],
+    ['ss6', 1, 5, S.SMALL, 80030],
+    ['st4', 3, 6, S.TABLETOP, 80167],
+    ['ss15', 4, 6, S.SMALL, 80014],
+    ['st5', 9, 6, S.TABLETOP, 80205],
+    ['st3', 11, 6, S.TABLETOP, 80168],
+    ['ss7', 11, 7, S.SMALL, 80050],
+    ['ss12', 1, 8, S.SMALL, 80114],
+    ['ss8', 3, 8, S.SMALL, 80015],
+    ['ss9', 6, 8, S.SMALL, 80173],
+    ['ss10', 7, 8, S.SMALL, 80020],
+    ['ss11', 9, 8, S.SMALL, 80019],
+    ['sw1', 0, 3, S.WALL, 80153],
+    ['sw2', 0, 6, S.WALL, 80155],
+  ]),
+];
+
+const duplex = {
+  id: 'duplex',
+  name: { en: 'Duplex Apartment', zh: '复式公寓' },
+  floors: {
+    '1F': {
+      w: 13,
+      h: 10,
+      label: { en: 'Living Floor', zh: '一楼' },
+      walls: [[6, 1, 6, 4]],
+      gaps: [[6, 3]],
+      yard: [0, 10, 13, 4],
+      door: [6, 9],
+      windows: [
+        [2, 9],
+        [10, 9],
+      ],
+      stairsUp: [11, 5],
+      stairsDown: [1, 8],
+      rooms: [
+        { id: 'kitchen', x: 1, y: 1, w: 5, h: 4, label: { en: 'Kitchen', zh: '厨房' } },
+        { id: 'bath', x: 7, y: 1, w: 5, h: 4, label: { en: 'Bathroom', zh: '卫生间' } },
+        { id: 'living', x: 1, y: 5, w: 11, h: 4, label: { en: 'Living Room', zh: '客厅' } },
+      ],
+    },
+    '2F': {
+      w: 13,
+      h: 10,
+      label: { en: 'Loft', zh: '阁楼' },
+      terrace: [1, 5, 7, 4],
+      terraceWall: 4,
+      windows: [[12, 3]],
+      stairsDown: [11, 1],
+      basket: [1, 8],
+      rooms: [
+        { id: 'loft', x: 1, y: 1, w: 11, h: 3, label: { en: 'Loft Bedroom', zh: '阁楼卧室' } },
+        { id: 'balcony', x: 1, y: 5, w: 7, h: 4, label: { en: 'Balcony', zh: '阳台' }, outdoor: true },
+        { id: 'sunroom', x: 8, y: 5, w: 4, h: 4, label: { en: 'Sunroom', zh: '阳光房' }, sunny: true },
+      ],
+    },
+    B1: {
+      w: 13,
+      h: 10,
+      label: { en: 'Storage Level', zh: '储物层' },
+      stairsUp: [1, 7],
+      rooms: [{ id: 'storage', x: 1, y: 1, w: 11, h: 8, label: { en: 'Storage', zh: '储物间' } }],
+    },
+  },
+  slots: [
+    ...slots('1F', [
+      ['k1', 1, 1, S.MEDIUM],
+      ['k2', 3, 1, S.MEDIUM],
+      ['k3', 5, 1, S.SMALL],
+      ['kt1', 1, 2, S.TABLETOP],
+      ['kt2', 1, 3, S.TABLETOP],
+      ['kt3', 4, 2, S.TABLETOP],
+      ['b1', 7, 1, S.SMALL],
+      ['b2', 8, 1, S.SMALL],
+      ['b3', 10, 1, S.LARGE],
+      ['l1', 3, 7, S.LARGE],
+      ['l4', 7, 7, S.LARGE],
+      ['l3', 5, 8, S.SMALL],
+      ['l2', 9, 8, S.SMALL],
+      ['l6', 11, 8, S.SMALL],
+      ['l5', 9, 5, S.MEDIUM],
+      ['l7', 2, 5, S.MEDIUM],
+      ['lt1', 5, 7, S.TABLETOP],
+      ['lw1', 0, 6, S.WALL],
+      ['lw2', 0, 7, S.WALL],
+      ['t1', 11, 7, S.SMALL, { trap: true }],
+    ]),
+    ...slots('2F', [
+      ['b5', 1, 1, S.SMALL],
+      ['b1', 3, 1, S.BED],
+      ['b2', 5, 1, S.MEDIUM],
+      ['b3', 7, 1, S.MEDIUM],
+      ['b4', 9, 1, S.LARGE],
+      ['bw', 2, 0, S.WALL],
+      ['bt', 5, 3, S.TABLETOP],
+      ['t1', 1, 2, S.SMALL, { trap: true }],
+      ['p3', 1, 6, S.MEDIUM, { outdoor: true }],
+      ['p4', 1, 7, S.SMALL, { outdoor: true }],
+      ['p1', 3, 6, S.LARGE, { outdoor: true }],
+      ['p2', 5, 6, S.LARGE, { outdoor: true }],
+      ['g1', 8, 6, S.LARGE, { sunny: true }],
+      ['g2', 10, 6, S.LARGE, { sunny: true }],
+      ['g3', 8, 8, S.MEDIUM, { sunny: true }],
+      ['t2', 11, 5, S.SMALL, { trap: true, sunny: true }],
+      ['t3', 1, 5, S.SMALL, { trap: true, outdoor: true }],
+    ]),
+    ...slots('B1', [
+      ['s1', 1, 1, S.LARGE],
+      ['s2', 3, 1, S.LARGE],
+      ['s3', 5, 1, S.LARGE],
+      ['s4', 7, 1, S.LARGE],
+      ['s5', 9, 1, S.MEDIUM],
+      ['s6', 1, 4, S.MEDIUM],
+      ['s7', 4, 4, S.LARGE],
+      ['s8', 8, 4, S.LARGE],
+      ['s9', 4, 7, S.MEDIUM],
+      ['s10', 8, 7, S.MEDIUM],
+      ['t1', 11, 8, S.SMALL, { trap: true }],
+    ]),
+    { id: '1F:door', floor: '1F', x: 6, y: 9, type: S.DOOR },
+    { id: '1F:win1', floor: '1F', x: 2, y: 9, type: S.WINDOW },
+    { id: '1F:win2', floor: '1F', x: 10, y: 9, type: S.WINDOW },
+    ...slots('1F', [
+      ['d1', 5, 10, S.DEFENSE, { lv: 0, target: 'door' }],
+      ['d2', 7, 10, S.DEFENSE, { lv: 0, target: 'door' }],
+      ['d3', 6, 11, S.DEFENSE, { lv: 0, target: 'door' }],
+      ['d4', 2, 10, S.DEFENSE, { lv: 0, target: 'win1' }],
+      ['d5', 10, 10, S.DEFENSE, { lv: 0, target: 'win2' }],
+      ['d6', 4, 11, S.DEFENSE, { lv: 1, target: 'door' }],
+      ['d7', 8, 11, S.DEFENSE, { lv: 1, target: 'door' }],
+      ['d8', 1, 11, S.DEFENSE, { lv: 1, target: 'win1' }],
+      ['d9', 11, 11, S.DEFENSE, { lv: 1, target: 'win2' }],
+      ['d10', 5, 12, S.DEFENSE, { lv: 2, target: 'door' }],
+      ['d11', 7, 12, S.DEFENSE, { lv: 2, target: 'door' }],
+      ['d12', 3, 11, S.DEFENSE, { lv: 2, target: 'win1' }],
+      ['d13', 9, 11, S.DEFENSE, { lv: 2, target: 'win2' }],
+      ['d14', 6, 13, S.DEFENSE, { lv: 3, target: 'door' }],
+      ['d15', 2, 12, S.DEFENSE, { lv: 3, target: 'win1' }],
+      ['d16', 10, 12, S.DEFENSE, { lv: 3, target: 'win2' }],
+    ]),
+    ...DUP_SCENE.map((p) => p.slot),
+  ],
+  // Config pieces of the College Student's duplex scene (Config_Furniture 80014–80205, Neighbor_Girl_* / NHome_*
+  // models; story codes 2012xx, 2013xx, 2015xx, 202001): the front door and windows (80200, 80201), the workbench
+  // (80033, 201317), the radio (80016), the 2F flower rack (80087, P_Neighbor_Girl_After_2F01) and the post-outbreak
+  // basement clutter (P_NHome_After_Basement*).
+  starter: [
+    { slot: '1F:k1', furn: 15000, rename: 'luxuryFridge' },
+    { slot: '1F:k2', furn: 55000 },
+    { slot: '1F:kt1', furn: 50001 },
+    { slot: '1F:kt2', furn: 50002 },
+    { slot: '1F:k3', furn: 21000 },
+    { slot: '1F:b1', furn: 21001 },
+    { slot: '1F:b2', furn: 21000 },
+    { slot: '1F:b3', furn: 21002 },
+    { slot: '1F:l1', furn: 80033, broken: true },
+    { slot: '1F:l7', furn: 20002 },
+    { slot: '1F:l4', furn: 21003 },
+    { slot: '1F:l5', furn: 21004, fixed: true },
+    { slot: '1F:l3', furn: 60000, starterPot: true },
+    { slot: '1F:lt1', furn: 80016 },
+    { slot: '1F:lw1', furn: 70000 },
+    { slot: '1F:lw2', furn: 70003 },
+    { slot: '1F:door', furn: 80200 },
+    { slot: '1F:win1', furn: 80201 },
+    { slot: '1F:win2', furn: 80201 },
+    { slot: '2F:b1', furn: 20001 },
+    { slot: '2F:b2', furn: 10004 },
+    { slot: '2F:b3', furn: 70005 },
+    { slot: '2F:b4', furn: 80073, clutter: true },
+    { slot: '2F:p1', furn: 40002 },
+    { slot: '2F:p2', furn: 80087, clutter: true },
+    { slot: 'B1:s1', furn: 80144, clutter: true, rubble: true },
+    { slot: 'B1:s2', furn: 10000 },
+    { slot: 'B1:s3', furn: 10001 },
+    { slot: 'B1:s4', furn: 80145, clutter: true },
+    { slot: 'B1:s6', furn: 21005 },
+    { slot: 'B1:s7', furn: 80149, clutter: true },
+    { slot: 'B1:s8', furn: 80150, clutter: true },
+    { slot: 'B1:s9', furn: 80151, clutter: true },
+    ...DUP_SCENE.map((p) => p.starter),
+  ],
+  locks: {
+    '2F': { taskId: 'repairStairs', label: { en: 'The loft ladder is broken.', zh: '通往阁楼的梯子坏了。' } },
+    B1: { taskId: 'repairBasement', repairs: 2, label: { en: 'Boxes block the storage level.', zh: '储物层被杂物堵住了。' } },
+  },
+  spawn: { floor: '1F', x: 6, y: 7 },
+  rooftopLine: { floor: '2F', x: 1, y: 8, to: 'wage' },
+};
+
+// Warehouse Manager warehouse -----------------------------------------------------------------
+// The warehouse's halls, office, cabin, garage and landing hold the rest of its WarehouseManager_* / P_* scene pieces
+// along their walls (BUG-0066): the carton stacks and oil drums of the halls, the moldy food and dead plants of the
+// cold storage, the office's microwave, water dispenser and washbasin, the cabin's cabinets, sofa, printer and office
+// things, the garage's tool cabinet, crates and pallets. A SlotType 0 heap (never installed by the player) stands in a
+// small slot as clutter.
+const WH_SCENE = [
+  ...scene('1F', [
+    // hall A: a carton stack; the clock over the aisle
+    ['as1', 4, 3, S.SMALL, 354, { clutter: true }],
+    ['aw1', 3, 0, S.WALL, 453],
+    // cold storage: the moldy food pile and the dead potted plants
+    ['cs1', 7, 7, S.SMALL, 357, { room: 'cold', clutter: true }],
+    ['cs2', 11, 7, S.SMALL, 356, { room: 'cold', clutter: true }],
+    // hall B: a carton stack and the oil drum pile
+    ['hs1', 14, 7, S.SMALL, 355, { clutter: true }],
+    ['hs2', 16, 7, S.SMALL, 335, { clutter: true }],
+    // office: the microwave by the fridge, the water dispenser and the low cabinet by the stairs
+    ['ot4', 8, 9, S.TABLETOP, 432],
+    ['os1', 16, 9, S.SMALL, 430],
+    ['os2', 16, 11, S.SMALL, 424],
+  ]),
+  ...scene('B1', [
+    // left cabin: the sofa, the manager's name badge (story 301216), the metal cabinet and the locker, the dusty
+    // office junk, the old office supplies, the desktop computer, the jammed printer and the dented equipment box; the
+    // TV and the dartboard on the west wall
+    ['ls1', 3, 1, S.SMALL, 372, { room: 'cabin' }],
+    ['lt1', 4, 1, S.TABLETOP, 410, { room: 'cabin' }],
+    ['ls2', 7, 1, S.SMALL, 380, { room: 'cabin' }],
+    ['ls3', 7, 4, S.SMALL, 383, { room: 'cabin' }],
+    ['lt2', 7, 5, S.TABLETOP, 350, { room: 'cabin' }],
+    ['lt3', 7, 8, S.TABLETOP, 377, { room: 'cabin' }],
+    ['lt4', 7, 9, S.TABLETOP, 378, { room: 'cabin' }],
+    ['ls4', 7, 11, S.SMALL, 379, { room: 'cabin' }],
+    ['ls5', 3, 11, S.SMALL, 421, { room: 'cabin' }],
+    ['lw1', 0, 5, S.WALL, 419, { room: 'cabin' }],
+    ['lw2', 0, 6, S.WALL, 438, { room: 'cabin' }],
+    // garage: the blunt tool pile, the tool cabinet, a carton stack, a wooden crate and the rotten pallet
+    ['gt1', 11, 1, S.TABLETOP, 363, { room: 'garage', clutter: true }],
+    ['gs1', 12, 1, S.SMALL, 406, { room: 'garage' }],
+    ['gs2', 16, 3, S.SMALL, 360, { room: 'garage', clutter: true }],
+    ['gs3', 13, 3, S.SMALL, 382, { room: 'garage' }],
+    ['gs4', 16, 7, S.SMALL, 376, { room: 'garage', clutter: true }],
+    // landing: the washbasin, a flowerpot and a carton stack
+    ['ss4', 11, 9, S.SMALL, 434],
+    ['ss5', 13, 9, S.SMALL, 420],
+    ['ss6', 16, 9, S.SMALL, 353, { clutter: true }],
+  ]),
+];
+
+const warehouse = {
+  id: 'warehouse',
+  name: { en: 'Supply Warehouse', zh: '物资仓库' },
+  floors: {
+    '1F': {
+      w: 18,
+      h: 13,
+      label: { en: 'Warehouse', zh: '仓库' },
+      walls: [
+        [6, 1, 6, 7],
+        [12, 1, 12, 7],
+        [1, 8, 17, 8],
+      ],
+      gaps: [
+        [6, 4],
+        [12, 4],
+        [3, 8],
+        [9, 8],
+        [15, 8],
+      ],
+      yard: [0, 13, 18, 4],
+      door: [9, 12],
+      windows: [
+        [3, 12],
+        [15, 12],
+      ],
+      stairsDown: [16, 10],
+      rooms: [
+        { id: 'hallA', x: 1, y: 1, w: 5, h: 7, label: { en: 'Warehouse Hall A', zh: '一号库区' } },
+        { id: 'cold', x: 7, y: 1, w: 5, h: 7, label: { en: 'Cold Storage', zh: '冷库' }, lock: 'coldStorage', cold: true },
+        { id: 'hallB', x: 13, y: 1, w: 4, h: 7, label: { en: 'Warehouse Hall B', zh: '二号库区' } },
+        { id: 'office', x: 1, y: 9, w: 16, h: 3, label: { en: 'Dormitory & Office', zh: '宿舍与办公室' } },
+      ],
+    },
+    B1: {
+      w: 18,
+      h: 13,
+      label: { en: 'Cabin & Garage', zh: '小屋与车库' },
+      walls: [
+        [8, 1, 8, 11],
+        [9, 8, 17, 8],
+      ],
+      gaps: [
+        [8, 10],
+        [12, 8],
+      ],
+      stairsUp: [16, 10],
+      rooms: [
+        { id: 'cabin', x: 1, y: 1, w: 7, h: 11, label: { en: 'Left Cabin', zh: '左侧小屋' }, lock: 'cabin' },
+        { id: 'garage', x: 9, y: 1, w: 8, h: 7, label: { en: 'Garage', zh: '车库' }, lock: 'garage' },
+        { id: 'landing', x: 9, y: 9, w: 8, h: 3, label: { en: 'Landing', zh: '楼梯间' } },
+      ],
+    },
+  },
+  slots: [
+    ...slots('1F', [
+      ['a1', 1, 1, S.LARGE],
+      ['a2', 4, 1, S.LARGE],
+      ['a7', 5, 3, S.SMALL],
+      ['a3', 1, 4, S.LARGE],
+      ['a4', 4, 5, S.LARGE],
+      ['a5', 1, 6, S.LARGE],
+      ['a6', 4, 7, S.MEDIUM],
+      ['c1', 7, 1, S.LARGE, { room: 'cold' }],
+      ['c2', 10, 1, S.LARGE, { room: 'cold' }],
+      ['c5', 7, 3, S.MEDIUM, { room: 'cold' }],
+      ['c6', 10, 3, S.MEDIUM, { room: 'cold' }],
+      ['c3', 7, 5, S.LARGE, { room: 'cold' }],
+      ['c4', 10, 5, S.LARGE, { room: 'cold' }],
+      ['h1', 13, 1, S.LARGE],
+      ['h2', 15, 1, S.LARGE],
+      ['h3', 15, 4, S.LARGE],
+      ['h4', 15, 6, S.MEDIUM],
+      ['h5', 13, 5, S.LARGE],
+      ['o1', 1, 9, S.BED],
+      ['o2', 4, 9, S.MEDIUM],
+      ['o3', 6, 9, S.MEDIUM],
+      ['o5', 10, 9, S.MEDIUM],
+      ['o6', 12, 9, S.MEDIUM],
+      ['o7', 14, 9, S.SMALL],
+      ['ot2', 2, 11, S.TABLETOP],
+      ['o4', 4, 11, S.SMALL],
+      ['ot3', 5, 11, S.TABLETOP],
+      ['o8', 6, 11, S.MEDIUM],
+      ['ot1', 8, 11, S.TABLETOP],
+      ['o9', 10, 11, S.MEDIUM],
+      ['o10', 12, 11, S.MEDIUM],
+      ['ow1', 0, 10, S.WALL],
+      ['ow2', 0, 11, S.WALL],
+      ['t1', 2, 3, S.SMALL, { trap: true }],
+      ['t2', 13, 3, S.SMALL, { trap: true }],
+      ['t3', 14, 11, S.SMALL, { trap: true }],
+    ]),
+    ...slots('B1', [
+      ['l1', 1, 1, S.LARGE, { room: 'cabin' }],
+      ['l2', 5, 1, S.LARGE, { room: 'cabin' }],
+      ['l3', 1, 4, S.MEDIUM, { room: 'cabin' }],
+      ['l4', 5, 4, S.LARGE, { room: 'cabin' }],
+      ['l5', 1, 7, S.MEDIUM, { room: 'cabin' }],
+      ['l6', 5, 8, S.LARGE, { room: 'cabin' }],
+      ['l7', 1, 9, S.LARGE, { room: 'cabin' }],
+      ['t1', 4, 11, S.SMALL, { trap: true, room: 'cabin' }],
+      ['g1', 9, 1, S.LARGE, { room: 'garage' }],
+      ['g2', 13, 1, S.LARGE, { room: 'garage' }],
+      ['g3', 15, 1, S.LARGE, { room: 'garage' }],
+      ['g4', 9, 4, S.MEDIUM, { room: 'garage' }],
+      ['g5', 15, 4, S.LARGE, { room: 'garage' }],
+      ['g6', 9, 6, S.LARGE, { room: 'garage' }],
+      ['g7', 13, 5, S.LARGE, { room: 'garage' }],
+      ['t2', 11, 7, S.SMALL, { trap: true, room: 'garage' }],
+      ['s1', 9, 9, S.MEDIUM],
+      ['s2', 14, 9, S.MEDIUM],
+      ['s3', 9, 11, S.MEDIUM],
+    ]),
+    { id: '1F:door', floor: '1F', x: 9, y: 12, type: S.DOOR },
+    { id: '1F:win1', floor: '1F', x: 3, y: 12, type: S.WINDOW },
+    { id: '1F:win2', floor: '1F', x: 15, y: 12, type: S.WINDOW },
+    ...slots('1F', [
+      ['d1', 8, 13, S.DEFENSE, { lv: 0, target: 'door' }],
+      ['d2', 10, 13, S.DEFENSE, { lv: 0, target: 'door' }],
+      ['d3', 9, 14, S.DEFENSE, { lv: 0, target: 'door' }],
+      ['d4', 3, 13, S.DEFENSE, { lv: 0, target: 'win1' }],
+      ['d5', 15, 13, S.DEFENSE, { lv: 0, target: 'win2' }],
+      ['d6', 7, 14, S.DEFENSE, { lv: 1, target: 'door' }],
+      ['d7', 11, 14, S.DEFENSE, { lv: 1, target: 'door' }],
+      ['d8', 2, 14, S.DEFENSE, { lv: 1, target: 'win1' }],
+      ['d9', 16, 14, S.DEFENSE, { lv: 1, target: 'win2' }],
+      ['d10', 8, 15, S.DEFENSE, { lv: 2, target: 'door' }],
+      ['d11', 10, 15, S.DEFENSE, { lv: 2, target: 'door' }],
+      ['d12', 4, 14, S.DEFENSE, { lv: 2, target: 'win1' }],
+      ['d13', 14, 14, S.DEFENSE, { lv: 2, target: 'win2' }],
+      ['d14', 9, 16, S.DEFENSE, { lv: 3, target: 'door' }],
+      ['d15', 3, 15, S.DEFENSE, { lv: 3, target: 'win1' }],
+      ['d16', 15, 15, S.DEFENSE, { lv: 3, target: 'win2' }],
+    ]),
+    ...WH_SCENE.map((p) => p.slot),
+  ],
+  // Config pieces of the Warehouse Manager's warehouse scene (Config_Furniture 321–453, WarehouseManager_* models;
+  // story codes 3012xx, 3013xx, 3015xx): the door and windows (368, 369), the tool table (405, 301317), the radio
+  // (407), the fuse box (328, 301323) and the warehouse junk: the dusty junk pile, the oil drum stack, building
+  // material piles, pallets, the broken hand truck, the rusty oil drum and the two forklifts of the garage.
+  starter: [
+    { slot: '1F:a1', furn: 10000 },
+    { slot: '1F:a2', furn: 10000 },
+    { slot: '1F:a3', furn: 204 },
+    { slot: '1F:a4', furn: 405, broken: true },
+    { slot: '1F:a5', furn: 358, clutter: true },
+    { slot: '1F:a6', furn: 10001 },
+    { slot: '1F:c1', furn: 10000, room: 'cold' },
+    { slot: '1F:c2', furn: 10000, room: 'cold' },
+    { slot: '1F:c6', furn: 42056, fixed: true, off: true },
+    { slot: '1F:h1', furn: 10000 },
+    { slot: '1F:h2', furn: 332, clutter: true },
+    { slot: '1F:o1', furn: 20000 },
+    { slot: '1F:o2', furn: 10004 },
+    { slot: '1F:o3', furn: 15000 },
+    { slot: '1F:o6', furn: 55000 },
+    { slot: '1F:o5', furn: 21004 },
+    { slot: '1F:o7', furn: 21001 },
+    { slot: '1F:ot1', furn: 801 },
+    { slot: '1F:ot3', furn: 407 },
+    { slot: '1F:ow1', furn: 70003 },
+    { slot: '1F:door', furn: 368 },
+    { slot: '1F:win1', furn: 369 },
+    { slot: '1F:win2', furn: 369 },
+    { slot: 'B1:l1', furn: 388, clutter: true, rubble: true },
+    { slot: 'B1:l2', furn: 443, clutter: true },
+    { slot: 'B1:l3', furn: 402, clutter: true },
+    { slot: 'B1:g1', furn: 331, clutter: true, rubble: true },
+    { slot: 'B1:g2', furn: 348, clutter: true },
+    { slot: 'B1:g3', furn: 352, clutter: true },
+    { slot: 'B1:g4', furn: 349, clutter: true },
+    { slot: 'B1:s1', furn: 359, clutter: true },
+    { slot: 'B1:s2', furn: 328 },
+    ...WH_SCENE.map((p) => p.starter),
+  ],
+  locks: {
+    coldStorage: { item: 9045, label: { en: 'The cold storage is locked. Its key must be made at the workbench.', zh: '冷库锁着，需要在工作台做一把钥匙。' } },
+    cabin: { item: 9046, label: { en: 'The left cabin is locked.', zh: '左侧小屋锁着。' } },
+    garage: { item: 9069, label: { en: 'The garage is locked.', zh: '车库锁着。' } },
+    B1: { taskId: 'repairBasement', repairs: 1, label: { en: 'The lower level is dark and cluttered.', zh: '下层又黑又乱。' } },
+  },
+  spawn: { floor: '1F', x: 9, y: 10 },
+  rooftopLine: null,
+};
+
+export const HOMES = { apartment, duplex, warehouse };
+
+
+// Scenery furniture that is not a Config_Furniture row, by string key: the placed trap ('trap', src/sim/traps.js), and
+// the stand-ins the homes placed before they placed config pieces ('workbench', 'radio', 'newspapers', 'woodpile',
+// 'junkpile', 'rubble', 'woodDoor', 'woodWindow'), kept so that saves from then still load and play.
+export const SCENERY = {
+  workbench: {
+    name: { en: 'Workbench', zh: '工作台' },
+    slot: S.LARGE,
+    funcs: ['craft', 'repairWorkbench', 'studyWorkbench', 'drawer'],
+    color: '#8a6a44',
+    h: 0.9,
+  },
+  woodpile: {
+    name: { en: 'Wood Pile', zh: '木柴堆' },
+    slot: S.LARGE,
+    funcs: ['dismantle'],
+    rmGet: [20005, 20005, 20005, 20005, 20106, 20106],
+    color: '#7a5a38',
+    h: 0.6,
+  },
+  newspapers: {
+    name: { en: 'Newspaper Stacks', zh: '报纸堆' },
+    slot: S.MEDIUM,
+    funcs: ['dismantle', 'cleanMagazines'],
+    rmGet: [20001, 20001, 20001, 20001, 20101, 2506],
+    color: '#b7ae96',
+    h: 0.5,
+  },
+  junkpile: {
+    name: { en: 'Pile of Junk', zh: '杂物堆' },
+    slot: S.LARGE,
+    funcs: ['dismantle'],
+    rmGet: [20003, 20003, 20002, 20002, 20004, 20005, 20001],
+    color: '#6f6a5f',
+    h: 0.7,
+  },
+  rubble: {
+    name: { en: 'Rubble', zh: '碎石堆' },
+    slot: S.LARGE,
+    funcs: ['clearRubble'],
+    rmGet: [20002, 20004, 20004],
+    color: '#5d5a55',
+    h: 0.5,
+  },
+  trap: {
+    name: { en: 'Trap', zh: '陷阱' },
+    slot: S.SMALL,
+    funcs: ['trapOpen', 'trapRemove'],
+    color: '#7d8288',
+    h: 0.2,
+  },
+  radio: {
+    name: { en: 'Radio', zh: '收音机' },
+    slot: S.TABLETOP,
+    funcs: ['radio'],
+    color: '#4c5b5c',
+    h: 0.35,
+  },
+  woodDoor: {
+    name: { en: 'Wooden Front Door', zh: '木门' },
+    slot: S.DOOR,
+    hp: 500,
+    door: true,
+    color: '#6b4a2f',
+  },
+  woodWindow: {
+    name: { en: 'Old Window', zh: '旧窗户' },
+    slot: S.WINDOW,
+    hp: 300,
+    window: true,
+    color: '#8fb4c9',
+  },
+};

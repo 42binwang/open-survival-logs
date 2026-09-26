@@ -1,0 +1,8 @@
+# Binaries are restored by install-ktx.sh; only the scripts and the small WebAssembly transcoder the tests
+# decode KTX2 with (hash-bound to assets/sources.lock.json) are committed.
+*
+!.gitignore
+!*.sh
+!ktx-wasm/
+!ktx-wasm/libktx_read.cjs
+!ktx-wasm/libktx_read.wasm

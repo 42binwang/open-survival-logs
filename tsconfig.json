@@ -1,0 +1,22 @@
+{
+  // Type-checks JavaScript through JSDoc. Only files that start with `// @ts-check` are checked (checkJs is off), so
+  // new code is strict while the untyped legacy modules stay as they are; tsc still reads the legacy modules to
+  // infer the types that checked files import from them. `npm run typecheck` = `tsc --noEmit -p tsconfig.json`.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.js", "pages/**/*.js", "tools/**/*.js", "tools/**/*.mjs", "tests/**/*.js", "tests/**/*.mjs", "*.config.js"],
+  "exclude": ["node_modules", "dist", "src/data/gen", "assets/cache", "tools/bin"]
+}

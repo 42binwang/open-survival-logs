@@ -1,0 +1,4 @@
+#!/bin/sh
+# Git LFS's own hook (core.hooksPath points here, so .git/hooks is not read).
+command -v git-lfs >/dev/null 2>&1 || { echo >&2 "git-lfs not found on PATH: install it (README.md, Requirements)"; exit 2; }
+git lfs post-commit "$@"

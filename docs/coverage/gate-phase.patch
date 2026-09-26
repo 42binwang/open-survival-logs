@@ -1,0 +1,170 @@
+diff --git a/tests/fixtures/gate/coverage-stub.mjs b/tests/fixtures/gate/coverage-stub.mjs
+new file mode 100644
+index 0000000..bfdf423
+--- /dev/null
++++ b/tests/fixtures/gate/coverage-stub.mjs
+@@ -0,0 +1,8 @@
++// @ts-check
++// Stands in for tools/coverage.mjs in tests/gate-coverage.test.js: 90% covered, so it passes before P3 and fails from P3.
++const i = process.argv.indexOf('--phase');
++const phase = i > 0 ? Number(/^P(\d+)$/.exec(process.argv[i + 1] || '')?.[1] ?? NaN) : NaN;
++const required = phase >= 3;
++const ok = !required;
++console.log(JSON.stringify({ ok, summary: `stub 90%${required ? ` · P${phase} requires 100%` : ''}`, problems: ok ? [] : [`stub: 90% — P${phase} requires 100%`] }));
++process.exit(ok ? 0 : 1);
+diff --git a/tests/gate-coverage.test.js b/tests/gate-coverage.test.js
+new file mode 100644
+index 0000000..702c0f7
+--- /dev/null
++++ b/tests/gate-coverage.test.js
+@@ -0,0 +1,43 @@
++// @ts-check
++// The gate hands the coverage tool the phase it judges by, so a P3 signoff fails while coverage is below 100%.
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { spawnSync } from 'node:child_process';
++import { CHECKS, coverageArgs, gatePhase, tool } from '../tools/gate/checks.mjs';
++import { ROOT } from '../tools/gate/port.mjs';
++
++test('gate phase: a signoff judges by its own phase, --final by at least P3, a plain run by the current phase', () => {
++  assert.equal(gatePhase({ signoff: 3 }, { id: 'P0' }), 'P3');
++  assert.equal(gatePhase({ signoff: 0 }, { id: 'P2' }), 'P0');
++  assert.equal(gatePhase({ final: true }, { id: 'P1' }), 'P3');
++  assert.equal(gatePhase({ final: true }, { id: 'P4' }), 'P4');
++  assert.equal(gatePhase({}, { id: 'P2' }), 'P2');
++  assert.equal(gatePhase({}, null), 'P0');
++});
++
++test('the coverage check passes the phase to tools/coverage.mjs', () => {
++  assert.deepEqual(coverageArgs({ quick: false, phase: 'P3' }), ['--json', '--phase', 'P3']);
++  const cov = CHECKS.find((c) => c.id === 'coverage');
++  assert.ok(cov, 'the registry has the coverage check');
++  assert.equal(cov.quick, false);
++});
++
++test('a P3 signoff fails the coverage check below 100%; before P3 it passes', async () => {
++  const stub = tool({ id: 'coverage', title: 'stub', owner: 'test', entry: 'tests/fixtures/gate/coverage-stub.mjs', args: coverageArgs });
++  const p3 = await stub.run({ quick: false, phase: gatePhase({ signoff: 3 }, { id: 'P0' }) });
++  assert.equal(p3.state, 'fail');
++  assert.match(p3.summary, /P3 requires 100%/);
++  const p0 = await stub.run({ quick: false, phase: gatePhase({ signoff: 0 }, { id: 'P0' }) });
++  assert.equal(p0.state, 'pass');
++});
++
++test('tools/coverage.mjs itself fails with --phase P3 below 100% and passes with --phase P0', () => {
++  // achievements without the traced test run are at 0%: a family below 100% without running the whole tool
++  const run = (/** @type {string} */ phase) => spawnSync(process.execPath, ['tools/coverage.mjs', ...coverageArgs({ quick: false, phase }), '--only', 'achievements', '--no-trace'], { cwd: ROOT, encoding: 'utf8' });
++  const p3 = run('P3');
++  assert.equal(p3.status, 1, p3.stderr);
++  const v = JSON.parse(p3.stdout.trim());
++  assert.equal(v.ok, false);
++  assert.ok(v.problems.some((/** @type {string} */ p) => /^achievements: .*P3 requires 100%/.test(p)), v.problems.join('\n'));
++  assert.equal(run('P0').status, 0);
++});
+diff --git a/tools/gate.mjs b/tools/gate.mjs
+index 773dbde..dc71b57 100644
+--- a/tools/gate.mjs
++++ b/tools/gate.mjs
+@@ -11,7 +11,7 @@
+ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+ import { dirname, join } from 'node:path';
+ import { parseArgs } from 'node:util';
+-import { CHECKS } from './gate/checks.mjs';
++import { CHECKS, gatePhase } from './gate/checks.mjs';
+ import { exec } from './gate/exec.mjs';
+ import { ledgers, phase } from './gate/ledgers.mjs';
+ import { ROOT, currentBranch, devPort } from './gate/port.mjs';
+@@ -112,6 +112,8 @@ if (args.status) {
+ 
+ // ------------------------------------------------------------------------------------------ runs
+ const modeName = args.quick ? 'quick' : args.final ? 'final' : signoff != null ? `signoff P${signoff}` : 'full';
++// the phase checks judge by (coverage prints before P3 and requires 100% from P3): the signoff's, else the current one
++const runPhase = gatePhase({ signoff, final: !!args.final }, ph);
+ const log = (/** @type {string} */ s) => !args.json && console.log(s);
+ log(`gate ${modeName} · ${phaseText} · ${where}`);
+ 
+@@ -130,7 +132,7 @@ for (const c of CHECKS) {
+   else {
+     const start = performance.now();
+     try {
+-      row = { ...meta, ...(await c.run({ quick: !!args.quick })) };
++      row = { ...meta, ...(await c.run({ quick: !!args.quick, phase: runPhase })) };
+     } catch (err) {
+       row = { ...meta, state: 'fail', summary: `the check crashed: ${/** @type {Error} */ (err).message}`, output: /** @type {Error} */ (err).stack };
+     }
+diff --git a/tools/gate/checks.mjs b/tools/gate/checks.mjs
+index 0db32b8..f347f89 100644
+--- a/tools/gate/checks.mjs
++++ b/tools/gate/checks.mjs
+@@ -10,6 +10,7 @@
+ import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync } from 'node:fs';
+ import { tmpdir } from 'node:os';
+ import { join, resolve } from 'node:path';
++import { phase } from './ledgers.mjs';
+ import { ROOT } from './port.mjs';
+ import { exec, lastJson, tail } from './exec.mjs';
+ 
+@@ -22,7 +23,7 @@ export const LFS_EXTENSIONS = ['glb', 'gltf', 'bin', 'ktx2', 'ogg', 'opus', 'wav
+ /**
+  * @typedef {'pass' | 'fail'} Outcome
+  * @typedef {{ state: Outcome, summary: string, output?: string }} CheckResult
+- * @typedef {{ quick: boolean }} RunMode
++ * @typedef {{ quick: boolean, phase?: string }} RunMode  phase: the phase the run is judged by (gatePhase)
+  * @typedef {object} Check
+  * @property {string} id
+  * @property {string} title
+@@ -83,12 +84,31 @@ function focusMarks() {
+   return found;
+ }
+ 
++/** First phase whose bar is full parity: --final judges by it at the least. */
++export const PARITY_PHASE = 3;
++
+ /**
+- * A check whose tool another package builds: pending until its entry file exists.
+- * @param {{ id: string, title: string, owner: string, entry: string, args?: string[], quick?: boolean, requiredFrom?: number, timeoutMs?: number }} spec
++ * The phase a run is judged by: the one a --signoff names; for --final the current phase but at least the parity
++ * phase; otherwise the current phase (docs/wp/STATUS.md).
++ * @param {{ signoff?: number | null, final?: boolean }} run
++ * @param {{ id: string } | null} [current]
++ */
++export function gatePhase({ signoff = null, final = false }, current = phase()) {
++  const now = current ? Number(current.id.slice(1)) : 0;
++  if (signoff != null) return `P${signoff}`;
++  if (final) return `P${Math.max(now, PARITY_PHASE)}`;
++  return `P${now}`;
++}
++
++/** The coverage tool's arguments: it prints before P3 and fails below 100% from P3, so it needs the phase. @param {RunMode} mode */
++export const coverageArgs = (mode) => ['--json', '--phase', mode.phase || gatePhase({})];
++
++/**
++ * A check whose tool another package builds: pending until its entry file exists. `args` may depend on the run mode.
++ * @param {{ id: string, title: string, owner: string, entry: string, args?: string[] | ((mode: RunMode) => string[]), quick?: boolean, requiredFrom?: number, timeoutMs?: number }} spec
+  * @returns {Check}
+  */
+-function tool({ id, title, owner, entry, args = ['--json'], quick = false, requiredFrom = 0, timeoutMs = 15 * 60_000 }) {
++export function tool({ id, title, owner, entry, args = ['--json'], quick = false, requiredFrom = 0, timeoutMs = 15 * 60_000 }) {
+   return {
+     id,
+     title,
+@@ -96,8 +116,8 @@ function tool({ id, title, owner, entry, args = ['--json'], quick = false, requi
+     requiredFrom,
+     quick,
+     pending: () => (has(entry) ? null : `${entry} not built yet (${owner})`),
+-    async run() {
+-      const r = await exec(node, [entry, ...args], { timeoutMs });
++    async run(/** @type {RunMode} */ mode = { quick: false }) {
++      const r = await exec(node, [entry, ...(typeof args === 'function' ? args(mode) : args)], { timeoutMs });
+       const json = lastJson(r.stdout);
+       const ok = r.code === 0 && json?.ok !== false;
+       const problems = Array.isArray(json?.problems) ? json.problems : null;
+@@ -354,7 +374,7 @@ export const CHECKS = [
+       return pass(`${verified}; grade LUT valid; scene-score cache reused and invalidated correctly`);
+     },
+   },
+-  tool({ id: 'coverage', title: 'Config entities reachable and working in the sim (tools/coverage.mjs)', owner: 'WP-P0-03', entry: 'tools/coverage.mjs', timeoutMs: 10 * 60_000 }),
++  tool({ id: 'coverage', title: 'Config entities reachable and working in the sim (tools/coverage.mjs)', owner: 'WP-P0-03', entry: 'tools/coverage.mjs', args: coverageArgs, timeoutMs: 10 * 60_000 }),
+   tool({ id: 'visual', title: 'Visual regression: SSIM against tests/visual/baselines', owner: 'WP-P0-11', entry: 'tools/visual/run.mjs' }),
+   tool({ id: 'art-metrics', title: 'Art metrics over the asset manifests (PBR, texel density, budgets, …)', owner: 'WP-P0-11', entry: 'tools/art-metrics.mjs' }),
+   tool({ id: 'budgets', title: 'Performance and size budgets at 1920 × 1080, 4× CPU throttle', owner: 'WP-P0-11', entry: 'tools/budgets/run.mjs', timeoutMs: 30 * 60_000 }),

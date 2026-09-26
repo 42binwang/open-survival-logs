@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Survival Log — Browser Edition</title>
+    <meta name="description" content="A browser recreation of Survival Log: hoard for 10 hours before the outbreak, then hold your safehouse for 100 days." />
+    <link rel="stylesheet" href="src/ui/kit/kit.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="scene" role="img" aria-label="Game view: your home and the survivor"></canvas>
+      <div id="hud" class="hidden"></div>
+      <div id="screens"></div>
+      <div id="windows"></div>
+      <div id="overlay"></div>
+    </div>
+    <noscript>This game needs JavaScript.</noscript>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>

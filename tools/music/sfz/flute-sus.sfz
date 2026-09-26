@@ -1,0 +1,27 @@
+// Flute, sustain (no vibrato): VSCO 2 Community Edition (CC0), sgossner/VSCO-2-CE@440300901d, folder 'Woodwinds/Flute/susNV'.
+// Written by tools/music/build.mjs (tools/music/instruments.mjs); played by tools/music/sampler.mjs.
+// Gain staging: loudest layer calibrated to -20 LUFS-M on LDFlute_susNV_C4_v3_1.wav (measured -17.7).
+<control> default_path=../../../assets/cache/vsco2ce/flute-sus/
+<global> ampeg_attack=0.06 ampeg_release=0.4 amp_veltrack=45 loop_mode=loop_continuous offset_auto=1 volume=-2.3
+<group> lovel=1 hivel=100 xfout_lovel=68 xfout_hivel=100
+<region> lokey=0 hikey=62 pitch_keycenter=60 sample=LDFlute_susNV_C3_v1_1.wav
+<region> lokey=63 hikey=66 pitch_keycenter=64 sample=LDFlute_susNV_E3_v1_1.wav
+<region> lokey=67 hikey=70 pitch_keycenter=69 sample=LDFlute_susNV_A3_v1_1.wav
+<region> lokey=71 hikey=74 pitch_keycenter=72 sample=LDFlute_susNV_C4_v1_1.wav
+<region> lokey=75 hikey=78 pitch_keycenter=76 sample=LDFlute_susNV_E4_v1_1.wav
+<region> lokey=79 hikey=82 pitch_keycenter=81 sample=LDFlute_susNV_A4_v1_1.wav
+<region> lokey=83 hikey=86 pitch_keycenter=84 sample=LDFlute_susNV_C5_v1_1.wav
+<region> lokey=87 hikey=90 pitch_keycenter=88 sample=LDFlute_susNV_E5_v1_1.wav
+<region> lokey=91 hikey=94 pitch_keycenter=93 sample=LDFlute_susNV_A5_v1_1.wav
+<region> lokey=95 hikey=127 pitch_keycenter=96 sample=LDFlute_susNV_C6_v1_1.wav
+<group> lovel=69 hivel=120 xfin_lovel=69 xfin_hivel=101 xfout_lovel=88 xfout_hivel=120
+<region> lokey=0 hikey=86 pitch_keycenter=84 sample=LDFlute_susNV_C5_v2_1.wav
+<region> lokey=87 hikey=127 pitch_keycenter=88 sample=LDFlute_susNV_E5_v2_1.wav
+<group> lovel=89 hivel=127 xfin_lovel=89 xfin_hivel=121
+<region> lokey=0 hikey=62 pitch_keycenter=60 sample=LDFlute_susNV_C3_v3_1.wav
+<region> lokey=63 hikey=66 pitch_keycenter=64 sample=LDFlute_susNV_E3_v3_1.wav
+<region> lokey=67 hikey=70 pitch_keycenter=69 sample=LDFlute_susNV_A3_v3_1.wav
+<region> lokey=71 hikey=74 pitch_keycenter=72 sample=LDFlute_susNV_C4_v3_1.wav
+<region> lokey=75 hikey=78 pitch_keycenter=76 sample=LDFlute_susNV_E4_v3_1.wav
+<region> lokey=79 hikey=87 pitch_keycenter=81 sample=LDFlute_susNV_A4_v3_1.wav
+<region> lokey=88 hikey=127 pitch_keycenter=93 sample=LDFlute_susNV_A5_v3_1.wav

@@ -1,0 +1,197 @@
+{
+ "piano": {
+  "volumeDb": -2.6,
+  "reference": "Player_vl2_rr1_F3.wav",
+  "measured": -17.376384686894013
+ },
+ "violins-sus": {
+  "volumeDb": 2.5,
+  "reference": "VlnEns_susVib_A3_v2.wav",
+  "measured": -22.455949886411297
+ },
+ "violins-trem": {
+  "volumeDb": -6.4,
+  "reference": "VlnEns_Trem_C4_v2.wav",
+  "measured": -13.61794871724136
+ },
+ "violins-spic": {
+  "volumeDb": 4.1,
+  "reference": "VlnEns_Spic_A3_v2_rr1.wav",
+  "measured": -24.081616140260326
+ },
+ "violins-pizz": {
+  "volumeDb": 0.9,
+  "reference": "VlnEns_Pizz_A3_v2_rr1.wav",
+  "measured": -20.910214622964308
+ },
+ "violas-sus": {
+  "volumeDb": -3.1,
+  "reference": "ViolaEns_susvib_F3_v2_1.wav",
+  "measured": -16.88722113864182
+ },
+ "violas-spic": {
+  "volumeDb": 2.3,
+  "reference": "Violas_spic_A3_v2_rr1.wav",
+  "measured": -22.273047267113522
+ },
+ "celli-sus": {
+  "volumeDb": -5.7,
+  "reference": "susvib_A2_v3_1.wav",
+  "measured": -14.323917585373751
+ },
+ "celli-trem": {
+  "volumeDb": -7.5,
+  "reference": "trem_B2_v2_1.wav",
+  "measured": -12.53578116569716
+ },
+ "celli-spic": {
+  "volumeDb": -3.5,
+  "reference": "spic_A2_v2_RR1.wav",
+  "measured": -16.509589835692772
+ },
+ "celli-pizz": {
+  "volumeDb": 2.9,
+  "reference": "pizzT_A2_v2_RR1.wav",
+  "measured": -22.919969389409097
+ },
+ "basses-sus": {
+  "volumeDb": 7.4,
+  "reference": "BKCtbss_SusNV_F#1_v3_rr1.wav",
+  "measured": -27.424646064500827
+ },
+ "basses-spic": {
+  "volumeDb": 2.6,
+  "reference": "BKCtbss_Spic_A#0_v3_rr1.wav",
+  "measured": -22.566373128919334
+ },
+ "basses-pizz": {
+  "volumeDb": 7.7,
+  "reference": "BKCtbss_Pizz_A#0_v3_rr1.wav",
+  "measured": -27.71148284742637
+ },
+ "harp": {
+  "volumeDb": 7.7,
+  "reference": "KSHarp_F4_mf.wav",
+  "measured": -27.652136897968486
+ },
+ "horn-sus": {
+  "volumeDb": -5.6,
+  "reference": "MOHorn_sus_C3_v4_1.wav",
+  "measured": -14.449445689456649
+ },
+ "horn-stac": {
+  "volumeDb": -3.2,
+  "reference": "MOHorn_stac_A2_v3_rr1.wav",
+  "measured": -16.82864789038775
+ },
+ "trombone-sus": {
+  "volumeDb": 9.2,
+  "reference": "tenortbn_sus_F2_v3_1.wav",
+  "measured": -29.23373035565007
+ },
+ "trombone-stac": {
+  "volumeDb": 6.7,
+  "reference": "tenortbn_stac_F2_v4_rr1.wav",
+  "measured": -26.667665216785885
+ },
+ "tuba-stac": {
+  "volumeDb": 14.1,
+  "reference": "Tuba3_stac_D2_v2_rr1_Sum.wav",
+  "measured": -34.08081900320597
+ },
+ "clarinet-sus": {
+  "volumeDb": -5.4,
+  "reference": "DCClar_susLong_A#3_v3_rr1_sum.wav",
+  "measured": -14.582984641344046
+ },
+ "clarinet-stac": {
+  "volumeDb": 0,
+  "reference": "DCClar_stac_A#3_v3_rr1_sum.wav",
+  "measured": -20.000795103867897
+ },
+ "bassoon-stac": {
+  "volumeDb": -0.3,
+  "reference": "PSBassoon_E2_v2_rr1.wav",
+  "measured": -19.71500594981321
+ },
+ "flute-sus": {
+  "volumeDb": -2.3,
+  "reference": "LDFlute_susNV_C4_v3_1.wav",
+  "measured": -17.674876207935505
+ },
+ "glockenspiel": {
+  "volumeDb": 19.1,
+  "reference": "glock_medium_C6.wav",
+  "measured": -39.08571942951362
+ },
+ "marimba": {
+  "volumeDb": 8.5,
+  "reference": "Marimba_hit_Outrigger_C4_loud_01.wav",
+  "measured": -28.469420047781252
+ },
+ "xylophone": {
+  "volumeDb": -1.3,
+  "reference": "Xylo_Medium_G5_ff_01_far.wav",
+  "measured": -18.744296060331667
+ },
+ "bowed-vibraphone": {
+  "volumeDb": 11.3,
+  "reference": "Vibes_bowed_D4_rr1_Main.wav",
+  "measured": -31.279392699157686
+ },
+ "timpani": {
+  "volumeDb": 4.2,
+  "reference": "Timpani2_Hit_v4_rr1_Sum.wav",
+  "measured": -24.152727418947123
+ },
+ "timpani-roll": {
+  "volumeDb": 7.2,
+  "reference": "Timpani1_Roll_v5_rr1_Sum.wav",
+  "measured": -27.171658822737324
+ },
+ "bass-drum": {
+  "volumeDb": 0.3,
+  "reference": "bassdrum_hit_ff.wav",
+  "measured": -20.343238534206364
+ },
+ "toms": {
+  "volumeDb": 5,
+  "reference": "Tom 1/Mallet/TomH_HitM_v4_rr1_Mid.wav",
+  "measured": -24.951743233364606
+ },
+ "snare": {
+  "volumeDb": -2.5,
+  "reference": "Snare2-HitSN_v9_rr1_Sum.wav",
+  "measured": -17.506586579201194
+ },
+ "claves": {
+  "volumeDb": 14.7,
+  "reference": "Claves1_Hit_v3_rr1_Sum.wav",
+  "measured": -34.661810292751724
+ },
+ "anvil": {
+  "volumeDb": 1.7,
+  "reference": "Anvil_Hit1_v3_rr1_Mid.wav",
+  "measured": -21.687975122381577
+ },
+ "brake-drum": {
+  "volumeDb": 11.2,
+  "reference": "BrakeDrum2_Hammer3_v3_rr1_Mid.wav",
+  "measured": -31.22420014329833
+ },
+ "cymbal": {
+  "volumeDb": -5,
+  "reference": "susCymb1_hit_fff1.wav",
+  "measured": -15.002611047575975
+ },
+ "gong": {
+  "volumeDb": -5.6,
+  "reference": "gong_fff.wav",
+  "measured": -14.449431729761681
+ },
+ "piano-pedal": {
+  "volumeDb": -2.6,
+  "reference": "Player_vl2_rr1_F3.wav",
+  "measured": -17.376384686894013
+ }
+}

@@ -1,0 +1,388 @@
+/*
+ * Survival Log UI kit: design tokens (docs/UI.md §2–§6). Every value is labelled in docs/UI.md: the twelve
+ * measured tokens of docs/ART.md §8 keep their names and values; the rest are measured on the source screenshots
+ * (sample boxes in docs/UI.md), derived from those, or decided. Components read these; the only raw colours in the
+ * component files are one-off gradient stops and HUD scrims, each beside the source frame it matches.
+ */
+:root {
+  /* ---- colour: docs/ART.md §8 (measured) ------------------------------------------------------------------- */
+  --ui-panel: #232522;
+  --ui-text: #e1e1df;
+  --ui-confirm: #328a33;
+  --ui-buy: #64923e;
+  --ui-stat-good: #4c7642;
+  --ui-gold: #e3c761;
+  --ui-objective: #8c862f;
+  --ui-primary: #f8ad34;
+  --ui-secondary: #e8ae06;
+  --ui-secondary-light: #fdcc2d;
+  --ui-danger: #ac3b2a;
+  --ui-danger-badge: #6b0102;
+  --ui-info: #69c5e4;
+
+  /* ---- colour: measured on the source, one sample box each (docs/UI.md §2.2) ---------------------------------- */
+  --ui-text-strong: #f4f6f3;
+  --ui-gold-pale: #ffe8ad;
+  --ui-gold-deep: #d79e02;
+  --ui-amber: #fbbb09;
+  --ui-fresh: #71ae72;
+  --ui-success: #87e18e;
+  --ui-online: #5ed67f;
+  --ui-xp: #68b4fa;
+  --ui-alert: #d73041;
+  --ui-stat-warn: #877524;
+  --ui-cold-cell: #12273a;
+  --ui-tag-must: #743a2a;
+  --ui-buy-rest: #5d833b;
+  --ui-dial-night: #222d2f;
+  --ui-dial-day: #5e4139;
+  --ui-dial-night-ring: #2a3538;
+  --ui-dial-day-ring: #66483f;
+  --ui-dial-rim: rgb(205 184 176 / 0.8);
+  --ui-dial-groove: rgb(0 0 0 / 0.28);
+  --ui-dial-marker: #f2c230;
+  --ui-dial-numeral: #dcdcd8;
+  --ui-dial-hand-shadow: rgb(0 0 0 / 0.4);
+
+  /* ---- colour: derived from a measurement, moved for contrast or for 4:2:0 chroma loss (docs/UI.md §2.3) ---- */
+  --ui-text-dim: #9c9e9a;
+  --ui-text-faint: #6d6f6b;
+  --ui-text-on-light: #2a1c05;
+  --ui-positive: #b8ebb2;
+  --ui-chilled: #86983f;
+  --ui-tag-must-text: #f6c2ad;
+  --ui-danger-text: #f0715f;
+  --ui-buy-face: #5b813a;
+  /* Buy gradients: CIELAB steps from --ui-buy-face at its hue (docs/UI.md §5.2) */
+  --ui-buy-hover-top: #688e46;
+  --ui-buy-hover-bottom: #4c722c;
+  --ui-buy-rest-top: #5e843c;
+  --ui-buy-rest-face: #517730;
+  --ui-buy-rest-bottom: #426822;
+
+  /* ---- colour: decided (docs/UI.md §2.4) ------------------------------------------------------------------ */
+  --ui-stat-sat: #d9835f;
+  --ui-stat-mor: #eaa6bb;
+  --ui-stat-sta: #f3d23c;
+  --ui-stat-life: #e25454;
+  --ui-stat-bad: #8e2a22;
+  --ui-buy-label: #ffffff;
+  --ui-buy-edge: #4b6d30;
+  --ui-expiring: #d9a53a;
+
+  /* ---- surfaces ---------------------------------------------------------------------------------------------- */
+  /* rgb(33 36 32 / 0.9) composites to --ui-panel over a scene of sRGB 55 (the source's median behind panels) */
+  --ui-panel-rgb: 33 36 32;
+  --ui-panel-alpha: 0.9;
+  --ui-panel-bg: rgb(var(--ui-panel-rgb) / var(--ui-panel-alpha));
+  --ui-panel-solid: #1d1f1c;
+  --ui-tip-edge: rgb(227 199 97 / 0.55);
+  --ui-chilled-text: #b9c97a;
+  --ui-nav-shade: rgb(6 6 5 / 0.6);
+  --ui-nav-shade-deep: rgb(6 6 5 / 0.7);
+  --ui-frame-fill: rgb(56 57 54 / 0.6);
+  --ui-frame-blur: 20px;
+  --ui-panel-sunk: rgb(10 11 10 / 0.55);
+  --ui-panel-edge: rgb(255 255 255 / 0.08);
+  --ui-line: rgb(255 255 255 / 0.07);
+  --ui-row-hover: rgb(255 255 255 / 0.055);
+  --ui-row-selected: rgb(227 199 97 / 0.1);
+  --ui-hud-bg-strong: rgb(24 25 22 / 0.9);
+  --ui-hud-edge: rgb(255 255 255 / 0.16);
+  --ui-scrim: rgb(0 0 0 / 0.62);
+  --ui-control: #393b36;
+  --ui-control-deep: #252722;
+  --ui-control-edge: #4a4c46;
+  --ui-track: #121619;
+  --ui-thumb: #555654;
+  --ui-grid-line: #2d2e30;
+  --ui-cell-top: #0d0e11;
+  --ui-cell-bottom: #1a1b1f;
+  --ui-slot-top: #25292c;
+  --ui-slot-bottom: #2d3134;
+  --ui-slot-edge: #3c4044;
+  --ui-slot-edge-hover: #7b7f82;
+  --ui-cold-edge: #1e3b56;
+  --ui-badge-bg: rgb(0 0 0 / 0.85);
+  --ui-tab-on-bg: #2b271c;
+  --ui-gold-chip: #4f4112;
+
+  /* ---- type (docs/UI.md §3): Noto Sans and Noto Sans SC (fonts.css, SIL OFL), the system stacks behind them ---- */
+  --ui-font-latin: 'Noto Sans', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial;
+  --ui-font-cjk: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Source Han Sans SC';
+  --ui-font: var(--ui-font-latin), var(--ui-font-cjk), sans-serif;
+  --ui-font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', var(--ui-font-cjk), monospace;
+  --ui-font-display: 'Arial Black', 'Segoe UI Black', 'Helvetica Neue', Arial, var(--ui-font-cjk), sans-serif;
+
+  --ui-fs-body: 14px;
+  --ui-fs-hud: 17px;
+  --ui-fs-hud-lg: 19px;
+  --ui-fs-title: 20px;
+  --ui-fs-floor: 22px;
+  --ui-fs-heading: 28px;
+  --ui-fs-clock: 32px;
+  --ui-fs-display: 68px;
+
+  --ui-lh-body: 20px;
+  --ui-lh-hud: 24px;
+  --ui-lh-hud-lg: 26px;
+  --ui-lh-title: 28px;
+  --ui-lh-heading: 36px;
+
+  --ui-fw-regular: 400;
+  --ui-fw-medium: 500;
+  --ui-fw-bold: 700;
+  --ui-fw-black: 900;
+  --ui-track-caps: 0.08em;
+  --ui-track-button: 0.06em;
+
+  /* ---- 4 px grid --------------------------------------------------------------------------------------------- */
+  --ui-space-1: 4px;
+  --ui-space-2: 8px;
+  --ui-space-3: 12px;
+  --ui-space-4: 16px;
+  --ui-space-5: 20px;
+  --ui-space-6: 24px;
+  --ui-space-8: 32px;
+  --ui-space-10: 40px;
+  --ui-space-12: 48px;
+  --ui-space-16: 64px;
+
+  --ui-radius-bar: 2px;
+  --ui-radius-control: 4px;
+  --ui-radius-slot: 6px;
+  --ui-radius-panel: 10px;
+  --ui-radius-modal: 12px;
+  --ui-radius-pill: 999px;
+
+  --ui-control-h: 36px;
+  --ui-control-h-sm: 28px;
+  --ui-control-h-lg: 52px;
+  --ui-hud-button: 72px;
+  --ui-hud-button-lg: 92px;
+
+  /* ---- inventory grid: 64 px cells (the icons' native size) at a 68 px pitch; slot = n × pitch − gap -------- */
+  --ui-cell: 64px;
+  --ui-cell-gap: 4px;
+  --ui-cell-pitch: 68px;
+  --ui-icon-fill: 0.66;
+  --ui-fresh-bar-h: 4px;
+  --ui-status-badge: 20px;
+
+  /* ---- elevation --------------------------------------------------------------------------------------------- */
+  --ui-shadow-panel: 0 12px 32px rgb(0 0 0 / 0.42), 0 2px 6px rgb(0 0 0 / 0.3);
+  --ui-shadow-pop: 0 8px 20px rgb(0 0 0 / 0.55);
+  --ui-shadow-pane: 0 2px 10px rgb(0 0 0 / 0.35);
+  --ui-shadow-modal: 0 24px 64px rgb(0 0 0 / 0.6);
+  --ui-text-shadow-hud: 0 1px 2px rgb(0 0 0 / 0.85), 0 0 6px rgb(0 0 0 / 0.45);
+
+  /* ---- focus ------------------------------------------------------------------------------------------------- */
+  --ui-focus: var(--ui-gold-pale);
+  --ui-focus-ring: 0 0 0 2px rgb(0 0 0 / 0.85), 0 0 0 4px var(--ui-focus);
+
+  /* ---- motion (docs/UI.md §6): visible feedback starts at 0 ms and settles within 100 ms -------------------- */
+  --ui-dur-press: 60ms;
+  --ui-dur-hover: 90ms;
+  --ui-dur-tip: 120ms;
+  --ui-dur-open: 180ms;
+  --ui-dur-toast: 240ms;
+  --ui-dur-modal: 280ms;
+  --ui-dur-bar: 400ms;
+  --ui-dur-toast-hold: 3200ms;
+  --ui-delay-tip: 350ms;
+  --ui-ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ui-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ui-ease-inout: cubic-bezier(0.4, 0, 0.2, 1);
+  --ui-ease-pop: cubic-bezier(0.34, 1.4, 0.64, 1);
+
+  /* ---- layers ------------------------------------------------------------------------------------------------ */
+  --ui-z-hud: 10;
+  --ui-z-window: 20;
+  --ui-z-drag: 40;
+  --ui-z-toast: 50;
+  --ui-z-modal: 60;
+  --ui-z-tip: 70;
+
+  /* ---- component colours: the literal colours of each component, named by its rule and property. Change a
+     look here; the component files read colours only from tokens (tests/e2e/ui-tile.spec.js). */
+  /* base.css */
+  --ui-scrollbar-bg: rgb(255 255 255 / 0.04);
+  /* components.css */
+  --ui-btn-fg: #dcdeda;
+  --ui-btn-shadow: rgb(255 255 255 / 0.12);
+  --ui-btn-hover-shadow: rgb(255 255 255 / 0.18);
+  --ui-btn-hover-shadow-2: rgb(255 255 255 / 0.22);
+  --ui-btn-active-shadow: rgb(0 0 0 / 0.35);
+  --ui-btn-focus-visible-shadow: rgb(255 255 255 / 0.12);
+  --ui-btn-primary-bg: #fbbb4c;
+  --ui-btn-primary-bg-2: #ee9f24;
+  --ui-btn-primary-edge: #c7851d;
+  --ui-btn-primary-shadow: rgb(255 255 255 / 0.35);
+  --ui-btn-primary-shadow-2: rgb(248 173 52 / 0.25);
+  --ui-btn-secondary-fg: #4a2e00;
+  --ui-btn-secondary-edge: #c79205;
+  --ui-btn-secondary-shadow: rgb(255 255 255 / 0.4);
+  --ui-btn-confirm-bg: #2f8431;
+  --ui-btn-confirm-bg-2: #2b7a2d;
+  --ui-btn-confirm-bg-3: #276f29;
+  --ui-btn-confirm-fg: #f2fff1;
+  --ui-btn-confirm-edge: #226424;
+  --ui-btn-confirm-btn-lg-bg: #36903a;
+  --ui-btn-confirm-btn-lg-bg-2: #2d7f2e;
+  --ui-btn-confirm-btn-lg-edge: #27702a;
+  --ui-btn-danger-bg: #b8452f;
+  --ui-btn-danger-bg-2: #963121;
+  --ui-btn-danger-fg: #fff1ec;
+  --ui-btn-danger-edge: #7d281b;
+  --ui-btn-objective-bg: rgb(41 43 38 / 0.96);
+  --ui-btn-objective-edge: #3a3c36;
+  --ui-btn-ghost-bg: rgb(12 13 14 / 0.7);
+  --ui-btn-ghost-edge: #3c3e41;
+  --ui-btn-disabled-bg: #2c2d31;
+  --ui-btn-disabled-fg: #7e7f81;
+  --ui-btn-disabled-edge: #36373b;
+  --ui-tab-bg: rgb(14 14 13 / 0.78);
+  --ui-tab-hover-edge: rgb(255 255 255 / 0.12);
+  --ui-tab-aria-selected-true-edge: #b8923a;
+  --ui-tab-aria-selected-true-shadow: rgb(227 199 97 / 0.08);
+  --ui-tabs-fill-tab-bg: #232426;
+  --ui-tabs-fill-tab-aria-selected-true-bg: #dda62a;
+  --ui-tabs-fill-tab-aria-selected-true-bg-2: #c28c14;
+  --ui-tabs-fill-tab-aria-selected-true-edge: #a8780e;
+  --ui-chip-hover-edge: rgb(227 199 97 / 0.6);
+  --ui-tag-must-shadow: rgb(255 160 130 / 0.3);
+  --ui-tag-gold-shadow: rgb(227 199 97 / 0.4);
+  --ui-tag-outline-bg: rgb(20 18 12 / 0.7);
+  --ui-tag-outline-shadow: rgb(227 199 97 / 0.7);
+  --ui-tag-quiet-bg: rgb(255 255 255 / 0.08);
+  --ui-tag-quiet-fg: #b9bbb7;
+  --ui-badge-danger-fg: #fff1ef;
+  --ui-badge-danger-shadow: rgb(255 120 110 / 0.45);
+  --ui-badge-good-bg: #2f5a2b;
+  --ui-badge-good-fg: #eaffe6;
+  --ui-badge-good-shadow: rgb(140 220 130 / 0.35);
+  --ui-count-bg: #b01c2a;
+  --ui-count-fg: #fff;
+  --ui-tip-bg: rgb(36 38 33 / 0.97);
+  --ui-tip-fg: #d4d6d2;
+  --ui-tip-before-border-right-color: rgb(36 38 33 / 0.97);
+  --ui-tip-rich-edge: rgb(227 199 97 / 0.55);
+  --ui-tip-rich-bg: rgb(22 25 27 / 0.97);
+  --ui-tip-desc-fg: #b3b5b1;
+  --ui-bar-primary-fill: #f3a02a;
+  --ui-toast-bg: rgb(18 19 17 / 0.92);
+  /* inventory.css */
+  --ui-grid-shadow: rgb(0 0 0 / 0.35);
+  --ui-cell-shadow: rgb(0 0 0 / 0.5);
+  --ui-cell-drop-ok-bg: rgb(100 146 62 / 0.4);
+  --ui-cell-drop-bad-bg: rgb(172 59 42 / 0.45);
+  --ui-grid-cold-cell-shadow: rgb(0 0 0 / 0.4);
+  --ui-slot-shadow: rgb(255 255 255 / 0.05);
+  --ui-slot-hover-bg: #2d3135;
+  --ui-slot-hover-bg-2: #373b3f;
+  --ui-slot-pending-bg: #2c2a1c;
+  --ui-slot-pending-bg-2: #3b3824;
+  --ui-slot-pending-shadow: rgb(227 199 97 / 0.16);
+  --ui-slot-servings-fg: #fff;
+  --ui-slot-status-fg: #fff;
+  --ui-slot-status-shadow: rgb(0 0 0 / 0.5);
+  --ui-slot-status-expiring-fg: #2a1c05;
+  --ui-slot-status-expired-shadow: rgb(255 120 110 / 0.6);
+  --ui-slot-status-expired-shadow-2: rgb(0 0 0 / 0.5);
+  --ui-slot-status-mold-status: #56642c;
+  --ui-slot-fresh-bg: rgb(0 0 0 / 0.55);
+  --ui-slot-frozen-before-bg: #dfe9f1;
+  --ui-slot-frozen-before-bg-2: #f6fafd;
+  /* hud.css */
+  --ui-daybar-before-bg: rgb(4 4 2 / 0.86);
+  --ui-weather-bg: rgb(18 21 17 / 0.92);
+  --ui-weather-shadow: rgb(255 255 255 / 0.06);
+  --ui-day-count-fg: #e4e5e3;
+  --ui-day-count-text-shadow: rgb(0 0 0 / 0.6);
+  --ui-loop-bg: rgb(40 42 37 / 0.92);
+  --ui-clock-digits-bg: rgb(4 10 14 / 0.88);
+  --ui-clock-digits-bg-2: rgb(4 10 14 / 0.74);
+  --ui-clock-digits-bg-3: rgb(4 10 14 / 0);
+  --ui-clock-digits-text-shadow: rgb(105 197 228 / 0.7);
+  --ui-clock-digits-text-shadow-2: rgb(105 197 228 / 0.35);
+  --ui-nav-before-mask: #000;
+  --ui-nav-icon-bg: rgb(14 14 11 / 0.8);
+  --ui-nav-icon-shadow: rgb(255 255 255 / 0.12);
+  --ui-nav-icon-fg: #d6d7d3;
+  --ui-nav-item-hover-nav-icon-shadow: rgb(227 199 97 / 0.7);
+  --ui-floors-bg: rgb(18 16 13 / 0.86);
+  --ui-floor-fg: #b9bcbb;
+  --ui-floor-aria-current-true-bg: rgb(64 52 20 / 0.3);
+  --ui-floor-aria-current-true-bg-2: rgb(92 72 20 / 0.95);
+  --ui-hudrow-fg: #c9ccca;
+  --ui-hudrow-power-fg: #aab5be;
+  --ui-stat-bg: rgb(16 17 15 / 0.86);
+  --ui-stat-shadow: rgb(255 255 255 / 0.06);
+  --ui-stat-fg: #fff;
+  --ui-stat-icon-glow: rgb(0 0 0 / 0.9);
+  --ui-stat-icon-glow-2: rgb(0 0 0 / 0.6);
+  --ui-stat-span-text-shadow: rgb(0 0 0 / 0.7);
+  --ui-objectives-before-bg: rgb(10 10 8 / 0.84);
+  --ui-objectives-before-bg-2: rgb(10 10 8 / 0.74);
+  --ui-objectives-before-bg-3: rgb(10 10 8 / 0);
+  --ui-objectives-before-mask: #000;
+  --ui-obj-head-edge: rgb(227 199 97 / 0.28);
+  --ui-obj-head-fg: #d9dcd9;
+  --ui-obj-fg: #c8cfd0;
+  --ui-obj-timer-fg: #c3c8c7;
+  --ui-quest-bg: rgb(50 51 46 / 0.72);
+  --ui-quest-prog-bg: rgb(16 18 15 / 0.9);
+  --ui-quest-prog-fg: #fefffc;
+  --ui-toolbtn-bg: rgb(57 59 54 / 0.88);
+  --ui-toolbtn-shadow: rgb(255 255 255 / 0.08);
+  --ui-toolbtn-fg: #e7e9e6;
+  --ui-toolbtn-hover-shadow: rgb(227 199 97 / 0.7);
+  --ui-toolbtn-main-bg: rgb(37 39 34 / 0.92);
+  --ui-queue-slots-bg: rgb(38 36 33 / 0.9);
+  --ui-queue-slots-shadow: rgb(255 255 255 / 0.08);
+  --ui-queue-slot-bg: #313330;
+  --ui-queue-slot-current-shadow: rgb(227 199 97 / 0.6);
+  --ui-speed-bg: rgb(33 30 27 / 0.9);
+  --ui-speed-shadow: rgb(255 255 255 / 0.08);
+  --ui-speed-btn-fg: #afafab;
+  --ui-speed-btn-aria-pressed-true-edge: #c9a13f;
+  --ui-speed-btn-aria-pressed-true-bg: rgb(67 58 24 / 0.95);
+  --ui-speed-btn-aria-pressed-true-fg: #f3cc32;
+  --ui-wish-bg: rgb(22 19 15 / 0.9);
+  --ui-wish-shadow: rgb(255 255 255 / 0.08);
+  --ui-wish-timer-bg: rgb(57 52 49 / 0.95);
+  --ui-wish-timer-fg: #c9c9c5;
+  --ui-alert-bg: rgb(43 34 26 / 0.92);
+  --ui-alert-shadow: rgb(255 255 255 / 0.08);
+  --ui-alert-fg: #e8c956;
+  --ui-alert-new-bg: rgb(83 63 53 / 0.94);
+  --ui-alert-pulse-50-shadow: rgb(232 201 86 / 0.55);
+  --ui-alert-pulse-50-shadow-2: rgb(232 201 86 / 0.25);
+  --ui-crisis-bg: #5a1614;
+  --ui-crisis-bg-2: #8a1c1d;
+  --ui-crisis-bg-3: rgb(138 28 29 / 0);
+  --ui-crisis-fg: #fff;
+  --ui-crisis-text-shadow: rgb(0 0 0 / 0.6);
+}
+
+/* Chinese: CJK first so Han glyphs never borrow a Latin fallback's metrics; more leading, lighter tracking. Bold stays
+   700: Noto Sans SC carries a true bold (its weight axis spans 400 … 700), and font-synthesis is off, so nothing is faked. */
+:lang(zh) {
+  --ui-font: var(--ui-font-cjk), var(--ui-font-latin), sans-serif;
+  --ui-lh-body: 22px;
+  --ui-lh-hud: 26px;
+  --ui-lh-hud-lg: 28px;
+  --ui-lh-title: 30px;
+  --ui-lh-heading: 40px;
+  --ui-track-caps: 0.04em;
+  --ui-track-button: 0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ui-dur-open: 0ms;
+    --ui-dur-toast: 80ms;
+    --ui-dur-modal: 80ms;
+    --ui-dur-bar: 0ms;
+  }
+}

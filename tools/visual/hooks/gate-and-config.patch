@@ -1,0 +1,170 @@
+diff --git a/.gitattributes b/.gitattributes
+index a29159b..82285cc 100644
+--- a/.gitattributes
++++ b/.gitattributes
+@@ -23,3 +23,4 @@ docs/art/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+ docs/art/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+ docs/art/**/*.webp filter=lfs diff=lfs merge=lfs -text
+ docs/art/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
++tests/visual/baselines/*.png filter=lfs diff=lfs merge=lfs -text
+diff --git a/package.json b/package.json
+index 2dcc08c..64bbb8d 100644
+--- a/package.json
++++ b/package.json
+@@ -20,6 +20,10 @@
+     "assets:verify": "node tools/fetch-assets.mjs --verify",
+     "asset-lock": "node tools/asset-lock.mjs",
+     "coverage": "node tools/coverage.mjs",
++    "art-metrics": "node tools/art-metrics.mjs",
++    "visual": "node tools/visual/run.mjs",
++    "budgets": "node tools/budgets/run.mjs",
++    "balance": "node tools/balance/run.mjs --seeds 50",
+     "audio": "node tools/audio/build.mjs",
+     "materials:build": "tools/materials/build.sh",
+     "materials:previews": "tools/materials/build.sh --previews",
+diff --git a/tests/gate-quality.test.js b/tests/gate-quality.test.js
+new file mode 100644
+index 0000000..51c2c3f
+--- /dev/null
++++ b/tests/gate-quality.test.js
+@@ -0,0 +1,27 @@
++// @ts-check
++// The WP-P0-11 gate checks judge the phase the run is judged by (tools/gate/checks.mjs gatePhase: the --signoff
++// phase, else STATUS.md's), passed to each tool as --phase; the release check runs only for --final and the P5
++// signoff, at P5 at least.
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { CHECKS, gatePhase } from '../tools/gate/checks.mjs';
++
++const check = (/** @type {string} */ id) => {
++  const c = CHECKS.find((x) => x.id === id);
++  if (!c) throw new Error(`no gate check '${id}'`);
++  return c;
++};
++
++test('gate --signoff P1 with STATUS.md at P0: rubric and art-metrics judge P1, release judges P5', async () => {
++  const p1 = gatePhase({ signoff: 1 }, { id: 'P0' });
++  assert.equal(p1, 'P1');
++  const rubric = await check('rubric').run({ quick: false, phase: p1 });
++  assert.equal(rubric.state, 'fail', 'no P1 scores yet');
++  assert.match(rubric.summary, /^P1:/, 'the signoff phase, not the STATUS.md phase');
++  const art = await check('art-metrics').run({ quick: false, phase: p1 });
++  assert.match(art.summary, /^P1:/, 'the content of P1 (every survivor, home and floor)');
++  const release = await check('release').run({ quick: false, phase: gatePhase({ final: true }, { id: 'P0' }) });
++  assert.match(release.summary, /^P5:/, '--final judges the release at P5');
++  assert.equal(check('release').finalOnly, true);
++  assert.deepEqual([check('rubric').requiredFrom, check('release').requiredFrom, check('ledgers').quick], [1, 5, true]);
++});
+diff --git a/tools/gate.mjs b/tools/gate.mjs
+index dc71b57..4e34e90 100644
+--- a/tools/gate.mjs
++++ b/tools/gate.mjs
+@@ -129,6 +129,7 @@ for (const c of CHECKS) {
+   let row;
+   if (pending) row = { ...meta, state: 'pending', summary: pending };
+   else if (args.quick && !c.quick) row = { ...meta, state: 'skipped', summary: 'not in --quick' };
++  else if (c.finalOnly && !args.final && !(signoff != null && signoff >= c.requiredFrom)) row = { ...meta, state: 'skipped', summary: `only for --final and the P${c.requiredFrom} signoff` };
+   else {
+     const start = performance.now();
+     try {
+@@ -150,7 +151,7 @@ const blocking = rows.filter((r) => r.state === 'fail' || (needed(r) && r.state
+ const advisory = signoff != null ? rows.filter((r) => !needed(r) && r.state === 'fail') : [];
+ const ok = blocking.length === 0;
+ const count = (/** @type {string} */ s) => rows.filter((r) => r.state === s).length;
+-const tally = `${count('pass')} passed, ${count('fail')} failed, ${count('pending')} pending${count('skipped') ? `, ${count('skipped')} not in --quick` : ''}`;
++const tally = `${count('pass')} passed, ${count('fail')} failed, ${count('pending')} pending${count('skipped') ? `, ${count('skipped')} skipped` : ''}`;
+ const why = ok ? '' : ` — ${blocking.map((r) => `${r.id} ${r.state}`).join(', ')}`;
+ log(`${ok ? 'PASS' : 'FAIL'} ${modeName}: ${tally} (${secs(performance.now() - t0)})${why}${advisory.length ? `; advisory failures: ${advisory.map((r) => r.id).join(', ')}` : ''}`);
+ 
+diff --git a/tools/gate/checks.mjs b/tools/gate/checks.mjs
+index 73aa847..e22777d 100644
+--- a/tools/gate/checks.mjs
++++ b/tools/gate/checks.mjs
+@@ -15,7 +15,7 @@ import { ROOT } from './port.mjs';
+ import { exec, lastJson, tail } from './exec.mjs';
+ 
+ /** Node tests on master (434 at the opening of P0). The count may only grow: raise it when tests are added. */
+-export const MIN_TESTS = 818;
++export const MIN_TESTS = 876;
+ 
+ /** Extensions stored in git LFS under assets/ (.gitattributes). */
+ export const LFS_EXTENSIONS = ['glb', 'gltf', 'bin', 'ktx2', 'ogg', 'opus', 'wav', 'flac', 'hdr', 'exr', 'png', 'jpg', 'jpeg', 'webp', 'blend', 'fbx', 'mp4'];
+@@ -30,6 +30,7 @@ export const LFS_EXTENSIONS = ['glb', 'gltf', 'bin', 'ktx2', 'ogg', 'opus', 'wav
+  * @property {string} owner  the work package that builds it
+  * @property {number} requiredFrom  the first phase whose signoff requires it (0 = P0)
+  * @property {boolean} quick  part of --quick
++ * @property {boolean} [finalOnly]  runs only for --final and a signoff of its requiredFrom phase or later
+  * @property {() => string | null} pending  why it is not built yet, or null when it can run
+  * @property {(mode: RunMode) => Promise<CheckResult>} run
+  */
+@@ -103,18 +104,24 @@ export function gatePhase({ signoff = null, final = false }, current = phase())
+ /** The coverage tool's arguments: it prints before P3 and fails below 100% from P3, so it needs the phase. @param {RunMode} mode */
+ export const coverageArgs = (mode) => ['--json', '--phase', mode.phase || gatePhase({})];
+ 
++/** The WP-P0-11 tools' phase argument: the phase the run is judged by. @param {RunMode} mode */
++const phaseArgs = (mode) => ['--phase', mode.phase || gatePhase({})];
++/** The release is P5's: --final and the P5 signoff judge it at P5 at least. @param {RunMode} mode */
++const releasePhase = (mode) => `P${Math.max(5, Number((mode.phase || gatePhase({})).slice(1)))}`;
++
+ /**
+  * A check whose tool another package builds: pending until its entry file exists. `args` may depend on the run mode.
+- * @param {{ id: string, title: string, owner: string, entry: string, args?: string[] | ((mode: RunMode) => string[]), quick?: boolean, requiredFrom?: number, timeoutMs?: number }} spec
++ * @param {{ id: string, title: string, owner: string, entry: string, args?: string[] | ((mode: RunMode) => string[]), quick?: boolean, requiredFrom?: number, finalOnly?: boolean, timeoutMs?: number }} spec
+  * @returns {Check}
+  */
+-export function tool({ id, title, owner, entry, args = ['--json'], quick = false, requiredFrom = 0, timeoutMs = 15 * 60_000 }) {
++export function tool({ id, title, owner, entry, args = ['--json'], quick = false, requiredFrom = 0, finalOnly = false, timeoutMs = 15 * 60_000 }) {
+   return {
+     id,
+     title,
+     owner,
+     requiredFrom,
+     quick,
++    finalOnly,
+     pending: () => (has(entry) ? null : `${entry} not built yet (${owner})`),
+     async run(/** @type {RunMode} */ mode = { quick: false }) {
+       const r = await exec(node, [entry, ...(typeof args === 'function' ? args(mode) : args)], { timeoutMs });
+@@ -376,8 +383,41 @@ export const CHECKS = [
+   },
+   tool({ id: 'coverage', title: 'Config entities reachable and working in the sim (tools/coverage.mjs)', owner: 'WP-P0-03', entry: 'tools/coverage.mjs', args: coverageArgs, timeoutMs: 10 * 60_000 }),
+   tool({ id: 'visual', title: 'Visual regression: SSIM against tests/visual/baselines', owner: 'WP-P0-11', entry: 'tools/visual/run.mjs' }),
+-  tool({ id: 'art-metrics', title: 'Art metrics over the asset manifests (PBR, texel density, budgets, …)', owner: 'WP-P0-11', entry: 'tools/art-metrics.mjs' }),
+-  tool({ id: 'budgets', title: 'Performance and size budgets at 1920 × 1080, 4× CPU throttle', owner: 'WP-P0-11', entry: 'tools/budgets/run.mjs', timeoutMs: 30 * 60_000 }),
++  tool({ id: 'art-metrics', title: 'Art metrics over the asset manifests (PBR, texel density, budgets, the content of the phase)', owner: 'WP-P0-11', entry: 'tools/art-metrics.mjs', args: (mode) => ['--json', ...phaseArgs(mode)] }),
++  tool({ id: 'budgets', title: 'Performance and size budgets of the default renderer at 1920 × 1080, 4× CPU throttle, 10 Mbit/s', owner: 'WP-P0-11', entry: 'tools/budgets/run.mjs', args: (mode) => ['--json', ...phaseArgs(mode)], timeoutMs: 30 * 60_000 }),
++  tool({
++    id: 'balance',
++    title: 'Balance bots on the real sim, 50 seeds per difficulty: every band due by the phase inside, no crash, every save/load round trip identical (docs/BALANCE.md)',
++    owner: 'WP-P0-11',
++    entry: 'tools/balance/run.mjs',
++    args: (mode) => ['--seeds', '50', '--out', '-', '--json', ...phaseArgs(mode)],
++    timeoutMs: 30 * 60_000,
++  }),
++  tool({
++    id: 'ledgers',
++    title: 'Quality ledgers: bugs, scores, side-by-side pairs, playtest sessions and the band log; formats, append-only against master, approvers from the STATUS.md registry (docs/QUALITY.md §5–§6)',
++    owner: 'WP-P0-11',
++    entry: 'tools/balance/check.mjs',
++    args: ['ledgers', '--json'],
++    quick: true,
++  }),
++  tool({
++    id: 'rubric',
++    title: 'Rubric signoff of the judged phase: every axis and due side-by-side pair ≥ 4, none below its earlier best (docs/QUALITY.md §3)',
++    owner: 'WP-P0-11',
++    entry: 'tools/balance/check.mjs',
++    args: (mode) => ['rubric', '--json', ...phaseArgs(mode)],
++    requiredFrom: 1,
++  }),
++  tool({
++    id: 'release',
++    title: 'Release criteria: no open S1/S2, ≤ 20 S3; ≥ 20 playtest sessions (≥ 5 per persona, 0 crashes); ≥ 200 bot sessions (0 crashes, 100 % round trips); every budget met at HEAD',
++    owner: 'WP-P0-11',
++    entry: 'tools/balance/check.mjs',
++    args: (mode) => ['release', '--json', '--phase', releasePhase(mode)],
++    requiredFrom: 5,
++    finalOnly: true,
++  }),
+   tool({
+     id: 'asset-lock',
+     title: 'Locked sources verify (SHA-256), every shipped file traces to a build, and a 5% re-bake matches at SSIM ≥ 0.99',

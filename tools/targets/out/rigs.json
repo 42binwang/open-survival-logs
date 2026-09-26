@@ -1,0 +1,728 @@
+{
+ "about": "Rig table. Every value carries its source: 'measured' (a reference surface, inverted through AgX), 'derived'\n(computed from measured values, formula given) or 'decided' (a choice, reason given). Units: three.js intensity at toneMappingExposure 1.0; radiance = albedo x E / pi.",
+ "anchors": {
+  "day_exterior_sunlit": {
+   "what": "roof concrete in sun beside the dish shadow, t059 (native)",
+   "display_srgb_lum": 142.5,
+   "albedo_assumed": 0.35,
+   "anchor_kind": "surface",
+   "E": 2.22,
+   "card_code": 111.4
+  },
+  "day_exterior_shade": {
+   "what": "same concrete inside the dish shadow, t059",
+   "display_srgb_lum": 53.2,
+   "albedo_assumed": 0.35,
+   "anchor_kind": "surface",
+   "E": 0.291,
+   "card_code": 31.2
+  },
+  "day_interior": {
+   "what": "bedroom plaster out of the lamp pool (plaster-t069-b), t069 Day 1 11:50 (native)",
+   "display_srgb_lum": 90.2,
+   "albedo_assumed": 0.6,
+   "anchor_kind": "surface",
+   "E": 0.419,
+   "card_code": 42.6
+  },
+  "dusk_interior": {
+   "what": "storeroom plaster (plaster-ss04-a), ss_04 Day 1 17:20 (native)",
+   "display_srgb_lum": 66.1,
+   "albedo_assumed": 0.6,
+   "anchor_kind": "surface",
+   "E": 0.237,
+   "card_code": 25.5
+  },
+  "planning_t035": {
+   "what": "kitchen wall tiles, t035 (planning phase, countdown 03:28, time of day unknown)",
+   "display_srgb_lum": 124.1,
+   "albedo_assumed": 0.75,
+   "anchor_kind": "surface",
+   "E": 0.699,
+   "card_code": 61.2
+  },
+  "cold_wave_interior": {
+   "what": "kitchen wall tiles (tiles-t041-a), t041 Day 16 15:20 (native)",
+   "display_srgb_lum": 102.6,
+   "albedo_assumed": 0.75,
+   "anchor_kind": "surface",
+   "E": 0.441,
+   "card_code": 44.3
+  },
+  "night_lamps_wall": {
+   "what": "bedroom plaster at night, 0.95-2.1 m from the lamp (lamp-t033 patches), t033 (native)",
+   "display_srgb_lum": 46.5,
+   "albedo_assumed": 0.6,
+   "anchor_kind": "surface",
+   "E": 0.141,
+   "card_code": 13.3
+  },
+  "dawn_frame": {
+   "what": "frame median, ss_06 Day 2 07:50 (native)",
+   "display_srgb_lum": 74.1,
+   "albedo_assumed": 0.3,
+   "anchor_kind": "frame statistic",
+   "E": 0.577,
+   "card_code": 53.9
+  },
+  "night_unlit_frame": {
+   "what": "frame p5, t033 (unlit corners of the night home, native)",
+   "display_srgb_lum": 17.0,
+   "albedo_assumed": 0.3,
+   "anchor_kind": "frame statistic",
+   "E": 0.101,
+   "card_code": 7.4
+  },
+  "storm_night_frame": {
+   "what": "frame median, ss_05 Day 16 03:40 rain (native)",
+   "display_srgb_lum": 24.9,
+   "albedo_assumed": 0.3,
+   "anchor_kind": "frame statistic",
+   "E": 0.139,
+   "card_code": 13.0
+  },
+  "day_exterior_frame": {
+   "what": "frame median, t059 (native), for the dawn/day ratio",
+   "display_srgb_lum": 123.0,
+   "albedo_assumed": 0.3,
+   "anchor_kind": "frame statistic",
+   "E": 1.708,
+   "card_code": 99.3
+  },
+  "night_exterior_punchin": {
+   "what": "frame median, t036 (HUD-less punch-in; not used for the standard)",
+   "display_srgb_lum": 24.8,
+   "albedo_assumed": 0.3,
+   "anchor_kind": "frame statistic",
+   "E": 0.139,
+   "card_code": 13.0
+  }
+ },
+ "unusable": {
+  "t013": "blackout frame has a flat floor p1 33.7 = p5 33.9: a screen-space darkness overlay, not scene light; not an anchor"
+ },
+ "sun_share_of_horizontal_E": 0.869,
+ "rigs": {
+  "day": {
+   "sun": {
+    "cct_k": {
+     "value": 5500,
+     "source": "decided: highlights of the native day frames read 6000-6030 K (t059, t032) and the sun sits a little warmer than the sky"
+    },
+    "azimuth_deg": {
+     "value": 15,
+     "source": "decided: camera-facing walls in shade in t059 (native); sun behind the scene, right"
+    },
+    "elevation_deg": {
+     "value": 60,
+     "source": "decided: short soft shadows in t059; not triangulated"
+    },
+    "E_normal": {
+     "value": 2.227,
+     "source": "derived: E_sunlit 2.220 x sun share 0.869 / sin 60"
+    }
+   },
+   "sky": {
+    "cct_k": {
+     "value": 7500,
+     "source": "decided: clear-sky fill, standard daylight sky"
+    },
+    "E_horizontal": {
+     "value": 0.291,
+     "source": "derived: E_sunlit x (1 - sun share); shade/sunlit scene ratio 7.63:1 (t059)"
+    }
+   },
+   "ground_bounce": {
+    "cct_k": {
+     "value": 4000,
+     "source": "decided: warm ground (concrete, wood, brick)"
+    },
+    "E_horizontal": {
+     "value": 0.087,
+     "source": "decided: 0.3 x sky"
+    }
+   },
+   "interior_bake_target_E": {
+    "value": 0.419,
+    "source": "measured: day_interior anchor",
+    "card_code": 42.6
+   }
+  },
+  "dawn": {
+   "sun": {
+    "cct_k": {
+     "value": 3500,
+     "source": "decided: ss_06 is overcast and shows no sun disc or shadow; a weak warm sun keeps dawn distinct"
+    },
+    "azimuth_deg": {
+     "value": 75,
+     "source": "decided: east of the view; azimuth decreases through the day"
+    },
+    "elevation_deg": {
+     "value": 8,
+     "source": "decided"
+    },
+    "E_normal": {
+     "value": 0.4,
+     "source": "decided: weak; no shadows in ss_06"
+    }
+   },
+   "sky": {
+    "cct_k": {
+     "value": 6500,
+     "source": "measured: ss_06 mean 6190 K, highlights 6470 K"
+    },
+    "E_horizontal": {
+     "value": 0.521,
+     "source": "derived: dawn_frame E minus the sun term"
+    }
+   },
+   "interior_bake_target_E": {
+    "value": 0.142,
+    "source": "derived: day interior x dawn/day exterior ratio 0.338 (frame medians ss_06 / t059)",
+    "card_code": 13.4
+   }
+  },
+  "dusk": {
+   "status": "provisional: sun colour and direction rest on the HUD-less t049 punch-in; the only native dusk frame (ss_04, 17:20) is interior",
+   "sun": {
+    "cct_k": {
+     "value": 2600,
+     "source": "provisional: t049 (punch-in) mean 2330 K, highlights 2460 K"
+    },
+    "azimuth_deg": {
+     "value": 285,
+     "source": "provisional: slat shadows upper-left to lower-right in t049 (punch-in)"
+    },
+    "elevation_deg": {
+     "value": 12,
+     "source": "decided"
+    },
+    "E_normal": {
+     "value": 1.26,
+     "source": "derived: day sun E_normal x dusk/day interior ratio 0.566 (ss_04 / t069)"
+    }
+   },
+   "sky": {
+    "cct_k": {
+     "value": 8000,
+     "source": "decided: blue sky opposite a low sun"
+    },
+    "E_horizontal": {
+     "value": 0.165,
+     "source": "derived: day sky x the same ratio"
+    }
+   },
+   "interior_DUSK_set_E": {
+    "value": 0.197,
+    "source": "derived: the ss_04 anchor minus the LAMPS share 0.040 (the bed lamp is on in ss_04; upper bound from t033; P0-08 replaces it with the baked LAMPS value at that texel)",
+    "card_code": 20.7
+   },
+   "interior_with_lamps_E": {
+    "value": 0.237,
+    "source": "measured: dusk_interior anchor (ss_04 17:20, bed lamp on)",
+    "card_code": 25.5
+   },
+   "interior_light": {
+    "about": "Colour of the dusk interior light from ss_04 (17:20) against t069 (11:50): same materials, same home. The\nper-channel scene ratio dusk/day, times the day interior light colour as rigged (86.9 % 5500 K sun bounce +\n13.1 % 7500 K sky), gives the ss_04 light; removing the bed lamp's share (2700 K) gives the lamp-free DUSK set\ncolour, which is then split into the dusk sun (2600 K) and sky (8000 K) by least squares on chromaticity.",
+    "pairs": [
+     {
+      "material": "back-wall plaster",
+      "t069_rect": [
+       1570,
+       160,
+       1625,
+       240
+      ],
+      "ss04_rect": [
+       1045,
+       20,
+       1095,
+       140
+      ],
+      "dusk_set_cct_k": 8620,
+      "sun_share": 0.0,
+      "luminance_ratio_dusk_over_day": 0.559,
+      "chroma_ratio_rgb": [
+       0.874,
+       1.022,
+       1.159
+      ]
+     },
+     {
+      "material": "concrete floor",
+      "t069_rect": [
+       1080,
+       740,
+       1160,
+       800
+      ],
+      "ss04_rect": [
+       1000,
+       720,
+       1080,
+       800
+      ],
+      "dusk_set_cct_k": 6490,
+      "sun_share": 0.17,
+      "luminance_ratio_dusk_over_day": 0.917,
+      "chroma_ratio_rgb": [
+       1.042,
+       0.991,
+       0.963
+      ]
+     },
+     {
+      "material": "saw-table top",
+      "t069_rect": [
+       800,
+       760,
+       860,
+       800
+      ],
+      "ss04_rect": [
+       760,
+       600,
+       820,
+       640
+      ],
+      "dusk_set_cct_k": 5970,
+      "sun_share": 0.25,
+      "luminance_ratio_dusk_over_day": 0.821,
+      "chroma_ratio_rgb": [
+       1.075,
+       0.99,
+       0.879
+      ]
+     }
+    ],
+    "ss04_light_rgb_unit_lum": [
+     1.118,
+     0.975,
+     0.904
+    ],
+    "ss04_light_cct_k": 5730,
+    "dusk_set_rgb_unit_lum": [
+     0.953,
+     1.009,
+     1.049
+    ],
+    "dusk_set_cct_k": 6900,
+    "dusk_set_hex": "#f4fbff",
+    "dusk_set_label": "measured light, CCT 6900 K (slightly off the blackbody curve; a 6900 K blackbody is #f6f4ff)",
+    "sun_share_of_interior_light": 0.13,
+    "sky_share_of_interior_light": 0.87,
+    "literal_mix_cct_k": 6630,
+    "literal_mix_mired_gap": 5.9,
+    "fit_residual_xy": 0.0111
+   }
+  },
+  "night_lamps": {
+   "moon": {
+    "cct_k": {
+     "value": 7000,
+     "source": "decided: native night frames read 5440-5530 K overall with warm lamps in them (t033, ss_05)"
+    },
+    "azimuth_deg": {
+     "value": 15,
+     "source": "decided: same as the day sun"
+    },
+    "elevation_deg": {
+     "value": 45,
+     "source": "decided"
+    },
+    "E_normal": {
+     "value": 0.138,
+     "source": "derived: 70 % (decided) of the native night exterior level (ss_05 frame median) on the moon"
+    }
+   },
+   "sky": {
+    "cct_k": {
+     "value": 8000,
+     "source": "decided"
+    },
+    "E_horizontal": {
+     "value": 0.042,
+     "source": "derived: remaining 30 %"
+    }
+   },
+   "interior_NIGHT_set_E": {
+    "value": 0.101,
+    "source": "measured (frame statistic): unlit corners of t033",
+    "card_code": 7.4
+   },
+   "interior_with_lamps_E": {
+    "value": 0.141,
+    "source": "measured: t033 plaster wall 0.95-2.1 m from the lamp",
+    "card_code": 13.3
+   },
+   "lamps": {
+    "table_lamp": {
+     "I": {
+      "value": 0.284,
+      "source": "derived: geometric mean of the per-patch estimates (working below)",
+      "working": [
+       {
+        "patch": "wall, beside the shade",
+        "distance_m": 0.76,
+        "contrast": 1.82,
+        "I": 0.198
+       },
+       {
+        "patch": "wall, upper left",
+        "distance_m": 1.83,
+        "contrast": 1.29,
+        "I": 0.407
+       }
+      ]
+     },
+     "night_check": {
+      "value": [
+       [
+        "wall, above the shade",
+        1.04,
+        1.03
+       ],
+       [
+        "wall, beside the racket",
+        2.16,
+        1.09
+       ]
+      ],
+      "source": "measured: t033 wall reads 1.03-1.09:1 across 0.95-2.1 m, so the night pool is soft; inverse-square falloff is not claimed"
+     },
+     "cct_k": {
+      "value": 2700,
+      "source": "decided: warm bulb; the shade displays #daa850 (t069, lamps.json emitter_hex) via the emitter layer"
+     },
+     "geometry": {
+      "value": "bulb 0.95 m above the floor (table) or 1.5 m (floor lamp); decay 2; distance 6 m",
+      "source": "decided"
+     }
+    },
+    "calibration_target": {
+     "target_E": 0.141,
+     "target_code_plaster_060": 46.5,
+     "accept_E_range": [
+      0.122,
+      0.162
+     ],
+     "accept_code_range": [
+      41.5,
+      51.5
+     ],
+     "NIGHT_share_E": 0.101,
+     "LAMPS_share_E": 0.04,
+     "bare_point_light_check": [
+      {
+       "patch": "wall, above the shade",
+       "distance_m": 1.04,
+       "bare_point_light_direct_E": 0.262,
+       "predicted_total_E": 0.363,
+       "predicted_code": 84.0,
+       "measured_contrast": 1.03
+      },
+      {
+       "patch": "wall, beside the racket",
+       "distance_m": 2.16,
+       "bare_point_light_direct_E": 0.061,
+       "predicted_total_E": 0.162,
+       "predicted_code": 51.4,
+       "measured_contrast": 1.09
+      }
+     ],
+     "bare_point_light_ratio_near_far": 2.24,
+     "source": "measured anchor (t033); the bare point light at I from t069 fails it, so shades are required (decided)"
+    },
+    "wall_lamp": {
+     "I": {
+      "value": 0.284,
+      "source": "decided: same bulb as the table lamp (no native wall-lamp frame; t077 is a punch-in)"
+     },
+     "geometry": {
+      "value": "SpotLight at 1.9 m, aimed 35 deg down, angle 50 deg, penumbra 0.6, decay 2, distance 8 m",
+      "source": "decided"
+     }
+    },
+    "flashlight": {
+     "I": {
+      "value": 709.7,
+      "source": "derived: the pool centre must clip like t013 (display >= 250 on a 0.4 floor): E = 79.2; I = E x d^2 / cos 55 (floor incidence), d = 1.3 / sin 35 = 2.27 m; without the cosine I = 407, which displays at 244"
+     },
+     "I_without_cosine": 407.1,
+     "display_without_cosine": 244.2,
+     "cct_k": {
+      "value": 6500,
+      "source": "measured: t013 pool edge 6540 K (display)"
+     },
+     "geometry": {
+      "value": "SpotLight held at 1.3 m, aimed 35 deg down, angle 22 deg, penumbra 0.35, decay 2, distance 10 m",
+      "source": "decided"
+     }
+    }
+   }
+  },
+  "night_exterior": {
+   "status": "provisional: t036 (the only street-at-night frame, 11 240 K, S50 0.93) is a HUD-less punch-in and is not used; the level comes from native ss_05",
+   "moon": {
+    "cct_k": {
+     "value": 7000,
+     "source": "decided: native night frames read 5440-5530 K overall with warm lamps in them (t033, ss_05)"
+    },
+    "azimuth_deg": {
+     "value": 15,
+     "source": "decided: same as the day sun"
+    },
+    "elevation_deg": {
+     "value": 45,
+     "source": "decided"
+    },
+    "E_normal": {
+     "value": 0.138,
+     "source": "derived: 70 % (decided) of the native night exterior level (ss_05 frame median) on the moon"
+    }
+   },
+   "sky": {
+    "cct_k": {
+     "value": 8000,
+     "source": "decided"
+    },
+    "E_horizontal": {
+     "value": 0.042,
+     "source": "derived: remaining 30 %"
+    }
+   },
+   "check_total_horizontal_E": {
+    "value": 0.14,
+    "source": "derived: moon x sin 45 + sky = the ss_05 anchor, no double count",
+    "card_code": 13.1
+   }
+  },
+  "blackout": {
+   "interior_bake_target_E": {
+    "value": 0.101,
+    "source": "derived: the NIGHT set with the LAMPS layer off",
+    "card_code": 7.4
+   },
+   "note": "blackout frame has a flat floor p1 33.7 = p5 33.9: a screen-space darkness overlay, not scene light; not an anchor"
+  },
+  "storm": {
+   "night_interior_E": {
+    "value": 0.101,
+    "source": "decided: the NIGHT set (rain does not change the interior level)",
+    "card_code": 7.4
+   },
+   "night_exterior_E_horizontal": {
+    "value": 0.139,
+    "source": "measured (frame statistic): ss_05",
+    "card_code": 13.0
+   },
+   "day_interior_E": {
+    "value": 0.441,
+    "source": "decided: equal to the overcast cold-wave interior (no native daytime storm frame)",
+    "card_code": 44.3
+   },
+   "sky_cct_k": {
+    "value": 7000,
+    "source": "decided: ss_05 mean 5530 K includes warm windows; overcast sky slightly cool"
+   },
+   "lightning": {
+    "value": "DirectionalLight 8000 K, E 3.0, 80-150 ms, 1-3 flickers every 8-20 s",
+    "source": "decided: no lightning in the references"
+   }
+  },
+  "cold_wave": {
+   "sky_cct_k": {
+    "value": 6500,
+    "source": "measured: t041 mean 6020 K, highlights 6320 K"
+   },
+   "interior_bake_target_E": {
+    "value": 0.441,
+    "source": "measured: cold_wave_interior anchor",
+    "card_code": 44.3
+   }
+  },
+  "hemisphere_fallback": {
+   "about": "HemisphereLight fallback for movables without a probe. Sky and ground colours are normalised to unit\nluminance (linear sRGB), so a vertical face (mean of sky and ground) receives exactly `intensity` = the rig's\nvertical target E.",
+   "rigs": {
+    "day": {
+     "color_linear_unit_lum": [
+      1.1432,
+      0.9713,
+      0.8627
+     ],
+     "color_is": "5500 K blackbody",
+     "groundColor_linear_unit_lum": [
+      1.4148,
+      0.9238,
+      0.5334
+     ],
+     "groundColor_is": "4000 K blackbody",
+     "intensity": 0.419,
+     "vertical_face_E": 0.419,
+     "note": "set with Color.setRGB(r, g, b, THREE.LinearSRGBColorSpace)"
+    },
+    "dusk": {
+     "color_linear_unit_lum": [
+      0.953,
+      1.009,
+      1.049
+     ],
+     "color_is": "measured dusk light, CCT 6900 K",
+     "groundColor_linear_unit_lum": [
+      1.4148,
+      0.9238,
+      0.5334
+     ],
+     "groundColor_is": "4000 K blackbody",
+     "intensity": 0.197,
+     "vertical_face_E": 0.197,
+     "note": "set with Color.setRGB(r, g, b, THREE.LinearSRGBColorSpace)"
+    },
+    "night": {
+     "color_linear_unit_lum": [
+      0.9474,
+      0.9917,
+      1.2371
+     ],
+     "color_is": "8000 K blackbody",
+     "groundColor_linear_unit_lum": [
+      1.4148,
+      0.9238,
+      0.5334
+     ],
+     "groundColor_is": "4000 K blackbody",
+     "intensity": 0.101,
+     "vertical_face_E": 0.101,
+     "note": "set with Color.setRGB(r, g, b, THREE.LinearSRGBColorSpace); add LAMPS where on"
+    }
+   }
+  },
+  "fog": {
+   "about": "FogExp2 colour as scene-linear radiance: sky colour (linear, max 1) x E_h x 0.5 / pi, i.e. the radiance of a\n50 % grey card under the sky; density reasons as fog fractions at the look point (10.47 m) and the far floor\nedge at 60 deg (38.6 m along the ray).",
+   "rows": [
+    {
+     "rig": "storm night",
+     "sky_cct_k": 7000,
+     "E_h": 0.139,
+     "color_linear_rgb": [
+      0.0201,
+      0.0197,
+      0.0221
+     ],
+     "density_per_m": 0.012,
+     "fog_at_look_point": 0.016,
+     "fog_at_far_floor_edge_60deg": 0.193
+    },
+    {
+     "rig": "storm day",
+     "sky_cct_k": 7000,
+     "E_h": 0.441,
+     "color_linear_rgb": [
+      0.0636,
+      0.0625,
+      0.0702
+     ],
+     "density_per_m": 0.012,
+     "fog_at_look_point": 0.016,
+     "fog_at_far_floor_edge_60deg": 0.193
+    },
+    {
+     "rig": "cold wave",
+     "sky_cct_k": 6500,
+     "E_h": 0.441,
+     "color_linear_rgb": [
+      0.0702,
+      0.0662,
+      0.0697
+     ],
+     "density_per_m": 0.008,
+     "fog_at_look_point": 0.007,
+     "fog_at_far_floor_edge_60deg": 0.091
+    }
+   ],
+   "clear_weather": "none (decided: no distance haze across the roofs in t059 or ss_06)",
+   "density_reason": "decided: storm 0.012 per m keeps the look point clear (1.6 %) and greys the far floor edge (19 %); cold wave 0.008 is two-thirds of that (0.7 % / 9 %) because snow haze is thinner than rain"
+  },
+  "emitter": {
+   "display_color": "#daa850 (t069 shade)",
+   "bloom_emissive": {
+    "emissive": "2700 K #ffad59",
+    "emissiveIntensity": 3.0,
+    "scene_luminance": 1.555,
+    "source": "decided: 2700 K emissive luminance 0.518 x 3.0 = 1.55, 1.55x the bloom threshold 1.0, so shades bloom and diffuse surfaces (at most 0.64 in day sun) do not"
+   }
+  },
+  "overcast": {
+   "exterior_E_horizontal": {
+    "value": 0.441,
+    "source": "decided: the measured cold-wave level (t041 tiles under the open cutaway) stands for the overcast sky",
+    "card_code": 44.3
+   },
+   "set": {
+    "value": "OVERCAST: uniform overcast sky dome + its bounce, no sun, normalised to 1.0 in the reference room",
+    "source": "decided: overcast rigs must not reuse the DAY sun-bounce pattern"
+   }
+  },
+  "movables": {
+   "about": "Movable objects (probe-lit): vertical-surface irradiance target in the day interior, and the display codes a\nmaterial then shows. The day-interior anchor itself is a vertical wall (plaster-t069-b), so E 0.419 is a\nvertical-surface irradiance.",
+   "vertical_E_day_interior": 0.419,
+   "vertical_E_accept_codes_plaster_060": [
+    85.2,
+    95.2
+   ],
+   "items": {
+    "hoodie": {
+     "albedo_from": "t069",
+     "albedo_luminance": 0.281,
+     "display_code_at_day_interior_vertical_E": 58.6,
+     "on_screen_by_frame": {
+      "t035": "#352d24",
+      "t069": "#3a3b3a",
+      "ss04": "#262826"
+     }
+    },
+    "jeans": {
+     "albedo_from": "t069",
+     "albedo_luminance": 0.246,
+     "display_code_at_day_interior_vertical_E": 53.6,
+     "on_screen_by_frame": {
+      "t035": "#272827",
+      "t069": "#333638",
+      "ss04": "#323233"
+     }
+    },
+    "hair": {
+     "albedo_from": "hair_relative (k_up_1.25; dark cap core relative to the t069 hoodie)",
+     "albedo_luminance": 0.138,
+     "display_code_at_day_interior_vertical_E": 41.2,
+     "note": "cap faces up: E 0.419 x k_up; the rim-lit per-frame values stay in character_measured.items.hair",
+     "on_screen_by_frame": {
+      "t035": "#33200f",
+      "t069": "#333331",
+      "ss04": "#191a19"
+     }
+    },
+    "sneakers": {
+     "albedo_from": "t069",
+     "albedo_luminance": 0.256,
+     "display_code_at_day_interior_vertical_E": 55.1,
+     "on_screen_by_frame": {
+      "t035": "#3c2f24",
+      "t069": "#363838",
+      "ss04": "#1d1f1e"
+     }
+    },
+    "face": {
+     "albedo_from": "t035",
+     "albedo_luminance": 0.388,
+     "display_code_at_day_interior_vertical_E": 71.5,
+     "on_screen_by_frame": {
+      "t035": "#76563d"
+     }
+    }
+   }
+  }
+ },
+ "agx_scene_grey_for_display_0.5": 0.1795
+}

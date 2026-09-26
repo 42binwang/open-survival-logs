@@ -1,0 +1,205 @@
+{
+ "G01": {
+  "status": "✅",
+  "code": "`src/data/gen/items.js` (ITEMS); `src/sim/itemuse.js` (eatItem); `src/sim/inventory.js` (instWeightG, dims); `src/sim/spoilage.js` (tickSpoilage); `src/sim/wishes.js` (wishPool); `src/ui/invgrid.js` (itemTooltip: taste stars); `src/sim/suggest.js` (bestFood: taste)",
+  "test": "`tests/coverage_gn.test.js` › 'G01: the 173 codex foods carry satiety, morale, shelf life, weight, size, trade value, taste and wish power; eating and wishes use them'; `tests/coverage_gn.test.js` › 'G01 (taste): the survivor reaches for the tastier of two equal foods, and finishes leftovers first'"
+ },
+ "G08": {
+  "status": "✅",
+  "code": "`src/sim/itemuse.js` (eatItem, BIG_DISH_SAT: eat until full, leftovers); `src/sim/inventory.js` (instWeightG: leftover weight); `src/ui/invgrid.js` (servings / leftover badge)",
+  "test": "`tests/coverage_gn.test.js` › 'G08 (servings): multi-serving foods lose one serving per meal and weigh less as they go'; `tests/coverage_gn.test.js` › 'G08 (big dishes): a big dish is eaten until full and the rest keeps for the next meal'"
+ },
+ "H02": {
+  "status": "✅",
+  "code": "`src/data/gen/plants.js`; `src/sim/farming.js` (tickPlanter: HarvestTime window, overripe, DecayTime; harvestLeft); `src/ui/farmPanel.js` (cropRow countdown)",
+  "test": "`tests/coverage_gn.test.js` › 'H02: 34 codex plants with growth, light, cold, anomaly odds, yields, perfect yield/rate, seed return and withering'; `tests/farming.test.js` › 'ripe crops keep for HarvestTime, go overripe, wither after DecayTime and leave fertilizer when cleared (H02)'"
+ },
+ "H04": {
+  "status": "✅",
+  "code": "`src/content/funcSpecs.js` (212 toilet); `src/sim/spoilage.js` (containerRate compost ×5, COMPOST_MEAT_DAYS, compostMeat)",
+  "test": "`tests/coverage_gn.test.js` › 'H04: a toilet trip turns paper into basic fertilizer; the compost bin rots food into fertilizer five times faster'; `tests/coverage_gn.test.js` › 'H04: rotten meat left in the compost bin becomes basic fertilizer after a few days'"
+ },
+ "H05": {
+  "status": "✅",
+  "code": "`src/sim/farming.js` (planterEnv: sun, planter lamps, nearbyLight / GROW_LIGHTS for LED grow lights and the daylight lamp)",
+  "test": "`tests/coverage_gn.test.js` › 'H05: the Student’s balcony gets full sun and her sunroom lets daylight in; indoor pots get none'; `tests/coverage_gn.test.js` › 'H05: a switched-on, powered LED grow light lights the planters next to it'"
+ },
+ "I01": {
+  "status": "✅",
+  "code": "`src/sim/furnActions.js` (repairWorkbench, studyWorkbench: dayNumber Day 6+); `src/sim/crafting.js`",
+  "test": "`tests/coverage_gn.test.js` › 'I01: the broken workbench is fixed with its manual; without it, studying opens up later; Organize packs the work surface'; `tests/coverage_gn.test.js` › 'I01: on the morning of Day 6 the study button and the action agree'"
+ },
+ "I07": {
+  "status": "✅",
+  "code": "`src/sim/furnActions.js` (dismantle, recycle: RemoveGet materials, partial 1764); `src/content/funcSpecs.js` (227–230, 1764)",
+  "test": "`tests/coverage_gn.test.js` › 'I07: dismantling a config furniture piece returns its RemoveGet materials'; `tests/coverage_gn.test.js` › 'I07: recycling breaks a piece down into its materials; \"recover part of the materials\" keeps some'"
+ },
+ "I08": {
+  "status": "✅",
+  "code": "`src/sim/explore.js` (canSearch lockpick/crowbar, throwLure / NOISEMAKER); `src/ui/explorePanel.js` (throw-can HUD button); `src/sim/furnActions.js` (PLIERS: faster take-apart, full recycling)",
+  "test": "`tests/explore.test.js` › 'locked containers need a crowbar or a lockpick, and the tool breaks'; `tests/explore.test.js` › 'the tin-can noisemaker pulls nearby zombies toward the far corner and lets the exposure settle'; `tests/coverage_gn.test.js` › 'I08: tool pliers halve the time to take furniture apart and recover every material'"
+ },
+ "K02": {
+  "status": "✅",
+  "code": "`src/sim/traps.js` (TRAP_TYPES habitats, trapFits, placeTrap, catchChancePerHour, rollCatch HABITAT_BONUS); `src/ui/trapPanel.js` (trapPlace filters spots); `src/content/homes.js` (balcony trap spot)",
+  "test": "`tests/coverage_gn.test.js` › 'K02: all 19 codex prey can be caught; common prey outnumber rare ones and location shifts the odds'; `tests/coverage_gn.test.js` › 'K02: traps only work in their habitat — the bird net on a terrace, the mousetrap under a roof'"
+ },
+ "L02": {
+  "status": "✅",
+  "code": "`src/sim/weather.js` (indoorTemp, heatingByFloor, clothingWarmth / CLOTHING_WARMTH, feelCold); `src/content/itemEffects.js` (24114 scarf); `src/sim/itemuse.js` (useSundry wear)",
+  "test": "`tests/coverage_gn.test.js` › 'L02: an electric heater warms its floor while powered'; `tests/coverage_gn.test.js` › 'L02: the hand-knitted scarf keeps the survivor one level warmer for the rest of the run'; `tests/coverage_gn.test.js` › 'G12: a cup of brewed tea warms the survivor up like hot water'"
+ },
+ "M11": {
+  "status": "✅",
+  "code": "`src/sim/power.js` (blackout); `src/sim/weather.js` (cold wave); `src/sim/horde.js` (thugs); `src/sim/spoilage.js` (spreadMold, disinfect: crisis bar entry, survived credit); `src/sim/furnActions.js` (mold objective, disinfect)",
+  "test": "`tests/coverage_gn.test.js` › 'M11: mold spreading in a container escalates into a Mold Crisis that disinfectant spray clears'; `tests/coverage_gn.test.js` › 'M11: the Mold Crisis shows on the crisis bar with an objective, and clearing it counts as a survived crisis'"
+ },
+ "N02": {
+  "status": "✅",
+  "code": "`src/sim/explore.js` (arrive, tickZombies, surges, exposure, RAIDERS / raiderTick / resolveStandoff / raiderTribute / raiderTalkChance, retreat); `src/ui/explorePanel.js` (site view, HUD, minimap, raiders standoff)",
+  "test": "`tests/explore.test.js` › 'hostile survivors turn up at sites from their first day, more often at the later sites'; `tests/explore.test.js` › 'a raider standoff waits for a choice; paying off hands over a third of the backpack'; `tests/explore.test.js` › 'fighting raiders: they hit harder than zombies, carry supplies, and are not zombie kills'; `tests/explore.test.js` › 'raider odds follow morale, and they want medicine and food before scrap'; `tests/coverage_gn.test.js` › 'N02: sites with opening hours count down to dark; noise and nightfall bring surges of zombies'"
+ },
+ "C04": {
+  "status": "✅",
+  "code": "`src/content/effects.js` (EFFECTS); `src/sim/stats.js` (addEffect, refreshAutoEffects: encumbered; trackBreakdown: Mental Block)",
+  "test": "`tests/coverage_af.test.js` › 'C04 applied status effects'; `tests/fix_home.test.js` › 'an overloaded backpack makes the survivor Encumbered until the load comes off'; `tests/fix_home.test.js` › 'a breakdown that lasts for hours leaves a Mental Block behind'"
+ },
+ "D01": {
+  "status": "✅",
+  "code": "`src/sim/inventory.js` (createInventory, insert, fitsWeight, weightKg); `src/sim/stats.js` (refreshAutoEffects: Encumbered when overloaded)",
+  "test": "`tests/coverage_af.test.js` › 'D01 backpack grid and carry limit'; `tests/fix_home.test.js` › 'an overloaded backpack makes the survivor Encumbered until the load comes off'"
+ },
+ "D07": {
+  "status": "✅",
+  "code": "`src/sim/spoilage.js` (containerRate: fridge/freezer/cold room/terrace TERRACE_SPOIL, tickSpoilage); `src/sim/home.js` (isOutdoorTile, dropToFloor)",
+  "test": "`tests/coverage_af.test.js` › 'D07 spoilage multipliers, Expiring Soon, Requires Fridge'; `tests/fix_home.test.js` › 'food kept on the terrace spoils a little faster than indoors, in furniture and floor boxes alike'"
+ },
+ "D09": {
+  "status": "✅",
+  "code": "`src/sim/itemuse.js` (consumeOne, eatItem leftovers); `src/sim/inventory.js` (useOnce, instWeightG); `src/sim/furnActions.js` (disinfect: one spray use); `src/ui/invgrid.js` (servings badge)",
+  "test": "`tests/coverage_af.test.js` › 'D09 multi-use items and servings badge'; `tests/coverage_gn.test.js` › 'G08 (big dishes): a big dish is eaten until full and the rest keeps for the next meal'; `tests/coverage_af.test.js` › 'D08 mold crisis and disinfectant sprays'"
+ },
+ "F07": {
+  "status": "✅",
+  "code": "`src/sim/furnActions.js` (repair, reinforce clamp, reinforceCap, Advanced Repair gate); `src/sim/planning.js` (replaceTargets, queueReplaceOpening); `src/ui/planningPanel.js` (Replace button); `src/sim/horde.js` (opening HP)",
+  "test": "`tests/coverage_af.test.js` › 'F07 door and window repair and reinforcement'; `tests/fix_home.test.js` › 'an upgraded door replaces the front door in place; the old upgrade comes back as a package'; `tests/fix_home.test.js` › 'reinforcing near the cap never pushes durability past the maximum'"
+ },
+ "_renames": {
+  "solar output follows daylight and the weather; basement panels get no sun": "solar output follows daylight and the weather; panels only go on the terrace",
+  "ripe crops wither after DecayTime and leave fertilizer when cleared (H02)": "ripe crops keep for HarvestTime, go overripe, wither after DecayTime and leave fertilizer when cleared (H02)",
+  "committing to the Truth moves the final horde to Day 84 and the ending follows the next dawn": "committing to the Truth moves the final horde to the night of Day 83, and the ending lands on Day 84",
+  "committing to the Truth moves the final horde to Day 84 and the ending follows once it is beaten": "committing to the Truth moves the final horde to the night of Day 83, and the ending lands on Day 84",
+  "P04 the final horde is on the Day 87 calendar and moves to a committed route’s day at the next midnight": "P04 the final horde is on the Day 87 calendar and moves to the night before a committed route’s ending day at the next midnight",
+  "P10 Greenhouse: after the commitment it takes 24 flowers, 36 produce and a heater on every open floor": "P10 Greenhouse: after the commitment it takes 24 flowers, 36 produce and real heat on every open floor"
+ },
+ "O02": {
+  "status": "✅",
+  "code": "`src/sim/phone.js` (sendSms, postGroup, postDuePrompts, groupReply, groupShareFood, toggleVibrate, notify, markRead, recount); `src/sim/social.js` (addUnknown, dronePackageFallback, coordTips); `src/content/people.js` (GROUP_PROMPTS, UNKNOWN_SURVIVORS, COORD_TIPS); `src/ui/phonePanel.js`; `src/engine/audio.js` (phoneMessage → ring / vibrate)",
+  "test": "`tests/coverage_ot.test.js` › 'O02 unknown numbers: a courier leaves a drone at the door, a stranger asks for help, an airdrop tip sends the drone to coordinates'; `tests/fix_meta.test.js` › 'O02 new messages ring the phone, or buzz in vibrate mode; silent messages make no sound'"
+ },
+ "Q01": {
+  "status": "✅",
+  "code": "`src/sim/settlement.js` (LEDGER_KINDS, dailyCredit, addPoints, reconcilePoints, ledgerTotals, settleDay departed row); `src/sim/social.js` (leavePoints in neighborDies, survivorDies, veteranDaily); `src/ui/deathScreen.js` (keyStats, allStats); `src/ui/settlementPanel.js` (ledgerTable)",
+  "test": "`tests/coverage_ot.test.js` › 'Q01 people who die leave Planning Points on a separate \"Left by the Departed\" settlement row'; `tests/fix_meta.test.js` › 'Q01 the neighbor, a network survivor and the veteran leave Planning Points scaled by the deliveries they got'"
+ },
+ "Q10": {
+  "status": "✅",
+  "code": "`src/sim/social.js` (neighborDaily Day-30 unlock, wmAnswer); `src/sim/endings.js` (triggerEnding); `src/meta/achievements.js` (nextCharacterUnlock, onEnding, unlockCharacter listener); `src/content/characters.js` (unlockHint)",
+  "test": "`tests/coverage_ot.test.js` › 'Q10 any ending unlocks the next locked character: a Wage Slave ending unlocks the Warehouse Manager once the Student is unlocked'; `tests/fix_meta.test.js` › 'Q10 one ending unlocks exactly one character: the next identity, else the next locked one; story unlocks never cascade'"
+ },
+ "R03": {
+  "status": "✅",
+  "code": "`src/meta/endless.js` (ENDLESS_RECIPES, applyEndlessStart, releaseUnlockTasks: one area task per day with objectives)",
+  "test": "`tests/fix_meta.test.js` › 'R03 Pure Endless warehouse: cold storage, lower level, garage and left cabin tasks come one per day, and every lock opens'; `tests/fix_meta.test.js` › 'R03 Pure Endless apartment: the stairs on Day 1 and the basement on Day 2 can be opened'"
+ },
+ "S05": {
+  "status": "✅",
+  "code": "`src/meta/profile.js` (PROFILE_STATS, profileSummary, pushRecord); `src/ui/deathScreen.js` (KEY_STATS, allStats); `src/ui/journalPanel.js` (statsTab); `src/sim/settlement.js` (summarizeDay, COUNTER_LABELS); `src/sim/social.js` / `src/sim/phone.js` (survivor.aid for baskets, rescue drops, veteran meals, group-chat food)",
+  "test": "`tests/coverage_ot.test.js` › 'S05 the survival archive lists lifetime kills, trades and the other run statistics'; `tests/coverage_ot.test.js` › 'S05 the aid count (supplies delivered and gifted to survivors) is shown in the archive'; `tests/fix_meta.test.js` › 'S05 basket deliveries, rescue drops, veteran meals and shared group-chat food all count as aid'"
+ },
+ "A14": {
+  "status": "✅",
+  "code": "`src/engine/audio.js` (currentMood, MOODS, SFX incl. ring / vibrate / zap, sfxLog, ambience); `src/sim/horde.js` (cue: spawns, arrival, opening hits, spikes, nets, chainsaws); `src/sim/weather.js` (thunder); `src/sim/social.js` (drone launch / return)",
+  "test": "`tests/coverage_af.test.js` › 'A14 music mood per home and scene'; `tests/fix_meta.test.js` › 'A14 horde events drive the sounds: spawns, the arrival, door bangs, spikes and chainsaws, each throttled'; `tests/fix_meta.test.js` › 'A14 the drone whirs when it takes off and when it comes back'; `tests/fix_meta.test.js` › 'A14 thunderstorm days roll thunder for the audio system; other days stay quiet'; browser: `docs/audit/playthrough.md` (audio context running, night music, thunder, 36 door bangs in the Day 7 horde, death)"
+ },
+ "P06": {
+  "status": "✅",
+  "code": "`src/sim/social.js` (repairBasket, sendBasket, checkRescue → TAG_NEIGHBOR_RESCUE1–3_COMPLETE, maybeStartRescue3, mirrorPromise, syncHearts, neighborDies); `src/content/people.js` (NEIGHBORS.student, RESCUE_TASKS 500 / 500 / 300 + 3 requests); `src/sim/story.js` (neighborInfo, routeStatus 'girl'); `src/content/events.js` (QUESTS.promise_girl); `src/sim/endings.js` (routeSucceeded 'girl', dueEnding); `src/content/endings.js` (ROUTES.girl endingDay 86, final wave the night before)",
+  "test": "`tests/social.test.js` › 'rescue tasks, text requests and five hearts set the Girl route tags'; `tests/endings.test.js` › 'Side By Side and Companionship need 5 hearts, two rescues and a living neighbor'; `tests/endings.test.js` › 'promise task: answering her three requests completes the third rescue and the Girl ending'; `tests/endings.test.js` › 'every route that ends before Day 101 fights its final wave the night before its ending day'; `tests/coverage_p.test.js` › 'P06/P11 Side By Side: basket rescues and five hearts open it, the kit starts the winter rescue, the ending follows the final wave'; `tests/storyrun.test.js` › 'committing to Side By Side moves the final horde to the night of Day 85, and the ending lands on Day 86'"
+ },
+ "P09": {
+  "status": "✅",
+  "code": "`src/content/sites.js` (hospital outpatientDesk / labBench / pharmacyCabinet / recorderCabinet); `src/sim/explore.js` (specialFinds, claimStoryItems → 'storyItemClaimed'); `src/sim/story.js` (noteClue, hospitalClueCount, recorderAtHome, pollWorld → TAG_LINE_TRUTH_EXPLORED, installedRecorder, routeStatus 'truth'); `src/content/endings.js` (ROUTES.truth endingDay 84, final wave the night of Day 83); `src/sim/horde.js` (syncFinalHorde); `src/sim/endings.js` (routeSucceeded 'truth', dueEnding)",
+  "test": "`tests/explore.test.js` › 'the hospital: three clues, the old recorder and the Ration Press papers (behind a hospital bed)'; `tests/story.test.js` › 'hospital clues and the recorder open the Truth line and count clues'; `tests/endings.test.js` › 'The Truth needs the hospital clues and the recorder set up at home'; `tests/storyrun.test.js` › 'committing to the Truth moves the final horde to the night of Day 83, and the ending lands on Day 84'"
+ },
+ "P10": {
+  "status": "✅",
+  "code": "`src/sim/story.js` (planterCount, warmth / allFloorsHeated via heatingByFloor or indoorTemp ≥ thermostat, routeStatus 'greenhouse' with the Day 71 latch, on('harvested') → `plant.harvest.produce`); `src/sim/farming.js` (collectCrop → `plant.harvest.flower`, updateCounters → PlantPotCount); `src/content/events.js` (st_seedlings, st_vase, st_garden3, QUESTS.promise_greenhouse); `src/sim/endings.js` (routeSucceeded 'greenhouse')",
+  "test": "`tests/endings.test.js` › 'Greenhouse needs 24 planters at the Day 71 check (College Student only)'; `tests/story.test.js` › 'harvested produce portions are counted for the Greenhouse promise'; `tests/coverage_p.test.js` › 'P10 Greenhouse: after the commitment it takes 24 flowers, 36 produce and real heat on every open floor'"
+ },
+ "P14": {
+  "status": "✅",
+  "code": "`src/ui/endingScreen.js` (showEnding: ending / snapshot / record pages, snapshotFloor, snapshots); `src/sim/endings.js` (safehouseTally, survivalScore, challengeResults, triggerEnding → `run.record`, `run.challenges`)",
+  "test": "`tests/endings.test.js` › 'the Safehouse Snapshot tally and survival record score'; `tests/endings.test.js` › 'the challenge endings section lists which taboos held this run'; `tests/coverage_p.test.js` › 'P14/P15 the ending keeps its record; Refusing to Take a Bow turns the run into Story Endless with endless hordes' (pages browser-verified)"
+ },
+ "P16": {
+  "status": "✅",
+  "code": "`src/content/events.js` (CLUES, LORE, CLUE_EVENTS, p_supplyStub4); `src/sim/story.js` (collectClues, noteClue → `clue.hospital` / `clue.truth` / `clue.slip`, documentList, prologue envelope); `src/content/sites.js` (hospital and office story fixtures incl. the Student's copies, `lore` lists); `src/sim/explore.js` (specialFinds, claimStoryItems, STORY_ITEMS); `src/content/people.js` (VETERAN final stage → 9047); `src/ui/eventPanel.js` (document viewer, Documents list); `src/sim/itemuse.js` (readBook → 'document')",
+  "test": "`tests/story.test.js` › 'hospital clues and the recorder open the Truth line and count clues'; `tests/explore.test.js` › 'the College Student's own hospital finds: the patient's diary and the family messages fill the lab and pharmacy slots'; `tests/coverage_p.test.js` › 'P16 story documents: every clue is a titled document; the veteran’s letter and the records room count as truth clues'; `tests/coverage_p.test.js` › 'P16 every written document has bilingual text and a way into the backpack: sites, events, the veteran, the prologue envelope'; `tests/coverage_p.test.js` › 'P16 the prologue envelope waits in the backpack; opening it gives three sticky notes, and read documents stay in the Documents list'"
+ },
+ "A08": {
+  "status": "✅",
+  "code": "`src/ui/menus.js` (settingsWindow, KEY_ACTIONS, keyFor, actionForBinding); `src/game.js` (applySettings); `src/engine/audio.js` (applyVolumes); `src/main.js` (fps cap, runHotkey, Mouse4/Mouse5 dispatch); `src/ui/hud.js` (lag optimization throttle); `src/ui/dom.js` (holdRefreshes, refreshWindowsSoon)",
+  "test": "`tests/coverage_af.test.js` › 'A08/A13 settings window, hotkey list and rebinding'; `tests/fix_ui.test.js` › 'A08 interface lag optimization rebuilds the HUD less often and not in the middle of a drag'; `tests/fix_ui.test.js` › 'A08 with lag optimization, windows are not rebuilt mid-drag, and the drop lands on the cell under the item'; `tests/fix_ui.test.js` › 'A08 refreshWindowsSoon collapses a burst of refreshes into one'; `tests/fix_ui.test.js` › 'A08 mouse side buttons bound in the settings resolve to their actions'; `tests/fix_ui.test.js` › 'main.js: E takes all from an open container window and otherwise interacts; side buttons run their action'"
+ },
+ "A12": {
+  "status": "✅",
+  "code": "`src/ui/menus.js` (titleScreen: radio, desk lamp, wall calendar, cat)",
+  "test": "`tests/coverage_af.test.js` › 'A12 title-screen radio easter egg'; `tests/fix_ui.test.js` › 'A12 title screen: the lamp, the calendar and the cat react to clicks besides the radio'"
+ },
+ "B07": {
+  "status": "✅",
+  "code": "`src/main.js` (runHotkey, E interact / take-all); `src/ui/menus.js` (KEY_ACTIONS); `src/ui/panels.js` (takeAll, takeAllHotkey); `src/ui/invgrid.js` (Ctrl/Shift/right-click)",
+  "test": "`tests/coverage_af.test.js` › 'A08/A13 settings window, hotkey list and rebinding'; `tests/fix_ui.test.js` › 'B07/D03 E takes everything from the top-most open container window, matching its Take All button'; `tests/fix_ui.test.js` › 'main.js: E takes all from an open container window and otherwise interacts; side buttons run their action'"
+ },
+ "D03": {
+  "status": "✅",
+  "code": "`src/ui/invgrid.js` (renderGrid, startDrag); `src/sim/inventory.js` (moveItem swap/merge/size); `src/ui/panels.js` (storage panel, takeAll, takeAllHotkey, quickUse, reasonText)",
+  "test": "`tests/coverage_af.test.js` › 'D03 storage panel transfers and Take All'; `tests/core.test.js` › 'grid inventory places, swaps, merges and respects size'; `tests/fix_ui.test.js` › 'B07/D03 takeAll moves a container into the backpack; the carry limit holds only when asked'; `tests/fix_ui.test.js` › 'B07/D03 E takes everything from the top-most open container window, matching its Take All button'"
+ },
+ "D04": {
+  "status": "✅",
+  "code": "`src/sim/home.js` (dropToFloor, cleanupFloorBoxes); `src/ui/panels.js` (floorItems panel, backpack 'On the floor' tab); `src/sim/itemuse.js` (pickUp kind, pickUpFromBox); `src/render/iso.js` (pick boxes, hover outline); `src/main.js` (box click, Alt highlight)",
+  "test": "`tests/coverage_af.test.js` › 'D04 floor boxes'; `tests/fix_ui.test.js` › 'D04 the floor list shows every box on this floor; Take and Take all walk to the box first'; `tests/fix_ui.test.js` › 'D04 E in the floor list picks up the focused box, or every box without one'; `tests/fix_ui.test.js` › 'D04 what does not fit in the backpack stays in the box (patch 08-16)'; `tests/fix_ui.test.js` › 'D04 floor boxes can be picked in the scene; whichever object is drawn in front wins'; `tests/fix_ui.test.js` › 'main.js: clicking a floor box opens the list on it; hovering labelled storage shows its tag'"
+ },
+ "D05": {
+  "status": "✅",
+  "code": "`src/ui/panels.js` (storage tag select, Store all button, TAG_ITEM_MATCH); `src/data/db.js` (furnitureTags); `src/ui/ctxmenu.js` (storageTagLabel in openCtxMenu); `src/main.js` (hover tooltip tag)",
+  "test": "`tests/coverage_af.test.js` › 'D05 storage tags and Store by Tag'; `tests/fix_ui.test.js` › 'D05 a labelled container shows its tag in the context menu'; `tests/fix_ui.test.js` › 'main.js: clicking a floor box opens the list on it; hovering labelled storage shows its tag'"
+ },
+ "D13": {
+  "status": "✅",
+  "code": "`src/sim/itemuse.js` (WASTE, placeWaste, eatItem); `src/sim/cooking.js` (finishJob: tins used in a dish)",
+  "test": "`tests/fix_ui.test.js` › 'D13 finishing canned food leaves a Washed Empty Can in the backpack, even when eaten from furniture'; `tests/fix_ui.test.js` › 'D13 waste goes to the backpack first, then the container it came from, then the floor'; `tests/cooking.test.js` › 'cooking with a tin leaves the washed empty can once the dish is done, not when it is cancelled'"
+ },
+ "D14": {
+  "status": "✅",
+  "code": "`src/ui/invgrid.js` (itemTooltip); `src/ui/panels.js` (itemDetail); `src/ui/hud.js` (notifyGot: batched pickup bars)",
+  "test": "`tests/coverage_af.test.js` › 'D14 item detail tooltip'; `tests/fix_ui.test.js` › 'D14 item notification bars batch gotItem, harvested and cooked events and go away on their own'"
+ },
+ "E13": {
+  "status": "✅",
+  "code": "`src/sim/rebirth.js` (buyAbility); `src/ui/hud.js` (planningBar before the outbreak); `src/ui/journalPanel.js` (Abilities tab); `src/ui/deathScreen.js` (rebirth page)",
+  "test": "`tests/coverage_af.test.js` › 'E13 spending Planning Points before the outbreak'; `tests/fix_ui.test.js` › 'E13 before the outbreak a bottom bar shows Planning Points with help and buys affordable abilities'"
+ },
+ "B05": {
+  "status": "✅",
+  "code": "`src/main.js` (drag → cam.follow=false, recenter, swivelTarget); `src/render/iso.js` (cam, swivel transform)",
+  "test": "`tests/coverage_af.test.js` › 'A08/A13 settings window, hotkey list and rebinding'; browser: `docs/audit/playthrough.md` (drag moves the camera and stops following, Space recentres, `,` swivels and springs back)"
+ },
+ "L04": {
+  "status": "✅",
+  "code": "`src/render/iso.js` (darkness overlay, flashlight beam, rain/snow particles, lightning); `src/ui/view.js` (homeView); `src/ui/explorePanel.js` (explore view); `src/main.js` (thunder → lightning)",
+  "test": "`tests/coverage_gn.test.js` › 'L04 (view model): rain and snow reach the renderer outside the basement, lights at night with power, a dark basement and a flashlight at dark sites'; browser: `docs/audit/playthrough.md` (night tint, storm rain, lightning with the thunder)"
+ }
+}

@@ -1,0 +1,239 @@
+{
+  "phase": "P0",
+  "commit": "7a079f69b889abb6e36c3de187dd6887d0b4e948",
+  "seeds": 50,
+  "days": 100,
+  "sessions": 404,
+  "botSessions": 400,
+  "crashes": 0,
+  "roundTrips": {
+    "checked": 802,
+    "ok": 802,
+    "unchecked": 0
+  },
+  "bands": [
+    {
+      "id": "idle-first-week-relaxed",
+      "state": "inside",
+      "required": true,
+      "value": 4
+    },
+    {
+      "id": "idle-first-week-normal",
+      "state": "inside",
+      "required": true,
+      "value": 4
+    },
+    {
+      "id": "idle-first-week-hard",
+      "state": "inside",
+      "required": true,
+      "value": 4
+    },
+    {
+      "id": "idle-first-week-outOfAmmo",
+      "state": "inside",
+      "required": true,
+      "value": 4
+    },
+    {
+      "id": "prepper-difficulty-order",
+      "state": "inside",
+      "required": true,
+      "value": 3
+    },
+    {
+      "id": "forager-difficulty-order",
+      "state": "inside",
+      "required": true,
+      "value": 5
+    },
+    {
+      "id": "prepper-food-follows-funds-relaxed",
+      "state": "inside",
+      "required": true,
+      "value": -0.01890482398956983
+    },
+    {
+      "id": "prepper-food-follows-funds-hard",
+      "state": "inside",
+      "required": true,
+      "value": 0.02193419740777669
+    },
+    {
+      "id": "prepper-food-follows-funds-outOfAmmo",
+      "state": "inside",
+      "required": true,
+      "value": 0.023002421307506182
+    },
+    {
+      "id": "prepper-food-draw-normal",
+      "state": "inside",
+      "required": true,
+      "value": 1.0625
+    },
+    {
+      "id": "prepper-horde25-relaxed",
+      "state": "inside",
+      "required": true,
+      "value": 0.98
+    },
+    {
+      "id": "prepper-horde25-normal",
+      "state": "inside",
+      "required": true,
+      "value": 1
+    },
+    {
+      "id": "prepper-horde25-hard",
+      "state": "inside",
+      "required": true,
+      "value": 0.8958333333333334
+    },
+    {
+      "id": "forager-horde25-relaxed",
+      "state": "inside",
+      "required": true,
+      "value": 1
+    },
+    {
+      "id": "forager-horde25-normal",
+      "state": "inside",
+      "required": true,
+      "value": 1
+    },
+    {
+      "id": "forager-horde25-hard",
+      "state": "inside",
+      "required": true,
+      "value": 0.9583333333333334
+    },
+    {
+      "id": "forager-gain-relaxed",
+      "state": "inside",
+      "required": true,
+      "value": 6.5
+    },
+    {
+      "id": "forager-gain-normal",
+      "state": "inside",
+      "required": true,
+      "value": 3
+    },
+    {
+      "id": "forager-gain-hard",
+      "state": "inside",
+      "required": true,
+      "value": 1
+    },
+    {
+      "id": "forager-gain-outOfAmmo",
+      "state": "inside",
+      "required": true,
+      "value": 0
+    },
+    {
+      "id": "cold-first-wave-day",
+      "state": "inside",
+      "required": true,
+      "value": 30.5
+    },
+    {
+      "id": "cold-unheated-normal",
+      "state": "inside",
+      "required": true,
+      "value": 0.9629629629629629
+    },
+    {
+      "id": "cold-unheated-relaxed",
+      "state": "inside",
+      "required": true,
+      "value": 1
+    },
+    {
+      "id": "prepper-points-follow-mult-relaxed",
+      "state": "inside",
+      "required": true,
+      "value": 0.08537479842406603
+    },
+    {
+      "id": "prepper-points-follow-mult-hard",
+      "state": "inside",
+      "required": true,
+      "value": -0.06874569816733889
+    },
+    {
+      "id": "prepper-points-follow-mult-outOfAmmo",
+      "state": "inside",
+      "required": true,
+      "value": -0.1461329153102442
+    },
+    {
+      "id": "defender-reach-30-50-normal",
+      "state": "unmeasured",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "defender-reach-50-70-normal",
+      "state": "unmeasured",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "defender-reach-70-88-normal",
+      "state": "unmeasured",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "defender-horde25-normal",
+      "state": "unmeasured",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "defender-horde25-outOfAmmo",
+      "state": "unmeasured",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "defender-horde35-normal",
+      "state": "unmeasured",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "defender-horde49-normal",
+      "state": "unmeasured",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "defender-horde87-normal",
+      "state": "unmeasured",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "defender-deaths-zombies-normal",
+      "state": "unmeasured",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "defender-deaths-illness-normal",
+      "state": "unmeasured",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "defender-deaths-cold-normal",
+      "state": "unmeasured",
+      "required": false,
+      "value": null
+    }
+  ],
+  "bandsFailing": []
+}

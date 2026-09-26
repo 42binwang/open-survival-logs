@@ -1,0 +1,34 @@
+diff --git a/src/game.js b/src/game.js
+index 9d597a0..b10edd8 100644
+--- a/src/game.js
++++ b/src/game.js
+@@ -11,6 +11,12 @@ import { bumpMods } from './sim/modifiers.js';
+ // Relaxed slow-down never applies while something is attacking the house.
+ const ATTACK_TYPES = new Set(['horde', 'sporadic', 'thugs']);
+ 
++// The two URL options playtests and visual shots may use (docs/playtests/README.md): ?seed=<integer> seeds every new
++// run that names no seed of its own; ?devSpeed=<1–8> multiplies the game speed.
++const query = new URLSearchParams(globalThis.location?.search || '');
++const QUERY_SEED = /^\d{1,10}$/.test(query.get('seed') || '') ? Number(query.get('seed')) : null;
++const DEV_SPEED = Math.min(8, Math.max(1, Math.floor(Number(query.get('devSpeed'))) || 1));
++
+ export const DEFAULT_SETTINGS = {
+   lang: 'en',
+   fps: 60,
+@@ -47,7 +53,7 @@ export function applySettings(patch) {
+ }
+ 
+ export function startRun(opts) {
+-  game.state = createRun(opts);
++  game.state = createRun(QUERY_SEED != null && opts.seed == null ? { ...opts, seed: QUERY_SEED } : opts);
+   game.slot = opts.slot || `slot-${game.state.meta.id}`;
+   game.state.clock.autoRelax = game.settings.autoRelax;
+   game.state.ui.autonomy = game.settings.autonomy;
+@@ -93,6 +99,7 @@ export function step(realDt) {
+   const c = s.clock;
+   let scale = SPEED_SCALE[c.speed] ?? 60;
+   if (c.speed > 0 && c.relaxed && isIdle(s) && !s.crises.active.some((cr) => ATTACK_TYPES.has(cr.type) && cr.phase === 'attack')) scale = RELAXED_SCALE;
++  scale *= DEV_SPEED;
+   if (s.ui.modalPause) scale = 0;
+   const dt = Math.min(realDt, 0.25) * scale;
+   if (dt > 0) tick(s, dt);

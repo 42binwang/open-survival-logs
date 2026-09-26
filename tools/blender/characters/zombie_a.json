@@ -1,0 +1,425 @@
+{
+  "id": "zombie_a",
+  "title": "Zombie (office worker)",
+  "notes": "A dead office worker: a grey-green, mottled skin (the MakeHuman skin drained of colour and tinted, dirt and dried blood noise), pale eyes, the pack's striped office shirt faded and stained, dark grey office trousers, black shoes, messy short hair. Dirt, blood and tears are baked from deterministic 3D noise (character.py grime).",
+  "mpfb": {
+    "phenotype": {
+      "gender": 1.0,
+      "age": 0.6,
+      "muscle": 0.45,
+      "weight": 0.5,
+      "proportions": 0.55,
+      "height": 0.55,
+      "cupsize": 0.5,
+      "firmness": 0.5,
+      "race": {
+        "asian": 0.6,
+        "caucasian": 0.4,
+        "african": 0.0
+      }
+    },
+    "rig": "game_engine",
+    "eyes": "low-poly/low-poly.mhclo",
+    "eyebrows": "eyebrow001/eyebrow001.mhclo",
+    "eyelashes": "eyelashes01/eyelashes01.mhclo",
+    "hair": "short01/short01.mhclo",
+    "clothes": [
+      "male_casualsuit03/male_casualsuit03.mhclo",
+      "shoes06/shoes06.mhclo"
+    ],
+    "skin_mhmat": "middleage_caucasian_male/middleage_caucasian_male.mhmat"
+  },
+  "skinDetail": "mindfront_aksel_skin/mindfront_aksel_skin.mhmat",
+  "eyeMaterial": "brown.mhmat",
+  "roles": {
+    "body": "body",
+    "eyes": "low-poly",
+    "eyebrows": "eyebrow001",
+    "eyelashes": "eyelashes01",
+    "hair": "short01",
+    "top": "male_casualsuit03",
+    "shoes": "shoes06"
+  },
+  "restPose": {
+    "armDropDeg": 18,
+    "clavicleDropDeg": 4,
+    "smoothRadius": [
+      0.08,
+      0.22
+    ],
+    "smoothFactor": 0.6,
+    "smoothIterations": 8,
+    "neckClearX": 0.09
+  },
+  "garments": {
+    "top": {
+      "regions": [
+        "shirt",
+        "trousers"
+      ],
+      "default": "shirt",
+      "boxes": [
+        [
+          "trousers",
+          [
+            0.0,
+            0.62
+          ],
+          [
+            0.5,
+            1.0
+          ]
+        ]
+      ],
+      "rules": [
+        {
+          "from": "shirt",
+          "to": "trousers",
+          "bones": [
+            "thigh",
+            "calf",
+            "foot"
+          ],
+          "share": 0.6
+        },
+        {
+          "from": "trousers",
+          "to": "shirt",
+          "bones": [
+            "spine",
+            "upperarm",
+            "lowerarm",
+            "clavicle",
+            "neck"
+          ],
+          "share": 0.6
+        }
+      ]
+    },
+    "shoes": {
+      "regions": [
+        "shoe",
+        "shoe_sole",
+        "sock"
+      ],
+      "default": "shoe",
+      "boxes": [
+        [
+          "shoe_sole",
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.755,
+            1.0
+          ]
+        ],
+        [
+          "sock",
+          [
+            0.76,
+            1.0
+          ],
+          [
+            0.0,
+            0.16
+          ]
+        ],
+        [
+          "sock",
+          [
+            0.26,
+            0.68
+          ],
+          [
+            0.52,
+            0.755
+          ]
+        ]
+      ],
+      "lowBand": [
+        "shoe_sole",
+        0.026
+      ]
+    }
+  },
+  "generated": {},
+  "budgets": {
+    "maxTriangles": 15000,
+    "maxInfluences": 4,
+    "triangles": {
+      "body": {
+        "face": 2300,
+        "headRest": 1300,
+        "hands": 1400,
+        "faceAboveHeadJoint": -0.035,
+        "faceBehindY": 0.03,
+        "faceHalfWidth": 0.075
+      },
+      "top": 4400,
+      "shoes": 1000,
+      "hair": 1100
+    }
+  },
+  "texelDensity": 512,
+  "atlases": {
+    "skin": {
+      "roles": [
+        "body",
+        "eyes"
+      ],
+      "size": 512,
+      "margin": 0.008,
+      "geoAO": 0.45
+    },
+    "cloth": {
+      "roles": [
+        "top",
+        "shoes"
+      ],
+      "size": 1024,
+      "margin": 0.004,
+      "geoAO": 0.4
+    },
+    "hair": {
+      "roles": [
+        "hair",
+        "eyebrows",
+        "eyelashes"
+      ],
+      "size": 256,
+      "margin": 0.01,
+      "alpha": true,
+      "roleScale": {
+        "eyebrows": 1.5,
+        "eyelashes": 1.5
+      }
+    }
+  },
+  "materials": {
+    "skin": {
+      "albedo": 0.2,
+      "roughness": [
+        0.55,
+        0.7
+      ],
+      "normalStrength": 0.8,
+      "hairCapStrength": 0.9,
+      "tint": [
+        150,
+        166,
+        134
+      ],
+      "saturation": 0.25,
+      "grime": {
+        "dirt": 0.8,
+        "dirtScale": 11.0,
+        "dirtDarken": 0.55,
+        "dirtHue": [
+          110,
+          100,
+          80
+        ],
+        "blood": 0.7,
+        "bloodScale": 5.0
+      }
+    },
+    "eyes": {
+      "saturation": 0.08,
+      "value": 0.95,
+      "roughness": 0.2
+    },
+    "hair": {
+      "albedo": 0.1,
+      "hue": [
+        110,
+        104,
+        96
+      ],
+      "contrast": 0.5,
+      "roughness": 0.7
+    },
+    "eyebrows": {
+      "albedo": 0.1,
+      "contrast": 0.4,
+      "hue": [
+        82,
+        62,
+        48
+      ],
+      "roughness": 0.9,
+      "alphaGain": 2.5
+    },
+    "eyelashes": {
+      "albedo": 0.08,
+      "contrast": 0.4,
+      "hue": [
+        82,
+        62,
+        48
+      ],
+      "roughness": 0.9,
+      "alphaGain": 1.5
+    },
+    "shirt": {
+      "base": "texture",
+      "saturation": 0.3,
+      "albedo": 0.22,
+      "roughness": [
+        0.85,
+        0.95
+      ],
+      "normalStrength": 1.0,
+      "grime": {
+        "dirt": 1.0,
+        "dirtScale": 7.0,
+        "dirtDarken": 0.4,
+        "blood": 0.8,
+        "bloodScale": 3.5,
+        "bloodThreshold": 0.56,
+        "tears": 0.16,
+        "tearScale": 9.0
+      }
+    },
+    "trousers": {
+      "base": "hue",
+      "hue": [
+        72,
+        74,
+        80
+      ],
+      "textureDetail": 0.35,
+      "albedo": 0.1,
+      "roughness": [
+        0.85,
+        0.95
+      ],
+      "normalStrength": 1.0,
+      "grime": {
+        "dirt": 1.0,
+        "dirtScale": 7.0,
+        "dirtDarken": 0.4,
+        "blood": 0.5,
+        "bloodScale": 3.5,
+        "bloodThreshold": 0.56,
+        "tears": 0.08,
+        "tearScale": 9.0,
+        "dirtHue": [
+          120,
+          105,
+          80
+        ]
+      }
+    },
+    "shoe": {
+      "base": "hue",
+      "hue": [
+        52,
+        50,
+        50
+      ],
+      "textureDetail": 0.3,
+      "albedo": 0.05,
+      "roughness": [
+        0.5,
+        0.65
+      ],
+      "grime": {
+        "dirt": 1.0,
+        "dirtScale": 7.0,
+        "dirtDarken": 0.4,
+        "blood": 0.0,
+        "bloodScale": 3.5,
+        "bloodThreshold": 0.56,
+        "tears": 0.0,
+        "tearScale": 9.0,
+        "dirtHue": [
+          130,
+          110,
+          80
+        ]
+      }
+    },
+    "shoe_sole": {
+      "base": "hue",
+      "hue": [
+        40,
+        38,
+        36
+      ],
+      "albedo": 0.035,
+      "roughness": [
+        0.7,
+        0.85
+      ]
+    },
+    "sock": {
+      "base": "hue",
+      "hue": [
+        60,
+        62,
+        70
+      ],
+      "albedo": 0.04,
+      "roughness": [
+        0.85,
+        0.95
+      ]
+    }
+  },
+  "clips": {
+    "idle": {
+      "loopAt": [
+        1.1083,
+        6.8333
+      ]
+    },
+    "walk": {
+      "loopAt": [
+        1.0083,
+        1.1167
+      ],
+      "swingClearM": 0.006
+    },
+    "run": {
+      "loopAt": [
+        0.125,
+        0.675
+      ],
+      "swingClearM": 0.006
+    },
+    "work": {
+      "loopAt": [
+        10.4833,
+        4.25
+      ]
+    },
+    "use": {
+      "loopAt": [
+        6.1,
+        2.2167
+      ]
+    },
+    "eat": {
+      "loopAt": [
+        4.3,
+        4.3667
+      ]
+    },
+    "sit": {
+      "loopAt": [
+        35.35,
+        2.2167
+      ]
+    },
+    "attack": {
+      "loopAt": [
+        2.5167,
+        3.65
+      ]
+    }
+  },
+  "bodyPointStep": 1,
+  "soleFromShoes": true
+}

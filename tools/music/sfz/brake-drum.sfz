@@ -1,0 +1,16 @@
+// Brake drum, hammer: Versilian Community Sample Library (VCSL) (CC0), sgossner/VCSL@c1ea7bcc3c, folder 'Idiophones/Struck Idiophones/Brake Drum'.
+// Written by tools/music/build.mjs (tools/music/instruments.mjs); played by tools/music/sampler.mjs.
+// Gain staging: loudest layer calibrated to -20 LUFS-M on BrakeDrum2_Hammer3_v3_rr1_Mid.wav (measured -31.2).
+<control> default_path=../../../assets/cache/vcsl/brake-drum/
+<global> pitch_keytrack=0 ampeg_release=0.4 amp_veltrack=70 loop_mode=one_shot offset_auto=1 volume=11.2
+<group> lovel=1 hivel=70
+<region> lokey=77 hikey=77 pitch_keycenter=77 sample=BrakeDrum1_Hammer_v1_rr1_Mid.wav
+<region> lokey=78 hikey=78 pitch_keycenter=78 seq_length=2 seq_position=1 sample=BrakeDrum2_Hammer1_v1_rr1_Mid.wav
+<region> lokey=78 hikey=78 pitch_keycenter=78 seq_length=2 seq_position=2 sample=BrakeDrum2_Hammer3_v1_rr1_Mid.wav
+<group> lovel=71 hivel=105
+<region> lokey=77 hikey=77 pitch_keycenter=77 sample=BrakeDrum1_Hammer_v2_rr1_Mid.wav
+<region> lokey=78 hikey=78 pitch_keycenter=78 seq_length=2 seq_position=1 sample=BrakeDrum2_Hammer1_v2_rr1_Mid.wav
+<region> lokey=78 hikey=78 pitch_keycenter=78 seq_length=2 seq_position=2 sample=BrakeDrum2_Hammer3_v2_rr1_Mid.wav
+<group> lovel=106 hivel=127
+<region> lokey=77 hikey=77 pitch_keycenter=77 sample=BrakeDrum1_Hammer_v3_rr1_Mid.wav
+<region> lokey=78 hikey=78 pitch_keycenter=78 sample=BrakeDrum2_Hammer3_v3_rr1_Mid.wav

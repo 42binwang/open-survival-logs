@@ -1,0 +1,237 @@
+/*
+ * Inventory grid and slots (docs/UI.md §5). A slot spans w × h cells: n × pitch − gap on each axis. The icon box is
+ * fitted from the icon's measured content extent (manifest meta.framing.extent, set as --ex / --ey and swapped with
+ * the footprint when the item is rotated), so the art fills the slot's short side at the icon convention's fill.
+ */
+.sl-grid {
+  --cols: 8;
+  --rows: 7;
+  position: relative;
+  width: calc(var(--cols) * var(--ui-cell-pitch) - var(--ui-cell-gap));
+  height: calc(var(--rows) * var(--ui-cell-pitch) - var(--ui-cell-gap));
+  box-sizing: content-box;
+  padding: var(--ui-cell-gap);
+  border-radius: var(--ui-radius-slot);
+  background: var(--ui-grid-line);
+  box-shadow: inset 0 0 0 1px var(--ui-grid-shadow);
+}
+.sl-grid__cells {
+  position: absolute;
+  inset: var(--ui-cell-gap);
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--ui-cell));
+  grid-auto-rows: var(--ui-cell);
+  gap: var(--ui-cell-gap);
+}
+/* Cells and slots both lighten toward the foot, as in ss_01. */
+.sl-cell {
+  border-radius: var(--ui-radius-control);
+  background: linear-gradient(var(--ui-cell-top), var(--ui-cell-bottom));
+  box-shadow: inset 0 1px 2px var(--ui-cell-shadow);
+}
+.sl-cell.is-drop-ok {
+  background: var(--ui-cell-drop-ok-bg);
+}
+.sl-cell.is-drop-bad {
+  background: var(--ui-cell-drop-bad-bg);
+}
+.sl-grid--cold .sl-cell {
+  background: var(--ui-cold-cell);
+  box-shadow:
+    inset 0 0 0 1px var(--ui-cold-edge),
+    inset 0 1px 2px var(--ui-grid-cold-cell-shadow);
+}
+
+/* ---- slot ------------------------------------------------------------------------------------------------------ */
+.sl-slot {
+  --x: 0;
+  --y: 0;
+  --w: 1;
+  --h: 1;
+  --ex: 0.66;
+  --ey: 0.66;
+  --sw: calc(var(--w) * var(--ui-cell-pitch) - var(--ui-cell-gap));
+  --sh: calc(var(--h) * var(--ui-cell-pitch) - var(--ui-cell-gap));
+  --icon: min(calc(var(--ui-icon-fill) * var(--sw) / var(--ex)), calc(var(--ui-icon-fill) * var(--sh) / var(--ey)));
+  position: absolute;
+  left: calc(var(--ui-cell-gap) + var(--x) * var(--ui-cell-pitch));
+  top: calc(var(--ui-cell-gap) + var(--y) * var(--ui-cell-pitch));
+  width: var(--sw);
+  height: var(--sh);
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ui-slot-edge);
+  border-radius: var(--ui-radius-slot);
+  background: linear-gradient(var(--ui-slot-top), var(--ui-slot-bottom));
+  box-shadow: inset 0 1px 0 var(--ui-slot-shadow);
+  overflow: hidden;
+  cursor: grab;
+  transition:
+    border-color var(--ui-dur-hover) var(--ui-ease-out),
+    background-color var(--ui-dur-hover) var(--ui-ease-out);
+}
+.sl-slot:hover,
+.sl-slot.is-hover {
+  border-color: var(--ui-slot-edge-hover);
+  background: linear-gradient(var(--ui-slot-hover-bg), var(--ui-slot-hover-bg-2));
+}
+.sl-slot.is-selected {
+  border: 2px solid var(--ui-gold-pale);
+}
+/* bought and not paid for yet (t018, the two items of "2 item(s)"): gold edge, warm fill */
+.sl-slot.is-pending {
+  border: 2px solid var(--ui-gold);
+  background: linear-gradient(var(--ui-slot-pending-bg), var(--ui-slot-pending-bg-2));
+  box-shadow: inset 0 0 16px var(--ui-slot-pending-shadow);
+}
+.sl-slot.is-dragging {
+  opacity: 0.35;
+}
+/* the dragged copy: translucent, so the green or red cells under it show where it would land */
+.sl-slot--ghost {
+  z-index: var(--ui-z-drag);
+  opacity: 0.6;
+  box-shadow: var(--ui-shadow-pop);
+  cursor: grabbing;
+}
+.sl-slot:focus-visible,
+.sl-slot.is-focus {
+  box-shadow: var(--ui-focus-ring);
+}
+/* The icon box may be larger than the slot on its long axis; it stays centred. --turn (slot.js artAngle) is the icon's
+   own quarter turn plus 90° when the item is rotated (R while dragging); a turned render's baked shadow turns too. */
+.sl-slot__icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--icon);
+  height: var(--icon);
+  max-width: none;
+  transform: translate(-50%, -50%) rotate(var(--turn, 0deg));
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* servings, bottom-left (ss_01, ss_08) */
+.sl-slot__servings {
+  position: absolute;
+  left: 6px;
+  bottom: 10px;
+  min-width: 34px;
+  height: 20px;
+  padding: 0 var(--ui-space-2);
+  border-radius: var(--ui-radius-pill);
+  background: var(--ui-badge-bg);
+  color: var(--ui-slot-servings-fg);
+  font-size: var(--ui-fs-body);
+  line-height: 20px;
+  font-weight: var(--ui-fw-bold);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  white-space: nowrap;
+}
+/* status, top-right (ss_08) */
+.sl-slot__status {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  width: var(--ui-status-badge);
+  height: var(--ui-status-badge);
+  border-radius: var(--ui-radius-control);
+  background: var(--status, var(--ui-chilled));
+  color: var(--ui-slot-status-fg);
+  font-size: 14px;
+  box-shadow: 0 1px 2px var(--ui-slot-status-shadow);
+}
+.sl-slot__status .sl-glyph {
+  width: 14px;
+  height: 14px;
+  vertical-align: 0;
+}
+.sl-slot__status--chilled {
+  --status: var(--ui-chilled);
+}
+.sl-slot__status--expiring {
+  --status: var(--ui-expiring);
+  color: var(--ui-slot-status-expiring-fg);
+}
+.sl-slot__status--expired {
+  --status: var(--ui-danger-badge);
+  box-shadow:
+    inset 0 0 0 1px var(--ui-slot-status-expired-shadow),
+    0 1px 2px var(--ui-slot-status-expired-shadow-2);
+}
+.sl-slot__status--mold {
+  --status: var(--ui-slot-status-mold-status);
+}
+/* freshness, full width at the foot of the slot (ss_01) */
+.sl-slot__fresh {
+  --v: 1;
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  bottom: 3px;
+  height: var(--ui-fresh-bar-h);
+  border-radius: 2px;
+  background: var(--ui-slot-fresh-bg);
+  overflow: hidden;
+}
+.sl-slot__fresh::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--v) * 100%);
+  border-radius: inherit;
+  background: var(--ui-fresh);
+}
+.sl-slot__fresh[data-state='soon']::after {
+  background: var(--ui-expiring);
+}
+.sl-slot__fresh[data-state='expired']::after {
+  background: var(--ui-danger);
+}
+
+/* frozen: the freezer's snow cap (ss_08) */
+.sl-slot--frozen::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 22px;
+  background:
+    radial-gradient(9px 8px at 12% 14px, var(--ui-slot-frozen-before-bg) 60%, transparent 62%),
+    radial-gradient(7px 10px at 37% 13px, var(--ui-slot-frozen-before-bg) 60%, transparent 62%),
+    radial-gradient(10px 7px at 64% 13px, var(--ui-slot-frozen-before-bg) 60%, transparent 62%),
+    radial-gradient(7px 9px at 88% 13px, var(--ui-slot-frozen-before-bg) 60%, transparent 62%),
+    linear-gradient(var(--ui-slot-frozen-before-bg-2), var(--ui-slot-frozen-before-bg)) top / 100% 12px no-repeat;
+  opacity: 0.92;
+  pointer-events: none;
+}
+
+/* ---- container heading: weight line and load bar above a grid ------------------------------------------------ */
+.sl-load {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: var(--ui-space-3);
+  margin-bottom: var(--ui-space-2);
+}
+.sl-load__label {
+  color: var(--ui-text-dim);
+}
+.sl-load__value {
+  color: var(--ui-text-strong);
+  font-weight: var(--ui-fw-bold);
+  font-variant-numeric: tabular-nums;
+}
+.sl-load__value.is-over {
+  color: var(--ui-danger-text);
+}
+.sl-load > .sl-bar {
+  grid-column: 1 / -1;
+  margin-top: var(--ui-space-1);
+}

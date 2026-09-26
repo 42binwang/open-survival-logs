@@ -1,0 +1,39 @@
+// Tenor trombone, sustain: VSCO 2 Community Edition (CC0), sgossner/VSCO-2-CE@440300901d, folder 'Brass/Tenor Trombone/sus'.
+// Written by tools/music/build.mjs (tools/music/instruments.mjs); played by tools/music/sampler.mjs.
+// Gain staging: loudest layer calibrated to -20 LUFS-M on tenortbn_sus_F2_v3_1.wav (measured -29.2).
+<control> default_path=../../../assets/cache/vsco2ce/trombone-sus/
+<global> ampeg_attack=0.06 ampeg_release=0.55 amp_veltrack=45 loop_mode=loop_continuous offset_auto=1 volume=9.2
+<group> lovel=1 hivel=80 xfout_lovel=48 xfout_hivel=80
+<region> lokey=0 hikey=35 pitch_keycenter=34 sample=tenortbn_sus_A#0_v1_1.wav
+<region> lokey=36 hikey=38 pitch_keycenter=37 sample=tenortbn_sus_C#1_v1_1.wav
+<region> lokey=39 hikey=40 pitch_keycenter=39 sample=tenortbn_sus_D#1_v1_1.wav
+<region> lokey=41 hikey=43 pitch_keycenter=41 sample=tenortbn_sus_F1_v1_1.wav
+<region> lokey=44 hikey=48 pitch_keycenter=46 sample=tenortbn_sus_A#1_v1_1.wav
+<region> lokey=49 hikey=51 pitch_keycenter=50 sample=tenortbn_sus_D2_v1_1.wav
+<region> lokey=52 hikey=56 pitch_keycenter=53 sample=tenortbn_sus_F2_v1_1.wav
+<region> lokey=57 hikey=60 pitch_keycenter=60 sample=tenortbn_sus_C3_v1_1.wav
+<region> lokey=61 hikey=62 pitch_keycenter=61 sample=tenortbn_sus_C#3_v1_1.wav
+<region> lokey=63 hikey=64 pitch_keycenter=63 sample=tenortbn_sus_D#3_v1_1.wav
+<region> lokey=65 hikey=127 pitch_keycenter=65 sample=tenortbn_sus_F3_v1_1.wav
+<group> lovel=49 hivel=112 xfin_lovel=49 xfin_hivel=81 xfout_lovel=80 xfout_hivel=112
+<region> lokey=0 hikey=35 pitch_keycenter=34 sample=tenortbn_sus_A#0_v2_1.wav
+<region> lokey=36 hikey=38 pitch_keycenter=37 sample=tenortbn_sus_C#1_v2_1.wav
+<region> lokey=39 hikey=40 pitch_keycenter=39 sample=tenortbn_sus_D#1_v2_1.wav
+<region> lokey=41 hikey=43 pitch_keycenter=41 sample=tenortbn_sus_F1_v2_1.wav
+<region> lokey=44 hikey=48 pitch_keycenter=46 sample=tenortbn_sus_A#1_v2_1.wav
+<region> lokey=49 hikey=51 pitch_keycenter=50 sample=tenortbn_sus_D2_v2_1.wav
+<region> lokey=52 hikey=56 pitch_keycenter=53 sample=tenortbn_sus_F2_v2_1.wav
+<region> lokey=57 hikey=60 pitch_keycenter=60 sample=tenortbn_sus_C3_v2_1.wav
+<region> lokey=61 hikey=62 pitch_keycenter=61 sample=tenortbn_sus_C#3_v2_1.wav
+<region> lokey=63 hikey=64 pitch_keycenter=63 sample=tenortbn_sus_D#3_v2_1.wav
+<region> lokey=65 hikey=127 pitch_keycenter=65 sample=tenortbn_sus_F3_v2_1.wav
+<group> lovel=81 hivel=127 xfin_lovel=81 xfin_hivel=113
+<region> lokey=0 hikey=40 pitch_keycenter=39 sample=tenortbn_sus_D#1_v3_1.wav
+<region> lokey=41 hikey=43 pitch_keycenter=41 sample=tenortbn_sus_F1_v3_1.wav
+<region> lokey=44 hikey=48 pitch_keycenter=46 sample=tenortbn_sus_A#1_v3_1.wav
+<region> lokey=49 hikey=51 pitch_keycenter=50 sample=tenortbn_sus_D2_v3_1.wav
+<region> lokey=52 hikey=56 pitch_keycenter=53 sample=tenortbn_sus_F2_v3_1.wav
+<region> lokey=57 hikey=60 pitch_keycenter=60 sample=tenortbn_sus_C3_v3_1.wav
+<region> lokey=61 hikey=62 pitch_keycenter=61 sample=tenortbn_sus_C#3_v3_1.wav
+<region> lokey=63 hikey=64 pitch_keycenter=63 sample=tenortbn_sus_D#3_v3_1.wav
+<region> lokey=65 hikey=127 pitch_keycenter=65 sample=tenortbn_sus_F3_v3_1.wav

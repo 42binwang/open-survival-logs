@@ -1,0 +1,12 @@
+// Glockenspiel: VSCO 2 Community Edition (CC0), sgossner/VSCO-2-CE@440300901d, folder 'Percussion/Glock'.
+// Written by tools/music/build.mjs (tools/music/instruments.mjs); played by tools/music/sampler.mjs.
+// Gain staging: loudest layer calibrated to -20 LUFS-M on glock_medium_C6.wav (measured -39.1).
+<control> default_path=../../../assets/cache/vsco2ce/glockenspiel/
+<global> ampeg_release=1.2 amp_veltrack=70 loop_mode=one_shot offset_auto=1 volume=19.1
+<group> lovel=1 hivel=127
+<region> lokey=0 hikey=81 pitch_keycenter=79 sample=glock_medium_G4.wav
+<region> lokey=82 hikey=87 pitch_keycenter=84 sample=glock_medium_C5.wav
+<region> lokey=88 hikey=93 pitch_keycenter=91 sample=glock_medium_G5.wav
+<region> lokey=94 hikey=99 pitch_keycenter=96 sample=glock_medium_C6.wav
+<region> lokey=100 hikey=105 pitch_keycenter=103 sample=glock_medium_G6.wav
+<region> lokey=106 hikey=127 pitch_keycenter=108 sample=glock_medium_C7.wav

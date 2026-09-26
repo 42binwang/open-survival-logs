@@ -1,0 +1,30 @@
+# Binary assets under assets/, the art-direction images and videos under docs/art/ (material previews, boards,
+# motion reviews), the images of the dev pages under pages/ and the visual-regression baselines under
+# tests/visual/baselines/ are stored in git LFS. Once per clone: `git lfs install`; then `git lfs pull` fetches them.
+# The gate's lfs check fails when a file matching these patterns is committed as a plain blob.
+assets/**/*.glb filter=lfs diff=lfs merge=lfs -text
+assets/**/*.gltf filter=lfs diff=lfs merge=lfs -text
+assets/**/*.bin filter=lfs diff=lfs merge=lfs -text
+assets/**/*.ktx2 filter=lfs diff=lfs merge=lfs -text
+assets/**/*.ogg filter=lfs diff=lfs merge=lfs -text
+assets/**/*.opus filter=lfs diff=lfs merge=lfs -text
+assets/**/*.wav filter=lfs diff=lfs merge=lfs -text
+assets/**/*.flac filter=lfs diff=lfs merge=lfs -text
+assets/**/*.hdr filter=lfs diff=lfs merge=lfs -text
+assets/**/*.exr filter=lfs diff=lfs merge=lfs -text
+assets/**/*.png filter=lfs diff=lfs merge=lfs -text
+assets/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+assets/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+assets/**/*.webp filter=lfs diff=lfs merge=lfs -text
+assets/**/*.blend filter=lfs diff=lfs merge=lfs -text
+assets/**/*.fbx filter=lfs diff=lfs merge=lfs -text
+assets/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+assets/**/*.woff2 filter=lfs diff=lfs merge=lfs -text
+docs/art/**/*.png filter=lfs diff=lfs merge=lfs -text
+docs/art/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+docs/art/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+docs/art/**/*.webp filter=lfs diff=lfs merge=lfs -text
+docs/art/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+pages/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+pages/**/*.png filter=lfs diff=lfs merge=lfs -text
+tests/visual/baselines/*.png filter=lfs diff=lfs merge=lfs -text

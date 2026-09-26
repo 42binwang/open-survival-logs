@@ -1,0 +1,201 @@
+/*
+ * Style tile layout (docs/UI.md §7): a fixed 1920 × 1080 stage with the HUD where the source puts it (ss_02, ss_06)
+ * and the windows in the space between. Positions only; every look comes from src/ui/kit.
+ */
+html,
+body {
+  margin: 0;
+  background: #0b0c0b;
+}
+.tile-stage {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.tile-stage[data-view='kit'] {
+  height: auto;
+  min-height: 1080px;
+}
+.tile-backdrop {
+  position: absolute;
+  z-index: -2;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  object-fit: cover;
+  user-select: none;
+}
+
+/* ---- HUD ------------------------------------------------------------------------------------------------------- */
+.tile-objectives,
+.tile-daybar,
+.tile-right,
+.tile-stats,
+.tile-toolbar > * {
+  z-index: var(--ui-z-hud);
+}
+.tile-objectives {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.tile-toasts {
+  position: absolute;
+  left: 560px;
+  right: 560px;
+  top: 28px;
+  z-index: var(--ui-z-toast);
+}
+.tile-daybar {
+  position: absolute;
+  right: 30px;
+  top: 33px;
+}
+.tile-right {
+  position: absolute;
+  right: 32px;
+  top: 248px;
+  display: grid;
+  justify-items: end;
+  row-gap: var(--ui-space-3);
+}
+.tile-floors {
+  margin: var(--ui-space-12) 0 var(--ui-space-3);
+}
+.tile-hudrow {
+  width: 248px;
+}
+.tile-hudrow + .tile-hudrow {
+  margin-top: var(--ui-space-1);
+}
+.tile-stats {
+  position: absolute;
+  right: 32px;
+  bottom: 20px;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--ui-space-3);
+}
+.tile-stats .sl-stats {
+  width: 264px;
+}
+.tile-encumbered {
+  margin-bottom: 5px;
+}
+.tile-toolbar > * {
+  position: absolute;
+}
+.tile-toolbtn--bag {
+  left: 22px;
+  top: 772px;
+}
+.tile-toolbtn--phone {
+  left: 22px;
+  top: 868px;
+}
+.tile-toolbtn--main {
+  left: 22px;
+  top: 964px;
+}
+.tile-chips {
+  left: 140px;
+  top: 944px;
+}
+.tile-chips img {
+  width: 28px;
+  height: 28px;
+  margin: 0 -2px;
+}
+.tile-queue {
+  left: 136px;
+  top: 996px;
+}
+.tile-speed {
+  left: 458px;
+  top: 996px;
+}
+.tile-alerts {
+  left: 892px;
+  top: 900px;
+}
+.tile-wish {
+  left: 700px;
+  top: 1006px;
+}
+
+/* ---- windows --------------------------------------------------------------------------------------------------- */
+.tile-inventory {
+  position: absolute;
+  left: 120px;
+  top: 226px;
+  z-index: var(--ui-z-window);
+}
+.tile-inventory__cols {
+  display: flex;
+  gap: var(--ui-space-6);
+}
+.tile-container .sl-section {
+  height: 24px;
+}
+.tile-container__bar {
+  margin: var(--ui-space-2) 0 var(--ui-space-3);
+}
+.tile-shopcol {
+  position: absolute;
+  left: 1092px;
+  top: 226px;
+  width: 500px;
+  z-index: var(--ui-z-window);
+  display: grid;
+  row-gap: var(--ui-space-3);
+}
+.tile-shop__list {
+  position: relative;
+  margin: 0 calc(-1 * var(--ui-space-2));
+  padding-right: var(--ui-space-3);
+}
+.tile-shop__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ui-space-1) var(--ui-space-2);
+}
+.tile-cash {
+  display: grid;
+  row-gap: var(--ui-space-2);
+  padding-block: var(--ui-space-4);
+  font-size: var(--ui-fs-hud);
+  line-height: var(--ui-lh-hud);
+}
+.tile-cash__line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tile-cash .sl-btn {
+  margin-top: var(--ui-space-2);
+}
+
+/* ---- tooltip: placed beside the fridge's hovered dish by placeItemTip (src/ui/kit/place.js) -------------------- */
+.tile-tip .sl-tip__title img {
+  width: 32px;
+  height: 32px;
+  flex: none;
+}
+.tile-tip__status {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  margin-top: var(--ui-space-2);
+  color: var(--ui-chilled-text);
+}
+.tile-dial__marks text {
+  font-family: var(--ui-font);
+  font-size: 14px;
+  font-weight: 700;
+  fill: var(--ui-dial-numeral);
+  text-anchor: middle;
+}

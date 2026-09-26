@@ -1,0 +1,1067 @@
+{
+  "schema": "survival-logs/asset-manifest@1",
+  "wp": "WP-P0-12",
+  "rebuild": {
+    "icons": {
+      "entry": "tools/blender/icons/build.sh",
+      "args": [
+        "--only",
+        "{name}"
+      ],
+      "inputs": [
+        "tools/blender/run.sh",
+        "tools/blender/common/",
+        "tools/blender/materials/",
+        "tools/blender/icons/",
+        "tools/lib/png.mjs",
+        "tools/fetch-assets.mjs",
+        "assets/materials/",
+        "assets/sources.lock.json",
+        "assets/lock/",
+        "src/contracts/assets.js",
+        "src/data/",
+        "src/engine/i18n.js",
+        "src/content/strings.js"
+      ],
+      "shared": [
+        "assets/cache",
+        "tools/bin"
+      ],
+      "tools": {
+        "blender": "5.2.2",
+        "ktx": "4.4.2",
+        "node": "24.15.0"
+      },
+      "seeds": {
+        "catalog": 20260923,
+        "cycles": 0
+      },
+      "cycles": {
+        "seed": 0,
+        "samples": 256
+      },
+      "cost": 8,
+      "timeoutSec": 300
+    }
+  },
+  "assets": [
+    {
+      "id": "icons/2115",
+      "kind": "icon",
+      "path": "assets/icons/2115.png",
+      "license": "LicenseRef-Original",
+      "sources": [
+        "ambientcg/Metal009@2K-PNG",
+        "polyhaven/studio_small_09@2k"
+      ],
+      "files": {
+        "64": "assets/icons/2115@64.png",
+        "128": "assets/icons/2115@128.png",
+        "256": "assets/icons/2115.png"
+      },
+      "rebuild": "icons",
+      "digests": {
+        "assets/icons/2115@64.png": "8174a957da4c5416c243b338e72b7969283404e0f5b7a0934beb4feda0633926",
+        "assets/icons/2115@128.png": "174663c7cf6a78c418b85ccfad6397c98758e7077fcb1116d559507163842340",
+        "assets/icons/2115.png": "e02594d48fee2f6d6ea30aad71632f3d14e542c4f4cdf0f349eebdd9d00e1fc3"
+      },
+      "params": {
+        "item": 2115,
+        "name": "Canned Luncheon Meat",
+        "nameZh": "午餐肉罐头",
+        "category": 1,
+        "categoryName": "food",
+        "footprint": [
+          2,
+          1
+        ],
+        "title": "Rectangular luncheon-meat tin with a lithographed wrap and a pull-ring lid",
+        "builder": "tin",
+        "labels": [
+          "luncheon"
+        ],
+        "libraryMaterials": [
+          "materials/metal_brushed"
+        ],
+        "serves": [
+          2115
+        ],
+        "box": {
+          "fill": 0.66,
+          "anchor": "centre",
+          "shadow": {
+            "dx": 0.03,
+            "dy": 0.03,
+            "sigma": 0.02,
+            "opacity": 0.3,
+            "color": "#000000",
+            "baked": true
+          }
+        },
+        "background": "transparent (straight alpha), no backdrop; a soft drop shadow is baked in (box.shadow)",
+        "pose": {
+          "yaw": -28
+        }
+      },
+      "meta": {
+        "sizes": [
+          64,
+          128,
+          256
+        ],
+        "alphaCoverage": {
+          "64": 0.315,
+          "128": 0.314,
+          "256": 0.313
+        },
+        "sizeBytes": {
+          "64": 5800,
+          "128": 18192,
+          "256": 53312
+        },
+        "framing": {
+          "radiusM": 0.0681,
+          "distanceM": 0.4345,
+          "extent": [
+            0.6323,
+            0.66
+          ]
+        }
+      }
+    },
+    {
+      "id": "icons/2105",
+      "kind": "icon",
+      "path": "assets/icons/2105.png",
+      "license": "LicenseRef-Original",
+      "sources": [
+        "polyhaven/studio_small_09@2k"
+      ],
+      "files": {
+        "64": "assets/icons/2105@64.png",
+        "128": "assets/icons/2105@128.png",
+        "256": "assets/icons/2105.png"
+      },
+      "rebuild": "icons",
+      "digests": {
+        "assets/icons/2105@64.png": "de425384dbb5ece23676912b2c2d678d8cfb12935878b4851db0cb61a94f3eb5",
+        "assets/icons/2105@128.png": "ec8db6d773a4095054595cadfb73c5996024c97a51f3b1cc864011c78afe1135",
+        "assets/icons/2105.png": "8f9e2a53b8ac67e46db4f4ef77af8687ce4714e58391712c1ce0d1110d20e983"
+      },
+      "params": {
+        "item": 2105,
+        "name": "Beef Noodles",
+        "nameZh": "红烧牛肉面",
+        "category": 1,
+        "categoryName": "food",
+        "footprint": [
+          2,
+          2
+        ],
+        "title": "Instant noodle cup, open and heaped with braised beef, bok choy, scallion and chili",
+        "builder": "noodle_cup",
+        "labels": [
+          "noodle_cup"
+        ],
+        "libraryMaterials": [],
+        "serves": [
+          2105
+        ],
+        "box": {
+          "fill": 0.66,
+          "anchor": "centre",
+          "shadow": {
+            "dx": 0.03,
+            "dy": 0.03,
+            "sigma": 0.02,
+            "opacity": 0.3,
+            "color": "#000000",
+            "baked": true
+          }
+        },
+        "background": "transparent (straight alpha), no backdrop; a soft drop shadow is baked in (box.shadow)",
+        "pose": {
+          "yaw": -15
+        }
+      },
+      "meta": {
+        "sizes": [
+          64,
+          128,
+          256
+        ],
+        "alphaCoverage": {
+          "64": 0.291,
+          "128": 0.289,
+          "256": 0.289
+        },
+        "sizeBytes": {
+          "64": 5762,
+          "128": 19793,
+          "256": 64891
+        },
+        "framing": {
+          "radiusM": 0.0608,
+          "distanceM": 0.4085,
+          "extent": [
+            0.5912,
+            0.66
+          ]
+        }
+      }
+    },
+    {
+      "id": "icons/2502",
+      "kind": "icon",
+      "path": "assets/icons/2502.png",
+      "license": "LicenseRef-Original",
+      "sources": [
+        "polyhaven/studio_small_09@2k"
+      ],
+      "files": {
+        "64": "assets/icons/2502@64.png",
+        "128": "assets/icons/2502@128.png",
+        "256": "assets/icons/2502.png"
+      },
+      "rebuild": "icons",
+      "digests": {
+        "assets/icons/2502@64.png": "40fa0f66275af988a1f1323bef9a3159c8b2f400c6e2dbc937f820479ce39a4f",
+        "assets/icons/2502@128.png": "da808bc6df809e05a3685d99bb2b56d4917f06679058874b27e0ed594ae72bc0",
+        "assets/icons/2502.png": "b0e85966f26604f98b27ba3021ce1318153c5ab76c6b879c54ee47cb7bd6b2fb"
+      },
+      "params": {
+        "item": 2502,
+        "name": "Bread",
+        "nameZh": "面包",
+        "category": 1,
+        "categoryName": "food",
+        "footprint": [
+          2,
+          1
+        ],
+        "title": "Pan loaf with two slices cut and fanned",
+        "builder": "bread",
+        "labels": [],
+        "libraryMaterials": [],
+        "serves": [
+          2502
+        ],
+        "box": {
+          "fill": 0.66,
+          "anchor": "centre",
+          "shadow": {
+            "dx": 0.03,
+            "dy": 0.03,
+            "sigma": 0.02,
+            "opacity": 0.3,
+            "color": "#000000",
+            "baked": true
+          }
+        },
+        "background": "transparent (straight alpha), no backdrop; a soft drop shadow is baked in (box.shadow)",
+        "pose": {
+          "yaw": -24
+        }
+      },
+      "meta": {
+        "sizes": [
+          64,
+          128,
+          256
+        ],
+        "alphaCoverage": {
+          "64": 0.183,
+          "128": 0.183,
+          "256": 0.182
+        },
+        "sizeBytes": {
+          "64": 4096,
+          "128": 12807,
+          "256": 37176
+        },
+        "framing": {
+          "radiusM": 0.1531,
+          "distanceM": 0.9442,
+          "extent": [
+            0.66,
+            0.5095
+          ]
+        }
+      }
+    },
+    {
+      "id": "icons/2103",
+      "kind": "icon",
+      "path": "assets/icons/2103.png",
+      "license": "LicenseRef-Original",
+      "sources": [
+        "polyhaven/studio_small_09@2k"
+      ],
+      "files": {
+        "64": "assets/icons/2103@64.png",
+        "128": "assets/icons/2103@128.png",
+        "256": "assets/icons/2103.png"
+      },
+      "rebuild": "icons",
+      "digests": {
+        "assets/icons/2103@64.png": "4bea20c28c5379e27493715d9430f07042a442a910cc4fdf6e866d283263b460",
+        "assets/icons/2103@128.png": "5f58d4ea6fcbd3d71ebe3f133418efb53637259d8bdf7eff4b24eddd61576342",
+        "assets/icons/2103.png": "7d5d2c9dafb575ff48ced462bbca4f9d0d1a1cefabb652ae1fa48db9bd214b66"
+      },
+      "params": {
+        "item": 2103,
+        "name": "Organic Fragrant Rice",
+        "nameZh": "生态香米",
+        "category": 1,
+        "categoryName": "food",
+        "footprint": [
+          3,
+          4
+        ],
+        "title": "Open hessian rice sack with a rolled rim, a heaped mound of rice and a large rice-ear emblem",
+        "builder": "rice_sack",
+        "labels": [
+          "rice_ear"
+        ],
+        "libraryMaterials": [],
+        "serves": [
+          2103
+        ],
+        "box": {
+          "fill": 0.66,
+          "anchor": "centre",
+          "shadow": {
+            "dx": 0.03,
+            "dy": 0.03,
+            "sigma": 0.02,
+            "opacity": 0.3,
+            "color": "#000000",
+            "baked": true
+          }
+        },
+        "background": "transparent (straight alpha), no backdrop; a soft drop shadow is baked in (box.shadow)",
+        "pose": {
+          "yaw": -22
+        }
+      },
+      "meta": {
+        "sizes": [
+          64,
+          128,
+          256
+        ],
+        "alphaCoverage": {
+          "64": 0.315,
+          "128": 0.314,
+          "256": 0.313
+        },
+        "sizeBytes": {
+          "64": 5773,
+          "128": 18366,
+          "256": 55224
+        },
+        "framing": {
+          "radiusM": 0.1717,
+          "distanceM": 1.0632,
+          "extent": [
+            0.6196,
+            0.66
+          ]
+        }
+      }
+    },
+    {
+      "id": "icons/2142",
+      "kind": "icon",
+      "path": "assets/icons/2142.png",
+      "license": "LicenseRef-Original",
+      "sources": [
+        "polyhaven/studio_small_09@2k"
+      ],
+      "files": {
+        "64": "assets/icons/2142@64.png",
+        "128": "assets/icons/2142@128.png",
+        "256": "assets/icons/2142.png"
+      },
+      "rebuild": "icons",
+      "digests": {
+        "assets/icons/2142@64.png": "5edfaae4d91e9f1b80bc5b4c91117a47ab6d6aafb14c0b93e9fdebb62600ae11",
+        "assets/icons/2142@128.png": "119a9a37713e9d6ff4b423192705fbc6b9ef203e77b7c12e9938664c7c459a33",
+        "assets/icons/2142.png": "d2a46dbe696c5b52ce43bce3a09cae314fd2ad4ea04e04fc7bc8c119f4b13509"
+      },
+      "params": {
+        "item": 2142,
+        "name": "Natural Sparkling Water",
+        "nameZh": "天然气泡水",
+        "category": 1,
+        "categoryName": "food",
+        "footprint": [
+          1,
+          2
+        ],
+        "title": "Clear PET bottle of sparkling water with a wrap label",
+        "builder": "water_bottle",
+        "labels": [
+          "water_band"
+        ],
+        "libraryMaterials": [],
+        "serves": [
+          2142
+        ],
+        "box": {
+          "fill": 0.66,
+          "anchor": "centre",
+          "shadow": {
+            "dx": 0.03,
+            "dy": 0.03,
+            "sigma": 0.02,
+            "opacity": 0.3,
+            "color": "#000000",
+            "baked": true
+          }
+        },
+        "background": "transparent (straight alpha), no backdrop; a soft drop shadow is baked in (box.shadow)",
+        "pose": {
+          "spin": 140,
+          "roll": 90,
+          "yaw": -38
+        }
+      },
+      "meta": {
+        "sizes": [
+          64,
+          128,
+          256
+        ],
+        "alphaCoverage": {
+          "64": 0.127,
+          "128": 0.126,
+          "256": 0.126
+        },
+        "sizeBytes": {
+          "64": 3230,
+          "128": 10354,
+          "256": 30273
+        },
+        "framing": {
+          "radiusM": 0.1225,
+          "distanceM": 0.7544,
+          "extent": [
+            0.66,
+            0.4182
+          ]
+        }
+      }
+    },
+    {
+      "id": "icons/13540",
+      "kind": "icon",
+      "path": "assets/icons/13540.png",
+      "license": "LicenseRef-Original",
+      "sources": [
+        "polyhaven/studio_small_09@2k"
+      ],
+      "files": {
+        "64": "assets/icons/13540@64.png",
+        "128": "assets/icons/13540@128.png",
+        "256": "assets/icons/13540.png"
+      },
+      "rebuild": "icons",
+      "digests": {
+        "assets/icons/13540@64.png": "21fb45f675dd205690d8bf5bf2f00afc4fbb03f4d8ac2130b5cce9082081c497",
+        "assets/icons/13540@128.png": "d392d0978dc93c55613f25006598bb00a6a0426afe95bd1ef5fbbace101f9a8f",
+        "assets/icons/13540.png": "1ddc8737b764870f9b21c2b86ca1d58e5f3f31e2eaedd12634619e53ef5e4006"
+      },
+      "params": {
+        "item": 13540,
+        "name": "Luncheon Meat and Fried Egg (Perfect)",
+        "nameZh": "午餐肉煎蛋(完美)",
+        "category": 1,
+        "categoryName": "food",
+        "footprint": [
+          2,
+          2
+        ],
+        "title": "Luncheon meat and fried egg on a wooden board: the one render for the Perfect, Good and Normal tiers (the tier shows as text, as in the source)",
+        "builder": "dish",
+        "labels": [],
+        "libraryMaterials": [],
+        "serves": [
+          13540,
+          13541,
+          13542
+        ],
+        "cooking": "perfect",
+        "box": {
+          "fill": 0.66,
+          "anchor": "centre",
+          "shadow": {
+            "dx": 0.03,
+            "dy": 0.03,
+            "sigma": 0.02,
+            "opacity": 0.3,
+            "color": "#000000",
+            "baked": true
+          }
+        },
+        "background": "transparent (straight alpha), no backdrop; a soft drop shadow is baked in (box.shadow)",
+        "pose": {
+          "yaw": -20
+        }
+      },
+      "meta": {
+        "sizes": [
+          64,
+          128,
+          256
+        ],
+        "alphaCoverage": {
+          "64": 0.186,
+          "128": 0.185,
+          "256": 0.185
+        },
+        "sizeBytes": {
+          "64": 4047,
+          "128": 13314,
+          "256": 42826
+        },
+        "framing": {
+          "radiusM": 0.0974,
+          "distanceM": 0.668,
+          "extent": [
+            0.66,
+            0.4081
+          ]
+        }
+      }
+    },
+    {
+      "id": "icons/13543",
+      "kind": "icon",
+      "path": "assets/icons/13543.png",
+      "license": "LicenseRef-Original",
+      "sources": [
+        "polyhaven/studio_small_09@2k"
+      ],
+      "files": {
+        "64": "assets/icons/13543@64.png",
+        "128": "assets/icons/13543@128.png",
+        "256": "assets/icons/13543.png"
+      },
+      "rebuild": "icons",
+      "digests": {
+        "assets/icons/13543@64.png": "8d75b4fd27ab478b3bd98faaaa0644689ba6af88326c4386890b14e8f9e7d309",
+        "assets/icons/13543@128.png": "6158ed4fe82564158b421c42f65515322ad09767ff3b42be239f0afe8735199c",
+        "assets/icons/13543.png": "a075f56d21c5c904c86f7c545286be9d3bbac5de28983dfca06f6d368784423b"
+      },
+      "params": {
+        "item": 13543,
+        "name": "Luncheon Meat and Fried Egg (Failed)",
+        "nameZh": "午餐肉煎蛋(失败)",
+        "category": 1,
+        "categoryName": "food",
+        "footprint": [
+          2,
+          2
+        ],
+        "title": "Luncheon meat and fried egg, Failed: charred slices and a burnt egg on the board",
+        "builder": "dish",
+        "labels": [],
+        "libraryMaterials": [],
+        "serves": [
+          13543
+        ],
+        "cooking": "failed",
+        "box": {
+          "fill": 0.66,
+          "anchor": "centre",
+          "shadow": {
+            "dx": 0.03,
+            "dy": 0.03,
+            "sigma": 0.02,
+            "opacity": 0.3,
+            "color": "#000000",
+            "baked": true
+          }
+        },
+        "background": "transparent (straight alpha), no backdrop; a soft drop shadow is baked in (box.shadow)",
+        "pose": {
+          "yaw": -20
+        }
+      },
+      "meta": {
+        "sizes": [
+          64,
+          128,
+          256
+        ],
+        "alphaCoverage": {
+          "64": 0.215,
+          "128": 0.213,
+          "256": 0.212
+        },
+        "sizeBytes": {
+          "64": 4518,
+          "128": 14985,
+          "256": 49748
+        },
+        "framing": {
+          "radiusM": 0.0992,
+          "distanceM": 0.6622,
+          "extent": [
+            0.66,
+            0.4833
+          ]
+        }
+      }
+    },
+    {
+      "id": "icons/2400",
+      "kind": "icon",
+      "path": "assets/icons/2400.png",
+      "license": "LicenseRef-Original",
+      "sources": [
+        "polyhaven/studio_small_09@2k"
+      ],
+      "files": {
+        "64": "assets/icons/2400@64.png",
+        "128": "assets/icons/2400@128.png",
+        "256": "assets/icons/2400.png"
+      },
+      "rebuild": "icons",
+      "digests": {
+        "assets/icons/2400@64.png": "03cc3050238254647182df6a6b9db6805027ee8396f9406af19ad2535a7d0615",
+        "assets/icons/2400@128.png": "bb3608b0ee647539b59092fb6fb8888aec7a3314c38099979ddd986ba544a2ca",
+        "assets/icons/2400.png": "952cd64c548c671b1c5bfa654b65c353013ffa78a931eb3c86f492fed9bcb8b2"
+      },
+      "params": {
+        "item": 2400,
+        "name": "First-Aid Bandage",
+        "nameZh": "急救绷带",
+        "category": 2,
+        "categoryName": "medicine",
+        "footprint": [
+          2,
+          1
+        ],
+        "title": "Gauze bandage roll in a green first-aid wrapper band, a short end unrolled",
+        "builder": "bandage",
+        "labels": [
+          "bandage_band"
+        ],
+        "libraryMaterials": [],
+        "serves": [
+          2400
+        ],
+        "box": {
+          "fill": 0.66,
+          "anchor": "centre",
+          "shadow": {
+            "dx": 0.03,
+            "dy": 0.03,
+            "sigma": 0.02,
+            "opacity": 0.3,
+            "color": "#000000",
+            "baked": true
+          }
+        },
+        "background": "transparent (straight alpha), no backdrop; a soft drop shadow is baked in (box.shadow)",
+        "pose": {
+          "yaw": -30
+        }
+      },
+      "meta": {
+        "sizes": [
+          64,
+          128,
+          256
+        ],
+        "alphaCoverage": {
+          "64": 0.207,
+          "128": 0.206,
+          "256": 0.205
+        },
+        "sizeBytes": {
+          "64": 4404,
+          "128": 14207,
+          "256": 39505
+        },
+        "framing": {
+          "radiusM": 0.0416,
+          "distanceM": 0.2914,
+          "extent": [
+            0.66,
+            0.5133
+          ]
+        }
+      }
+    },
+    {
+      "id": "icons/20106",
+      "kind": "icon",
+      "path": "assets/icons/20106.png",
+      "license": "LicenseRef-Original",
+      "sources": [
+        "polyhaven/studio_small_09@2k"
+      ],
+      "files": {
+        "64": "assets/icons/20106@64.png",
+        "128": "assets/icons/20106@128.png",
+        "256": "assets/icons/20106.png"
+      },
+      "rebuild": "icons",
+      "digests": {
+        "assets/icons/20106@64.png": "1b304aab4bd5fef187a1853a02b5157dc1e0a52ffa9ebc46e905ab4ec35ef20d",
+        "assets/icons/20106@128.png": "351cd64498d1375674f0bee08903e4f05ab67f2b9a3217fd5a5f1b126de67d01",
+        "assets/icons/20106.png": "300aba17b8dd0ecd16c0bc179e7d8acc9c3e81dc91c82a4705d7aaae65a4eada"
+      },
+      "params": {
+        "item": 20106,
+        "name": "Wooden Plank",
+        "nameZh": "木板",
+        "category": 9,
+        "categoryName": "material",
+        "footprint": [
+          2,
+          1
+        ],
+        "title": "Three rough-sawn pine boards, stacked: saturated grain, knots, dark end grain",
+        "builder": "planks",
+        "labels": [],
+        "libraryMaterials": [],
+        "serves": [
+          20106
+        ],
+        "box": {
+          "fill": 0.66,
+          "anchor": "centre",
+          "shadow": {
+            "dx": 0.03,
+            "dy": 0.03,
+            "sigma": 0.02,
+            "opacity": 0.3,
+            "color": "#000000",
+            "baked": true
+          }
+        },
+        "background": "transparent (straight alpha), no backdrop; a soft drop shadow is baked in (box.shadow)",
+        "pose": {
+          "yaw": -34
+        }
+      },
+      "meta": {
+        "sizes": [
+          64,
+          128,
+          256
+        ],
+        "alphaCoverage": {
+          "64": 0.156,
+          "128": 0.155,
+          "256": 0.155
+        },
+        "sizeBytes": {
+          "64": 3473,
+          "128": 11219,
+          "256": 36650
+        },
+        "framing": {
+          "radiusM": 0.1853,
+          "distanceM": 1.3118,
+          "extent": [
+            0.66,
+            0.415
+          ]
+        }
+      }
+    },
+    {
+      "id": "icons/15026",
+      "kind": "icon",
+      "path": "assets/icons/15026.png",
+      "license": "LicenseRef-Original",
+      "sources": [
+        "polyhaven/studio_small_09@2k"
+      ],
+      "files": {
+        "64": "assets/icons/15026@64.png",
+        "128": "assets/icons/15026@128.png",
+        "256": "assets/icons/15026.png"
+      },
+      "rebuild": "icons",
+      "digests": {
+        "assets/icons/15026@64.png": "aaba21e3ab314379806c479b879b7b049542e776425775825474a04a0dc2db73",
+        "assets/icons/15026@128.png": "ae341406de64904c9393ec2b37e26ad7766c7e71b000a012e6c012672a2036d7",
+        "assets/icons/15026.png": "d1f2610ba7709b107d7d192084f9ac9ba40c2a972817bc2ab3fedd95bcdfc35e"
+      },
+      "params": {
+        "item": 15026,
+        "name": "Tomato Seeds",
+        "nameZh": "西红柿种子",
+        "category": 10,
+        "categoryName": "seed",
+        "footprint": [
+          1,
+          1
+        ],
+        "title": "Kraft paper seed packet with a crimped top and a tomato window, leaning up",
+        "builder": "seed_packet",
+        "labels": [
+          "seed_tomato"
+        ],
+        "libraryMaterials": [],
+        "serves": [
+          15026
+        ],
+        "box": {
+          "fill": 0.66,
+          "anchor": "centre",
+          "shadow": {
+            "dx": 0.03,
+            "dy": 0.03,
+            "sigma": 0.02,
+            "opacity": 0.3,
+            "color": "#000000",
+            "baked": true
+          }
+        },
+        "background": "transparent (straight alpha), no backdrop; a soft drop shadow is baked in (box.shadow)",
+        "pose": {
+          "yaw": -14,
+          "tilt": 58
+        }
+      },
+      "meta": {
+        "sizes": [
+          64,
+          128,
+          256
+        ],
+        "alphaCoverage": {
+          "64": 0.247,
+          "128": 0.246,
+          "256": 0.245
+        },
+        "sizeBytes": {
+          "64": 4782,
+          "128": 13734,
+          "256": 35488
+        },
+        "framing": {
+          "radiusM": 0.0795,
+          "distanceM": 0.5096,
+          "extent": [
+            0.4817,
+            0.66
+          ]
+        }
+      }
+    },
+    {
+      "id": "icons/25001",
+      "kind": "icon",
+      "path": "assets/icons/25001.png",
+      "license": "LicenseRef-Original",
+      "sources": [
+        "polyhaven/studio_small_09@2k"
+      ],
+      "files": {
+        "64": "assets/icons/25001@64.png",
+        "128": "assets/icons/25001@128.png",
+        "256": "assets/icons/25001.png"
+      },
+      "rebuild": "icons",
+      "digests": {
+        "assets/icons/25001@64.png": "c0cd5f5824f646bb291817efa9ba68bd6d6db9b9613e2c7e13bd768f394e5b9d",
+        "assets/icons/25001@128.png": "713719aef1a01fba34d2eb3cc132ee8feef84d7f8b662a233845f65bb0d99b16",
+        "assets/icons/25001.png": "2296732193fa70dad3355cdf38971d7dd007c574b2debf26b2c3c13a9b2624c7"
+      },
+      "params": {
+        "item": 25001,
+        "name": "Simple Mousetrap",
+        "nameZh": "简易捕鼠夹",
+        "category": 12,
+        "categoryName": "trap",
+        "footprint": [
+          1,
+          1
+        ],
+        "title": "Wooden snap mousetrap with a cheese bait",
+        "builder": "mousetrap",
+        "labels": [
+          "trap_stamp"
+        ],
+        "libraryMaterials": [],
+        "serves": [
+          25001
+        ],
+        "box": {
+          "fill": 0.66,
+          "anchor": "centre",
+          "shadow": {
+            "dx": 0.03,
+            "dy": 0.03,
+            "sigma": 0.02,
+            "opacity": 0.3,
+            "color": "#000000",
+            "baked": true
+          }
+        },
+        "background": "transparent (straight alpha), no backdrop; a soft drop shadow is baked in (box.shadow)",
+        "pose": {
+          "yaw": -30
+        }
+      },
+      "meta": {
+        "sizes": [
+          64,
+          128,
+          256
+        ],
+        "alphaCoverage": {
+          "64": 0.138,
+          "128": 0.137,
+          "256": 0.136
+        },
+        "sizeBytes": {
+          "64": 3322,
+          "128": 10591,
+          "256": 33068
+        },
+        "framing": {
+          "radiusM": 0.0555,
+          "distanceM": 0.3883,
+          "extent": [
+            0.66,
+            0.3886
+          ]
+        }
+      }
+    },
+    {
+      "id": "icons/3022",
+      "kind": "icon",
+      "path": "assets/icons/3022.png",
+      "license": "LicenseRef-Original",
+      "sources": [
+        "polyhaven/studio_small_09@2k"
+      ],
+      "files": {
+        "64": "assets/icons/3022@64.png",
+        "128": "assets/icons/3022@128.png",
+        "256": "assets/icons/3022.png"
+      },
+      "rebuild": "icons",
+      "digests": {
+        "assets/icons/3022@64.png": "e261233b71a43401099d65e938165ef7fa6ad61957bfbf162a73c76837812579",
+        "assets/icons/3022@128.png": "a2ed9fa1cae701d7d5bf14b6175ab324b590db5b16fb1a0f20d7f53e6ab4e59c",
+        "assets/icons/3022.png": "58350f2c836dd0baf70ce47ec0bf7012fd106f23bf19b5eaaee7b23c780d02cc"
+      },
+      "params": {
+        "item": 3022,
+        "name": "Home First-Aid Manual",
+        "nameZh": "家庭急救手册",
+        "category": 3,
+        "categoryName": "book",
+        "footprint": [
+          1,
+          2
+        ],
+        "title": "Hardcover first-aid manual with a ribbon bookmark",
+        "builder": "book",
+        "labels": [
+          "book_cover"
+        ],
+        "libraryMaterials": [],
+        "serves": [
+          3022
+        ],
+        "box": {
+          "fill": 0.66,
+          "anchor": "centre",
+          "shadow": {
+            "dx": 0.03,
+            "dy": 0.03,
+            "sigma": 0.02,
+            "opacity": 0.3,
+            "color": "#000000",
+            "baked": true
+          }
+        },
+        "background": "transparent (straight alpha), no backdrop; a soft drop shadow is baked in (box.shadow)",
+        "pose": {
+          "yaw": -18
+        }
+      },
+      "meta": {
+        "sizes": [
+          64,
+          128,
+          256
+        ],
+        "alphaCoverage": {
+          "64": 0.229,
+          "128": 0.229,
+          "256": 0.228
+        },
+        "sizeBytes": {
+          "64": 4935,
+          "128": 15760,
+          "256": 42817
+        },
+        "framing": {
+          "radiusM": 0.152,
+          "distanceM": 0.8025,
+          "extent": [
+            0.66,
+            0.5649
+          ]
+        }
+      }
+    }
+  ],
+  "bindings": {
+    "2103": {
+      "asset": "icons/2103"
+    },
+    "2105": {
+      "asset": "icons/2105"
+    },
+    "2115": {
+      "asset": "icons/2115"
+    },
+    "2142": {
+      "asset": "icons/2142"
+    },
+    "2400": {
+      "asset": "icons/2400"
+    },
+    "2502": {
+      "asset": "icons/2502"
+    },
+    "3022": {
+      "asset": "icons/3022"
+    },
+    "13540": {
+      "asset": "icons/13540"
+    },
+    "13541": {
+      "asset": "icons/13540"
+    },
+    "13542": {
+      "asset": "icons/13540"
+    },
+    "13543": {
+      "asset": "icons/13543"
+    },
+    "15026": {
+      "asset": "icons/15026"
+    },
+    "20106": {
+      "asset": "icons/20106"
+    },
+    "25001": {
+      "asset": "icons/25001"
+    }
+  }
+}

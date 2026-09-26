@@ -1,0 +1,813 @@
+{
+ "summary": {
+  "native_views": [
+   "ss_01",
+   "ss_02",
+   "ss_04",
+   "ss_06",
+   "ss_07",
+   "t019",
+   "t032",
+   "t033",
+   "t035",
+   "t041",
+   "t059",
+   "t069",
+   "t074"
+  ],
+  "pitch_deg_median": 39.98,
+  "pitch_deg_range": [
+   39.9,
+   40.48
+  ],
+  "yaw_deg_median": -29.99,
+  "default_vfov_deg_median": 59.76,
+  "default_views": [
+   "ss_01",
+   "ss_06",
+   "ss_07",
+   "t019",
+   "t032",
+   "t033",
+   "t035",
+   "t041",
+   "t059"
+  ],
+  "zoomed_native_vfov_deg": [
+   49.77,
+   49.8,
+   50.92,
+   53.89
+  ],
+  "punch_in_vfov_deg": [
+   35.18,
+   37.35,
+   37.65,
+   38.02,
+   39.02,
+   39.39
+  ]
+ },
+ "views": [
+  {
+   "id": "ss_01",
+   "file": "screenshots/ss_01_8f2609d8.jpg",
+   "what": "Supermarket before the disaster, shop UI (screenshot)",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 939.9,
+   "vfov_deg": 59.76,
+   "hfov_deg": 91.21,
+   "pitch_deg": 39.98,
+   "yaw_deg": -30.03,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": -0.08,
+   "rms_angle_err_deg": 0.202,
+   "f_pairs_px": [
+    937.0,
+    936.0,
+    913.0
+   ],
+   "f_pair_spread_pct": 2.6,
+   "ci68": {
+    "vfov_deg": [
+     59.63,
+     59.85
+    ],
+    "pitch_deg": [
+     39.94,
+     40.03
+    ],
+    "yaw_deg": [
+     -30.07,
+     -29.99
+    ]
+   },
+   "inliers": [
+    22,
+    22,
+    20
+   ]
+  },
+  {
+   "id": "ss_02",
+   "file": "screenshots/ss_02_dede236e.jpg",
+   "what": "Duplex 2F terrace, Day 7 11:50 (screenshot)",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 1134.0,
+   "vfov_deg": 50.92,
+   "hfov_deg": 80.5,
+   "pitch_deg": 39.98,
+   "yaw_deg": -29.98,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": 0.09,
+   "rms_angle_err_deg": 0.178,
+   "f_pairs_px": [
+    1141.0,
+    1134.0,
+    1128.0
+   ],
+   "f_pair_spread_pct": 1.2,
+   "ci68": {
+    "vfov_deg": [
+     50.83,
+     51.03
+    ],
+    "pitch_deg": [
+     39.95,
+     40.01
+    ],
+    "yaw_deg": [
+     -30.0,
+     -29.96
+    ]
+   },
+   "inliers": [
+    27,
+    102,
+    44
+   ]
+  },
+  {
+   "id": "ss_04",
+   "file": "screenshots/ss_04_344f0472.jpg",
+   "what": "Home 1F storeroom, Day 1 17:20 (screenshot)",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 1062.3,
+   "vfov_deg": 53.89,
+   "hfov_deg": 84.21,
+   "pitch_deg": 40.06,
+   "yaw_deg": -30.01,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": -0.02,
+   "rms_angle_err_deg": 0.197,
+   "f_pairs_px": [
+    1064.0,
+    1061.0,
+    1059.0
+   ],
+   "f_pair_spread_pct": 0.4,
+   "ci68": {
+    "vfov_deg": [
+     53.83,
+     53.96
+    ],
+    "pitch_deg": [
+     40.04,
+     40.09
+    ],
+    "yaw_deg": [
+     -30.04,
+     -29.99
+    ]
+   },
+   "inliers": [
+    37,
+    88,
+    61
+   ]
+  },
+  {
+   "id": "ss_06",
+   "file": "screenshots/ss_06_bdcdf4bc.jpg",
+   "what": "Rooftops and street, Day 2 07:50 (screenshot)",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 939.0,
+   "vfov_deg": 59.8,
+   "hfov_deg": 91.27,
+   "pitch_deg": 40.1,
+   "yaw_deg": -30.04,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": -0.03,
+   "rms_angle_err_deg": 0.211,
+   "f_pairs_px": [
+    938.0,
+    941.0,
+    935.0
+   ],
+   "f_pair_spread_pct": 0.6,
+   "ci68": {
+    "vfov_deg": [
+     59.7,
+     59.9
+    ],
+    "pitch_deg": [
+     40.08,
+     40.13
+    ],
+    "yaw_deg": [
+     -30.05,
+     -30.03
+    ]
+   },
+   "inliers": [
+    29,
+    113,
+    48
+   ]
+  },
+  {
+   "id": "ss_07",
+   "file": "screenshots/ss_07_02c2b148.jpg",
+   "what": "Inventory UI over the scene, Day 5 09:50 (screenshot)",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 932.5,
+   "vfov_deg": 60.15,
+   "hfov_deg": 91.67,
+   "pitch_deg": 40.1,
+   "yaw_deg": -29.96,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": -0.05,
+   "rms_angle_err_deg": 0.184,
+   "f_pairs_px": [
+    931.0,
+    944.0,
+    984.0
+   ],
+   "f_pair_spread_pct": 5.6,
+   "ci68": {
+    "vfov_deg": [
+     60.02,
+     60.3
+    ],
+    "pitch_deg": [
+     40.05,
+     40.15
+    ],
+    "yaw_deg": [
+     -30.02,
+     -29.92
+    ]
+   },
+   "inliers": [
+    8,
+    11,
+    6
+   ]
+  },
+  {
+   "id": "t019",
+   "file": "trailer/shot_09_t018.983s.jpg",
+   "what": "Supermarket, pre-disaster",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 940.7,
+   "vfov_deg": 59.72,
+   "hfov_deg": 91.16,
+   "pitch_deg": 39.92,
+   "yaw_deg": -29.99,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": 0.02,
+   "rms_angle_err_deg": 0.225,
+   "f_pairs_px": [
+    943.0,
+    941.0,
+    935.0
+   ],
+   "f_pair_spread_pct": 0.8,
+   "ci68": {
+    "vfov_deg": [
+     59.58,
+     59.89
+    ],
+    "pitch_deg": [
+     39.86,
+     39.99
+    ],
+    "yaw_deg": [
+     -30.01,
+     -29.95
+    ]
+   },
+   "inliers": [
+    16,
+    70,
+    82
+   ]
+  },
+  {
+   "id": "t025",
+   "file": "trailer/shot_15_t024.933s.jpg",
+   "what": "Home storeroom and bed, lamps on",
+   "kind": "punch-in",
+   "min_segment_px": 50,
+   "f_px": 1524.0,
+   "vfov_deg": 39.02,
+   "hfov_deg": 64.42,
+   "pitch_deg": 38.11,
+   "yaw_deg": -29.69,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": -0.27,
+   "rms_angle_err_deg": 0.349,
+   "f_pairs_px": [
+    1528.0,
+    1548.0,
+    1606.0
+   ],
+   "f_pair_spread_pct": 5.1,
+   "ci68": {
+    "vfov_deg": [
+     38.91,
+     39.19
+    ],
+    "pitch_deg": [
+     38.04,
+     38.18
+    ],
+    "yaw_deg": [
+     -29.74,
+     -29.63
+    ]
+   },
+   "inliers": [
+    49,
+    79,
+    33
+   ]
+  },
+  {
+   "id": "t026",
+   "file": "trailer/shot_16_t026.217s.jpg",
+   "what": "Garage storeroom",
+   "kind": "punch-in",
+   "min_segment_px": 50,
+   "f_px": 1584.1,
+   "vfov_deg": 37.65,
+   "hfov_deg": 62.43,
+   "pitch_deg": 37.7,
+   "yaw_deg": -31.96,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": 4.74,
+   "rms_angle_err_deg": 2.597,
+   "f_pairs_px": [
+    1724.0,
+    1501.0,
+    1699.0
+   ],
+   "f_pair_spread_pct": 13.1,
+   "ci68": {
+    "vfov_deg": [
+     36.7,
+     38.63
+    ],
+    "pitch_deg": [
+     37.44,
+     37.99
+    ],
+    "yaw_deg": [
+     -32.05,
+     -31.82
+    ]
+   },
+   "inliers": [
+    94,
+    102,
+    29
+   ]
+  },
+  {
+   "id": "t028",
+   "file": "trailer/shot_19_t028.000s.jpg",
+   "what": "Storeroom, closest zoom",
+   "kind": "punch-in",
+   "min_segment_px": 50,
+   "f_px": 1567.2,
+   "vfov_deg": 38.02,
+   "hfov_deg": 62.98,
+   "pitch_deg": 39.27,
+   "yaw_deg": -30.93,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": 1.92,
+   "rms_angle_err_deg": 1.029,
+   "f_pairs_px": [
+    1695.0,
+    1590.0,
+    1695.0
+   ],
+   "f_pair_spread_pct": 6.2,
+   "ci68": {
+    "vfov_deg": [
+     37.52,
+     38.45
+    ],
+    "pitch_deg": [
+     39.11,
+     39.39
+    ],
+    "yaw_deg": [
+     -30.98,
+     -30.88
+    ]
+   },
+   "inliers": [
+    65,
+    87,
+    66
+   ]
+  },
+  {
+   "id": "t032",
+   "file": "trailer/shot_22_t032.300s.jpg",
+   "what": "Roof, Day 3",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 940.0,
+   "vfov_deg": 59.75,
+   "hfov_deg": 91.2,
+   "pitch_deg": 39.93,
+   "yaw_deg": -30.0,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": -0.22,
+   "rms_angle_err_deg": 0.252,
+   "f_pairs_px": [
+    949.0,
+    952.0,
+    929.0
+   ],
+   "f_pair_spread_pct": 2.4,
+   "ci68": {
+    "vfov_deg": [
+     59.5,
+     60.08
+    ],
+    "pitch_deg": [
+     39.85,
+     40.01
+    ],
+    "yaw_deg": [
+     -30.05,
+     -29.96
+    ]
+   },
+   "inliers": [
+    26,
+    162,
+    45
+   ]
+  },
+  {
+   "id": "t033",
+   "file": "trailer/shot_23_t033.500s.jpg",
+   "what": "Home 1F at night, Day 18",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 940.7,
+   "vfov_deg": 59.71,
+   "hfov_deg": 91.16,
+   "pitch_deg": 39.97,
+   "yaw_deg": -29.93,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": 0.04,
+   "rms_angle_err_deg": 0.175,
+   "f_pairs_px": [
+    942.0,
+    941.0,
+    948.0
+   ],
+   "f_pair_spread_pct": 0.7,
+   "ci68": {
+    "vfov_deg": [
+     59.63,
+     59.77
+    ],
+    "pitch_deg": [
+     39.93,
+     39.99
+    ],
+    "yaw_deg": [
+     -29.95,
+     -29.91
+    ]
+   },
+   "inliers": [
+    12,
+    49,
+    9
+   ]
+  },
+  {
+   "id": "t035",
+   "file": "trailer/shot_24_t035.212s.jpg",
+   "what": "Apartment 1F, whole floor, golden light",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 936.1,
+   "vfov_deg": 59.96,
+   "hfov_deg": 91.45,
+   "pitch_deg": 39.98,
+   "yaw_deg": -30.01,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": -0.04,
+   "rms_angle_err_deg": 0.231,
+   "f_pairs_px": [
+    938.0,
+    931.0,
+    922.0
+   ],
+   "f_pair_spread_pct": 1.7,
+   "ci68": {
+    "vfov_deg": [
+     59.85,
+     60.03
+    ],
+    "pitch_deg": [
+     39.94,
+     40.02
+    ],
+    "yaw_deg": [
+     -30.04,
+     -29.98
+    ]
+   },
+   "inliers": [
+    37,
+    118,
+    27
+   ]
+  },
+  {
+   "id": "t041",
+   "file": "trailer/shot_27_t041.417s.jpg",
+   "what": "Apartment front in snow, Day 16 15:20",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 973.4,
+   "vfov_deg": 58.04,
+   "hfov_deg": 89.21,
+   "pitch_deg": 39.9,
+   "yaw_deg": -29.97,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": -0.09,
+   "rms_angle_err_deg": 0.257,
+   "f_pairs_px": [
+    969.0,
+    974.0,
+    967.0
+   ],
+   "f_pair_spread_pct": 0.8,
+   "ci68": {
+    "vfov_deg": [
+     57.96,
+     58.15
+    ],
+    "pitch_deg": [
+     39.86,
+     39.94
+    ],
+    "yaw_deg": [
+     -30.02,
+     -29.92
+    ]
+   },
+   "inliers": [
+    34,
+    50,
+    15
+   ]
+  },
+  {
+   "id": "t049",
+   "file": "trailer/shot_31_t049.038s.jpg",
+   "what": "Front yard horde with traps, low sun",
+   "kind": "punch-in",
+   "min_segment_px": 50,
+   "f_px": 1597.5,
+   "vfov_deg": 37.35,
+   "hfov_deg": 62.01,
+   "pitch_deg": 38.76,
+   "yaw_deg": -28.1,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": 0.24,
+   "rms_angle_err_deg": 0.659,
+   "f_pairs_px": [
+    1737.0,
+    1777.0,
+    2037.0
+   ],
+   "f_pair_spread_pct": 16.9,
+   "ci68": {
+    "vfov_deg": [
+     37.01,
+     37.81
+    ],
+    "pitch_deg": [
+     38.53,
+     38.96
+    ],
+    "yaw_deg": [
+     -28.29,
+     -27.93
+    ]
+   },
+   "inliers": [
+    21,
+    17,
+    7
+   ]
+  },
+  {
+   "id": "t059",
+   "file": "trailer/shot_35_t059.417s.jpg",
+   "what": "Roof, Day 1 14:40",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 909.7,
+   "vfov_deg": 61.39,
+   "hfov_deg": 93.08,
+   "pitch_deg": 40.48,
+   "yaw_deg": -29.92,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": -0.42,
+   "rms_angle_err_deg": 0.924,
+   "f_pairs_px": [
+    806.0,
+    817.0,
+    940.0
+   ],
+   "f_pair_spread_pct": 16.4,
+   "ci68": {
+    "vfov_deg": [
+     60.6,
+     62.31
+    ],
+    "pitch_deg": [
+     40.2,
+     40.79
+    ],
+    "yaw_deg": [
+     -29.96,
+     -29.87
+    ]
+   },
+   "inliers": [
+    5,
+    163,
+    82
+   ]
+  },
+  {
+   "id": "t067",
+   "file": "trailer/shot_40_t067.171s.jpg",
+   "what": "Storeroom, bright",
+   "kind": "punch-in",
+   "min_segment_px": 50,
+   "f_px": 1508.7,
+   "vfov_deg": 39.39,
+   "hfov_deg": 64.94,
+   "pitch_deg": 39.4,
+   "yaw_deg": -30.46,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": 1.59,
+   "rms_angle_err_deg": 0.729,
+   "f_pairs_px": [
+    1601.0,
+    1521.0,
+    1581.0
+   ],
+   "f_pair_spread_pct": 5.1,
+   "ci68": {
+    "vfov_deg": [
+     38.83,
+     39.72
+    ],
+    "pitch_deg": [
+     39.2,
+     39.51
+    ],
+    "yaw_deg": [
+     -30.54,
+     -30.4
+    ]
+   },
+   "inliers": [
+    41,
+    77,
+    19
+   ]
+  },
+  {
+   "id": "t069",
+   "file": "trailer/shot_41_t068.883s.jpg",
+   "what": "Home storeroom, Day 1 11:50",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 1163.4,
+   "vfov_deg": 49.8,
+   "hfov_deg": 79.06,
+   "pitch_deg": 40.01,
+   "yaw_deg": -29.93,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": -0.14,
+   "rms_angle_err_deg": 0.22,
+   "f_pairs_px": [
+    1161.0,
+    1164.0,
+    1172.0
+   ],
+   "f_pair_spread_pct": 0.9,
+   "ci68": {
+    "vfov_deg": [
+     49.74,
+     49.88
+    ],
+    "pitch_deg": [
+     39.99,
+     40.05
+    ],
+    "yaw_deg": [
+     -29.96,
+     -29.91
+    ]
+   },
+   "inliers": [
+    28,
+    77,
+    34
+   ]
+  },
+  {
+   "id": "t074",
+   "file": "trailer/shot_44_t073.800s.jpg",
+   "what": "Home storeroom and bedroom, Day 1 12:10",
+   "kind": "native",
+   "min_segment_px": 50,
+   "f_px": 1164.1,
+   "vfov_deg": 49.77,
+   "hfov_deg": 79.03,
+   "pitch_deg": 39.96,
+   "yaw_deg": -29.99,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": -0.01,
+   "rms_angle_err_deg": 0.203,
+   "f_pairs_px": [
+    1166.0,
+    1164.0,
+    1163.0
+   ],
+   "f_pair_spread_pct": 0.2,
+   "ci68": {
+    "vfov_deg": [
+     49.72,
+     49.85
+    ],
+    "pitch_deg": [
+     39.94,
+     39.99
+    ],
+    "yaw_deg": [
+     -30.02,
+     -29.97
+    ]
+   },
+   "inliers": [
+    15,
+    50,
+    26
+   ]
+  },
+  {
+   "id": "t080",
+   "file": "trailer/shot_47_t079.713s.jpg",
+   "what": "Office with sofa, closest zoom (sofa edges pollute the verticals)",
+   "kind": "punch-in",
+   "min_segment_px": 50,
+   "f_px": 1703.4,
+   "vfov_deg": 35.18,
+   "hfov_deg": 58.81,
+   "pitch_deg": 44.71,
+   "yaw_deg": -21.25,
+   "steep_axis_vp_side": "right",
+   "roll_from_nadir_deg": 6.01,
+   "rms_angle_err_deg": 2.615,
+   "f_pairs_px": [
+    2451.0,
+    2026.0,
+    2399.0
+   ],
+   "f_pair_spread_pct": 17.7,
+   "ci68": {
+    "vfov_deg": [
+     34.03,
+     35.69
+    ],
+    "pitch_deg": [
+     44.28,
+     44.94
+    ],
+    "yaw_deg": [
+     -21.48,
+     -21.07
+    ]
+   },
+   "inliers": [
+    19,
+    30,
+    23
+   ]
+  }
+ ]
+}

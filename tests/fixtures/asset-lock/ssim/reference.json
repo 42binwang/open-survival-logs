@@ -1,0 +1,39 @@
+{
+  "implementation": "scikit-image 0.26.0 (scipy 1.18.1) skimage.metrics.structural_similarity(gaussian_weights=True, sigma=1.5, use_sample_covariance=False, data_range=255)",
+  "pairs": [
+    {
+      "a": "ref.png",
+      "b": "ref.png",
+      "ssim": 1.0,
+      "channels": [
+        1.0
+      ]
+    },
+    {
+      "a": "ref.png",
+      "b": "noise.png",
+      "ssim": 0.9005180038038277,
+      "channels": [
+        0.9005180038038277
+      ]
+    },
+    {
+      "a": "ref.png",
+      "b": "shift.png",
+      "ssim": 0.47697340127841353,
+      "channels": [
+        0.47697340127841353
+      ]
+    },
+    {
+      "a": "rgb-ref.png",
+      "b": "rgb-dim.png",
+      "ssim": 0.9766346492480027,
+      "channels": [
+        0.9712428765482131,
+        0.9775633636441713,
+        0.9810977075516234
+      ]
+    }
+  ]
+}

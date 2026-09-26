@@ -1,0 +1,218 @@
+{
+  "schema": "survival-logs/icon-catalog@1",
+  "note": "The icons of WP-P0-12, keyed by config item id (src/data/gen/items.js). Sizes in millimetres; the Blender builders (render.py) and the label art (labels.mjs) both read them, so a label always fits its container. pose.yaw turns the subject about Z (degrees, counter-clockwise from above) in front of the fixed camera; pose.tilt leans it towards the camera. quality is how a dish is cooked in its render (dishes.QUALITY); serves lists the config item ids one icon stands for (a recipe's Perfect, Good and Normal tiers share one render; Failed has its own), and icons carry no tier badge.",
+  "seed": 20260923,
+  "icons": [
+    {
+      "id": 2115,
+      "builder": "tin",
+      "title": "Rectangular luncheon-meat tin with a lithographed wrap and a pull-ring lid",
+      "tin": {
+        "w": 100,
+        "d": 58,
+        "r": 12,
+        "h": 83,
+        "band": [
+          5.5,
+          76.5
+        ]
+      },
+      "labels": [
+        "luncheon"
+      ],
+      "pose": {
+        "yaw": -28
+      }
+    },
+    {
+      "id": 2105,
+      "builder": "noodle_cup",
+      "title": "Instant noodle cup, open and heaped with braised beef, bok choy, scallion and chili",
+      "cup": {
+        "top": 95,
+        "bottom": 70,
+        "h": 80,
+        "band": [
+          5,
+          72
+        ]
+      },
+      "labels": [
+        "noodle_cup"
+      ],
+      "pose": {
+        "yaw": -15
+      }
+    },
+    {
+      "id": 2502,
+      "builder": "bread",
+      "title": "Pan loaf with two slices cut and fanned",
+      "loaf": {
+        "l": 190,
+        "w": 105,
+        "h": 95,
+        "slices": 2,
+        "slice": 14
+      },
+      "pose": {
+        "yaw": -24
+      }
+    },
+    {
+      "id": 2103,
+      "builder": "rice_sack",
+      "title": "Open hessian rice sack with a rolled rim, a heaped mound of rice and a large rice-ear emblem",
+      "sack": {
+        "w": 240,
+        "d": 170,
+        "h": 235
+      },
+      "labels": [
+        "rice_ear"
+      ],
+      "pose": {
+        "yaw": -22
+      }
+    },
+    {
+      "id": 2142,
+      "builder": "water_bottle",
+      "title": "Clear PET bottle of sparkling water with a wrap label",
+      "bottle": {
+        "r": 32,
+        "h": 232,
+        "band": [
+          92,
+          152
+        ]
+      },
+      "labels": [
+        "water_band"
+      ],
+      "pose": {
+        "spin": 140,
+        "roll": 90,
+        "yaw": -38
+      }
+    },
+    {
+      "id": 13540,
+      "builder": "dish",
+      "title": "Luncheon meat and fried egg on a wooden board: the one render for the Perfect, Good and Normal tiers (the tier shows as text, as in the source)",
+      "dish": {
+        "vessel": "board",
+        "food": "luncheon_egg",
+        "w": 165,
+        "d": 125
+      },
+      "quality": "perfect",
+      "pose": {
+        "yaw": -20
+      },
+      "serves": [
+        13540,
+        13541,
+        13542
+      ]
+    },
+    {
+      "id": 13543,
+      "builder": "dish",
+      "title": "Luncheon meat and fried egg, Failed: charred slices and a burnt egg on the board",
+      "dish": {
+        "vessel": "board",
+        "food": "luncheon_egg",
+        "w": 165,
+        "d": 125
+      },
+      "quality": "failed",
+      "pose": {
+        "yaw": -20
+      },
+      "serves": [
+        13543
+      ]
+    },
+    {
+      "id": 2400,
+      "builder": "bandage",
+      "title": "Gauze bandage roll in a green first-aid wrapper band, a short end unrolled",
+      "roll": {
+        "r": 17,
+        "w": 62,
+        "band": 36,
+        "tail": 35,
+        "labelTurn": -40
+      },
+      "labels": [
+        "bandage_band"
+      ],
+      "pose": {
+        "yaw": -30
+      }
+    },
+    {
+      "id": 20106,
+      "builder": "planks",
+      "title": "Three rough-sawn pine boards, stacked: saturated grain, knots, dark end grain",
+      "planks": {
+        "l": 300,
+        "w": 95,
+        "t": 28,
+        "n": 3
+      },
+      "pose": {
+        "yaw": -34
+      }
+    },
+    {
+      "id": 15026,
+      "builder": "seed_packet",
+      "title": "Kraft paper seed packet with a crimped top and a tomato window, leaning up",
+      "packet": {
+        "w": 90,
+        "h": 130
+      },
+      "labels": [
+        "seed_tomato"
+      ],
+      "pose": {
+        "yaw": -14,
+        "tilt": 58
+      }
+    },
+    {
+      "id": 25001,
+      "builder": "mousetrap",
+      "title": "Wooden snap mousetrap with a cheese bait",
+      "trap": {
+        "l": 100,
+        "w": 46,
+        "t": 9
+      },
+      "labels": [
+        "trap_stamp"
+      ],
+      "pose": {
+        "yaw": -30
+      }
+    },
+    {
+      "id": 3022,
+      "builder": "book",
+      "title": "Hardcover first-aid manual with a ribbon bookmark",
+      "book": {
+        "w": 150,
+        "h": 210,
+        "t": 22
+      },
+      "labels": [
+        "book_cover"
+      ],
+      "pose": {
+        "yaw": -18
+      }
+    }
+  ]
+}

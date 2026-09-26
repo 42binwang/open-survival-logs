@@ -1,0 +1,117 @@
+{
+  "$comment": "Clips retargeted onto the character by animate.py. Any CMU trial works: subject/trial name the ASF/AMC pair in assets/cache/cmu/<subject>/ (pinned in assets/lock/WP-P0-09.json); fps is the trial's capture rate from the CMU index (default 120); window is the part of the trial searched for the best loop (seconds); loop.minSec/maxSec bound the loop length; knees [min, max] (a standing clip) raises the pelvis until the most bent leg is at max flexion and never lets a leg straighten past min; stanceWidth 'hip' sets the ankles hip width apart; planted keeps both feet flat and pinned for the whole loop; levelPelvis takes out that fraction of the pelvis roll; calmWeight (default 0.05) favours loop points where every bone accelerates at most its typical rate; splice 'singleSupport' makes the loop start where one foot is planted and the other in the air (a walk), 'flight' where both are in the air (a run); closeSec (default 0.25) is how long before the wrap the velocity mismatch is taken out; mirror builds the loop from one step and the other side's mirrored step; armSwing scales the upper arms' swing about their mean pose, armBackLimitDeg soft-limits how far they swing behind the vertical; clavicleFollow overrides the global follow, clavicleKeep keeps that share of the clavicles' motion relative to the chest; toeSmoothFrames smooths the noisy toe channels, handSmoothFrames the wrists, upperSmoothFrames every trunk, head and arm joint (cyclic); rootMotion 'extract' moves the travel (and turning) into the extracted root motion and leaves the clip in place, 'pin' removes any drift; head.alignToChest turns neck and head toward the chest's facing, head.keepYaw scales the head's yaw swings about it, head.liftDeg lifts the face; footLock (default true) pins the soles' heel, ball and toe points with leg IK. locomotion is published in the glTF extras for the game (WP-P0-08): playback rate = sim speed / clip speedMps, clamped. kind (default 'loop', the search above): 'oneShot' plays the window once (the game holds its last frame), 'hold' holds the window's mean pose for holdSec with breathe.chestDeg (a sine over the loop, each bone about its own lateral axis); speed plays the capture faster; yawFrom 'chest' / 'mix' takes the facing from the chest / the mean of pelvis and chest (a trunk turned from the hips); faceUp turns a lying head that fraction of the way to face up; seat reports the seat height (the underside of the buttocks), seatHeightM moves the pelvis so it is at that height (the planted feet stay on the floor); rootMotion 'pinStart' fixes the position and facing of the window's first 0.1 s (a fall keeps its travel); yawFrom 'lying' faces the clip away from where the head points (lying on the back along glTF Z, head toward -Z, face up); floor 'body' puts the lowest body point on the floor (a fall blends from the soles at its start to the body at its end); flinch layers a procedural hit reaction on the window (spine back, head forward, arms up and out, elbows bent, pelvis back and down, on a fast-rise, smooth-settle envelope); use says what the game plays the clip for.",
+  "fps": 60,
+  "clavicleFollow": 0.25,
+  "lockBlendSec": 0.06,
+  "smoothFrames": 7,
+  "ikSmoothFrames": 5,
+  "toeSmoothFrames": 13,
+  "clips": {
+    "idle": {
+      "subject": 82, "trial": 8, "title": "Stand still (then a casual walk forward)",
+      "window": [0.3, 8.2], "loop": { "minSec": 4.0, "maxSec": 7.0 }, "rootMotion": "pin", "knees": [4, 8], "stanceWidth": "hip", "planted": true, "levelPelvis": 0.6,
+      "head": { "alignToChest": true, "keepYaw": 0.35 }
+    },
+    "walk": {
+      "subject": 35, "trial": 1, "title": "Walk",
+      "window": [0.4, 2.9], "loop": { "minSec": 0.9, "maxSec": 1.3 }, "splice": "singleSupport", "handSmoothFrames": 25,
+      "rootMotion": "extract", "head": { "alignToChest": true, "liftDeg": 15 }
+    },
+    "run": {
+      "subject": 16, "trial": 46, "title": "Run",
+      "window": [0.0, 1.12], "loop": { "minSec": 0.6, "maxSec": 0.8 }, "splice": "flight", "closeSec": 1.0, "clavicleFollow": 0.0, "clavicleKeep": 0.3, "armBackLimitDeg": 15,
+      "rootMotion": "extract", "head": { "alignToChest": true, "liftDeg": 5 }
+    },
+    "work": {
+      "subject": 79, "trial": 26, "fps": 60, "title": "Planting a tree: bent over, both hands working low",
+      "use": "bent-over work in place with the hands at waist-to-knee height: repairing, rummaging, farming",
+      "window": [3.0, 15.3], "loop": { "minSec": 2.5, "maxSec": 5.0 }, "closeSec": 0.6, "rootMotion": "pin", "stanceWidth": "hip", "planted": true, "levelPelvis": 0.6,
+      "head": { "alignToChest": true, "keepYaw": 0.6 }
+    },
+    "use": {
+      "subject": 79, "trial": 14, "fps": 60, "title": "Making dough: standing, hands at counter height",
+      "use": "standing work at a counter or bench: cooking, crafting, washing",
+      "window": [1.0, 10.2], "loop": { "minSec": 2.0, "maxSec": 5.0 }, "calmWeight": 0.3, "closeSec": 0.8, "upperSmoothFrames": 7, "rootMotion": "pin", "knees": [4, 10], "stanceWidth": "hip", "planted": true, "levelPelvis": 0.6,
+      "head": { "alignToChest": true, "keepYaw": 0.5 }
+    },
+    "eat": {
+      "subject": 79, "trial": 15, "fps": 60, "title": "Eating a sandwich: standing, both hands to the mouth",
+      "use": "eating or drinking standing",
+      "window": [1.8, 12.9], "loop": { "minSec": 2.8, "maxSec": 4.5 }, "rootMotion": "pin", "knees": [4, 10], "stanceWidth": "hip", "planted": true, "levelPelvis": 0.6,
+      "head": { "alignToChest": true, "keepYaw": 0.5 }
+    },
+    "sit": {
+      "subject": 13, "trial": 4, "title": "Sit on a stepstool: seated idle, hands in the lap",
+      "use": "seated idle on a chair or sofa, in front of the TV",
+      "window": [33.3, 38.6], "loop": { "minSec": 2.0, "maxSec": 4.5 }, "calmWeight": 0.3, "closeSec": 0.6, "handSmoothFrames": 25, "rootMotion": "pin", "yawFrom": "mix", "planted": true, "seat": true, "seatHeightM": 0.44,
+      "head": { "alignToChest": true, "keepYaw": 0.5 }
+    },
+    "attack": {
+      "subject": 79, "trial": 1, "fps": 60, "title": "Chopping wood: a two-handed overhead strike, forward and down",
+      "use": "a two-handed forward strike (zombies at doors and at the survivor)",
+      "window": [1.9, 7.3], "loop": { "minSec": 3.0, "maxSec": 3.9 }, "speed": 2.4, "rootMotion": "pin", "planted": true,
+      "head": { "alignToChest": true, "keepYaw": 0.5 }
+    },
+    "pickup": {
+      "subject": 115, "trial": 6, "kind": "oneShot", "title": "Picking a box up, bending the knees",
+      "use": "bend down and pick something up (once)",
+      "window": [0.25, 1.35], "rootMotion": "pin", "planted": true
+    },
+    "hit": {
+      "subject": 82, "trial": 8, "kind": "oneShot", "title": "Stand still, with a procedural backward flinch layered on",
+      "use": "a flinch backward when hit (once)",
+      "window": [2.0, 2.5], "rootMotion": "pin", "planted": true, "stanceWidth": "hip", "levelPelvis": 0.6, "head": { "alignToChest": true, "keepYaw": 0.35 },
+      "flinch": { "peakSec": 0.12, "spineDeg": { "spine_01": 9, "spine_02": 12, "spine_03": 10 }, "neckDeg": { "neck_01": 12 },
+                  "armLiftDeg": 15, "armOutDeg": 15, "elbowDeg": 70, "pelvisBackM": 0.08, "pelvisDownM": 0.02 }
+    },
+    "death": {
+      "subject": 90, "trial": 18, "kind": "oneShot", "title": "Rug-pull fall: collapses backward onto the back, then lies still",
+      "use": "collapse to the ground and lie still (once; hold the last frame)",
+      "window": [0.45, 2.6], "rootMotion": "pinStart", "floor": "body"
+    },
+    "sleep": {
+      "subject": 140, "trial": 8, "kind": "hold", "title": "Lying on the back before getting up (held), with procedural breathing",
+      "use": "sleeping in bed (loop)",
+      "window": [0.05, 0.4], "holdSec": 4.0, "yawFrom": "lying", "rootMotion": "pin", "floor": "body", "faceUp": 0.7,
+      "breathe": { "chestDeg": { "spine_02": 1.2, "spine_03": 0.8 } }
+    }
+  },
+  "locomotion": {
+    "simSpeedMps": 5.0,
+    "speedMultipliers": { "encumbered": 0.7, "caffeine": 1.25 },
+    "moveClip": "run",
+    "idleClip": "idle",
+    "rate": "simSpeedMps / clip.extras.rootMotion.speedMps",
+    "rateClamp": [0.75, 1.35],
+    "crossfadeSec": 0.2
+  },
+  "boneMap": {
+    "pelvis": "root",
+    "spine_01": "lowerback",
+    "spine_02": "upperback",
+    "spine_03": "thorax",
+    "neck_01": "lowerneck",
+    "head": "head",
+    "clavicle_l": "lclavicle",
+    "upperarm_l": "lhumerus",
+    "lowerarm_l": "lradius",
+    "hand_l": "lhand",
+    "clavicle_r": "rclavicle",
+    "upperarm_r": "rhumerus",
+    "lowerarm_r": "rradius",
+    "hand_r": "rhand",
+    "thigh_l": "lfemur",
+    "calf_l": "ltibia",
+    "foot_l": "lfoot",
+    "ball_l": "ltoes",
+    "thigh_r": "rfemur",
+    "calf_r": "rtibia",
+    "foot_r": "rfoot",
+    "ball_r": "rtoes"
+  },
+  "relaxedHand": {
+    "curlDeg": { "01": 30, "02": 40, "03": 20 },
+    "thumbDeg": { "01": 8, "02": 12, "03": 8 },
+    "together": 0.7
+  }
+}

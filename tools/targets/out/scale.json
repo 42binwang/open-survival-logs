@@ -1,0 +1,534 @@
+{
+ "assumptions": {
+  "male_m": 1.75,
+  "female_m": 1.65
+ },
+ "characters": [
+  {
+   "view": "ss_02",
+   "label": "student (female), standing",
+   "height_m": 1.65,
+   "vfov_deg": 50.92,
+   "camera_height_m": 6.66,
+   "look_distance_m": 10.37
+  },
+  {
+   "view": "t069",
+   "label": "wage slave (male), walking",
+   "height_m": 1.75,
+   "vfov_deg": 49.8,
+   "camera_height_m": 6.69,
+   "look_distance_m": 10.4
+  },
+  {
+   "view": "t035",
+   "label": "male, standing",
+   "height_m": 1.75,
+   "vfov_deg": 59.96,
+   "camera_height_m": 6.87,
+   "look_distance_m": 10.7
+  },
+  {
+   "view": "t025",
+   "label": "male, standing (trailer punch-in)",
+   "height_m": 1.75,
+   "vfov_deg": 39.02,
+   "camera_height_m": 6.7,
+   "look_distance_m": 10.86
+  }
+ ],
+ "picks": [
+  {
+   "view": "t035",
+   "label": "cut wall, camera-facing (floor to cap)",
+   "foot_h_m": 0.0,
+   "height_m": 0.89,
+   "foot_px": [
+    930,
+    797
+   ],
+   "top_px": [
+    930,
+    737
+   ],
+   "off_vertical_deg": 2.4
+  },
+  {
+   "view": "t035",
+   "label": "entrance door jamb incl. frame (upper bound)",
+   "foot_h_m": 0.0,
+   "height_m": 2.65,
+   "foot_px": [
+    945,
+    802
+   ],
+   "top_px": [
+    940,
+    588
+   ],
+   "off_vertical_deg": 0.1
+  },
+  {
+   "view": "t035",
+   "label": "fridge (French door)",
+   "foot_h_m": 0.0,
+   "height_m": 1.67,
+   "foot_px": [
+    1172,
+    268
+   ],
+   "top_px": [
+    1182,
+    175
+   ],
+   "off_vertical_deg": 3.5
+  },
+  {
+   "view": "t035",
+   "label": "full wall, NE exterior corner (cut-wall cap to wall top)",
+   "foot_h_m": 0.89,
+   "height_m": 3.36,
+   "foot_px": [
+    1492,
+    262
+   ],
+   "top_px": [
+    1560,
+    97
+   ],
+   "off_vertical_deg": 0.7
+  },
+  {
+   "view": "t041",
+   "label": "security door, left jamb",
+   "foot_h_m": 0.0,
+   "height_m": 2.34,
+   "foot_px": [
+    762,
+    558
+   ],
+   "top_px": [
+    735,
+    375
+   ],
+   "off_vertical_deg": 2.9
+  },
+  {
+   "view": "t041",
+   "label": "security door, right jamb",
+   "foot_h_m": 0.0,
+   "height_m": 2.63,
+   "foot_px": [
+    895,
+    610
+   ],
+   "top_px": [
+    887,
+    395
+   ],
+   "off_vertical_deg": 1.8
+  },
+  {
+   "view": "t069",
+   "label": "full wall, storeroom west wall at the extinguisher (floor to top)",
+   "foot_h_m": 0.0,
+   "height_m": 3.34,
+   "foot_px": [
+    585,
+    488
+   ],
+   "top_px": [
+    508,
+    163
+   ],
+   "off_vertical_deg": 3.2
+  },
+  {
+   "view": "t074",
+   "label": "wall, bedroom inner corner (foot where the floor meets the wall below the wainscot)",
+   "foot_h_m": 0.0,
+   "height_m": 3.23,
+   "foot_px": [
+    1043,
+    398
+   ],
+   "top_px": [
+    1053,
+    108
+   ],
+   "off_vertical_deg": 1.5
+  },
+  {
+   "view": "ss_04",
+   "label": "steel shelving rack, front post (LSD segment)",
+   "foot_h_m": 0.0,
+   "height_m": 1.96,
+   "foot_px": [
+    733,
+    890
+   ],
+   "top_px": [
+    687,
+    706
+   ],
+   "off_vertical_deg": 0.1
+  }
+ ],
+ "framing": [
+  {
+   "vfov_deg": 60,
+   "hfov_deg": 91.5,
+   "f_px": 935.3,
+   "floor_near_m": 2.45,
+   "floor_far_m": 38.2,
+   "target_ground_dist_m": 8.02,
+   "floor_width_m": {
+    "bottom": 12.7,
+    "centre": 21.5,
+    "top": 68.9
+   },
+   "floor_px_per_m": {
+    "bottom": 150.7,
+    "centre": 89.3,
+    "top": 27.9
+   },
+   "bottom_row_px_per_m_by_height": {
+    "0.0": 150.7,
+    "0.9": 173.9,
+    "1.0": 177.0,
+    "1.4": 190.2,
+    "2.0": 214.4,
+    "2.4": 234.2,
+    "3.3": 295.6
+   },
+   "px_per_m_1m_high_bottom": 177.0,
+   "max_height_within_256_tol_m": 3.12,
+   "max_height_at_or_below_256_m": 2.76,
+   "floor_incidence_deg": [
+    10.0,
+    70.0
+   ],
+   "character_175_px": 134.2,
+   "floor_in_view": {
+    "apartment": {
+     "in_frame_pct": 94.6,
+     "hud_free_pct": 86.9
+    },
+    "duplex": {
+     "in_frame_pct": 96.4,
+     "hud_free_pct": 91.1
+    },
+    "warehouse": {
+     "in_frame_pct": 88.5,
+     "hud_free_pct": 75.2
+    }
+   }
+  },
+  {
+   "vfov_deg": 55,
+   "hfov_deg": 85.6,
+   "f_px": 1037.3,
+   "floor_near_m": 2.79,
+   "floor_far_m": 30.4,
+   "target_ground_dist_m": 8.02,
+   "floor_width_m": {
+    "bottom": 12.0,
+    "centre": 19.4,
+    "top": 51.1
+   },
+   "floor_px_per_m": {
+    "bottom": 160.4,
+    "centre": 99.1,
+    "top": 37.6
+   },
+   "bottom_row_px_per_m_by_height": {
+    "0.0": 160.4,
+    "0.9": 185.2,
+    "1.0": 188.4,
+    "1.4": 202.5,
+    "2.0": 228.2,
+    "2.4": 249.3,
+    "3.3": 314.7
+   },
+   "px_per_m_1m_high_bottom": 188.4,
+   "max_height_within_256_tol_m": 2.89,
+   "max_height_at_or_below_256_m": 2.51,
+   "floor_incidence_deg": [
+    12.5,
+    67.5
+   ],
+   "character_175_px": 148.8,
+   "floor_in_view": {
+    "apartment": {
+     "in_frame_pct": 93.1,
+     "hud_free_pct": 82.2
+    },
+    "duplex": {
+     "in_frame_pct": 95.1,
+     "hud_free_pct": 86.8
+    },
+    "warehouse": {
+     "in_frame_pct": 83.8,
+     "hud_free_pct": 70.3
+    }
+   }
+  },
+  {
+   "vfov_deg": 50,
+   "hfov_deg": 79.3,
+   "f_px": 1158.0,
+   "floor_near_m": 3.14,
+   "floor_far_m": 25.1,
+   "target_ground_dist_m": 8.02,
+   "floor_width_m": {
+    "bottom": 11.2,
+    "centre": 17.4,
+    "top": 39.1
+   },
+   "floor_px_per_m": {
+    "bottom": 171.9,
+    "centre": 110.6,
+    "top": 49.1
+   },
+   "bottom_row_px_per_m_by_height": {
+    "0.0": 171.9,
+    "0.9": 198.5,
+    "1.0": 201.9,
+    "1.4": 217.1,
+    "2.0": 244.6,
+    "2.4": 267.2,
+    "3.3": 337.3
+   },
+   "px_per_m_1m_high_bottom": 201.9,
+   "max_height_within_256_tol_m": 2.62,
+   "max_height_at_or_below_256_m": 2.2,
+   "floor_incidence_deg": [
+    15.0,
+    65.0
+   ],
+   "character_175_px": 166.1,
+   "floor_in_view": {
+    "apartment": {
+     "in_frame_pct": 90.9,
+     "hud_free_pct": 77.0
+    },
+    "duplex": {
+     "in_frame_pct": 93.5,
+     "hud_free_pct": 81.8
+    },
+    "warehouse": {
+     "in_frame_pct": 78.0,
+     "hud_free_pct": 65.1
+    }
+   }
+  },
+  {
+   "vfov_deg": 45,
+   "hfov_deg": 72.7,
+   "f_px": 1303.7,
+   "floor_near_m": 3.5,
+   "floor_far_m": 21.3,
+   "target_ground_dist_m": 8.02,
+   "floor_width_m": {
+    "bottom": 10.3,
+    "centre": 15.4,
+    "top": 30.5
+   },
+   "floor_px_per_m": {
+    "bottom": 185.9,
+    "centre": 124.5,
+    "top": 63.0
+   },
+   "bottom_row_px_per_m_by_height": {
+    "0.0": 185.9,
+    "0.9": 214.5,
+    "1.0": 218.3,
+    "1.4": 234.7,
+    "2.0": 264.4,
+    "2.4": 288.9,
+    "3.3": 364.6
+   },
+   "px_per_m_1m_high_bottom": 218.3,
+   "max_height_within_256_tol_m": 2.28,
+   "max_height_at_or_below_256_m": 1.84,
+   "floor_incidence_deg": [
+    17.5,
+    62.5
+   ],
+   "character_175_px": 187.0,
+   "floor_in_view": {
+    "apartment": {
+     "in_frame_pct": 86.3,
+     "hud_free_pct": 71.0
+    },
+    "duplex": {
+     "in_frame_pct": 91.0,
+     "hud_free_pct": 76.0
+    },
+    "warehouse": {
+     "in_frame_pct": 71.6,
+     "hud_free_pct": 59.7
+    }
+   }
+  },
+  {
+   "vfov_deg": 40,
+   "hfov_deg": 65.8,
+   "f_px": 1483.6,
+   "floor_near_m": 3.89,
+   "floor_far_m": 18.5,
+   "target_ground_dist_m": 8.02,
+   "floor_width_m": {
+    "bottom": 9.5,
+    "centre": 13.6,
+    "top": 23.9
+   },
+   "floor_px_per_m": {
+    "bottom": 203.0,
+    "centre": 141.7,
+    "top": 80.2
+   },
+   "bottom_row_px_per_m_by_height": {
+    "0.0": 203.0,
+    "0.9": 234.4,
+    "1.0": 238.5,
+    "1.4": 256.4,
+    "2.0": 288.9,
+    "2.4": 315.6,
+    "3.3": 398.4
+   },
+   "px_per_m_1m_high_bottom": 238.5,
+   "max_height_within_256_tol_m": 1.87,
+   "max_height_at_or_below_256_m": 1.39,
+   "floor_incidence_deg": [
+    20.0,
+    60.0
+   ],
+   "character_175_px": 212.8,
+   "floor_in_view": {
+    "apartment": {
+     "in_frame_pct": 78.8,
+     "hud_free_pct": 64.5
+    },
+    "duplex": {
+     "in_frame_pct": 84.5,
+     "hud_free_pct": 69.3
+    },
+    "warehouse": {
+     "in_frame_pct": 64.6,
+     "hud_free_pct": 54.1
+    }
+   }
+  },
+  {
+   "vfov_deg": 35,
+   "hfov_deg": 58.5,
+   "f_px": 1712.7,
+   "floor_near_m": 4.29,
+   "floor_far_m": 16.2,
+   "target_ground_dist_m": 8.02,
+   "floor_width_m": {
+    "bottom": 8.5,
+    "centre": 11.7,
+    "top": 18.8
+   },
+   "floor_px_per_m": {
+    "bottom": 224.9,
+    "centre": 163.6,
+    "top": 102.1
+   },
+   "bottom_row_px_per_m_by_height": {
+    "0.0": 224.9,
+    "0.9": 259.6,
+    "1.0": 264.2,
+    "1.4": 284.0,
+    "2.0": 320.0,
+    "2.4": 349.6,
+    "3.3": 441.3
+   },
+   "px_per_m_1m_high_bottom": 264.2,
+   "max_height_within_256_tol_m": 1.35,
+   "max_height_at_or_below_256_m": 0.81,
+   "floor_incidence_deg": [
+    22.5,
+    57.5
+   ],
+   "character_175_px": 245.7,
+   "floor_in_view": {
+    "apartment": {
+     "in_frame_pct": 70.2,
+     "hud_free_pct": 57.6
+    },
+    "duplex": {
+     "in_frame_pct": 75.9,
+     "hud_free_pct": 61.9
+    },
+    "warehouse": {
+     "in_frame_pct": 55.6,
+     "hud_free_pct": 45.9
+    }
+   }
+  },
+  {
+   "vfov_deg": 30,
+   "hfov_deg": 50.9,
+   "f_px": 2015.3,
+   "floor_near_m": 4.71,
+   "floor_far_m": 14.4,
+   "target_ground_dist_m": 8.02,
+   "floor_width_m": {
+    "bottom": 7.6,
+    "centre": 10.0,
+    "top": 14.7
+   },
+   "floor_px_per_m": {
+    "bottom": 253.8,
+    "centre": 192.5,
+    "top": 131.0
+   },
+   "bottom_row_px_per_m_by_height": {
+    "0.0": 253.8,
+    "0.9": 293.0,
+    "1.0": 298.1,
+    "1.4": 320.5,
+    "2.0": 361.1,
+    "2.4": 394.5,
+    "3.3": 498.0
+   },
+   "px_per_m_1m_high_bottom": 298.1,
+   "max_height_within_256_tol_m": 0.66,
+   "max_height_at_or_below_256_m": 0.05,
+   "floor_incidence_deg": [
+    25.0,
+    55.0
+   ],
+   "character_175_px": 289.1,
+   "floor_in_view": {
+    "apartment": {
+     "in_frame_pct": 58.6,
+     "hud_free_pct": 47.2
+    },
+    "duplex": {
+     "in_frame_pct": 64.9,
+     "hud_free_pct": 52.7
+    },
+    "warehouse": {
+     "in_frame_pct": 43.0,
+     "hud_free_pct": 34.1
+    }
+   }
+  }
+ ],
+ "camera_height_m": 6.73,
+ "camera_height_sd_m": 0.1,
+ "look_distance_m": 10.47,
+ "spans": [
+  {
+   "view": "t041",
+   "label": "security door opening incl. frame, jamb foot to jamb foot",
+   "width_m": 1.69
+  }
+ ],
+ "camera_height_native_only_m": 6.74,
+ "look_distance_native_only_m": 10.49
+}

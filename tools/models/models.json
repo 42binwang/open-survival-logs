@@ -1,0 +1,722 @@
+{
+  "wp": "WP-P1-models",
+  "resolution": "1k",
+  "recipe": "polyhaven-gltf",
+  "families": {
+    "sofa": "sofas and couches",
+    "armchair": "upholstered armchairs",
+    "rack": "metal shelving racks",
+    "bookshelf": "wooden bookshelves and shelf units",
+    "cabinet": "cabinets, dressers, nightstands and drawers",
+    "table": "dining and side tables",
+    "coffeetable": "low coffee tables",
+    "desk": "desks",
+    "chair": "chairs and stools",
+    "bed": "beds and bed frames",
+    "tv": "televisions",
+    "stove": "cooking stoves",
+    "generator": "fuel generators",
+    "crate": "boxes, crates and toolboxes",
+    "barrel": "barrels and jerrycans",
+    "bucket": "buckets and baskets",
+    "plant": "potted plants and planters",
+    "workbench": "tool carts, tool chests and workshop storage",
+    "appliance": "small appliances and electronics",
+    "lamp": "lamps and light fittings",
+    "wall": "wall decorations",
+    "heater": "heating and climate units",
+    "exterior": "street furniture and outdoor props",
+    "misc": "miscellaneous small props"
+  },
+  "classes": {
+    "$comment": "params.class (the triangle budget of tools/art-metrics/standard.mjs TRIANGLES) by family: pieces of furniture, or props (clutter, small appliances, wall decorations); a prop larger than propMaxM along any axis is furniture. Every model is tier regular (ART.md §3: 256 px/m for floors, walls, furniture and clutter).",
+    "furniture": [
+      "sofa",
+      "armchair",
+      "rack",
+      "bookshelf",
+      "cabinet",
+      "table",
+      "coffeetable",
+      "desk",
+      "chair",
+      "bed",
+      "tv",
+      "stove",
+      "generator",
+      "workbench",
+      "heater",
+      "exterior"
+    ],
+    "prop": [
+      "crate",
+      "barrel",
+      "bucket",
+      "plant",
+      "appliance",
+      "lamp",
+      "wall",
+      "misc"
+    ],
+    "propMaxM": 1.0,
+    "tier": "regular"
+  },
+  "runtime": {
+    "$comment": "the renderer (src/render3d/models.js) draws no model with more triangles than maxTriangles, except these families; the manifest marks them params.skip",
+    "maxTriangles": 45000,
+    "exceptFamilies": [
+      "bed"
+    ]
+  },
+  "textures": {
+    "$comment": "KTX2 from the locked 1k JPEGs (tools/models/textures.py). Each image is sized for the texel density of its tier over the UV islands that sample it (ART.md §3, ±10 %), on a lattice of sizes q × 2^k (q 8…15) so that levels stay whole 4 × 4 blocks, at most the source size. Encoder settings are the material library's (tools/materials/targets.json encode). The JPEGs stay as the glTF fallback images. A map ETC1S cannot keep inside the albedo limits or off the roughness ends is UASTC (the library's mask settings, 'fallback'); a normal map whose RDO pushes a level past the normal-length limits is UASTC without RDO ('normalExact').",
+    "maxSize": 1024,
+    "minSize": 32,
+    "encode": {
+      "baseColor": [
+        "--encode",
+        "basis-lz",
+        "--clevel",
+        "4",
+        "--qlevel",
+        "255"
+      ],
+      "normal": [
+        "--encode",
+        "uastc",
+        "--uastc-quality",
+        "4",
+        "--uastc-rdo",
+        "--uastc-rdo-l",
+        "0.4",
+        "--uastc-rdo-m",
+        "--zstd",
+        "18"
+      ],
+      "orm": [
+        "--encode",
+        "basis-lz",
+        "--clevel",
+        "4",
+        "--qlevel",
+        "255",
+        "--no-endpoint-rdo",
+        "--no-selector-rdo"
+      ],
+      "normalExact": [
+        "--encode",
+        "uastc",
+        "--uastc-quality",
+        "4",
+        "--zstd",
+        "18"
+      ],
+      "fallback": [
+        "--encode",
+        "uastc",
+        "--uastc-quality",
+        "3",
+        "--zstd",
+        "18"
+      ]
+    }
+  },
+  "models": [
+    {
+      "id": "Sofa_01",
+      "family": "sofa",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "sofa_02",
+      "family": "sofa",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "sofa_03",
+      "family": "sofa",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "ArmChair_01",
+      "family": "armchair",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "modern_arm_chair_01",
+      "family": "armchair",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "steel_frame_shelves_01",
+      "family": "rack",
+      "frontYawDeg": 0,
+      "mount": "floor",
+      "scale": 0.1,
+      "note": "authored at 10x scale in the Poly Haven glTF (Poly Haven lists it as 1.10 x 0.50 x 2.14 m); params.scale 0.1 brings it to metres"
+    },
+    {
+      "id": "steel_frame_shelves_02",
+      "family": "rack",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "worn_metal_rack",
+      "family": "rack",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "wooden_bookshelf_worn",
+      "family": "bookshelf",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "Shelf_01",
+      "family": "bookshelf",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "wooden_display_shelves_01",
+      "family": "bookshelf",
+      "frontYawDeg": -90,
+      "mount": "floor",
+      "note": "open shelving, the same from both sides; frontYawDeg turns an open side to +Z"
+    },
+    {
+      "id": "drawer_cabinet",
+      "family": "cabinet",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "painted_wooden_cabinet",
+      "family": "cabinet",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "painted_wooden_cabinet_02",
+      "family": "cabinet",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "vintage_cabinet_01",
+      "family": "cabinet",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "painted_wooden_nightstand",
+      "family": "cabinet",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "ClassicNightstand_01",
+      "family": "cabinet",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "vintage_wooden_drawer_01",
+      "family": "cabinet",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "GothicCommode_01",
+      "family": "cabinet",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "WoodenTable_01",
+      "family": "table",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "WoodenTable_03",
+      "family": "table",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "wooden_table_02",
+      "family": "table",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "round_wooden_table_02",
+      "family": "table",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "side_table_01",
+      "family": "table",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "small_wooden_table_01",
+      "family": "table",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "painted_wooden_table",
+      "family": "table",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "CoffeeTable_01",
+      "family": "coffeetable",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "modern_coffee_table_01",
+      "family": "coffeetable",
+      "frontYawDeg": -90,
+      "mount": "floor",
+      "note": "symmetric; frontYawDeg turns a long side to +Z"
+    },
+    {
+      "id": "industrial_coffee_table",
+      "family": "coffeetable",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "coffee_table_round_01",
+      "family": "coffeetable",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "metal_office_desk",
+      "family": "desk",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "SchoolDesk_01",
+      "family": "desk",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "painted_wooden_chair_01",
+      "family": "chair",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "SchoolChair_01",
+      "family": "chair",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "plastic_monobloc_chair_01",
+      "family": "chair",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "dining_chair_02",
+      "family": "chair",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "wooden_stool_01",
+      "family": "chair",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "metal_stool_02",
+      "family": "chair",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "painted_wooden_stool",
+      "family": "chair",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "old_bed_frame",
+      "family": "bed",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "vintage_day_bed",
+      "family": "bed",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "Television_01",
+      "family": "tv",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "television_02",
+      "family": "tv",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "electric_stove",
+      "family": "stove",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "portable_generator",
+      "family": "generator",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "cardboard_box_01",
+      "family": "crate",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "wooden_crate_01",
+      "family": "crate",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "wooden_crate_02",
+      "family": "crate",
+      "frontYawDeg": -90,
+      "mount": "floor",
+      "note": "frontYawDeg turns the long stencilled side to +Z"
+    },
+    {
+      "id": "plastic_crate_01",
+      "family": "crate",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "plastic_crate_02",
+      "family": "crate",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "wooden_military_crate",
+      "family": "crate",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "old_military_crate",
+      "family": "crate",
+      "frontYawDeg": 0,
+      "mount": "floor",
+      "note": "two crates side by side, one open with its lid off"
+    },
+    {
+      "id": "metal_toolbox",
+      "family": "crate",
+      "frontYawDeg": 0,
+      "mount": "surface"
+    },
+    {
+      "id": "Barrel_01",
+      "family": "barrel",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "Barrel_02",
+      "family": "barrel",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "barrel_03",
+      "family": "barrel",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "metal_jerrycan",
+      "family": "barrel",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "metal_jerrycan_green",
+      "family": "barrel",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "plastic_jerrycan",
+      "family": "barrel",
+      "frontYawDeg": 90,
+      "mount": "floor",
+      "note": "frontYawDeg turns the wide face to +Z"
+    },
+    {
+      "id": "wooden_bucket_02",
+      "family": "bucket",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "wicker_basket_01",
+      "family": "bucket",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "potted_plant_01",
+      "family": "plant",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "potted_plant_02",
+      "family": "plant",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "potted_plant_04",
+      "family": "plant",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "planter_box_01",
+      "family": "plant",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "planter_box_02",
+      "family": "plant",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "planter_box_03",
+      "family": "plant",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "planter_pot_clay",
+      "family": "plant",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "tool_cart",
+      "family": "workbench",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "metal_tool_chest",
+      "family": "workbench",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "industrial_storage_cart",
+      "family": "workbench",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "vintage_microwave",
+      "family": "appliance",
+      "frontYawDeg": 0,
+      "mount": "surface"
+    },
+    {
+      "id": "boombox",
+      "family": "appliance",
+      "frontYawDeg": 0,
+      "mount": "surface"
+    },
+    {
+      "id": "vintage_radio_transceiver",
+      "family": "appliance",
+      "frontYawDeg": 0,
+      "mount": "surface"
+    },
+    {
+      "id": "CashRegister_01",
+      "family": "appliance",
+      "frontYawDeg": 0,
+      "mount": "surface"
+    },
+    {
+      "id": "vintage_electric_kettle",
+      "family": "appliance",
+      "frontYawDeg": 0,
+      "mount": "surface"
+    },
+    {
+      "id": "classic_laptop",
+      "family": "appliance",
+      "frontYawDeg": 0,
+      "mount": "surface"
+    },
+    {
+      "id": "cassette_player",
+      "family": "appliance",
+      "frontYawDeg": 0,
+      "mount": "surface",
+      "note": "stands upright; its origin is at mid-height, not the base"
+    },
+    {
+      "id": "desk_lamp_arm_01",
+      "family": "lamp",
+      "frontYawDeg": 180,
+      "mount": "surface",
+      "note": "a clamp-on architect lamp; frontYawDeg turns the reaching arm and shade to +Z"
+    },
+    {
+      "id": "modern_ceiling_lamp_01",
+      "family": "lamp",
+      "frontYawDeg": 0,
+      "mount": "ceiling",
+      "note": "pendant: hang it so boundsM.max.y meets the ceiling"
+    },
+    {
+      "id": "industrial_wall_lamp",
+      "family": "lamp",
+      "frontYawDeg": 0,
+      "mount": "wall"
+    },
+    {
+      "id": "dartboard",
+      "family": "wall",
+      "frontYawDeg": 0,
+      "mount": "wall"
+    },
+    {
+      "id": "hanging_picture_frame_01",
+      "family": "wall",
+      "frontYawDeg": 0,
+      "mount": "wall"
+    },
+    {
+      "id": "hanging_picture_frame_02",
+      "family": "wall",
+      "frontYawDeg": 0,
+      "mount": "wall"
+    },
+    {
+      "id": "wall_clock",
+      "family": "wall",
+      "frontYawDeg": 0,
+      "mount": "wall"
+    },
+    {
+      "id": "fancy_picture_frame_01",
+      "family": "wall",
+      "frontYawDeg": 0,
+      "mount": "wall"
+    },
+    {
+      "id": "barrel_stove",
+      "family": "heater",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "exterior_aircon_unit",
+      "family": "heater",
+      "frontYawDeg": 0,
+      "mount": "wall",
+      "note": "two wall-mounted units side by side on brackets; the back is at z = 0 (the wall)"
+    },
+    {
+      "id": "street_lamp_02",
+      "family": "exterior",
+      "frontYawDeg": 0,
+      "mount": "wall",
+      "note": "a wall lantern on a bracket; the back plate is at z = 0 (the wall)"
+    },
+    {
+      "id": "utility_box_01",
+      "family": "exterior",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "utility_box_02",
+      "family": "exterior",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "metal_trash_can",
+      "family": "exterior",
+      "frontYawDeg": 0,
+      "mount": "floor",
+      "note": "two cans side by side, one with its lid off"
+    },
+    {
+      "id": "water_manhole_cover",
+      "family": "exterior",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "wooden_ladder",
+      "family": "exterior",
+      "frontYawDeg": -90,
+      "mount": "floor",
+      "note": "an A-frame step ladder; frontYawDeg turns the rung side to +Z"
+    },
+    {
+      "id": "WetFloorSign_01",
+      "family": "misc",
+      "frontYawDeg": 0,
+      "mount": "floor"
+    },
+    {
+      "id": "fire_alarm",
+      "family": "misc",
+      "frontYawDeg": 0,
+      "mount": "wall"
+    },
+    {
+      "id": "all_purpose_cleaner",
+      "family": "misc",
+      "frontYawDeg": 0,
+      "mount": "surface"
+    }
+  ]
+}

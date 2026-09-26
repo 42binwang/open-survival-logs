@@ -1,0 +1,148 @@
+{
+  "$comment": "Resolution, texel density, encoding and check thresholds for the material library (docs/ART.md \u00a73). Each material tiles at its tiling.tileM metres (default tileM) (ART.md \u00a73 'Tiled materials repeat at 1 m or 2 m'; 'a 512 texture covers 2 x 2 m at 256 px/m; a 1K hero texture covers 2 x 2 m at 512 px/m'). tests/materials.test.js reads this file.",
+  "tileM": 1,
+  "tiers": {
+    "regular": {
+      "texelDensity": 256
+    },
+    "tall": {
+      "texelDensity": 384
+    },
+    "hero": {
+      "texelDensity": 512
+    }
+  },
+  "texelDensityTolerance": 0.1,
+  "maxScaleChange": 0.35,
+  "detail": {
+    "resolution": 256,
+    "sizeM": 0.1
+  },
+  "shared": {
+    "variationResolution": 512,
+    "variationSizeM": 8
+  },
+  "encode": {
+    "baseColor": [
+      "--encode",
+      "basis-lz",
+      "--clevel",
+      "4",
+      "--qlevel",
+      "255"
+    ],
+    "orm": [
+      "--encode",
+      "basis-lz",
+      "--clevel",
+      "4",
+      "--qlevel",
+      "255",
+      "--no-endpoint-rdo",
+      "--no-selector-rdo"
+    ],
+    "normal": [
+      "--encode",
+      "uastc",
+      "--uastc-quality",
+      "4",
+      "--uastc-rdo",
+      "--uastc-rdo-l",
+      "0.4",
+      "--uastc-rdo-m",
+      "--zstd",
+      "18"
+    ],
+    "mask": [
+      "--encode",
+      "uastc",
+      "--uastc-quality",
+      "3",
+      "--zstd",
+      "18"
+    ]
+  },
+  "checks": {
+    "roughnessSaturation": {
+      "maxFraction": 0.005,
+      "low": 1,
+      "high": 254
+    },
+    "roughnessMinStd": 0.01,
+    "normals": {
+      "meanLengthError": 0.02,
+      "p99LengthError": 0.08,
+      "minZ": 0.0
+    },
+    "seam": {
+      "maxZ": 4.0,
+      "maxRatioToP99": 1.3
+    },
+    "repetition": [
+      [
+        4,
+        0.12
+      ],
+      [
+        8,
+        0.2
+      ],
+      [
+        16,
+        0.25
+      ]
+    ],
+    "minPsnr": {
+      "baseColor": 30,
+      "normal": 34,
+      "orm": 30
+    },
+    "selfCopy": {
+      "fractions": [
+        0.5,
+        0.3333333333333333,
+        0.25,
+        0.2,
+        0.16666666666666666,
+        0.14285714285714285,
+        0.125
+      ],
+      "minMeanCodes": 1.5,
+      "maxRatio": 0.35
+    },
+    "periodRecurrence": {
+      "periodM": 1.0,
+      "bandM": [
+        0.004,
+        0.024
+      ],
+      "maxCorrelation": 0.3,
+      "maxExcessOverChance": 0.15,
+      "note": "2 m tiles: knot-scale detail (log luminance band-passed to 4-24 mm) must not recur one metre along either axis; wood floors must be 2 m tiles"
+    },
+    "presetUse": {
+      "uses": [
+        "floor",
+        "wall",
+        "furniture",
+        "accent"
+      ],
+      "floorFamilies": [
+        "wood_floor"
+      ],
+      "note": "a floor family's presets allowed on floors keep their tinted median inside the family band; darker or lighter ones carry params.tint.presetUse without 'floor'"
+    },
+    "decodedLimits": {
+      "note": "every decoded base color texel of a non-transmissive material is inside the hard limits (build.py clamps before encoding and tightens until it is)"
+    }
+  },
+  "changes": [
+    "2026-09-23 WP-P0-05b: tiers become the ART.md \u00a73 classes (regular 256, tall 384, hero 512 px/m) over tileM = 2 m tiles (ART.md \u00a73 'a 512 texture covers 2 x 2 m at 256 px/m'); was hero 1024 / regular 512 px/m over 1 m placeholders.",
+    "checks.normals tightened to WP-P0-11's art-metrics limits (docs/ART.md-derived, tools/art-metrics/standard.mjs NORMALS): mean length error 0.03 -> 0.02, p99 0.12 -> 0.08.",
+    "checks.repetition added (tools/art-metrics.mjs tile-repetition: 4x4 12 %, 8x8 20 %, 16x16 25 %).",
+    "detail: new, 256 px close-up normal maps tiling every 0.1 m (fabric, leather, cardboard).",
+    "2026-09-23 WP-P0-05c: no copied tiles. The default tile is 1 m (ART.md \u00a73 allows 1 m or 2 m) and a texture's size is texelDensity x its tile (256 px over 1 m, 512 over 2 m); 'repeat' tiling is gone (it packed n x n copies of a scan into a tile); checks.selfCopy fails any base color within 1.5 codes (or 0.35 of the difference at an unrelated shift) of itself shifted by 1/2 ... 1/8 of the tile (WP-P0-11c uses 1 code at 1/2 and 1/4).",
+    "2026-09-23 WP-P0-05c art check: the woods are 2 m tiles again, laid from whole boards with staggered joints (tiling 'planks'); checks.periodRecurrence fails a 2 m tile whose knot-scale detail recurs every metre. Synthesis can jitter its block sizes (no fixed block period), overlap more, feather its cuts and even out local contrast first.",
+    "2026-09-23 WP-P0-05c re-check: base color clamped inside the hard limits before encoding, tightened until every decoded texel is inside them; params.tint.presetUse restricts a preset to uses (oak 'smoked' is accent/furniture only), and floor-family presets allowed on floors stay in band."
+  ]
+}

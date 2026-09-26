@@ -1,0 +1,930 @@
+{
+  "$comment": "Visual regression shots (tools/visual/run.mjs, docs/QUALITY.md 'Visual regression'). Each shot starts in a fresh browser context at 1920 x 1080 with Math.random seeded from `seed` (?seed= carries it for the game), the page clock fixed at `clock` and advanced only by the harness, and runs its UI steps; `setup` steps are the named in-page setups of tools/visual/setups.mjs. Shots of ?render=3d add `camera` (look-at point, floor, zoom); the rest of the pose is src/contracts/look.js. Adding a shot needs its first baseline, approved by someone other than the branch agent: node tools/visual/run.mjs --approve <id> --reason '...' --by review:<id>|integrator. Every tile of a 16 x 9 grid must also reach SSIM 0.95 (tools/visual/compare.mjs).",
+  "schema": "survival-logs/visual-shots@1",
+  "viewport": [
+    1920,
+    1080
+  ],
+  "threshold": 0.98,
+  "clock": "2026-06-01T09:00:00.000Z",
+  "settleFrames": 90,
+  "shots": [
+    {
+      "id": "title",
+      "title": "Title screen",
+      "url": "/?render=2d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        }
+      ]
+    },
+    {
+      "id": "choose-past",
+      "title": "New Game: choose your past and the difficulty",
+      "url": "/?render=2d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "waitFor": {
+            "role": "heading",
+            "name": "Choose your past"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wage-apartment-prep",
+      "title": "Wage Slave: the apartment when the preparation hours start (HUD, countdown, objectives)",
+      "url": "/?render=2d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home",
+            "character": "wage"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wage-city-map",
+      "title": "Wage Slave: the city map of supply points before the outbreak",
+      "url": "/?render=2d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home"
+          }
+        },
+        {
+          "setup": "panel",
+          "args": {
+            "id": "map"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wage-market",
+      "title": "Wage Slave: inside the Discount Supermarket during the preparation hours",
+      "url": "/?render=2d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home"
+          }
+        },
+        {
+          "setup": "travel",
+          "args": {
+            "to": "market"
+          }
+        },
+        {
+          "state": {
+            "scene": "shop:market"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wage-backpack",
+      "title": "Wage Slave: the backpack grid open over the apartment",
+      "url": "/?render=2d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home"
+          }
+        },
+        {
+          "setup": "panel",
+          "args": {
+            "id": "backpack"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wage-night-day2",
+      "title": "Wage Slave: Day 2 at 22:00 after the outbreak, the Daily Settlement and plan offer over the night apartment",
+      "url": "/?render=2d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home"
+          }
+        },
+        {
+          "setup": "hours",
+          "args": {
+            "hours": 38
+          }
+        },
+        {
+          "state": {
+            "phase": "post"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wage-death",
+      "title": "Wage Slave: the death screen on Day 1 (survival record, planning points, rebirth choices)",
+      "url": "/?render=2d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home"
+          }
+        },
+        {
+          "setup": "hours",
+          "args": {
+            "hours": 30
+          }
+        },
+        {
+          "setup": "die"
+        },
+        {
+          "state": {
+            "phase": "dead"
+          }
+        }
+      ]
+    },
+    {
+      "id": "student-duplex-prep",
+      "title": "College Student: the duplex when the preparation hours start",
+      "url": "/?render=2d&seed=4243",
+      "seed": 4243,
+      "storage": {
+        "survivalLog.history": {
+          "characters": {
+            "wage": true,
+            "student": true,
+            "warehouse": true
+          }
+        }
+      },
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "click": ".charcard:nth-child(2)"
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home",
+            "character": "student"
+          }
+        }
+      ]
+    },
+    {
+      "id": "warehouse-prep",
+      "title": "Warehouse Manager: the supply warehouse when the preparation hours start",
+      "url": "/?render=2d&seed=4244",
+      "seed": 4244,
+      "storage": {
+        "survivalLog.history": {
+          "characters": {
+            "wage": true,
+            "student": true,
+            "warehouse": true
+          }
+        }
+      },
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "click": ".charcard:nth-child(3)"
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home",
+            "character": "warehouse"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wage-site-streets",
+      "title": "Wage Slave: exploring the Nearby Streets on Day 2 (exploration HUD over the site)",
+      "url": "/?render=2d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home"
+          }
+        },
+        {
+          "setup": "hours",
+          "args": {
+            "hours": 26
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Skip the plans"
+          }
+        },
+        {
+          "frames": 120
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Make a plan"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Continue"
+          }
+        },
+        {
+          "press": "Escape"
+        },
+        {
+          "setup": "explore",
+          "args": {
+            "site": "streets"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3d-apartment-1f-golden",
+      "title": "The three.js renderer: Apartment 1F, whole floor, warm low light (planning-phase countdown on screen)",
+      "url": "/?render=3d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home"
+          }
+        },
+        {
+          "setup": "goto",
+          "args": {
+            "day": 1,
+            "hour": 17,
+            "minute": 0
+          }
+        },
+        {
+          "setup": "weather",
+          "args": {
+            "kind": "sunny"
+          }
+        },
+        {
+          "frames": 10
+        },
+        {
+          "setup": "clear"
+        }
+      ],
+      "camera": {
+        "lookAt": [
+          7.0,
+          5.5
+        ],
+        "floor": "1F",
+        "lookZoom": 0
+      },
+      "storage": {
+        "survivalLog.history": {
+          "characters": {
+            "wage": true,
+            "student": true,
+            "warehouse": true
+          }
+        }
+      }
+    },
+    {
+      "id": "3d-warehouse-storeroom-day",
+      "title": "The three.js renderer: Home storeroom, Day 1 11:50 (zoomed, vFOV 49.8°)",
+      "url": "/?render=3d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "click": ".charcard:nth-child(3)"
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home"
+          }
+        },
+        {
+          "setup": "unlock",
+          "args": {}
+        },
+        {
+          "setup": "goto",
+          "args": {
+            "day": 1,
+            "hour": 11,
+            "minute": 50
+          }
+        },
+        {
+          "setup": "weather",
+          "args": {
+            "kind": "sunny"
+          }
+        },
+        {
+          "frames": 10
+        },
+        {
+          "setup": "clear"
+        }
+      ],
+      "camera": {
+        "lookAt": [
+          9.0,
+          6.5
+        ],
+        "floor": "1F",
+        "lookZoom": 1
+      },
+      "storage": {
+        "survivalLog.history": {
+          "characters": {
+            "wage": true,
+            "student": true,
+            "warehouse": true
+          }
+        }
+      }
+    },
+    {
+      "id": "3d-market-predisaster",
+      "title": "The three.js renderer: The Discount Supermarket before the disaster, stocked (t019; ART.md §1.1 lists it as a supermarket view); the recreation's pre-disaster market shop",
+      "url": "/?render=3d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home"
+          }
+        },
+        {
+          "setup": "goto",
+          "args": {
+            "day": 1,
+            "hour": 9,
+            "minute": 30
+          }
+        },
+        {
+          "setup": "travel",
+          "args": {
+            "to": "market"
+          }
+        },
+        {
+          "setup": "weather",
+          "args": {
+            "kind": "sunny"
+          }
+        },
+        {
+          "frames": 10
+        },
+        {
+          "setup": "clear"
+        }
+      ],
+      "camera": {
+        "lookAt": [
+          8.0,
+          6.0
+        ],
+        "lookZoom": 0
+      },
+      "storage": {
+        "survivalLog.history": {
+          "characters": {
+            "wage": true,
+            "student": true,
+            "warehouse": true
+          }
+        }
+      }
+    },
+    {
+      "id": "3d-apartment-1f-night",
+      "title": "The three.js renderer: Home 1F at night with lamps on, Day 18",
+      "url": "/?render=3d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home"
+          }
+        },
+        {
+          "setup": "goto",
+          "args": {
+            "day": 18,
+            "hour": 22,
+            "minute": 0
+          }
+        },
+        {
+          "setup": "weather",
+          "args": {
+            "kind": "sunny"
+          }
+        },
+        {
+          "frames": 10
+        },
+        {
+          "setup": "clear"
+        }
+      ],
+      "camera": {
+        "lookAt": [
+          7.0,
+          5.5
+        ],
+        "floor": "1F",
+        "lookZoom": 0
+      },
+      "storage": {
+        "survivalLog.history": {
+          "characters": {
+            "wage": true,
+            "student": true,
+            "warehouse": true
+          }
+        }
+      }
+    },
+    {
+      "id": "3d-duplex-2f-terrace",
+      "title": "The three.js renderer: Duplex 2F terrace, Day 7 11:50 (zoomed, vFOV 51°)",
+      "url": "/?render=3d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "click": ".charcard:nth-child(2)"
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home"
+          }
+        },
+        {
+          "setup": "unlock",
+          "args": {}
+        },
+        {
+          "setup": "goto",
+          "args": {
+            "day": 7,
+            "hour": 11,
+            "minute": 50
+          }
+        },
+        {
+          "setup": "weather",
+          "args": {
+            "kind": "sunny"
+          }
+        },
+        {
+          "frames": 10
+        },
+        {
+          "setup": "clear"
+        }
+      ],
+      "camera": {
+        "lookAt": [
+          6.5,
+          5.0
+        ],
+        "floor": "2F",
+        "lookZoom": 0.9
+      },
+      "storage": {
+        "survivalLog.history": {
+          "characters": {
+            "wage": true,
+            "student": true,
+            "warehouse": true
+          }
+        }
+      }
+    },
+    {
+      "id": "3d-site-streets",
+      "title": "The three.js renderer: Rooftops and street, Day 2 07:50 (overcast dawn)",
+      "url": "/?render=3d&seed=4242",
+      "seed": 4242,
+      "steps": [
+        {
+          "waitFor": ".title-logo"
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "New Game"
+          }
+        },
+        {
+          "check": {
+            "role": "checkbox"
+          }
+        },
+        {
+          "click": {
+            "role": "button",
+            "name": "Start",
+            "exact": true
+          }
+        },
+        {
+          "state": {
+            "phase": "pre",
+            "scene": "home"
+          }
+        },
+        {
+          "setup": "goto",
+          "args": {
+            "day": 2,
+            "hour": 6,
+            "minute": 0
+          }
+        },
+        {
+          "setup": "explore",
+          "args": {
+            "site": "streets",
+            "arriveAt": 7.833333333333333
+          }
+        },
+        {
+          "setup": "weather",
+          "args": {
+            "kind": "cloudy"
+          }
+        },
+        {
+          "frames": 10
+        },
+        {
+          "setup": "clear"
+        }
+      ],
+      "camera": {
+        "lookAt": [
+          9.0,
+          7.0
+        ],
+        "lookZoom": 0
+      },
+      "storage": {
+        "survivalLog.history": {
+          "characters": {
+            "wage": true,
+            "student": true,
+            "warehouse": true
+          }
+        }
+      }
+    }
+  ]
+}

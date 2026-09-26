@@ -1,0 +1,666 @@
+{
+ "about": "UI measurements behind docs/UI.md (WP-P0-07), from the native screenshots and the trailer frames.",
+ "script": "docs/art/ui/measure_ui.py",
+ "frames": {
+  "ss_01": "screenshots/ss_01_8f2609d8.jpg",
+  "ss_02": "screenshots/ss_02_dede236e.jpg",
+  "ss_07": "screenshots/ss_07_02c2b148.jpg",
+  "ss_08": "screenshots/ss_08_1502124d.jpg",
+  "t014": "trailer/shot_07_t014.700s.jpg",
+  "t018": "trailer/shot_08_t018.167s.jpg"
+ },
+ "samples": {
+  "textStrong": {
+   "frame": "ss_01",
+   "box": [
+    382,
+    145,
+    499,
+    168
+   ],
+   "select": "bright150",
+   "text": true,
+   "what": "\"Inventory\" window title",
+   "hex": "#f4f6f3",
+   "n": 174,
+   "uiMd": "#f4f6f3"
+  },
+  "goldPale": {
+   "frame": "ss_07",
+   "box": [
+    370,
+    252,
+    470,
+    278
+   ],
+   "select": "bright150",
+   "text": true,
+   "what": "active tab label \"Inventory\"",
+   "hex": "#ffe8ad",
+   "n": 106,
+   "uiMd": "#ffe8ad"
+  },
+  "goldDeep": {
+   "frame": "ss_07",
+   "box": [
+    300,
+    327,
+    820,
+    334
+   ],
+   "select": "yellow",
+   "text": false,
+   "what": "load bar, gold",
+   "hex": "#d79e02",
+   "n": 3640,
+   "uiMd": "#d79e02"
+  },
+  "amber": {
+   "frame": "ss_07",
+   "box": [
+    968,
+    558,
+    1180,
+    576
+   ],
+   "select": "yellow",
+   "text": true,
+   "what": "crafted item \"Spike Barrier Supply Box*1\"",
+   "hex": "#fbbb09",
+   "n": 153,
+   "uiMd": "#fbbb09"
+  },
+  "fresh": {
+   "frame": "ss_01",
+   "box": [
+    400,
+    716,
+    570,
+    719
+   ],
+   "select": "green",
+   "text": false,
+   "what": "freshness bar under the flour sack",
+   "hex": "#71ae72",
+   "n": 510,
+   "uiMd": "#71ae72"
+  },
+  "success": {
+   "frame": "ss_07",
+   "box": [
+    1085,
+    520,
+    1270,
+    545
+   ],
+   "select": "green",
+   "text": true,
+   "what": "\"Crafting Complete\"",
+   "hex": "#87e18e",
+   "n": 84,
+   "uiMd": "#87e18e"
+  },
+  "online": {
+   "frame": "ss_02",
+   "box": [
+    1878,
+    596,
+    1888,
+    604
+   ],
+   "select": "green",
+   "text": false,
+   "what": "current-floor dot",
+   "hex": "#5ed67f",
+   "n": 80,
+   "uiMd": "#5ed67f"
+  },
+  "xp": {
+   "frame": "ss_07",
+   "box": [
+    968,
+    582,
+    1066,
+    600
+   ],
+   "select": "blue",
+   "text": true,
+   "what": "\"Gained 70 XP.\"",
+   "hex": "#68b4fa",
+   "n": 92,
+   "uiMd": "#68b4fa"
+  },
+  "alert": {
+   "frame": "ss_02",
+   "box": [
+    145,
+    136,
+    225,
+    147
+   ],
+   "select": "red",
+   "text": false,
+   "what": "Front Door hit-point bar",
+   "hex": "#d73041",
+   "n": 880,
+   "uiMd": "#d73041"
+  },
+  "statWarn": {
+   "frame": "ss_02",
+   "box": [
+    1640,
+    972,
+    1660,
+    1002
+   ],
+   "select": "all",
+   "text": false,
+   "what": "Stamina fill",
+   "hex": "#877524",
+   "n": 600,
+   "uiMd": "#877524"
+  },
+  "coldCell": {
+   "frame": "ss_08",
+   "box": [
+    496,
+    422,
+    536,
+    464
+   ],
+   "select": "all",
+   "text": false,
+   "what": "empty freezer cell",
+   "hex": "#12273a",
+   "n": 1680,
+   "uiMd": "#12273a"
+  },
+  "tagMust": {
+   "frame": "t018",
+   "box": [
+    1215,
+    300,
+    1230,
+    320
+   ],
+   "select": "all",
+   "text": false,
+   "what": "\"Must Buy\" tag (file px)",
+   "hex": "#743a2a",
+   "n": 300,
+   "uiMd": "#743a2a"
+  },
+  "track": {
+   "frame": "ss_01",
+   "box": [
+    900,
+    208,
+    935,
+    213
+   ],
+   "select": "all",
+   "text": false,
+   "what": "load bar track",
+   "hex": "#121619",
+   "n": 175,
+   "uiMd": "#121619"
+  },
+  "thumb": {
+   "frame": "ss_01",
+   "box": [
+    1534,
+    220,
+    1540,
+    400
+   ],
+   "select": "all",
+   "text": false,
+   "what": "shop scrollbar thumb",
+   "hex": "#555654",
+   "n": 1080,
+   "uiMd": "#555654"
+  },
+  "tabOnBg": {
+   "frame": "ss_07",
+   "box": [
+    300,
+    250,
+    340,
+    280
+   ],
+   "select": "all",
+   "text": false,
+   "what": "active tab face",
+   "hex": "#2b271c",
+   "n": 1200,
+   "uiMd": "#2b271c"
+  },
+  "goldChip": {
+   "frame": "ss_02",
+   "box": [
+    777,
+    992,
+    783,
+    1018
+   ],
+   "select": "all",
+   "text": false,
+   "what": "\"Pick One\" chip",
+   "hex": "#4f4112",
+   "n": 156,
+   "uiMd": "#4f4112"
+  },
+  "cellEmpty": {
+   "frame": "ss_01",
+   "box": [
+    880,
+    690,
+    920,
+    730
+   ],
+   "select": "all",
+   "text": false,
+   "what": "empty backpack cell",
+   "hex": "#17181c",
+   "n": 1600,
+   "uiMd": "#17181c"
+  },
+  "slotEdge": {
+   "frame": "ss_01",
+   "box": [
+    384,
+    300,
+    386,
+    420
+   ],
+   "select": "all",
+   "text": false,
+   "what": "slot border",
+   "hex": "#3e4244",
+   "n": 240,
+   "uiMd": "#3e4244"
+  },
+  "buttonDisabled": {
+   "frame": "ss_01",
+   "box": [
+    420,
+    880,
+    560,
+    905
+   ],
+   "select": "all",
+   "text": false,
+   "what": "Checkout, disabled: face",
+   "hex": "#2c2d31",
+   "n": 3500,
+   "uiMd": "#2c2d31"
+  },
+  "textDisabled": {
+   "frame": "ss_01",
+   "box": [
+    607,
+    903,
+    714,
+    923
+   ],
+   "select": "bright70",
+   "text": true,
+   "what": "Checkout, disabled: label",
+   "hex": "#7e7f81",
+   "n": 120,
+   "uiMd": "#7e7f81"
+  },
+  "shopRowHover": {
+   "frame": "ss_01",
+   "box": [
+    1240,
+    190,
+    1400,
+    210
+   ],
+   "select": "all",
+   "text": false,
+   "what": "shop row under the cursor",
+   "hex": "#31332f",
+   "n": 3200,
+   "uiMd": "#31332f"
+  },
+  "speedPressed": {
+   "frame": "ss_02",
+   "box": [
+    468,
+    1008,
+    480,
+    1048
+   ],
+   "select": "all",
+   "text": false,
+   "what": "pressed speed button face",
+   "hex": "#433a18",
+   "n": 480,
+   "uiMd": "#433a18"
+  },
+  "tipFace": {
+   "frame": "t014",
+   "box": [
+    740,
+    640,
+    760,
+    700
+   ],
+   "select": "all",
+   "text": false,
+   "what": "rich tooltip face (file px)",
+   "hex": "#191d20",
+   "n": 1200,
+   "uiMd": "#191d20"
+  },
+  "dayCounter": {
+   "frame": "ss_02",
+   "box": [
+    1545,
+    50,
+    1710,
+    98
+   ],
+   "select": "bright170",
+   "text": true,
+   "what": "DAY7",
+   "hex": "#e4e5e3",
+   "n": 850,
+   "uiMd": "#e4e5e3"
+  },
+  "chilledBadge": {
+   "frame": "ss_08",
+   "box": [
+    474,
+    298,
+    489,
+    312
+   ],
+   "select": "notWhite",
+   "text": false,
+   "what": "kept-cold status badge (price tag glyph excluded)",
+   "hex": "#8e9e41",
+   "n": 158,
+   "uiMd": "#8e9e41"
+  },
+  "dialNight": {
+   "frame": "ss_02",
+   "box": [
+    1800,
+    70,
+    1830,
+    85
+   ],
+   "select": "all",
+   "text": false,
+   "what": "24 h dial, inner disc, upper (night) half",
+   "hex": "#222d2f",
+   "n": 450,
+   "uiMd": "#222d2f"
+  },
+  "dialDay": {
+   "frame": "ss_02",
+   "box": [
+    1790,
+    120,
+    1805,
+    135
+   ],
+   "select": "all",
+   "text": false,
+   "what": "24 h dial, inner disc, lower (day) half, clear of the hand",
+   "hex": "#5e4139",
+   "n": 225,
+   "uiMd": "#5e4139"
+  },
+  "encumbered": {
+   "frame": "ss_02",
+   "box": [
+    1500,
+    1030,
+    1510,
+    1050
+   ],
+   "select": "all",
+   "text": false,
+   "what": "Encumbered badge (ART.md --ui-danger is #6b0102)",
+   "hex": "#861f28",
+   "n": 200,
+   "uiMd": "#861f28"
+  },
+  "panelComposite": {
+   "frame": "ss_01",
+   "box": [
+    365,
+    125,
+    600,
+    135
+   ],
+   "select": "all",
+   "text": false,
+   "what": "inventory window, top padding, over the bright shop",
+   "hex": "#222521",
+   "n": 2350,
+   "uiMd": null
+  },
+  "buyRest": {
+   "frame": "ss_01",
+   "box": [
+    1440,
+    345,
+    1545,
+    377
+   ],
+   "select": "greenFill",
+   "text": false,
+   "what": "Buy, row 2 (not hovered)",
+   "hex": "#5d823c",
+   "n": 1857,
+   "uiMd": null
+  },
+  "buyHover": {
+   "frame": "ss_01",
+   "box": [
+    1440,
+    230,
+    1545,
+    262
+   ],
+   "select": "greenFill",
+   "text": false,
+   "what": "Buy, row 1, under the cursor",
+   "hex": "#678f41",
+   "n": 1804,
+   "uiMd": null
+  }
+ },
+ "profiles": {
+  "cellGradient": {
+   "frame": "ss_01",
+   "x": 900,
+   "y": [
+    656,
+    719
+   ],
+   "what": "empty cell, top \u2192 bottom (--ui-cell-top \u2192 --ui-cell-bottom)",
+   "top": "#0d0e10",
+   "bottom": "#191a1e",
+   "median": "#141516"
+  },
+  "loopPill": {
+   "frame": "ss_02",
+   "x": 1612,
+   "y": [
+    113,
+    129
+   ],
+   "what": "Loop: 1 pill, above the text",
+   "top": "#2c2b27",
+   "bottom": "#2d2c27",
+   "median": "#2a2c27"
+  }
+ },
+ "gridPitch": {
+  "row": 680,
+  "gapCentres": [
+   564,
+   570,
+   586,
+   660,
+   730,
+   800,
+   870,
+   940
+  ],
+  "gaps": [
+   74,
+   70,
+   70,
+   70,
+   70
+  ],
+  "pitch": 70.0
+ },
+ "panelAlpha": {
+  "method": "yellow floor line under the Groceries window bottom edge, blue-channel contrast inside / outside",
+  "transmission": 0.071,
+  "alpha": 0.929,
+  "compositeOverFloor": "#1e201d",
+  "floorOutside": "#626255",
+  "panelColour": "#191b19"
+ },
+ "frostedFrame": {
+  "left": {
+   "box": [
+    211,
+    300,
+    225,
+    900
+   ],
+   "hex": "#3a2e27"
+  },
+  "top": {
+   "box": [
+    300,
+    211,
+    1600,
+    222
+   ],
+   "hex": "#332922"
+  },
+  "gap": {
+   "box": [
+    752,
+    300,
+    764,
+    900
+   ],
+   "hex": "#473724"
+  },
+  "bottom": {
+   "box": [
+    300,
+    905,
+    1600,
+    918
+   ],
+   "hex": "#44331f"
+  },
+  "sceneAbove": {
+   "box": [
+    300,
+    150,
+    1600,
+    200
+   ],
+   "hex": "#23160f"
+  }
+ },
+ "buyButtons": {
+  "hoveredRow": 1,
+  "buttons": [
+   {
+    "box": [
+     1458,
+     230,
+     1524,
+     263
+    ],
+    "size": [
+     66,
+     33
+    ],
+    "fill": "#668e40"
+   },
+   {
+    "box": [
+     1458,
+     345,
+     1524,
+     378
+    ],
+    "size": [
+     66,
+     33
+    ],
+    "fill": "#5d823c"
+   },
+   {
+    "box": [
+     1452,
+     459,
+     1524,
+     492
+    ],
+    "size": [
+     72,
+     33
+    ],
+    "fill": "#5d823a"
+   },
+   {
+    "box": [
+     1458,
+     574,
+     1524,
+     607
+    ],
+    "size": [
+     66,
+     33
+    ],
+    "fill": "#5b823a"
+   },
+   {
+    "box": [
+     1458,
+     686,
+     1524,
+     719
+    ],
+    "size": [
+     66,
+     33
+    ],
+    "fill": "#5d823a"
+   },
+   {
+    "box": [
+     1458,
+     800,
+     1524,
+     833
+    ],
+    "size": [
+     66,
+     33
+    ],
+    "fill": "#5d843c"
+   }
+  ],
+  "rest": "#5d823b",
+  "hover": "#668e40"
+ }
+}

@@ -1,0 +1,408 @@
+{
+ "method": "object segmented from a slot of #292d30 (ours: the 128 px file composited 1:1), as in the WP-P0-12 review 1 stats",
+ "summary (medians)": {
+  "extent/slot": {
+   "source": 0.69,
+   "ours": 0.71
+  },
+  "shadowShare": {
+   "source": 0.53,
+   "ours": 0.38
+  },
+  "shadowDepth": {
+   "source": 6.7,
+   "ours": 7.1
+  },
+  "C* median": {
+   "source": 23.2,
+   "ours": 33.65
+  },
+  "L* p90": {
+   "source": 83.2,
+   "ours": 81.55
+  },
+  "L* p10": {
+   "source": 20.3,
+   "ours": 36.05
+  }
+ },
+ "source": {
+  "ss01 noodle cup 2x2": {
+   "extent/slot": 0.61,
+   "shadowShare": 0.54,
+   "shadowDepth": 6.6,
+   "L*": [
+    19.3,
+    47.3,
+    82.9
+   ],
+   "C*": [
+    14.3,
+    46.2,
+    76.6
+   ]
+  },
+  "ss01 rice sack 3x4": {
+   "extent/slot": 0.63,
+   "shadowShare": 0.53,
+   "shadowDepth": 6.6,
+   "L*": [
+    26.9,
+    53.6,
+    83.8
+   ],
+   "C*": [
+    10.6,
+    21.7,
+    35.2
+   ]
+  },
+  "ss01 cola 1x2": {
+   "extent/slot": 0.76,
+   "shadowShare": 0.43,
+   "shadowDepth": 7.0,
+   "L*": [
+    2.4,
+    18.4,
+    55.9
+   ],
+   "C*": [
+    5.1,
+    21.9,
+    59.6
+   ]
+  },
+  "ss01 chips bag 2x2": {
+   "extent/slot": 0.69,
+   "shadowShare": 0.46,
+   "shadowDepth": 6.4,
+   "L*": [
+    20.3,
+    65.0,
+    93.2
+   ],
+   "C*": [
+    16.8,
+    41.2,
+    73.9
+   ]
+  },
+  "ss01 supply box 4x3": {
+   "extent/slot": 0.6,
+   "shadowShare": 0.54,
+   "shadowDepth": 6.7,
+   "L*": [
+    25.9,
+    54.0,
+    94.6
+   ],
+   "C*": [
+    8.3,
+    18.8,
+    54.2
+   ]
+  },
+  "ss01 cheese 1x1": {
+   "extent/slot": 0.83,
+   "shadowShare": 0.38,
+   "shadowDepth": 5.5,
+   "L*": [
+    20.3,
+    89.3,
+    94.1
+   ],
+   "C*": [
+    16.1,
+    40.3,
+    46.7
+   ]
+  },
+  "ss01 dumplings 2x2": {
+   "extent/slot": 0.73,
+   "shadowShare": 0.48,
+   "shadowDepth": 7.0,
+   "L*": [
+    49.4,
+    74.1,
+    83.2
+   ],
+   "C*": [
+    5.4,
+    13.0,
+    16.7
+   ]
+  },
+  "ss07 wooden board 2x2": {
+   "extent/slot": 0.69,
+   "shadowShare": 0.7,
+   "shadowDepth": 6.8,
+   "L*": [
+    14.8,
+    60.0,
+    84.3
+   ],
+   "C*": [
+    20.0,
+    39.2,
+    44.5
+   ]
+  },
+  "ss07 mousetrap 1x1 a": {
+   "extent/slot": 0.89,
+   "shadowShare": 0.49,
+   "shadowDepth": 6.7,
+   "L*": [
+    29.9,
+    53.7,
+    64.3
+   ],
+   "C*": [
+    13.9,
+    30.6,
+    39.3
+   ]
+  },
+  "ss07 mousetrap 1x1 b": {
+   "extent/slot": 0.88,
+   "shadowShare": 0.5,
+   "shadowDepth": 6.8,
+   "L*": [
+    30.2,
+    53.8,
+    64.3
+   ],
+   "C*": [
+    14.9,
+    30.5,
+    39.2
+   ]
+  },
+  "ss07 metal plate 2x2": {
+   "extent/slot": 0.67,
+   "shadowShare": 0.71,
+   "shadowDepth": 7.0,
+   "L*": [
+    35.3,
+    69.8,
+    88.9
+   ],
+   "C*": [
+    4.5,
+    10.4,
+    13.0
+   ]
+  },
+  "ss07 circuit board 2x2": {
+   "extent/slot": 0.62,
+   "shadowShare": 0.58,
+   "shadowDepth": 6.5,
+   "L*": [
+    4.0,
+    35.7,
+    52.2
+   ],
+   "C*": [
+    1.3,
+    13.6,
+    21.5
+   ]
+  },
+  "ss07 bracket 2x2": {
+   "extent/slot": 0.74,
+   "shadowShare": 0.61,
+   "shadowDepth": 6.3,
+   "L*": [
+    16.7,
+    38.7,
+    67.6
+   ],
+   "C*": [
+    7.9,
+    23.2,
+    44.0
+   ]
+  }
+ },
+ "ours@128": {
+  "2115": {
+   "extent/slot": 0.71,
+   "shadowShare": 0.45,
+   "shadowDepth": 7.8,
+   "L*": [
+    17.4,
+    62.8,
+    97.6
+   ],
+   "C*": [
+    1.2,
+    9.4,
+    46.0
+   ]
+  },
+  "2105": {
+   "extent/slot": 0.7,
+   "shadowShare": 0.38,
+   "shadowDepth": 8.0,
+   "L*": [
+    21.4,
+    48.5,
+    70.5
+   ],
+   "C*": [
+    8.9,
+    41.8,
+    52.1
+   ]
+  },
+  "2502": {
+   "extent/slot": 0.72,
+   "shadowShare": 0.32,
+   "shadowDepth": 6.4,
+   "L*": [
+    48.3,
+    57.1,
+    85.6
+   ],
+   "C*": [
+    21.0,
+    35.6,
+    51.9
+   ]
+  },
+  "2103": {
+   "extent/slot": 0.71,
+   "shadowShare": 0.38,
+   "shadowDepth": 7.8,
+   "L*": [
+    29.2,
+    49.4,
+    79.5
+   ],
+   "C*": [
+    8.5,
+    22.1,
+    25.9
+   ]
+  },
+  "2142": {
+   "extent/slot": 0.71,
+   "shadowShare": 0.27,
+   "shadowDepth": 5.8,
+   "L*": [
+    35.7,
+    70.8,
+    88.5
+   ],
+   "C*": [
+    3.5,
+    22.3,
+    38.7
+   ]
+  },
+  "13540": {
+   "extent/slot": 0.71,
+   "shadowShare": 0.41,
+   "shadowDepth": 7.3,
+   "L*": [
+    36.4,
+    56.4,
+    74.8
+   ],
+   "C*": [
+    24.4,
+    44.8,
+    52.8
+   ]
+  },
+  "13543": {
+   "extent/slot": 0.71,
+   "shadowShare": 0.41,
+   "shadowDepth": 6.9,
+   "L*": [
+    15.3,
+    34.6,
+    65.1
+   ],
+   "C*": [
+    12.5,
+    36.0,
+    51.0
+   ]
+  },
+  "2400": {
+   "extent/slot": 0.71,
+   "shadowShare": 0.34,
+   "shadowDepth": 6.9,
+   "L*": [
+    48.1,
+    68.9,
+    89.7
+   ],
+   "C*": [
+    4.1,
+    9.3,
+    37.4
+   ]
+  },
+  "20106": {
+   "extent/slot": 0.7,
+   "shadowShare": 0.35,
+   "shadowDepth": 6.8,
+   "L*": [
+    39.6,
+    61.3,
+    70.4
+   ],
+   "C*": [
+    37.9,
+    48.0,
+    52.9
+   ]
+  },
+  "15026": {
+   "extent/slot": 0.7,
+   "shadowShare": 0.46,
+   "shadowDepth": 7.4,
+   "L*": [
+    37.0,
+    46.7,
+    79.9
+   ],
+   "C*": [
+    17.8,
+    37.6,
+    66.2
+   ]
+  },
+  "25001": {
+   "extent/slot": 0.7,
+   "shadowShare": 0.33,
+   "shadowDepth": 6.1,
+   "L*": [
+    42.5,
+    72.7,
+    83.2
+   ],
+   "C*": [
+    10.4,
+    31.7,
+    37.1
+   ]
+  },
+  "3022": {
+   "extent/slot": 0.7,
+   "shadowShare": 0.41,
+   "shadowDepth": 7.4,
+   "L*": [
+    27.7,
+    44.4,
+    92.5
+   ],
+   "C*": [
+    5.3,
+    12.8,
+    20.2
+   ]
+  }
+ }
+}

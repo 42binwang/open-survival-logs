@@ -1,0 +1,103 @@
+{
+  "schema": "survival-logs/icon-rig@1",
+  "note": "The fixed icon rig (WP-P0-12): every icon is rendered with this camera, these lights and these settings. Distances and light sizes are in units of the subject's bounding radius, so the light on a 5 cm seed packet and a 60 cm plank stack is the same; light power is given for a 1 m distance and scales with the square of the real distance.",
+  "resolution": 256,
+  "camera": {
+    "pitchDeg": 40,
+    "lensMm": 85,
+    "sensorMm": 36,
+    "fill": 0.66,
+    "note": "pitch = src/contracts/look.js CAMERA.pitchDeg (the game camera); the subject turns, the camera never does. fill = the share of the frame the subject's projected bounds take along their longer side: 0.66, calibrated so that measured like the source (docs/art/icons/review-stats.json: object segmented from its slot) ours match the source's median object size / slot side (0.65-0.69 over 13 native icons, WP-P0-12 review 1), so the 64 and 128 px files sit 1:1 in 1x1 and 2x2 slots with the corners free"
+  },
+  "lights": {
+    "key": {
+      "azimuthDeg": -48,
+      "elevationDeg": 50,
+      "distance": 5,
+      "size": 2.6,
+      "power": 8.8,
+      "color": [
+        1.0,
+        0.94,
+        0.86
+      ]
+    },
+    "fill": {
+      "azimuthDeg": 62,
+      "elevationDeg": 16,
+      "distance": 5,
+      "size": 4.0,
+      "power": 2.9,
+      "color": [
+        0.86,
+        0.92,
+        1.0
+      ]
+    },
+    "rim": {
+      "azimuthDeg": 160,
+      "elevationDeg": 38,
+      "distance": 5,
+      "size": 1.6,
+      "power": 8.8,
+      "color": [
+        1.0,
+        0.97,
+        0.93
+      ]
+    }
+  },
+  "world": {
+    "gradient": {
+      "zenith": 1.0,
+      "horizon": 0.38,
+      "nadir": 0.05,
+      "color": [
+        1.0,
+        0.98,
+        0.95
+      ],
+      "strength": 0.05
+    },
+    "hdri": {
+      "source": "polyhaven/studio_small_09@2k",
+      "file": "assets/cache/polyhaven/studio_small_09@2k/studio_small_09_2k.hdr",
+      "strength": 0.05,
+      "rotationDeg": 110
+    }
+  },
+  "cycles": {
+    "device": "CPU",
+    "seed": 0,
+    "samples": 256,
+    "adaptiveSampling": false,
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoisingInputPasses": "RGB_ALBEDO_NORMAL",
+    "denoisingPrefilter": "ACCURATE",
+    "denoisingQuality": "HIGH",
+    "pixelFilter": "BLACKMAN_HARRIS",
+    "filterWidth": 1.5,
+    "maxBounces": 10,
+    "transmissionBounces": 12,
+    "transparentMaxBounces": 16,
+    "clampIndirect": 6,
+    "caustics": false,
+    "transparentGlass": true,
+    "transparentGlassRoughness": 0.15
+  },
+  "color": {
+    "view": "Khronos PBR Neutral",
+    "look": "None",
+    "exposure": 0.0,
+    "note": "Khronos PBR Neutral keeps printed label colours at their authored values up to the highlights (AgX drifts saturated reds towards salmon), which is how the source's inventory icons read; icons are UI images, drawn without the game's AgX + LUT chain"
+  },
+  "shadow": {
+    "dx": 0.03,
+    "dy": 0.03,
+    "sigma": 0.02,
+    "opacity": 0.3,
+    "color": "#000000",
+    "note": "the source's soft contact shadow below-right of every icon (about 7 codes darker than the slot on all 13 measured source icons): the icon alpha moved 3 % down and right, Gaussian-blurred (sigma 2 % of the side, about 4 % across), black at 0.3 (0.4 measured 9.9 codes deep, the source 6.7), baked into the files by finish.mjs; sizes are shares of the icon side"
+  },
+  "lightsNote": "key:fill 3:1 (8.8 : 2.9), as the source icons keep dark shadow sides"
+}

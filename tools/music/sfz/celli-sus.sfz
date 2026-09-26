@@ -1,0 +1,34 @@
+// Cello section, sustain vibrato: VSCO 2 Community Edition (CC0), sgossner/VSCO-2-CE@440300901d, folder 'Strings/Cello Section/susvib'.
+// Written by tools/music/build.mjs (tools/music/instruments.mjs); played by tools/music/sampler.mjs.
+// Gain staging: loudest layer calibrated to -20 LUFS-M on susvib_A2_v3_1.wav (measured -14.3).
+<control> default_path=../../../assets/cache/vsco2ce/celli-sus/
+<global> ampeg_attack=0.2 ampeg_release=0.8 amp_veltrack=40 loop_mode=loop_continuous offset_auto=1 volume=-5.7
+<group> lovel=1 hivel=108 xfout_lovel=60 xfout_hivel=108
+<region> lokey=0 hikey=38 pitch_keycenter=36 sample=susvib_C1_v1_1.wav
+<region> lokey=39 hikey=41 pitch_keycenter=40 seq_length=2 seq_position=1 sample=susvib_E1_v1_1.wav
+<region> lokey=39 hikey=41 pitch_keycenter=40 seq_length=2 seq_position=2 sample=susvib_E1_v1_2.wav
+<region> lokey=42 hikey=45 pitch_keycenter=43 sample=susvib_G1_v1_1.wav
+<region> lokey=46 hikey=48 pitch_keycenter=47 sample=susvib_B1_v1_1.wav
+<region> lokey=49 hikey=51 pitch_keycenter=50 sample=susvib_D2_v1_1.wav
+<region> lokey=52 hikey=55 pitch_keycenter=53 sample=susvib_F2_v1_1.wav
+<region> lokey=56 hikey=58 pitch_keycenter=57 sample=susvib_A2_v1_1.wav
+<region> lokey=59 hikey=62 pitch_keycenter=60 sample=susvib_C3_v1_1.wav
+<region> lokey=63 hikey=65 pitch_keycenter=64 sample=susvib_E3_v1_1.wav
+<region> lokey=66 hikey=69 pitch_keycenter=67 sample=susvib_G3_v1_1.wav
+<region> lokey=70 hikey=72 pitch_keycenter=71 sample=susvib_B3_v1_1.wav
+<region> lokey=73 hikey=75 pitch_keycenter=74 sample=susvib_D4_v1_1.wav
+<region> lokey=76 hikey=127 pitch_keycenter=77 sample=susvib_F4_v1_1.wav
+<group> lovel=61 hivel=127 xfin_lovel=61 xfin_hivel=109
+<region> lokey=0 hikey=38 pitch_keycenter=36 sample=susvib_C1_v3_1.wav
+<region> lokey=39 hikey=41 pitch_keycenter=40 sample=susvib_E1_v3_1.wav
+<region> lokey=42 hikey=45 pitch_keycenter=43 sample=susvib_G1_v3_1.wav
+<region> lokey=46 hikey=48 pitch_keycenter=47 sample=susvib_B1_v3_1.wav
+<region> lokey=49 hikey=51 pitch_keycenter=50 sample=susvib_D2_v3_1.wav
+<region> lokey=52 hikey=55 pitch_keycenter=53 sample=susvib_F2_v3_1.wav
+<region> lokey=56 hikey=58 pitch_keycenter=57 sample=susvib_A2_v3_1.wav
+<region> lokey=59 hikey=62 pitch_keycenter=60 sample=susvib_C3_v3_1.wav
+<region> lokey=63 hikey=65 pitch_keycenter=64 sample=susvib_E3_v3_1.wav
+<region> lokey=66 hikey=69 pitch_keycenter=67 sample=susvib_G3_v3_1.wav
+<region> lokey=70 hikey=72 pitch_keycenter=71 sample=susvib_B3_v3_1.wav
+<region> lokey=73 hikey=75 pitch_keycenter=74 sample=susvib_D4_v3_1.wav
+<region> lokey=76 hikey=127 pitch_keycenter=77 sample=susvib_F4_v3_1.wav

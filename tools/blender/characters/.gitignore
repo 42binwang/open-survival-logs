@@ -1,0 +1,4 @@
+# Restorable intermediates of the character pipeline (see README.md); node_modules is a symlink build.py makes
+.work/
+__pycache__/
+node_modules

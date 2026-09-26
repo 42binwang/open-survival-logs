@@ -1,0 +1,1425 @@
+{
+  "$comment": "Side-by-side pairs of docs/QUALITY.md §2: every home and exploration site a native source frame shows (HUD on screen, docs/ART.md §1.1; punch-ins never), captured by `shot` (its storage, which unlocks the survivors, its steps, then the numeric look-at point in sim tiles, the floor, and `lookZoom`, the zoom amount of src/contracts/look.js zoomFov: 0 = 60° vFOV … 1 = 50°; the rest of the pose is src/contracts/look.js) reaching its `conditions` (day, hour, weather and scene, asserted from the game state by tests/visual.test.js), and judged on the `judge` list against `measured` within `tolerances`. `from` is the phase the pair is due. `nearest: true` marks a target with no native frame of its own, paired with the nearest native frame of the same kind of space. `descriptors.requires` must all hold for a 4 (they cumulate); `mayShow` are things the source shows that the recreation may add. Targets no native frame shows are `unpaired`, with why.",
+  "schema": "survival-logs/side-by-side@2",
+  "tolerances": {
+    "vFovDeg": 1,
+    "pitchDeg": 1,
+    "yawDeg": 2,
+    "valueCodes": 5,
+    "paletteDeltaE2000": 8,
+    "lightDeg": 15,
+    "relativeAlbedoL": 5
+  },
+  "judges": {
+    "camera": "tools/targets/camera.py on the capture: vFOV within ±1°, pitch within ±1°, yaw within ±2° of measured.camera",
+    "value": "the median luma of the same region of the capture within ±5 codes of measured.value.median",
+    "palette": "each of the capture's 3 dominant CIELAB colours (same method) within ΔE2000 8 of its nearest measured.palette colour",
+    "light": "the key light of the capture (look.js rig) within 15° of measured.light in azimuth and in elevation",
+    "relativeAlbedo": "the L* gaps between the 3 dominant colours of the capture within 5 of those of the source"
+  },
+  "pairs": [
+    {
+      "id": "apartment-1f-golden",
+      "from": "P1",
+      "space": "home",
+      "target": "apartment",
+      "floor": "1F",
+      "source": "assets/targets/source/trailer/shot_24_t035.212s.jpg",
+      "ref": "t035",
+      "shows": "Apartment 1F, whole floor, warm low light (planning-phase countdown on screen)",
+      "time": "dusk rig (t035's clock is hidden; ART.md uses it for relative albedo only)",
+      "weather": "clear",
+      "nearest": false,
+      "shot": {
+        "url": "/?render=3d&seed=4242",
+        "seed": 4242,
+        "steps": [
+          {
+            "waitFor": ".title-logo"
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "New Game"
+            }
+          },
+          {
+            "check": {
+              "role": "checkbox"
+            }
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "Start",
+              "exact": true
+            }
+          },
+          {
+            "state": {
+              "phase": "pre",
+              "scene": "home"
+            }
+          },
+          {
+            "setup": "goto",
+            "args": {
+              "day": 1,
+              "hour": 17,
+              "minute": 0
+            }
+          },
+          {
+            "setup": "weather",
+            "args": {
+              "kind": "sunny"
+            }
+          },
+          {
+            "frames": 10
+          },
+          {
+            "setup": "clear"
+          }
+        ],
+        "camera": {
+          "lookAt": [
+            7.0,
+            5.5
+          ],
+          "floor": "1F",
+          "lookZoom": 0
+        },
+        "storage": {
+          "survivalLog.history": {
+            "characters": {
+              "wage": true,
+              "student": true,
+              "warehouse": true
+            }
+          }
+        }
+      },
+      "measured": {
+        "camera": {
+          "vFovDeg": 60.0,
+          "pitchDeg": 40.0,
+          "yawDeg": -30.0,
+          "source": "docs/ART.md §1.1 (tools/targets/camera.py)"
+        },
+        "value": {
+          "median": 65,
+          "region": "central 60 % × 60 % crop, Rec. 709 luma of the sRGB codes"
+        },
+        "palette": {
+          "lab": [
+            [
+              29.5,
+              4.7,
+              15.2
+            ],
+            [
+              18.2,
+              2.5,
+              12.8
+            ],
+            [
+              45.9,
+              5.3,
+              19.3
+            ]
+          ],
+          "share": [
+            0.48,
+            0.31,
+            0.2
+          ],
+          "method": "k-means (k = 3) in CIELAB of the central crop at 160 × 90"
+        },
+        "light": null
+      },
+      "judge": [
+        "camera",
+        "relativeAlbedo"
+      ],
+      "descriptors": {
+        "requires": [
+          "the whole 1F floor plan in frame with the walls cut at the ART.md cutaway height",
+          "the furniture set of ART.md §5 for the apartment 1F in its source places",
+          "floor, wall and furniture albedo ratios of t035 (ART.md relative albedo)"
+        ],
+        "mayShow": [
+          "the planning countdown and objectives HUD",
+          "warm lamp pools"
+        ]
+      },
+      "why": "t035's clock is hidden: ART.md uses it for relative albedo only, so value, palette and light are not judged against it",
+      "conditions": {
+        "day": 1,
+        "hour": 17,
+        "minute": 0,
+        "weather": "sunny",
+        "scene": "home"
+      }
+    },
+    {
+      "id": "apartment-1f-night",
+      "from": "P1",
+      "space": "home",
+      "target": "apartment",
+      "floor": "1F",
+      "source": "assets/targets/source/trailer/shot_23_t033.500s.jpg",
+      "ref": "t033",
+      "shows": "Home 1F at night with lamps on, Day 18",
+      "time": "Day 18, night with lamps",
+      "weather": "clear",
+      "nearest": true,
+      "why": "t033 does not name its home; the apartment is the home whose 1F it matches best",
+      "shot": {
+        "url": "/?render=3d&seed=4242",
+        "seed": 4242,
+        "steps": [
+          {
+            "waitFor": ".title-logo"
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "New Game"
+            }
+          },
+          {
+            "check": {
+              "role": "checkbox"
+            }
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "Start",
+              "exact": true
+            }
+          },
+          {
+            "state": {
+              "phase": "pre",
+              "scene": "home"
+            }
+          },
+          {
+            "setup": "goto",
+            "args": {
+              "day": 18,
+              "hour": 22,
+              "minute": 0
+            }
+          },
+          {
+            "setup": "weather",
+            "args": {
+              "kind": "sunny"
+            }
+          },
+          {
+            "frames": 10
+          },
+          {
+            "setup": "clear"
+          }
+        ],
+        "camera": {
+          "lookAt": [
+            7.0,
+            5.5
+          ],
+          "floor": "1F",
+          "lookZoom": 0
+        },
+        "storage": {
+          "survivalLog.history": {
+            "characters": {
+              "wage": true,
+              "student": true,
+              "warehouse": true
+            }
+          }
+        }
+      },
+      "measured": {
+        "camera": {
+          "vFovDeg": 59.7,
+          "pitchDeg": 40.0,
+          "yawDeg": -29.9,
+          "source": "docs/ART.md §1.1 (tools/targets/camera.py)"
+        },
+        "value": {
+          "median": 36,
+          "region": "central 60 % × 60 % crop, Rec. 709 luma of the sRGB codes"
+        },
+        "palette": {
+          "lab": [
+            [
+              10.6,
+              -0.4,
+              1.9
+            ],
+            [
+              20.5,
+              -0.1,
+              4.7
+            ],
+            [
+              42.3,
+              1.5,
+              8.7
+            ]
+          ],
+          "share": [
+            0.55,
+            0.4,
+            0.06
+          ],
+          "method": "k-means (k = 3) in CIELAB of the central crop at 160 × 90"
+        },
+        "light": {
+          "key": "moon",
+          "az": 15,
+          "el": 45,
+          "source": "docs/ART.md §4 rig table"
+        }
+      },
+      "judge": [
+        "camera",
+        "value",
+        "palette",
+        "light"
+      ],
+      "descriptors": {
+        "requires": [
+          "lamps on inside, their pools on the floor (the lamps are switched on by the survivor's autonomy at night; not set by the shot)",
+          "moonlight from the ART.md night direction through the windows",
+          "the 1F furniture in the same places as t033"
+        ],
+        "mayShow": [
+          "rain on the windows",
+          "a zombie outside"
+        ]
+      },
+      "conditions": {
+        "day": 18,
+        "hour": 22,
+        "minute": 0,
+        "weather": "sunny",
+        "scene": "home"
+      }
+    },
+    {
+      "id": "apartment-front-snow",
+      "from": "P3",
+      "space": "home",
+      "target": "apartment",
+      "floor": "1F",
+      "source": "assets/targets/source/trailer/shot_27_t041.417s.jpg",
+      "ref": "t041",
+      "shows": "Apartment front in snow, Day 16 15:20",
+      "time": "Day 16, 15:20, cold wave",
+      "weather": "snow",
+      "nearest": false,
+      "shot": {
+        "url": "/?render=3d&seed=4242",
+        "seed": 4242,
+        "steps": [
+          {
+            "waitFor": ".title-logo"
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "New Game"
+            }
+          },
+          {
+            "check": {
+              "role": "checkbox"
+            }
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "Start",
+              "exact": true
+            }
+          },
+          {
+            "state": {
+              "phase": "pre",
+              "scene": "home"
+            }
+          },
+          {
+            "setup": "goto",
+            "args": {
+              "day": 16,
+              "hour": 15,
+              "minute": 20
+            }
+          },
+          {
+            "setup": "weather",
+            "args": {
+              "kind": "snow"
+            }
+          },
+          {
+            "frames": 10
+          },
+          {
+            "setup": "clear"
+          }
+        ],
+        "camera": {
+          "lookAt": [
+            7.0,
+            9.0
+          ],
+          "floor": "1F",
+          "lookZoom": 0
+        },
+        "storage": {
+          "survivalLog.history": {
+            "characters": {
+              "wage": true,
+              "student": true,
+              "warehouse": true
+            }
+          }
+        }
+      },
+      "measured": {
+        "camera": {
+          "vFovDeg": 58.0,
+          "pitchDeg": 39.9,
+          "yawDeg": -30.0,
+          "source": "docs/ART.md §1.1 (tools/targets/camera.py)"
+        },
+        "value": {
+          "median": 78,
+          "region": "central 60 % × 60 % crop, Rec. 709 luma of the sRGB codes"
+        },
+        "palette": {
+          "lab": [
+            [
+              35.1,
+              0.7,
+              2.9
+            ],
+            [
+              23.3,
+              3.5,
+              5.0
+            ],
+            [
+              51.6,
+              -1.5,
+              1.9
+            ]
+          ],
+          "share": [
+            0.56,
+            0.28,
+            0.16
+          ],
+          "method": "k-means (k = 3) in CIELAB of the central crop at 160 × 90"
+        },
+        "light": null
+      },
+      "judge": [
+        "camera",
+        "value",
+        "palette"
+      ],
+      "descriptors": {
+        "requires": [
+          "snow on the ground and roofs in front of the apartment",
+          "the front facade and door as t041",
+          "the cold-wave overcast (no sun shadows)"
+        ],
+        "mayShow": [
+          "falling snow particles",
+          "footprints"
+        ]
+      },
+      "conditions": {
+        "day": 16,
+        "hour": 15,
+        "minute": 20,
+        "weather": "snow",
+        "scene": "home"
+      }
+    },
+    {
+      "id": "apartment-roof-day",
+      "from": "P3",
+      "space": "home",
+      "target": "apartment",
+      "floor": "2F",
+      "source": "assets/targets/source/trailer/shot_35_t059.417s.jpg",
+      "ref": "t059",
+      "shows": "Roof, Day 1 14:40, sunlit concrete and the dish shadow",
+      "time": "Day 1, 14:40",
+      "weather": "clear",
+      "nearest": true,
+      "why": "the camera fit of t059 is loose (f spread 16.4 %, ART.md §1.1), so the camera is not judged on this pair",
+      "shot": {
+        "url": "/?render=3d&seed=4242",
+        "seed": 4242,
+        "steps": [
+          {
+            "waitFor": ".title-logo"
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "New Game"
+            }
+          },
+          {
+            "check": {
+              "role": "checkbox"
+            }
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "Start",
+              "exact": true
+            }
+          },
+          {
+            "state": {
+              "phase": "pre",
+              "scene": "home"
+            }
+          },
+          {
+            "setup": "unlock",
+            "args": {}
+          },
+          {
+            "setup": "goto",
+            "args": {
+              "day": 1,
+              "hour": 14,
+              "minute": 40
+            }
+          },
+          {
+            "setup": "weather",
+            "args": {
+              "kind": "sunny"
+            }
+          },
+          {
+            "frames": 10
+          },
+          {
+            "setup": "clear"
+          }
+        ],
+        "camera": {
+          "lookAt": [
+            7.0,
+            5.5
+          ],
+          "floor": "2F",
+          "lookZoom": 0
+        },
+        "storage": {
+          "survivalLog.history": {
+            "characters": {
+              "wage": true,
+              "student": true,
+              "warehouse": true
+            }
+          }
+        }
+      },
+      "measured": {
+        "camera": {
+          "vFovDeg": 61.4,
+          "pitchDeg": 40.5,
+          "yawDeg": -29.9,
+          "source": "docs/ART.md §1.1 (tools/targets/camera.py)"
+        },
+        "value": {
+          "median": 134,
+          "region": "central 60 % × 60 % crop, Rec. 709 luma of the sRGB codes"
+        },
+        "palette": {
+          "lab": [
+            [
+              65.7,
+              -1.0,
+              6.8
+            ],
+            [
+              47.5,
+              0.7,
+              10.4
+            ],
+            [
+              27.5,
+              4.5,
+              9.7
+            ]
+          ],
+          "share": [
+            0.47,
+            0.27,
+            0.26
+          ],
+          "method": "k-means (k = 3) in CIELAB of the central crop at 160 × 90"
+        },
+        "light": {
+          "key": "sun",
+          "az": 15,
+          "el": 60,
+          "source": "docs/ART.md §4 rig table"
+        }
+      },
+      "judge": [
+        "value",
+        "palette",
+        "light"
+      ],
+      "descriptors": {
+        "requires": [
+          "the roof floor in frame with its parapet",
+          "day sun from azimuth 15°, elevation 60°, with shadows"
+        ],
+        "mayShow": [
+          "laundry or roof clutter",
+          "birds"
+        ]
+      },
+      "conditions": {
+        "day": 1,
+        "hour": 14,
+        "minute": 40,
+        "weather": "sunny",
+        "scene": "home"
+      }
+    },
+    {
+      "id": "duplex-2f-terrace",
+      "from": "P1",
+      "space": "home",
+      "target": "duplex",
+      "floor": "2F",
+      "source": "assets/targets/source/screenshots/ss_02_dede236e.jpg",
+      "ref": "ss_02",
+      "shows": "Duplex 2F terrace, Day 7 11:50 (zoomed, vFOV 51°)",
+      "time": "Day 7, 11:50",
+      "weather": "clear",
+      "nearest": false,
+      "shot": {
+        "url": "/?render=3d&seed=4242",
+        "seed": 4242,
+        "steps": [
+          {
+            "waitFor": ".title-logo"
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "New Game"
+            }
+          },
+          {
+            "click": ".charcard:nth-child(2)"
+          },
+          {
+            "check": {
+              "role": "checkbox"
+            }
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "Start",
+              "exact": true
+            }
+          },
+          {
+            "state": {
+              "phase": "pre",
+              "scene": "home"
+            }
+          },
+          {
+            "setup": "unlock",
+            "args": {}
+          },
+          {
+            "setup": "goto",
+            "args": {
+              "day": 7,
+              "hour": 11,
+              "minute": 50
+            }
+          },
+          {
+            "setup": "weather",
+            "args": {
+              "kind": "sunny"
+            }
+          },
+          {
+            "frames": 10
+          },
+          {
+            "setup": "clear"
+          }
+        ],
+        "camera": {
+          "lookAt": [
+            6.5,
+            5.0
+          ],
+          "floor": "2F",
+          "lookZoom": 0.9
+        },
+        "storage": {
+          "survivalLog.history": {
+            "characters": {
+              "wage": true,
+              "student": true,
+              "warehouse": true
+            }
+          }
+        }
+      },
+      "measured": {
+        "camera": {
+          "vFovDeg": 50.9,
+          "pitchDeg": 40.0,
+          "yawDeg": -30.0,
+          "source": "docs/ART.md §1.1 (tools/targets/camera.py)"
+        },
+        "value": {
+          "median": 48,
+          "region": "central 60 % × 60 % crop, Rec. 709 luma of the sRGB codes"
+        },
+        "palette": {
+          "lab": [
+            [
+              15.6,
+              2.6,
+              6.7
+            ],
+            [
+              30.3,
+              6.9,
+              10.1
+            ],
+            [
+              43.7,
+              5.8,
+              22.7
+            ]
+          ],
+          "share": [
+            0.59,
+            0.27,
+            0.15
+          ],
+          "method": "k-means (k = 3) in CIELAB of the central crop at 160 × 90"
+        },
+        "light": null
+      },
+      "judge": [
+        "camera",
+        "value",
+        "palette"
+      ],
+      "descriptors": {
+        "requires": [
+          "the duplex 2F terrace at the ss_02 zoom (50.9° vFOV)",
+          "the terrace furniture of ART.md §5 in its source places"
+        ],
+        "mayShow": [
+          "plants in pots",
+          "the survivor on the terrace"
+        ]
+      },
+      "conditions": {
+        "day": 7,
+        "hour": 11,
+        "minute": 50,
+        "weather": "sunny",
+        "scene": "home",
+        "character": "student"
+      }
+    },
+    {
+      "id": "warehouse-storeroom-day",
+      "from": "P1",
+      "space": "home",
+      "target": "warehouse",
+      "floor": "1F",
+      "source": "assets/targets/source/trailer/shot_41_t068.883s.jpg",
+      "ref": "t069",
+      "shows": "Home storeroom, Day 1 11:50 (zoomed, vFOV 49.8°)",
+      "time": "Day 1, 11:50",
+      "weather": "clear",
+      "nearest": false,
+      "shot": {
+        "url": "/?render=3d&seed=4242",
+        "seed": 4242,
+        "steps": [
+          {
+            "waitFor": ".title-logo"
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "New Game"
+            }
+          },
+          {
+            "click": ".charcard:nth-child(3)"
+          },
+          {
+            "check": {
+              "role": "checkbox"
+            }
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "Start",
+              "exact": true
+            }
+          },
+          {
+            "state": {
+              "phase": "pre",
+              "scene": "home"
+            }
+          },
+          {
+            "setup": "unlock",
+            "args": {}
+          },
+          {
+            "setup": "goto",
+            "args": {
+              "day": 1,
+              "hour": 11,
+              "minute": 50
+            }
+          },
+          {
+            "setup": "weather",
+            "args": {
+              "kind": "sunny"
+            }
+          },
+          {
+            "frames": 10
+          },
+          {
+            "setup": "clear"
+          }
+        ],
+        "camera": {
+          "lookAt": [
+            9.0,
+            6.5
+          ],
+          "floor": "1F",
+          "lookZoom": 1
+        },
+        "storage": {
+          "survivalLog.history": {
+            "characters": {
+              "wage": true,
+              "student": true,
+              "warehouse": true
+            }
+          }
+        }
+      },
+      "measured": {
+        "camera": {
+          "vFovDeg": 49.8,
+          "pitchDeg": 40.0,
+          "yawDeg": -29.9,
+          "source": "docs/ART.md §1.1 (tools/targets/camera.py)"
+        },
+        "value": {
+          "median": 73,
+          "region": "central 60 % × 60 % crop, Rec. 709 luma of the sRGB codes"
+        },
+        "palette": {
+          "lab": [
+            [
+              29.4,
+              -0.0,
+              3.8
+            ],
+            [
+              51.7,
+              -0.7,
+              9.9
+            ],
+            [
+              46.6,
+              14.0,
+              33.1
+            ]
+          ],
+          "share": [
+            0.81,
+            0.16,
+            0.02
+          ],
+          "method": "k-means (k = 3) in CIELAB of the central crop at 160 × 90"
+        },
+        "light": {
+          "key": "sun",
+          "az": 15,
+          "el": 60,
+          "source": "docs/ART.md §4 rig table"
+        }
+      },
+      "judge": [
+        "camera",
+        "value",
+        "palette",
+        "light"
+      ],
+      "descriptors": {
+        "requires": [
+          "the warehouse storeroom at the t069 zoom (49.8° vFOV)",
+          "shelving and crates in their source places",
+          "day light through the openings"
+        ],
+        "mayShow": [
+          "dust motes"
+        ]
+      },
+      "conditions": {
+        "day": 1,
+        "hour": 11,
+        "minute": 50,
+        "weather": "sunny",
+        "scene": "home",
+        "character": "warehouse"
+      }
+    },
+    {
+      "id": "warehouse-storeroom-dusk",
+      "from": "P1",
+      "space": "home",
+      "target": "warehouse",
+      "floor": "1F",
+      "source": "assets/targets/source/screenshots/ss_04_344f0472.jpg",
+      "ref": "ss_04",
+      "shows": "Home 1F storeroom, Day 1 17:20, bed lamp on (zoomed, vFOV 53.9°)",
+      "time": "Day 1, 17:20",
+      "weather": "clear",
+      "nearest": false,
+      "shot": {
+        "url": "/?render=3d&seed=4242",
+        "seed": 4242,
+        "steps": [
+          {
+            "waitFor": ".title-logo"
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "New Game"
+            }
+          },
+          {
+            "click": ".charcard:nth-child(3)"
+          },
+          {
+            "check": {
+              "role": "checkbox"
+            }
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "Start",
+              "exact": true
+            }
+          },
+          {
+            "state": {
+              "phase": "pre",
+              "scene": "home"
+            }
+          },
+          {
+            "setup": "unlock",
+            "args": {}
+          },
+          {
+            "setup": "goto",
+            "args": {
+              "day": 1,
+              "hour": 17,
+              "minute": 20
+            }
+          },
+          {
+            "setup": "weather",
+            "args": {
+              "kind": "sunny"
+            }
+          },
+          {
+            "frames": 10
+          },
+          {
+            "setup": "clear"
+          }
+        ],
+        "camera": {
+          "lookAt": [
+            9.0,
+            6.5
+          ],
+          "floor": "1F",
+          "lookZoom": 0.6
+        },
+        "storage": {
+          "survivalLog.history": {
+            "characters": {
+              "wage": true,
+              "student": true,
+              "warehouse": true
+            }
+          }
+        }
+      },
+      "measured": {
+        "camera": {
+          "vFovDeg": 53.9,
+          "pitchDeg": 40.1,
+          "yawDeg": -30.0,
+          "source": "docs/ART.md §1.1 (tools/targets/camera.py)"
+        },
+        "value": {
+          "median": 61,
+          "region": "central 60 % × 60 % crop, Rec. 709 luma of the sRGB codes"
+        },
+        "palette": {
+          "lab": [
+            [
+              22.0,
+              1.1,
+              4.2
+            ],
+            [
+              41.3,
+              0.9,
+              4.6
+            ],
+            [
+              29.2,
+              15.3,
+              18.9
+            ]
+          ],
+          "share": [
+            0.69,
+            0.22,
+            0.09
+          ],
+          "method": "k-means (k = 3) in CIELAB of the central crop at 160 × 90"
+        },
+        "light": null
+      },
+      "judge": [
+        "camera",
+        "value",
+        "palette"
+      ],
+      "descriptors": {
+        "requires": [
+          "the warehouse storeroom at the ss_04 zoom (53.9° vFOV)",
+          "dusk interior level (DUSK set 0.197)"
+        ],
+        "mayShow": [
+          "lamps switched on"
+        ]
+      },
+      "conditions": {
+        "day": 1,
+        "hour": 17,
+        "minute": 20,
+        "weather": "sunny",
+        "scene": "home",
+        "character": "warehouse"
+      }
+    },
+    {
+      "id": "site-streets",
+      "from": "P3",
+      "space": "site",
+      "target": "streets",
+      "floor": "site",
+      "source": "assets/targets/source/screenshots/ss_06_bdcdf4bc.jpg",
+      "ref": "ss_06",
+      "shows": "Rooftops and street, Day 2 07:50 (overcast dawn)",
+      "time": "Day 2, 07:50",
+      "weather": "overcast",
+      "nearest": true,
+      "why": "no native frame shows an exploration run; ss_06 is the nearest street view",
+      "shot": {
+        "url": "/?render=3d&seed=4242",
+        "seed": 4242,
+        "steps": [
+          {
+            "waitFor": ".title-logo"
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "New Game"
+            }
+          },
+          {
+            "check": {
+              "role": "checkbox"
+            }
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "Start",
+              "exact": true
+            }
+          },
+          {
+            "state": {
+              "phase": "pre",
+              "scene": "home"
+            }
+          },
+          {
+            "setup": "goto",
+            "args": {
+              "day": 2,
+              "hour": 6,
+              "minute": 0
+            }
+          },
+          {
+            "setup": "explore",
+            "args": {
+              "site": "streets",
+              "arriveAt": 7.833333333333333
+            }
+          },
+          {
+            "setup": "weather",
+            "args": {
+              "kind": "cloudy"
+            }
+          },
+          {
+            "frames": 10
+          },
+          {
+            "setup": "clear"
+          }
+        ],
+        "camera": {
+          "lookAt": [
+            9.0,
+            7.0
+          ],
+          "lookZoom": 0
+        },
+        "storage": {
+          "survivalLog.history": {
+            "characters": {
+              "wage": true,
+              "student": true,
+              "warehouse": true
+            }
+          }
+        }
+      },
+      "measured": {
+        "camera": {
+          "vFovDeg": 59.8,
+          "pitchDeg": 40.1,
+          "yawDeg": -30.0,
+          "source": "docs/ART.md §1.1 (tools/targets/camera.py)"
+        },
+        "value": {
+          "median": 79,
+          "region": "central 60 % × 60 % crop, Rec. 709 luma of the sRGB codes"
+        },
+        "palette": {
+          "lab": [
+            [
+              33.1,
+              1.8,
+              2.2
+            ],
+            [
+              51.2,
+              -2.3,
+              1.9
+            ],
+            [
+              15.3,
+              -1.7,
+              0.8
+            ]
+          ],
+          "share": [
+            0.43,
+            0.32,
+            0.25
+          ],
+          "method": "k-means (k = 3) in CIELAB of the central crop at 160 × 90"
+        },
+        "light": null
+      },
+      "judge": [
+        "camera",
+        "value",
+        "palette"
+      ],
+      "descriptors": {
+        "requires": [
+          "the streets site layout from above at the default zoom",
+          "the dawn overcast of ss_06 (no sun shadows)"
+        ],
+        "mayShow": [
+          "zombies in the street",
+          "burning debris"
+        ]
+      },
+      "conditions": {
+        "day": 2,
+        "hour": 7,
+        "minute": 50,
+        "weather": "cloudy",
+        "scene": "explore:streets"
+      }
+    },
+    {
+      "id": "market-predisaster",
+      "from": "P3",
+      "space": "shop",
+      "target": "market",
+      "floor": null,
+      "source": "assets/targets/source/trailer/shot_09_t018.983s.jpg",
+      "ref": "t019",
+      "shows": "The Discount Supermarket before the disaster, stocked (t019; ART.md §1.1 lists it as a supermarket view); the recreation's pre-disaster market shop",
+      "time": "Day 1, preparation hours",
+      "weather": "clear",
+      "nearest": false,
+      "shot": {
+        "url": "/?render=3d&seed=4242",
+        "seed": 4242,
+        "steps": [
+          {
+            "waitFor": ".title-logo"
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "New Game"
+            }
+          },
+          {
+            "check": {
+              "role": "checkbox"
+            }
+          },
+          {
+            "click": {
+              "role": "button",
+              "name": "Start",
+              "exact": true
+            }
+          },
+          {
+            "state": {
+              "phase": "pre",
+              "scene": "home"
+            }
+          },
+          {
+            "setup": "goto",
+            "args": {
+              "day": 1,
+              "hour": 9,
+              "minute": 30
+            }
+          },
+          {
+            "setup": "travel",
+            "args": {
+              "to": "market"
+            }
+          },
+          {
+            "setup": "weather",
+            "args": {
+              "kind": "sunny"
+            }
+          },
+          {
+            "frames": 10
+          },
+          {
+            "setup": "clear"
+          }
+        ],
+        "camera": {
+          "lookAt": [
+            8.0,
+            6.0
+          ],
+          "lookZoom": 0
+        },
+        "storage": {
+          "survivalLog.history": {
+            "characters": {
+              "wage": true,
+              "student": true,
+              "warehouse": true
+            }
+          }
+        }
+      },
+      "measured": {
+        "camera": {
+          "vFovDeg": 59.7,
+          "pitchDeg": 39.9,
+          "yawDeg": -30.0,
+          "source": "docs/ART.md §1.1 (tools/targets/camera.py)"
+        },
+        "value": {
+          "median": 131,
+          "region": "central 60 % × 60 % crop, Rec. 709 luma of the sRGB codes"
+        },
+        "palette": {
+          "lab": [
+            [
+              60.3,
+              0.4,
+              9.2
+            ],
+            [
+              32.8,
+              3.4,
+              10.1
+            ],
+            [
+              41.6,
+              -0.8,
+              -26.1
+            ]
+          ],
+          "share": [
+            0.65,
+            0.25,
+            0.1
+          ],
+          "method": "k-means (k = 3) in CIELAB of the central crop at 160 × 90"
+        },
+        "light": null
+      },
+      "judge": [
+        "camera",
+        "value",
+        "palette"
+      ],
+      "descriptors": {
+        "requires": [
+          "the supermarket aisles and checkout as t019",
+          "shelf stock read as goods, not texture noise"
+        ],
+        "mayShow": [
+          "zombies between the aisles"
+        ]
+      },
+      "conditions": {
+        "day": 1,
+        "weather": "sunny",
+        "scene": "shop:market",
+        "phase": "pre"
+      }
+    }
+  ],
+  "unpaired": [
+    {
+      "target": "hardware",
+      "space": "site",
+      "why": "no native source frame shows the hardware (docs/ART.md §1.1 lists the 13 native views: supermarket, rooftops, homes and storerooms only); it was paired with t019 or t069, which show other places",
+      "judgedBy": "a grey-card reading at the day and night rigs (±5 codes of ART.md §4.2 / §4.3) and a day and a night capture checked against the ART.md §7 bands (docs/QUALITY.md §2)",
+      "evidence": [
+        "docs/quality/<phase>/unpaired/hardware-greycard.md",
+        "docs/quality/<phase>/unpaired/hardware-day.png",
+        "docs/quality/<phase>/unpaired/hardware-night.png"
+      ]
+    },
+    {
+      "target": "school",
+      "space": "site",
+      "why": "no native source frame shows the school (docs/ART.md §1.1 lists the 13 native views: supermarket, rooftops, homes and storerooms only); it was paired with t019 or t069, which show other places",
+      "judgedBy": "a grey-card reading at the day and night rigs (±5 codes of ART.md §4.2 / §4.3) and a day and a night capture checked against the ART.md §7 bands (docs/QUALITY.md §2)",
+      "evidence": [
+        "docs/quality/<phase>/unpaired/school-greycard.md",
+        "docs/quality/<phase>/unpaired/school-day.png",
+        "docs/quality/<phase>/unpaired/school-night.png"
+      ]
+    },
+    {
+      "target": "hospital",
+      "space": "site",
+      "why": "no native source frame shows the hospital (docs/ART.md §1.1 lists the 13 native views: supermarket, rooftops, homes and storerooms only); it was paired with t019 or t069, which show other places",
+      "judgedBy": "a grey-card reading at the day and night rigs (±5 codes of ART.md §4.2 / §4.3) and a day and a night capture checked against the ART.md §7 bands (docs/QUALITY.md §2)",
+      "evidence": [
+        "docs/quality/<phase>/unpaired/hospital-greycard.md",
+        "docs/quality/<phase>/unpaired/hospital-day.png",
+        "docs/quality/<phase>/unpaired/hospital-night.png"
+      ]
+    },
+    {
+      "target": "office",
+      "space": "site",
+      "why": "no native source frame shows the office (docs/ART.md §1.1 lists the 13 native views: supermarket, rooftops, homes and storerooms only); it was paired with t019 or t069, which show other places",
+      "judgedBy": "a grey-card reading at the day and night rigs (±5 codes of ART.md §4.2 / §4.3) and a day and a night capture checked against the ART.md §7 bands (docs/QUALITY.md §2)",
+      "evidence": [
+        "docs/quality/<phase>/unpaired/office-greycard.md",
+        "docs/quality/<phase>/unpaired/office-day.png",
+        "docs/quality/<phase>/unpaired/office-night.png"
+      ]
+    },
+    {
+      "target": "supermarket",
+      "space": "site",
+      "why": "no native source frame shows the ruined supermarket site: t019 shows the supermarket stocked, before the disaster, so it pairs with the pre-disaster market shop (market-predisaster)",
+      "judgedBy": "a grey-card reading at the day and night rigs (±5 codes of ART.md §4.2 / §4.3) and a day and a night capture checked against the ART.md §7 bands (docs/QUALITY.md §2)",
+      "evidence": [
+        "docs/quality/<phase>/unpaired/supermarket-greycard.md",
+        "docs/quality/<phase>/unpaired/supermarket-day.png",
+        "docs/quality/<phase>/unpaired/supermarket-night.png"
+      ]
+    }
+  ]
+}

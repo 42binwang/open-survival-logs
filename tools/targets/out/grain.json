@@ -1,0 +1,59 @@
+{
+ "scene_flat_patches": [
+  {
+   "frame": "ss_06",
+   "patches": 94,
+   "hp_std_median": 0.107,
+   "mean_level": 30.0
+  },
+  {
+   "frame": "ss_07",
+   "patches": 20,
+   "hp_std_median": 0.436,
+   "mean_level": 32.0
+  },
+  {
+   "frame": "ss_02",
+   "patches": 98,
+   "hp_std_median": 0.127,
+   "mean_level": 33.5
+  },
+  {
+   "frame": "ss_08",
+   "patches": 20,
+   "hp_std_median": 0.482,
+   "mean_level": 34.1
+  },
+  {
+   "frame": "ss_04",
+   "patches": 106,
+   "hp_std_median": 0.205,
+   "mean_level": 30.1
+  },
+  {
+   "frame": "ss_05",
+   "patches": 56,
+   "hp_std_median": 0.287,
+   "mean_level": 27.9
+  },
+  {
+   "frame": "ss_01",
+   "patches": 34,
+   "hp_std_median": 0.339,
+   "mean_level": 36.0
+  }
+ ],
+ "ui_hp_std": [
+  0.242,
+  1.975,
+  0.344,
+  1.29
+ ],
+ "scene_floor_hp_std": 0.287,
+ "ui_floor_hp_std": 0.817,
+ "grain_rms_8bit_upper_bound": 0.0,
+ "jpeg_luma_quant_dc_ac1": [
+  3,
+  2
+ ]
+}

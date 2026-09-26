@@ -1,0 +1,1912 @@
+{
+ "about": "Implied albedo per band sample: pi * AgX^-1(display) / E(condition). Anchored on the rig calibration, so it is\nrelative to plaster 0.60, white tile 0.75 and roof concrete 0.35; samples partly in shade read low.",
+ "families": {
+  "wood-floor": {
+   "n": 3,
+   "albedo_luminance_min_median_max": [
+    0.254,
+    0.342,
+    0.389
+   ],
+   "white_balanced_S_min_max": [
+    0.2,
+    0.4
+   ],
+   "white_balanced_hex": [
+    "#ab9a89",
+    "#c49e75",
+    "#a18269"
+   ]
+  },
+  "tiles": {
+   "n": 1,
+   "albedo_luminance_min_median_max": [
+    0.878,
+    0.878,
+    0.878
+   ],
+   "white_balanced_S_min_max": [
+    0.06,
+    0.06
+   ],
+   "white_balanced_hex": [
+    "#eef0fe"
+   ]
+  },
+  "fabric": {
+   "n": 3,
+   "albedo_luminance_min_median_max": [
+    0.223,
+    0.255,
+    0.461
+   ],
+   "white_balanced_S_min_max": [
+    0.06,
+    0.63
+   ],
+   "white_balanced_hex": [
+    "#b87843",
+    "#8f7b93",
+    "#b7b4ad"
+   ]
+  },
+  "foliage": {
+   "n": 2,
+   "albedo_luminance_min_median_max": [
+    0.132,
+    0.145,
+    0.158
+   ],
+   "white_balanced_S_min_max": [
+    0.3,
+    0.3
+   ],
+   "white_balanced_hex": [
+    "#776e53",
+    "#5d6a4a"
+   ]
+  },
+  "character": {
+   "n": 13,
+   "albedo_luminance_min_median_max": [
+    0.089,
+    0.23,
+    0.393
+   ],
+   "white_balanced_S_min_max": [
+    0.08,
+    0.3
+   ],
+   "white_balanced_hex": [
+    "#63616c",
+    "#505a73",
+    "#605049",
+    "#c49d8f",
+    "#6b636b",
+    "#8294a8",
+    "#778ca4",
+    "#778795",
+    "#7b8ea4",
+    "#8297a8",
+    "#98acc6",
+    "#687b89",
+    "#708495"
+   ]
+  },
+  "mf-concrete": {
+   "n": 3,
+   "albedo_luminance_min_median_max": [
+    0.319,
+    0.405,
+    0.645
+   ],
+   "white_balanced_S_min_max": [
+    0.18,
+    0.21
+   ],
+   "white_balanced_hex": [
+    "#99afc0",
+    "#8a9dae",
+    "#bfd7ea"
+   ]
+  },
+  "mf-newsprint": {
+   "n": 2,
+   "albedo_luminance_min_median_max": [
+    1.517,
+    1.535,
+    1.553
+   ],
+   "white_balanced_S_min_max": [
+    0.0,
+    0.0
+   ],
+   "white_balanced_hex": [
+    "#ffffff",
+    "#ffffff"
+   ]
+  },
+  "mf-cardboard": {
+   "n": 2,
+   "albedo_luminance_min_median_max": [
+    0.609,
+    1.06,
+    1.511
+   ],
+   "white_balanced_S_min_max": [
+    0.06,
+    0.12
+   ],
+   "white_balanced_hex": [
+    "#fffff0",
+    "#d4cbba"
+   ]
+  },
+  "mf-rubber": {
+   "n": 1,
+   "albedo_luminance_min_median_max": [
+    0.095,
+    0.095,
+    0.095
+   ],
+   "white_balanced_S_min_max": [
+    0.06,
+    0.06
+   ],
+   "white_balanced_hex": [
+    "#5b5557"
+   ]
+  },
+  "mf-soil": {
+   "n": 1,
+   "albedo_luminance_min_median_max": [
+    0.043,
+    0.043,
+    0.043
+   ],
+   "white_balanced_S_min_max": [
+    0.06,
+    0.06
+   ],
+   "white_balanced_hex": [
+    "#393a3d"
+   ]
+  },
+  "mf-plastic": {
+   "n": 1,
+   "albedo_luminance_min_median_max": [
+    1.077,
+    1.077,
+    1.077
+   ],
+   "white_balanced_S_min_max": [
+    0.06,
+    0.06
+   ],
+   "white_balanced_hex": [
+    "#efffff"
+   ]
+  }
+ },
+ "checker_t033": {
+  "light_display": 61.9,
+  "dark_display": 37.9,
+  "display_linear_ratio": 2.49,
+  "scene_ratio": 1.96
+ },
+ "character_targets_p0_09": {
+  "source": "requested by WP-P0-09 (character lane) for an office outfit; grey values given as one sRGB code. Shirt, trousers, belt and socks are SUPERSEDED: the source survivor wears a hoodie, jeans and sneakers (character_measured below); skin mean is kept",
+  "values": {
+   "office trousers": {
+    "albedo_srgb": [
+     52,
+     52,
+     52
+    ],
+    "albedo_linear_luminance": 0.0343
+   },
+   "leather shoes": {
+    "albedo_srgb": [
+     36,
+     36,
+     36
+    ],
+    "albedo_linear_luminance": 0.0176
+   },
+   "belt": {
+    "albedo_srgb": [
+     38,
+     38,
+     38
+    ],
+    "albedo_linear_luminance": 0.0194
+   },
+   "socks": {
+    "albedo_srgb": [
+     34,
+     34,
+     34
+    ],
+    "albedo_linear_luminance": 0.016
+   },
+   "skin mean": {
+    "albedo_srgb": [
+     196,
+     150,
+     126
+    ],
+    "albedo_linear_luminance": 0.3505
+   },
+   "shirt": {
+    "albedo_srgb": [
+     212,
+     212,
+     212
+    ],
+    "albedo_linear_luminance": 0.6584
+   }
+  }
+ },
+ "character_measured": {
+  "about": "Survivor clothing, hair and face from the source frames (regions.json family 'character'), per item: on-screen\ndisplay value, and albedo under the frame's own anchor (t069 is the day-interior rig itself; t035 relative to\nits white tiles; ss_04 under the dusk anchor with the bed lamp on). The t069 value is the albedo target.",
+  "items": {
+   "hoodie": [
+    {
+     "frame": "t035",
+     "condition": "planning-time-unknown",
+     "display_hex": "#352d24",
+     "albedo_luminance": 0.122,
+     "albedo_wb_hex": "#63616c",
+     "albedo_srgb_value": 98
+    },
+    {
+     "frame": "t069",
+     "condition": "day-interior",
+     "display_hex": "#3a3b3a",
+     "albedo_luminance": 0.281,
+     "albedo_wb_hex": "#8294a8",
+     "albedo_srgb_value": 144
+    },
+    {
+     "frame": "ss04",
+     "condition": "dusk-interior",
+     "display_hex": "#262826",
+     "albedo_luminance": 0.289,
+     "albedo_wb_hex": "#8297a8",
+     "albedo_srgb_value": 146
+    }
+   ],
+   "jeans": [
+    {
+     "frame": "t035",
+     "condition": "planning-time-unknown",
+     "display_hex": "#272827",
+     "albedo_luminance": 0.099,
+     "albedo_wb_hex": "#505a73",
+     "albedo_srgb_value": 89
+    },
+    {
+     "frame": "t069",
+     "condition": "day-interior",
+     "display_hex": "#333638",
+     "albedo_luminance": 0.246,
+     "albedo_wb_hex": "#778ca4",
+     "albedo_srgb_value": 136
+    },
+    {
+     "frame": "ss04",
+     "condition": "dusk-interior",
+     "display_hex": "#323233",
+     "albedo_luminance": 0.393,
+     "albedo_wb_hex": "#98acc6",
+     "albedo_srgb_value": 168
+    }
+   ],
+   "hair": [
+    {
+     "frame": "t035",
+     "condition": "planning-time-unknown",
+     "display_hex": "#33200f",
+     "albedo_luminance": 0.089,
+     "albedo_wb_hex": "#605049",
+     "albedo_srgb_value": 84
+    },
+    {
+     "frame": "t069",
+     "condition": "day-interior",
+     "display_hex": "#333331",
+     "albedo_luminance": 0.23,
+     "albedo_wb_hex": "#778795",
+     "albedo_srgb_value": 132
+    },
+    {
+     "frame": "ss04",
+     "condition": "dusk-interior",
+     "display_hex": "#191a19",
+     "albedo_luminance": 0.184,
+     "albedo_wb_hex": "#687b89",
+     "albedo_srgb_value": 119
+    }
+   ],
+   "face": [
+    {
+     "frame": "t035",
+     "condition": "planning-time-unknown",
+     "display_hex": "#76563d",
+     "albedo_luminance": 0.388,
+     "albedo_wb_hex": "#c49d8f",
+     "albedo_srgb_value": 167
+    }
+   ],
+   "sneakers": [
+    {
+     "frame": "t035",
+     "condition": "planning-time-unknown",
+     "display_hex": "#3c2f24",
+     "albedo_luminance": 0.132,
+     "albedo_wb_hex": "#6b636b",
+     "albedo_srgb_value": 102
+    },
+    {
+     "frame": "t069",
+     "condition": "day-interior",
+     "display_hex": "#363838",
+     "albedo_luminance": 0.256,
+     "albedo_wb_hex": "#7b8ea4",
+     "albedo_srgb_value": 138
+    },
+    {
+     "frame": "ss04",
+     "condition": "dusk-interior",
+     "display_hex": "#1d1f1e",
+     "albedo_luminance": 0.216,
+     "albedo_wb_hex": "#708495",
+     "albedo_srgb_value": 128
+    }
+   ]
+  },
+  "hair_relative": {
+   "about": "Hair albedo relative to the hoodie in the same frame (same light, same character): the dark cap core (the\ndarker half of the head pixels, which drops the lit rim) against the hoodie median, both inverted through AgX,\ntimes the t069 hoodie albedo, divided by k_up, the extra light an up-facing cap gets over a vertical hoodie\n(decided 1.25, bracket 1.0-1.5). Expected code under the day rig: the cap at E 0.419 x k_up.",
+   "frames": [
+    {
+     "frame": "t035",
+     "hair_core_code": 31.3,
+     "hoodie_code": 47.1,
+     "scene_ratio_hair_over_hoodie": 0.613
+    },
+    {
+     "frame": "t069",
+     "hair_core_code": 38.9,
+     "hoodie_code": 50.8,
+     "scene_ratio_hair_over_hoodie": 0.706
+    },
+    {
+     "frame": "ss04",
+     "hair_core_code": 19.4,
+     "hoodie_code": 38.1,
+     "scene_ratio_hair_over_hoodie": 0.511
+    }
+   ],
+   "median_ratio": 0.613,
+   "ratio_range": [
+    0.511,
+    0.706
+   ],
+   "hoodie_albedo_t069": 0.281,
+   "hoodie_expected_code_day_rig": 58.6,
+   "targets": {
+    "k_up_1.0": {
+     "albedo_luminance": 0.172,
+     "albedo_srgb_value": 115,
+     "expected_code_day_rig": 41.2
+    },
+    "k_up_1.25": {
+     "albedo_luminance": 0.138,
+     "albedo_srgb_value": 104,
+     "expected_code_day_rig": 41.2
+    },
+    "k_up_1.5": {
+     "albedo_luminance": 0.115,
+     "albedo_srgb_value": 95,
+     "expected_code_day_rig": 41.2
+    }
+   },
+   "target_key": "k_up_1.25",
+   "hue": "neutral: white-balanced t069 hair #778795",
+   "confidence": "low: small heads (a few hundred pixels), k_up decided, JPEG/H.264 in dark tones"
+  }
+ },
+ "material_families": {
+  "about": "Albedo and roughness bands for the families ART.md 7.2 had no band for (WP-P0-04d).\n\nHorizontal surfaces in t069 read far brighter per unit albedo than the vertical plaster anchor (newsprint on the\nfloor implies 1.5 at E 0.419), so each family is measured against a reference of the same orientation in the\nsame frame: newsprint (decided 0.60) sets the horizontal factor k_h in t069; concrete is relative to it; the\nss_04 cardboard top is relative to the ss_04 floor concrete, which takes the t069 concrete value (same floor);\nthe t035 tyre uses the t069 factor (cross-frame, low confidence); the ss_02 soil uses the day-exterior anchor,\nitself a horizontal surface (a lower bound if the planter is shaded). Measured bands span 0.8 x min to 1.25 x max\nof the samples (decided spread). Roughness is decided for every family.",
+  "k_h_t069": 2.558,
+  "newsprint_implied_t069": 1.535,
+  "ss04_box_top_to_side": 2.48,
+  "families": {
+   "grout": {
+    "albedo": [
+     0.3,
+     0.45
+    ],
+    "albedo_srgb": [
+     149,
+     179
+    ],
+    "albedo_label": "decided (ART.md 7.2)",
+    "measured_values": null,
+    "measured_median": null,
+    "roughness": [
+     0.8,
+     0.95
+    ],
+    "roughness_label": "decided",
+    "reason": "albedo: ART.md 7.2 grout 0.30-0.45 (decided); roughness decided: cementitious, no highlights like plaster",
+    "samples": [],
+    "lane_band": {
+     "albedo": [
+      0.3,
+      0.45
+     ],
+     "roughness": [
+      0.8,
+      0.95
+     ]
+    },
+    "matches_lane": {
+     "albedo": true,
+     "albedo_median_inside_lane_band": true,
+     "roughness": true
+    }
+   },
+   "concrete": {
+    "albedo": [
+     0.1,
+     0.198
+    ],
+    "albedo_srgb": [
+     89,
+     123
+    ],
+    "albedo_label": "measured: relative to t069 newsprint (horizontal)",
+    "measured_values": [
+     0.158,
+     0.125
+    ],
+    "measured_median": 0.141,
+    "roughness": [
+     0.7,
+     0.9
+    ],
+    "roughness_label": "decided",
+    "reason": "interior floor slab (dirty or sealed); the library material `concrete`. Roughness decided: no highlights on the storeroom floor (t069, ss_04)",
+    "samples": [
+     {
+      "id": "mf-concrete-t069-1",
+      "condition": "day-interior",
+      "implied_albedo_at_anchor_E": 0.405,
+      "display_hex": "#494946"
+     },
+     {
+      "id": "mf-concrete-t069-2",
+      "condition": "day-interior",
+      "implied_albedo_at_anchor_E": 0.319,
+      "display_hex": "#40403d"
+     },
+     {
+      "id": "mf-concrete-ss04-3",
+      "condition": "dusk-interior",
+      "implied_albedo_at_anchor_E": 0.645,
+      "display_hex": "#454541"
+     }
+    ],
+    "lane_band": {
+     "albedo": [
+      0.2,
+      0.35
+     ],
+     "roughness": [
+      0.7,
+      0.9
+     ]
+    },
+    "matches_lane": {
+     "albedo": false,
+     "albedo_median_inside_lane_band": false,
+     "roughness": true
+    }
+   },
+   "concrete_exterior": {
+    "albedo": [
+     0.25,
+     0.4
+    ],
+    "albedo_srgb": [
+     137,
+     170
+    ],
+    "albedo_label": "decided",
+    "target": 0.35,
+    "roughness": [
+     0.7,
+     0.9
+    ],
+    "roughness_label": "decided",
+    "reason": "exterior paving and roof concrete (weathered): target 0.35, the day anchor (roof concrete, also up-facing), band decided; the shell site pavers stay 0.35",
+    "samples": [],
+    "lane_band": null,
+    "matches_lane": null
+   },
+   "leather": {
+    "albedo": [
+     0.02,
+     0.3
+    ],
+    "albedo_srgb": [
+     39,
+     149
+    ],
+    "albedo_label": "decided",
+    "measured_values": null,
+    "measured_median": null,
+    "roughness": [
+     0.4,
+     0.6
+    ],
+    "roughness_label": "decided",
+    "reason": "decided: no leather in the references; black leather at the floor, tan up to the clothing band 0.30; ART.md leather roughness",
+    "samples": [],
+    "lane_band": {
+     "albedo": [
+      0.02,
+      0.3
+     ],
+     "roughness": [
+      0.4,
+      0.6
+     ]
+    },
+    "matches_lane": {
+     "albedo": true,
+     "albedo_median_inside_lane_band": true,
+     "roughness": true
+    }
+   },
+   "laminate": {
+    "albedo": [
+     0.25,
+     0.39
+    ],
+    "albedo_srgb": [
+     137,
+     168
+    ],
+    "albedo_label": "provisional",
+    "measured_values": null,
+    "measured_median": null,
+    "roughness": [
+     0.45,
+     0.65
+    ],
+    "roughness_label": "decided",
+    "reason": "provisional: wood-print decor, so a copy of the wood-floor row, which is derived under a vertical anchor (see correction)",
+    "samples": [],
+    "lane_band": {
+     "albedo": [
+      0.25,
+      0.39
+     ],
+     "roughness": [
+      0.45,
+      0.65
+     ]
+    },
+    "matches_lane": {
+     "albedo": true,
+     "albedo_median_inside_lane_band": true,
+     "roughness": true
+    }
+   },
+   "rubber": {
+    "albedo": [
+     0.013,
+     0.05
+    ],
+    "albedo_srgb": [
+     30,
+     63
+    ],
+    "albedo_label": "measured: t035 tyre top / k_h(t069); cross-frame, low confidence; inside the lane band, which is kept (confirmed)",
+    "measured_values": [
+     0.037
+    ],
+    "measured_median": 0.037,
+    "roughness": [
+     0.6,
+     0.85
+    ],
+    "roughness_label": "decided",
+    "reason": "roughness decided: worn, dusty tyres and mats show no highlight in t035; sneaker soles keep 0.4-0.6 (character band)",
+    "samples": [
+     {
+      "id": "mf-rubber-t035-1",
+      "condition": "planning-time-unknown",
+      "implied_albedo_at_anchor_E": 0.095,
+      "display_hex": "#2f2417"
+     }
+    ],
+    "lane_band": {
+     "albedo": [
+      0.013,
+      0.05
+     ],
+     "roughness": [
+      0.4,
+      0.6
+     ]
+    },
+    "matches_lane": {
+     "albedo": true,
+     "albedo_median_inside_lane_band": true,
+     "roughness": false
+    }
+   },
+   "cardboard": {
+    "albedo": [
+     0.265,
+     0.414
+    ],
+    "albedo_srgb": [
+     141,
+     172
+    ],
+    "albedo_label": "measured: box top relative to the ss_04 floor concrete (both horizontal), concrete from t069",
+    "measured_values": [
+     0.331
+    ],
+    "measured_median": 0.331,
+    "roughness": [
+     0.85,
+     0.95
+    ],
+    "roughness_label": "decided",
+    "reason": "roughness decided: matte kraft, no highlights (ss_04)",
+    "samples": [
+     {
+      "id": "mf-cardboard-ss04-1",
+      "condition": "dusk-interior",
+      "implied_albedo_at_anchor_E": 1.511,
+      "display_hex": "#7d6548"
+     },
+     {
+      "id": "mf-cardboard-ss04-2",
+      "condition": "dusk-interior",
+      "implied_albedo_at_anchor_E": 0.609,
+      "display_hex": "#4f3f2f"
+     }
+    ],
+    "lane_band": {
+     "albedo": [
+      0.2,
+      0.35
+     ],
+     "roughness": [
+      0.85,
+      0.95
+     ]
+    },
+    "matches_lane": {
+     "albedo": false,
+     "albedo_median_inside_lane_band": true,
+     "roughness": true
+    }
+   },
+   "plastic": {
+    "albedo": [
+     0.02,
+     0.7
+    ],
+    "albedo_srgb": [
+     39,
+     218
+    ],
+    "albedo_label": "decided (the t069 AC housing implies 1.08 at the vertical anchor: lit above it near the open top, unusable)",
+    "measured_values": null,
+    "measured_median": null,
+    "roughness": [
+     0.35,
+     0.6
+    ],
+    "roughness_label": "decided",
+    "reason": "roughness decided: housings show a soft sheen (t069 AC unit); albedo spans dark to white plastics, capped at the 0.70 hard limit (aged white plastic greys; only white enamel goes higher)",
+    "samples": [
+     {
+      "id": "mf-plastic-t069-1",
+      "condition": "day-interior",
+      "implied_albedo_at_anchor_E": 1.077,
+      "display_hex": "#757571"
+     }
+    ],
+    "lane_band": {
+     "albedo": [
+      0.02,
+      0.8
+     ],
+     "roughness": [
+      0.35,
+      0.6
+     ]
+    },
+    "matches_lane": {
+     "albedo": false,
+     "albedo_median_inside_lane_band": true,
+     "roughness": true
+    }
+   },
+   "bark": {
+    "albedo": [
+     0.08,
+     0.2
+    ],
+    "albedo_srgb": [
+     80,
+     124
+    ],
+    "albedo_label": "decided",
+    "measured_values": null,
+    "measured_median": null,
+    "roughness": [
+     0.7,
+     0.9
+    ],
+    "roughness_label": "decided",
+    "reason": "decided: trunks are too small to sample (t059 tree); typical dry bark",
+    "samples": [],
+    "lane_band": {
+     "albedo": [
+      0.08,
+      0.2
+     ],
+     "roughness": [
+      0.7,
+      0.9
+     ]
+    },
+    "matches_lane": {
+     "albedo": true,
+     "albedo_median_inside_lane_band": true,
+     "roughness": true
+    }
+   },
+   "soil": {
+    "albedo": [
+     0.034,
+     0.2
+    ],
+    "albedo_srgb": [
+     52,
+     124
+    ],
+    "albedo_label": "measured: ss_02 planter under the sunlit day-exterior anchor; a lower bound if shaded; upper end kept at the lane value because shade is unknown",
+    "measured_values": [
+     0.043
+    ],
+    "measured_median": 0.043,
+    "roughness": [
+     0.8,
+     0.97
+    ],
+    "roughness_label": "decided",
+    "reason": "roughness decided: dry potting soil, no highlights",
+    "samples": [
+     {
+      "id": "mf-soil-ss02-1",
+      "condition": "day-exterior",
+      "implied_albedo_at_anchor_E": 0.043,
+      "display_hex": "#3c3024"
+     }
+    ],
+    "lane_band": {
+     "albedo": [
+      0.05,
+      0.2
+     ],
+     "roughness": [
+      0.8,
+      0.97
+     ]
+    },
+    "matches_lane": {
+     "albedo": false,
+     "albedo_median_inside_lane_band": false,
+     "roughness": true
+    }
+   },
+   "newsprint": {
+    "albedo": [
+     0.45,
+     0.65
+    ],
+    "albedo_srgb": [
+     179,
+     211
+    ],
+    "albedo_label": "decided anchor 0.60 (inside the lane band)",
+    "measured_values": null,
+    "measured_median": 0.6,
+    "roughness": [
+     0.85,
+     0.95
+    ],
+    "roughness_label": "decided",
+    "reason": "roughness decided: uncoated paper",
+    "samples": [
+     {
+      "id": "mf-newsprint-t069-1",
+      "condition": "day-interior",
+      "implied_albedo_at_anchor_E": 1.553,
+      "display_hex": "#878682"
+     },
+     {
+      "id": "mf-newsprint-t069-2",
+      "condition": "day-interior",
+      "implied_albedo_at_anchor_E": 1.517,
+      "display_hex": "#82868a"
+     }
+    ],
+    "lane_band": {
+     "albedo": [
+      0.45,
+      0.65
+     ],
+     "roughness": [
+      0.85,
+      0.95
+     ]
+    },
+    "matches_lane": {
+     "albedo": true,
+     "albedo_median_inside_lane_band": true,
+     "roughness": true
+    }
+   },
+   "rattan": {
+    "albedo": [
+     0.25,
+     0.45
+    ],
+    "albedo_srgb": [
+     137,
+     179
+    ],
+    "albedo_label": "decided",
+    "measured_values": null,
+    "measured_median": null,
+    "roughness": [
+     0.45,
+     0.65
+    ],
+    "roughness_label": "decided",
+    "reason": "decided: no rattan in the references; natural cane with a light lacquer",
+    "samples": [],
+    "lane_band": {
+     "albedo": [
+      0.25,
+      0.45
+     ],
+     "roughness": [
+      0.45,
+      0.65
+     ]
+    },
+    "matches_lane": {
+     "albedo": true,
+     "albedo_median_inside_lane_band": true,
+     "roughness": true
+    }
+   }
+  },
+  "up_facing_correction": {
+   "source_up_to_vertical_t069": 2.558,
+   "renderer_up_to_vertical_indicative": 1.5,
+   "wood_floor_t035_vertical_anchor": {
+    "wood-t035-a": 0.389,
+    "wood-t035-b": 0.254
+   },
+   "wood_floor_on_screen_equivalent": [
+    0.169,
+    0.259
+   ],
+   "same_orientation_render_factor": 0.586,
+   "about": "On-screen match needs source up/vertical ratio / renderer's, not k_h alone. Floors derived under a vertical anchor\n(t035 wood floor, relative to its wall tiles) would drop by the renderer ratio; same-orientation (physical) bands render\nat renderer/source of the reference unless the renderer's up-facing light rises. Policy chosen in P0-04e."
+  }
+ },
+ "samples": [
+  {
+   "id": "plaster-ss04-a",
+   "family": "plaster",
+   "condition": "dusk-interior",
+   "E": 0.237,
+   "albedo_linear_rgb": [
+    0.709,
+    0.602,
+    0.366
+   ],
+   "albedo_luminance": 0.608,
+   "albedo_srgb_hex": "#dbcca3",
+   "albedo_wb_hex": "#c6d0bf",
+   "albedo_wb_hsv_s": 0.083,
+   "white_balance_from": "4730 K blackbody",
+   "display_hex": "#494130",
+   "valid": false,
+   "excluded_because": "calibration anchor (returns its assumed 0.60)"
+  },
+  {
+   "id": "plaster-t069-a",
+   "family": "plaster",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    1.121,
+    0.76,
+    0.363
+   ],
+   "albedo_luminance": 0.808,
+   "albedo_srgb_hex": "#ffe2a2",
+   "albedo_wb_hex": "#f3e7bd",
+   "albedo_wb_hsv_s": 0.221,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#776348",
+   "valid": false,
+   "excluded_because": "inside the t069 table-lamp pool"
+  },
+  {
+   "id": "plaster-t069-b",
+   "family": "plaster",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    0.799,
+    0.585,
+    0.31
+   ],
+   "albedo_luminance": 0.61,
+   "albedo_srgb_hex": "#e7c997",
+   "albedo_wb_hex": "#d1cdb0",
+   "albedo_wb_hsv_s": 0.157,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#675841",
+   "valid": false,
+   "excluded_because": "calibration anchor (returns its assumed 0.60)"
+  },
+  {
+   "id": "wood-t069-a",
+   "family": "wood-floor",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    0.51,
+    0.308,
+    0.179
+   ],
+   "albedo_luminance": 0.342,
+   "albedo_srgb_hex": "#bd9775",
+   "albedo_wb_hex": "#ab9a89",
+   "albedo_wb_hsv_s": 0.197,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#523d2c",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "wood-t035-a",
+   "family": "wood-floor",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.66,
+    0.337,
+    0.102
+   ],
+   "albedo_luminance": 0.389,
+   "albedo_srgb_hex": "#d49d5a",
+   "albedo_wb_hex": "#c49e75",
+   "albedo_wb_hsv_s": 0.405,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#775631",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "wood-t035-b",
+   "family": "wood-floor",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.424,
+    0.221,
+    0.081
+   ],
+   "albedo_luminance": 0.254,
+   "albedo_srgb_hex": "#ae8150",
+   "albedo_wb_hex": "#a18269",
+   "albedo_wb_hsv_s": 0.347,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#614426",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "wood-ss02-a",
+   "family": "wood-floor",
+   "condition": "day-exterior",
+   "E": 2.22,
+   "albedo_linear_rgb": [
+    0.201,
+    0.097,
+    0.031
+   ],
+   "albedo_luminance": 0.114,
+   "albedo_srgb_hex": "#7c5831",
+   "albedo_wb_hex": "#6b5b40",
+   "albedo_wb_hsv_s": 0.4,
+   "white_balance_from": "4250 K blackbody",
+   "display_hex": "#75522f",
+   "valid": false,
+   "excluded_because": "sun through slats, mixed sun and shade"
+  },
+  {
+   "id": "tiles-t035-a",
+   "family": "tiles",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.94,
+    0.773,
+    0.452
+   ],
+   "albedo_luminance": 0.785,
+   "albedo_srgb_hex": "#f8e4b3",
+   "albedo_wb_hex": "#e5e5e5",
+   "albedo_wb_hsv_s": 0.0,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#877c67",
+   "valid": false,
+   "excluded_because": "calibration anchor (returns its assumed 0.75)"
+  },
+  {
+   "id": "tiles-t041-a",
+   "family": "tiles",
+   "condition": "cold-snow",
+   "E": 0.441,
+   "albedo_linear_rgb": [
+    0.665,
+    0.769,
+    0.738
+   ],
+   "albedo_luminance": 0.745,
+   "albedo_srgb_hex": "#d5e3df",
+   "albedo_wb_hex": "#e0e0e0",
+   "albedo_wb_hsv_s": 0.0,
+   "white_balance_from": "tiles-t041-a",
+   "display_hex": "#626766",
+   "valid": false,
+   "excluded_because": "calibration anchor (returns its assumed 0.75)"
+  },
+  {
+   "id": "tiles-t041-b",
+   "family": "tiles",
+   "condition": "cold-snow",
+   "E": 0.441,
+   "albedo_linear_rgb": [
+    0.766,
+    0.9,
+    0.984
+   ],
+   "albedo_luminance": 0.878,
+   "albedo_srgb_hex": "#e3f3fd",
+   "albedo_wb_hex": "#eef0fe",
+   "albedo_wb_hsv_s": 0.062,
+   "white_balance_from": "tiles-t041-a",
+   "display_hex": "#686f73",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "tiles-t033-a",
+   "family": "tiles",
+   "condition": "night-lamps",
+   "E": 0.141,
+   "albedo_linear_rgb": [
+    0.935,
+    0.927,
+    0.796
+   ],
+   "albedo_luminance": 0.919,
+   "albedo_srgb_hex": "#f8f7e7",
+   "albedo_wb_hex": "#dffcff",
+   "albedo_wb_hsv_s": 0.126,
+   "white_balance_from": "4660 K blackbody",
+   "display_hex": "#3f3e39",
+   "valid": false,
+   "excluded_because": "next to the table lamp"
+  },
+  {
+   "id": "tiles-t033-b",
+   "family": "tiles",
+   "condition": "night-lamps",
+   "E": 0.141,
+   "albedo_linear_rgb": [
+    0.476,
+    0.469,
+    0.39
+   ],
+   "albedo_luminance": 0.465,
+   "albedo_srgb_hex": "#b7b6a8",
+   "albedo_wb_hex": "#a5bac6",
+   "albedo_wb_hsv_s": 0.169,
+   "white_balance_from": "4660 K blackbody",
+   "display_hex": "#272621",
+   "valid": false,
+   "excluded_because": "next to the table lamp"
+  },
+  {
+   "id": "fabric-t035-a",
+   "family": "fabric",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.571,
+    0.184,
+    0.033
+   ],
+   "albedo_luminance": 0.255,
+   "albedo_srgb_hex": "#c77733",
+   "albedo_wb_hex": "#b87843",
+   "albedo_wb_hsv_s": 0.633,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#703e17",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "fabric-t035-b",
+   "family": "fabric",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.33,
+    0.196,
+    0.168
+   ],
+   "albedo_luminance": 0.223,
+   "albedo_srgb_hex": "#9b7a72",
+   "albedo_wb_hex": "#8f7b93",
+   "albedo_wb_hsv_s": 0.162,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#56413b",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "fabric-t069-a",
+   "family": "fabric",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    0.595,
+    0.438,
+    0.297
+   ],
+   "albedo_luminance": 0.461,
+   "albedo_srgb_hex": "#cbb194",
+   "albedo_wb_hex": "#b7b4ad",
+   "albedo_wb_hsv_s": 0.056,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#594c3e",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "fabric-t033-a",
+   "family": "fabric",
+   "condition": "night-lamps",
+   "E": 0.141,
+   "albedo_linear_rgb": [
+    1.738,
+    1.536,
+    1.069
+   ],
+   "albedo_luminance": 1.546,
+   "albedo_srgb_hex": "#ffffff",
+   "albedo_wb_hex": "#ffffff",
+   "albedo_wb_hsv_s": 0.0,
+   "white_balance_from": "4660 K blackbody",
+   "display_hex": "#595345",
+   "valid": false,
+   "excluded_because": "next to the table lamp (local E far above the night ambient)"
+  },
+  {
+   "id": "fabric-t033-b",
+   "family": "fabric",
+   "condition": "night-lamps",
+   "E": 0.141,
+   "albedo_linear_rgb": [
+    2.188,
+    0.887,
+    0.292
+   ],
+   "albedo_luminance": 1.12,
+   "albedo_srgb_hex": "#fff293",
+   "albedo_wb_hex": "#fff7ae",
+   "albedo_wb_hsv_s": 0.317,
+   "white_balance_from": "4660 K blackbody",
+   "display_hex": "#633c1e",
+   "valid": false,
+   "excluded_because": "next to the table lamp"
+  },
+  {
+   "id": "metal-t035-a",
+   "family": "metal",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.172,
+    0.15,
+    0.099
+   ],
+   "albedo_luminance": 0.151,
+   "albedo_srgb_hex": "#736c59",
+   "albedo_wb_hex": "#6a6d73",
+   "albedo_wb_hsv_s": 0.081,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#3b3528",
+   "valid": false,
+   "excluded_because": "specular family (use F0 / roughness, not albedo)"
+  },
+  {
+   "id": "metal-t035-b",
+   "family": "metal",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    1.05,
+    0.981,
+    0.732
+   ],
+   "albedo_luminance": 0.978,
+   "albedo_srgb_hex": "#fffdde",
+   "albedo_wb_hex": "#f1ffff",
+   "albedo_wb_hsv_s": 0.056,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#8c887c",
+   "valid": false,
+   "excluded_because": "specular family (use F0 / roughness, not albedo)"
+  },
+  {
+   "id": "metal-t041-a",
+   "family": "metal",
+   "condition": "cold-snow",
+   "E": 0.441,
+   "albedo_linear_rgb": [
+    1.345,
+    1.491,
+    1.582
+   ],
+   "albedo_luminance": 1.467,
+   "albedo_srgb_hex": "#ffffff",
+   "albedo_wb_hex": "#ffffff",
+   "albedo_wb_hsv_s": 0.0,
+   "white_balance_from": "tiles-t041-a",
+   "display_hex": "#828789",
+   "valid": false,
+   "excluded_because": "specular family (use F0 / roughness, not albedo)"
+  },
+  {
+   "id": "metal-t059-a",
+   "family": "metal",
+   "condition": "day-exterior",
+   "E": 2.22,
+   "albedo_linear_rgb": [
+    2.948,
+    2.684,
+    1.671
+   ],
+   "albedo_luminance": 2.667,
+   "albedo_srgb_hex": "#ffffff",
+   "albedo_wb_hex": "#ffffff",
+   "albedo_wb_hsv_s": 0.0,
+   "white_balance_from": "6030 K blackbody",
+   "display_hex": "#e1ddd1",
+   "valid": false,
+   "excluded_because": "specular family (use F0 / roughness, not albedo)"
+  },
+  {
+   "id": "glass-t059-a",
+   "family": "glass",
+   "condition": "day-exterior",
+   "E": 2.22,
+   "albedo_linear_rgb": [
+    0.684,
+    0.721,
+    0.57
+   ],
+   "albedo_luminance": 0.702,
+   "albedo_srgb_hex": "#d8ddc7",
+   "albedo_wb_hex": "#d0dfcb",
+   "albedo_wb_hsv_s": 0.09,
+   "white_balance_from": "6030 K blackbody",
+   "display_hex": "#adaea5",
+   "valid": false,
+   "excluded_because": "specular family"
+  },
+  {
+   "id": "glass-t059-b",
+   "family": "glass",
+   "condition": "day-exterior",
+   "E": 2.22,
+   "albedo_linear_rgb": [
+    0.237,
+    0.324,
+    0.38
+   ],
+   "albedo_luminance": 0.31,
+   "albedo_srgb_hex": "#869aa6",
+   "albedo_wb_hex": "#819ca9",
+   "albedo_wb_hsv_s": 0.238,
+   "white_balance_from": "6030 K blackbody",
+   "display_hex": "#7e8c93",
+   "valid": false,
+   "excluded_because": "specular family"
+  },
+  {
+   "id": "foliage-t059-a",
+   "family": "foliage",
+   "condition": "day-exterior",
+   "E": 2.22,
+   "albedo_linear_rgb": [
+    0.199,
+    0.154,
+    0.082
+   ],
+   "albedo_luminance": 0.158,
+   "albedo_srgb_hex": "#7b6d51",
+   "albedo_wb_hex": "#776e53",
+   "albedo_wb_hsv_s": 0.303,
+   "white_balance_from": "6030 K blackbody",
+   "display_hex": "#74664f",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "foliage-t035-a",
+   "family": "foliage",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.13,
+    0.143,
+    0.039
+   ],
+   "albedo_luminance": 0.132,
+   "albedo_srgb_hex": "#656938",
+   "albedo_wb_hex": "#5d6a4a",
+   "albedo_wb_hsv_s": 0.305,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#313210",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "skin-ss02-a",
+   "family": "skin",
+   "condition": "day-exterior",
+   "E": 2.22,
+   "albedo_linear_rgb": [
+    0.161,
+    0.066,
+    0.036
+   ],
+   "albedo_luminance": 0.084,
+   "albedo_srgb_hex": "#704835",
+   "albedo_wb_hex": "#614b46",
+   "albedo_wb_hsv_s": 0.281,
+   "white_balance_from": "4250 K blackbody",
+   "display_hex": "#6a4330",
+   "valid": false,
+   "excluded_because": "under the terrace pergola, not in full sun"
+  },
+  {
+   "id": "skin-ss02-b",
+   "family": "skin",
+   "condition": "day-exterior",
+   "E": 2.22,
+   "albedo_linear_rgb": [
+    0.167,
+    0.074,
+    0.033
+   ],
+   "albedo_luminance": 0.091,
+   "albedo_srgb_hex": "#724d33",
+   "albedo_wb_hex": "#624f43",
+   "albedo_wb_hsv_s": 0.322,
+   "white_balance_from": "4250 K blackbody",
+   "display_hex": "#6c472f",
+   "valid": false,
+   "excluded_because": "under the terrace pergola, not in full sun"
+  },
+  {
+   "id": "blood-t041-a",
+   "family": "blood",
+   "condition": "cold-snow",
+   "E": 0.441,
+   "albedo_linear_rgb": [
+    0.335,
+    0.145,
+    0.107
+   ],
+   "albedo_luminance": 0.182,
+   "albedo_srgb_hex": "#9c6a5c",
+   "albedo_wb_hex": "#a5695c",
+   "albedo_wb_hsv_s": 0.44,
+   "white_balance_from": "tiles-t041-a",
+   "display_hex": "#42251d",
+   "valid": false,
+   "excluded_because": "on snow: strong snow bounce"
+  },
+  {
+   "id": "blood-t041-b",
+   "family": "blood",
+   "condition": "cold-snow",
+   "E": 0.441,
+   "albedo_linear_rgb": [
+    0.288,
+    0.114,
+    0.101
+   ],
+   "albedo_luminance": 0.15,
+   "albedo_srgb_hex": "#925f59",
+   "albedo_wb_hex": "#9a5d5a",
+   "albedo_wb_hsv_s": 0.417,
+   "white_balance_from": "tiles-t041-a",
+   "display_hex": "#3c1f1b",
+   "valid": false,
+   "excluded_because": "on snow: strong snow bounce"
+  },
+  {
+   "id": "char-hoodie-t035",
+   "family": "character",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.148,
+    0.118,
+    0.087
+   ],
+   "albedo_luminance": 0.122,
+   "albedo_srgb_hex": "#6b6153",
+   "albedo_wb_hex": "#63616c",
+   "albedo_wb_hsv_s": 0.101,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#352d24",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "char-jeans-t035",
+   "family": "character",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.096,
+    0.101,
+    0.098
+   ],
+   "albedo_luminance": 0.099,
+   "albedo_srgb_hex": "#575958",
+   "albedo_wb_hex": "#505a73",
+   "albedo_wb_hsv_s": 0.302,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#272827",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "char-hair-t035",
+   "family": "character",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.141,
+    0.079,
+    0.038
+   ],
+   "albedo_luminance": 0.089,
+   "albedo_srgb_hex": "#694f37",
+   "albedo_wb_hex": "#605049",
+   "albedo_wb_hsv_s": 0.244,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#33200f",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "char-face-t035",
+   "family": "character",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.658,
+    0.331,
+    0.158
+   ],
+   "albedo_luminance": 0.388,
+   "albedo_srgb_hex": "#d49c6f",
+   "albedo_wb_hex": "#c49d8f",
+   "albedo_wb_hsv_s": 0.269,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#76563d",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "char-sneakers-t035",
+   "family": "character",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.177,
+    0.124,
+    0.085
+   ],
+   "albedo_luminance": 0.132,
+   "albedo_srgb_hex": "#756352",
+   "albedo_wb_hex": "#6b636b",
+   "albedo_wb_hsv_s": 0.075,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#3c2f24",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "char-hoodie-t069",
+   "family": "character",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    0.278,
+    0.282,
+    0.28
+   ],
+   "albedo_luminance": 0.281,
+   "albedo_srgb_hex": "#909190",
+   "albedo_wb_hex": "#8294a8",
+   "albedo_wb_hsv_s": 0.23,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#3a3b3a",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "char-jeans-t069",
+   "family": "character",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    0.23,
+    0.249,
+    0.263
+   ],
+   "albedo_luminance": 0.246,
+   "albedo_srgb_hex": "#84898c",
+   "albedo_wb_hex": "#778ca4",
+   "albedo_wb_hsv_s": 0.274,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#333638",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "char-hair-t069",
+   "family": "character",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    0.23,
+    0.232,
+    0.215
+   ],
+   "albedo_luminance": 0.23,
+   "albedo_srgb_hex": "#848480",
+   "albedo_wb_hex": "#778795",
+   "albedo_wb_hsv_s": 0.205,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#333331",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "char-sneakers-t069",
+   "family": "character",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    0.246,
+    0.259,
+    0.264
+   ],
+   "albedo_luminance": 0.256,
+   "albedo_srgb_hex": "#888b8c",
+   "albedo_wb_hex": "#7b8ea4",
+   "albedo_wb_hsv_s": 0.252,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#363838",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "char-hoodie-ss04",
+   "family": "character",
+   "condition": "dusk-interior",
+   "E": 0.237,
+   "albedo_linear_rgb": [
+    0.278,
+    0.293,
+    0.274
+   ],
+   "albedo_luminance": 0.289,
+   "albedo_srgb_hex": "#90938f",
+   "albedo_wb_hex": "#8297a8",
+   "albedo_wb_hsv_s": 0.227,
+   "white_balance_from": "4730 K blackbody",
+   "display_hex": "#262826",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "char-jeans-ss04",
+   "family": "character",
+   "condition": "dusk-interior",
+   "E": 0.237,
+   "albedo_linear_rgb": [
+    0.397,
+    0.391,
+    0.399
+   ],
+   "albedo_luminance": 0.393,
+   "albedo_srgb_hex": "#a9a8aa",
+   "albedo_wb_hex": "#98acc6",
+   "albedo_wb_hsv_s": 0.231,
+   "white_balance_from": "4730 K blackbody",
+   "display_hex": "#323233",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "char-hair-ss04",
+   "family": "character",
+   "condition": "dusk-interior",
+   "E": 0.237,
+   "albedo_linear_rgb": [
+    0.175,
+    0.188,
+    0.178
+   ],
+   "albedo_luminance": 0.184,
+   "albedo_srgb_hex": "#747875",
+   "albedo_wb_hex": "#687b89",
+   "albedo_wb_hsv_s": 0.242,
+   "white_balance_from": "4730 K blackbody",
+   "display_hex": "#191a19",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "char-sneakers-ss04",
+   "family": "character",
+   "condition": "dusk-interior",
+   "E": 0.237,
+   "albedo_linear_rgb": [
+    0.205,
+    0.22,
+    0.211
+   ],
+   "albedo_luminance": 0.216,
+   "albedo_srgb_hex": "#7d817f",
+   "albedo_wb_hex": "#708495",
+   "albedo_wb_hsv_s": 0.245,
+   "white_balance_from": "4730 K blackbody",
+   "display_hex": "#1d1f1e",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "mf-concrete-t069-1",
+   "family": "mf-concrete",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    0.4,
+    0.41,
+    0.377
+   ],
+   "albedo_luminance": 0.405,
+   "albedo_srgb_hex": "#aaaca5",
+   "albedo_wb_hex": "#99afc0",
+   "albedo_wb_hsv_s": 0.203,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#494946",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "mf-concrete-t069-2",
+   "family": "mf-concrete",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    0.319,
+    0.321,
+    0.302
+   ],
+   "albedo_luminance": 0.319,
+   "albedo_srgb_hex": "#999a95",
+   "albedo_wb_hex": "#8a9dae",
+   "albedo_wb_hsv_s": 0.208,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#40403d",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "mf-concrete-ss04-3",
+   "family": "mf-concrete",
+   "condition": "dusk-interior",
+   "E": 0.237,
+   "albedo_linear_rgb": [
+    0.652,
+    0.65,
+    0.578
+   ],
+   "albedo_luminance": 0.645,
+   "albedo_srgb_hex": "#d3d3c8",
+   "albedo_wb_hex": "#bfd7ea",
+   "albedo_wb_hsv_s": 0.184,
+   "white_balance_from": "4730 K blackbody",
+   "display_hex": "#454541",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "mf-newsprint-t069-1",
+   "family": "mf-newsprint",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    1.576,
+    1.56,
+    1.411
+   ],
+   "albedo_luminance": 1.553,
+   "albedo_srgb_hex": "#ffffff",
+   "albedo_wb_hex": "#ffffff",
+   "albedo_wb_hsv_s": 0.0,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#878682",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "mf-newsprint-t069-2",
+   "family": "mf-newsprint",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    1.403,
+    1.534,
+    1.684
+   ],
+   "albedo_luminance": 1.517,
+   "albedo_srgb_hex": "#ffffff",
+   "albedo_wb_hex": "#ffffff",
+   "albedo_wb_hsv_s": 0.0,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#82868a",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "mf-cardboard-ss04-1",
+   "family": "mf-cardboard",
+   "condition": "dusk-interior",
+   "E": 0.237,
+   "albedo_linear_rgb": [
+    2.242,
+    1.384,
+    0.616
+   ],
+   "albedo_luminance": 1.511,
+   "albedo_srgb_hex": "#ffffce",
+   "albedo_wb_hex": "#fffff0",
+   "albedo_wb_hsv_s": 0.058,
+   "white_balance_from": "4730 K blackbody",
+   "display_hex": "#7d6548",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "mf-cardboard-ss04-2",
+   "family": "mf-cardboard",
+   "condition": "dusk-interior",
+   "E": 0.237,
+   "albedo_linear_rgb": [
+    0.827,
+    0.571,
+    0.346
+   ],
+   "albedo_luminance": 0.609,
+   "albedo_srgb_hex": "#ebc79f",
+   "albedo_wb_hex": "#d4cbba",
+   "albedo_wb_hsv_s": 0.123,
+   "white_balance_from": "4730 K blackbody",
+   "display_hex": "#4f3f2f",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "mf-rubber-t035-1",
+   "family": "mf-rubber",
+   "condition": "planning-time-unknown",
+   "E": 0.699,
+   "albedo_linear_rgb": [
+    0.125,
+    0.09,
+    0.055
+   ],
+   "albedo_luminance": 0.095,
+   "albedo_srgb_hex": "#635542",
+   "albedo_wb_hex": "#5b5557",
+   "albedo_wb_hsv_s": 0.061,
+   "white_balance_from": "tiles-t035-a",
+   "display_hex": "#2f2417",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "mf-soil-ss02-1",
+   "family": "mf-soil",
+   "condition": "day-exterior",
+   "E": 2.22,
+   "albedo_linear_rgb": [
+    0.055,
+    0.04,
+    0.028
+   ],
+   "albedo_luminance": 0.043,
+   "albedo_srgb_hex": "#43392e",
+   "albedo_wb_hex": "#393a3d",
+   "albedo_wb_hsv_s": 0.063,
+   "white_balance_from": "4250 K blackbody",
+   "display_hex": "#3c3024",
+   "valid": true,
+   "excluded_because": null
+  },
+  {
+   "id": "mf-plastic-t069-1",
+   "family": "mf-plastic",
+   "condition": "day-interior",
+   "E": 0.419,
+   "albedo_linear_rgb": [
+    1.082,
+    1.084,
+    0.997
+   ],
+   "albedo_luminance": 1.077,
+   "albedo_srgb_hex": "#ffffff",
+   "albedo_wb_hex": "#efffff",
+   "albedo_wb_hsv_s": 0.062,
+   "white_balance_from": "4760 K blackbody",
+   "display_hex": "#757571",
+   "valid": true,
+   "excluded_because": null
+  }
+ ]
+}

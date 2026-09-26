@@ -1,0 +1,22 @@
+--- tools/art-metrics/standard.mjs	2026-09-23 02:59:41
++++ b/tools/art-metrics/standard.mjs	2026-09-23 03:20:11
+@@ -35,7 +35,18 @@
+   tile_ceramic: { label: 'white ceramic tiles', albedo: [0.7, 0.9], roughness: [0.15, 0.3] },
+   // ART.md: light tile ÷ 1.96 = 0.38 (single value, ±10 %)
+   tile_checker_dark: { label: 'dark checker tiles', albedo: [0.342, 0.418], roughness: [0.2, 0.35] },
+-  grout: { label: 'grout', albedo: [0.3, 0.45] },
++  grout: { label: 'grout', albedo: [0.3, 0.45], roughness: [0.8, 0.95] },
++  // WP-P0-05b proposal (derived from ART.md §7.2; tools/materials/bands.json 'source' gives each reason)
++  concrete: { label: 'concrete', albedo: [0.2, 0.35], roughness: [0.7, 0.9] },
++  leather: { label: 'leather', albedo: [0.02, 0.3], roughness: [0.4, 0.6] },
++  laminate: { label: 'wood-print laminate', albedo: [0.25, 0.39], roughness: [0.45, 0.65] },
++  rubber: { label: 'rubber', albedo: [0.013, 0.05], roughness: [0.4, 0.6] },
++  cardboard: { label: 'cardboard', albedo: [0.2, 0.35], roughness: [0.85, 0.95] },
++  plastic: { label: 'plastic', albedo: [0.02, 0.8], roughness: [0.35, 0.6] },
++  bark: { label: 'bark', albedo: [0.08, 0.2], roughness: [0.7, 0.9] },
++  soil: { label: 'soil', albedo: [0.05, 0.2], roughness: [0.8, 0.97] },
++  newsprint: { label: 'newsprint', albedo: [0.45, 0.65], roughness: [0.85, 0.95] },
++  rattan: { label: 'rattan', albedo: [0.25, 0.45], roughness: [0.45, 0.65] },
+   terracotta: { label: 'terracotta and pavers', albedo: [0.2, 0.35], roughness: [0.7, 0.9] },
+   fabric: { label: 'fabric', albedo: [0.22, 0.46], roughness: [0.85, 1] },
+   foliage: { label: 'foliage', albedo: [0.13, 0.16], roughness: [0.6, 0.8] },

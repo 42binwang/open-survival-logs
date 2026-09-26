@@ -1,0 +1,161 @@
+/*
+ * Kit base: everything is scoped to .sl-root so the kit can load next to the current game styles (styles.css)
+ * before any panel is migrated. Type roles, numerals, focus and scrollbars.
+ */
+.sl-root {
+  font-family: var(--ui-font);
+  font-size: var(--ui-fs-body);
+  line-height: var(--ui-lh-body);
+  font-weight: var(--ui-fw-regular);
+  color: var(--ui-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+}
+.sl-root *,
+.sl-root *::before,
+.sl-root *::after {
+  box-sizing: border-box;
+}
+.sl-root :where(h1, h2, h3, h4, p, ul, ol, li, figure, dl, dd) {
+  margin: 0;
+  padding: 0;
+}
+.sl-root :where(ul, ol) {
+  list-style: none;
+}
+.sl-root :where(button) {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---- type roles ------------------------------------------------------------------------------------------------ */
+/* line box = the display face's whole ascent + descent (1.41 em), margins trim it back to the glyphs */
+.sl-t-display {
+  margin-block: -16px -12px;
+  font-family: var(--ui-font-display);
+  font-size: var(--ui-fs-display);
+  line-height: 1.42;
+  font-weight: var(--ui-fw-black);
+  letter-spacing: -0.01em;
+}
+.sl-t-heading {
+  font-size: var(--ui-fs-heading);
+  line-height: var(--ui-lh-heading);
+  font-weight: var(--ui-fw-bold);
+  color: var(--ui-text-strong);
+}
+.sl-t-title {
+  font-size: var(--ui-fs-title);
+  line-height: var(--ui-lh-title);
+  font-weight: var(--ui-fw-bold);
+  color: var(--ui-text-strong);
+}
+.sl-t-hud {
+  font-size: var(--ui-fs-hud);
+  line-height: var(--ui-lh-hud);
+}
+.sl-t-hud-lg {
+  font-size: var(--ui-fs-hud-lg);
+  line-height: var(--ui-lh-hud-lg);
+  font-weight: var(--ui-fw-bold);
+}
+.sl-t-body {
+  font-size: var(--ui-fs-body);
+  line-height: var(--ui-lh-body);
+}
+.sl-t-label {
+  font-size: var(--ui-fs-body);
+  line-height: var(--ui-lh-body);
+  font-weight: var(--ui-fw-bold);
+}
+.sl-t-caps {
+  font-size: var(--ui-fs-body);
+  line-height: var(--ui-lh-body);
+  font-weight: var(--ui-fw-bold);
+  letter-spacing: var(--ui-track-caps);
+}
+.sl-root:lang(en) .sl-t-caps {
+  text-transform: uppercase;
+}
+.sl-t-mono {
+  font-family: var(--ui-font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.sl-num {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.sl-strong {
+  color: var(--ui-text-strong);
+  font-weight: var(--ui-fw-bold);
+}
+.sl-dim {
+  color: var(--ui-text-dim);
+}
+.sl-gold {
+  color: var(--ui-gold);
+}
+.sl-good {
+  color: var(--ui-positive);
+}
+.sl-bad {
+  color: var(--ui-danger-text);
+}
+.sl-info {
+  color: var(--ui-info);
+}
+.sl-xp {
+  color: var(--ui-xp);
+}
+
+/* ---- focus: keyboard focus only, visible on light fills and dark panels alike ----------------------------------- */
+.sl-root :focus {
+  outline: none;
+}
+.sl-root :focus-visible,
+.sl-root .is-focus {
+  outline: none;
+  box-shadow: var(--ui-focus-ring);
+}
+
+/* ---- scrollbars: the source's thin light thumb on a clear track ---------------------------------------------- */
+.sl-scroll {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ui-thumb) transparent;
+}
+.sl-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.sl-scroll::-webkit-scrollbar-thumb {
+  background: var(--ui-thumb);
+  border-radius: 3px;
+}
+.sl-scrollbar {
+  position: absolute;
+  top: var(--ui-space-2);
+  bottom: var(--ui-space-2);
+  right: var(--ui-space-1);
+  width: 4px;
+  border-radius: 2px;
+  background: var(--ui-scrollbar-bg);
+}
+.sl-scrollbar > i {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--thumb-top, 0%);
+  height: var(--thumb-size, 40%);
+  border-radius: 2px;
+  background: var(--ui-thumb);
+}
+
+/* ---- glyphs (src/ui/kit/glyphs.js): currentColor, sized by the font ---------------------------------------- */
+.sl-glyph {
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+  vertical-align: -0.2em;
+  fill: currentColor;
+}

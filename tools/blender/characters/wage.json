@@ -1,0 +1,339 @@
+{
+  "id": "wage",
+  "title": "Wage Slave",
+  "notes": "The source's Wage Slave (docs/wp/WP-P0-09.md): dark charcoal hoodie with the hood down at the nape, faded mid-blue jeans, dark sneakers with white soles, short dark hair. materials.*.albedo is the mean linear luminance of the region's base color: ART.md \u00a77.2 character_measured targets (hoodie 0.281, jeans 0.246, skin inside the light band), except hair 0.12 (the low end of \u00a77.2's measured 0.089-0.230, white-balanced #778795): in every source frame the hair reads darker than the hoodie (t069 51 vs 58, ss_04 25 vs 38), and the top-lit hair reads at 0.8x the hoodie on screen (WP-P0-04c corrects the 0.23 target); sneakers 0.18 (the 0.256 sample is low confidence and the source's sneakers read dark). Hues (sRGB 0-255) only set the hue; hoodie and jeans lean to \u00a77.2's white-balanced colours, shoes and socks use the sneakers' #7b8ea4.",
+  "mpfb": {
+    "phenotype": {
+      "gender": 1.0,
+      "age": 0.53,
+      "muscle": 0.5,
+      "weight": 0.46,
+      "proportions": 0.55,
+      "height": 0.565,
+      "cupsize": 0.5,
+      "firmness": 0.5,
+      "race": {
+        "asian": 0.85,
+        "caucasian": 0.15,
+        "african": 0.0
+      }
+    },
+    "rig": "game_engine",
+    "eyes": "low-poly/low-poly.mhclo",
+    "eyebrows": "eyebrow001/eyebrow001.mhclo",
+    "eyelashes": "eyelashes01/eyelashes01.mhclo",
+    "hair": "short04/short04.mhclo",
+    "clothes": [
+      "male_casualsuit02/male_casualsuit02.mhclo",
+      "shoes06/shoes06.mhclo"
+    ],
+    "skin_mhmat": "young_asian_male/young_asian_male.mhmat"
+  },
+  "skinDetail": "mindfront_aksel_skin/mindfront_aksel_skin.mhmat",
+  "eyeMaterial": "brown.mhmat",
+  "roles": {
+    "body": "body",
+    "eyes": "low-poly",
+    "eyebrows": "eyebrow001",
+    "eyelashes": "eyelashes01",
+    "hair": "short04",
+    "top": "male_casualsuit02",
+    "shoes": "shoes06"
+  },
+  "restPose": {
+    "armDropDeg": 18,
+    "clavicleDropDeg": 4,
+    "smoothRadius": [
+      0.08,
+      0.22
+    ],
+    "smoothFactor": 0.6,
+    "smoothIterations": 8,
+    "neckClearX": 0.09
+  },
+  "garments": {
+    "top": {
+      "regions": [
+        "hoodie",
+        "jeans"
+      ],
+      "default": "jeans",
+      "boxes": [
+        [
+          "hoodie",
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.585,
+            1.0
+          ]
+        ],
+        [
+          "hoodie",
+          [
+            0.73,
+            1.0
+          ],
+          [
+            0.0,
+            0.42
+          ]
+        ]
+      ]
+    },
+    "shoes": {
+      "regions": [
+        "shoe_upper",
+        "shoe_sole",
+        "sock"
+      ],
+      "default": "shoe_upper",
+      "boxes": [
+        [
+          "shoe_sole",
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.755,
+            1.0
+          ]
+        ],
+        [
+          "sock",
+          [
+            0.76,
+            1.0
+          ],
+          [
+            0.0,
+            0.16
+          ]
+        ],
+        [
+          "sock",
+          [
+            0.26,
+            0.68
+          ],
+          [
+            0.52,
+            0.755
+          ]
+        ]
+      ],
+      "lowBand": [
+        "shoe_sole",
+        0.026
+      ]
+    }
+  },
+  "generated": {
+    "hood": {
+      "region": "hoodie"
+    },
+    "strings": {
+      "region": "hoodie"
+    }
+  },
+  "hood": {
+    "spanDeg": 80,
+    "cols": 18,
+    "rows": 7,
+    "sideDrop": 0.05,
+    "backDrop": 0.15,
+    "lipRise": 0.012,
+    "thickEdge": 0.008,
+    "thickMax": 0.026,
+    "shell": 0.006,
+    "stringX": 0.036,
+    "stringLength": 0.2,
+    "stringGap": 0.004,
+    "stringWidth": 0.008,
+    "stringThickness": 0.006,
+    "followNeck": 0.6,
+    "followBand": [
+      -0.07,
+      0.02
+    ],
+    "followHead": 0.25
+  },
+  "budgets": {
+    "maxTriangles": 15000,
+    "maxInfluences": 4,
+    "triangles": {
+      "body": {
+        "face": 2300,
+        "headRest": 1300,
+        "hands": 1400,
+        "faceAboveHeadJoint": -0.035,
+        "faceBehindY": 0.03,
+        "faceHalfWidth": 0.075
+      },
+      "top": 4200,
+      "shoes": 1100,
+      "hair": 1050
+    }
+  },
+  "texelDensity": 512,
+  "atlases": {
+    "skin": {
+      "roles": [
+        "body",
+        "eyes"
+      ],
+      "size": 512,
+      "margin": 0.008,
+      "geoAO": 0.45
+    },
+    "cloth": {
+      "roles": [
+        "top",
+        "shoes",
+        "hood",
+        "strings"
+      ],
+      "size": 1024,
+      "margin": 0.004,
+      "geoAO": 0.4
+    },
+    "hair": {
+      "roles": [
+        "hair",
+        "eyebrows",
+        "eyelashes"
+      ],
+      "size": 256,
+      "margin": 0.01,
+      "alpha": true,
+      "roleScale": {
+        "eyebrows": 1.5,
+        "eyelashes": 1.5
+      }
+    }
+  },
+  "materials": {
+    "skin": {
+      "albedo": 0.35,
+      "roughness": [
+        0.5,
+        0.6
+      ],
+      "normalStrength": 0.7,
+      "hairCapStrength": 0.9
+    },
+    "eyes": {
+      "saturation": 0.4,
+      "value": 0.85,
+      "roughness": 0.08
+    },
+    "hair": {
+      "albedo": 0.12,
+      "hue": [
+        119,
+        135,
+        149
+      ],
+      "contrast": 0.45,
+      "roughness": 0.6
+    },
+    "eyebrows": {
+      "albedo": 0.1,
+      "contrast": 0.4,
+      "hue": [
+        82,
+        62,
+        48
+      ],
+      "roughness": 0.9,
+      "alphaGain": 2.5
+    },
+    "eyelashes": {
+      "albedo": 0.08,
+      "contrast": 0.4,
+      "hue": [
+        82,
+        62,
+        48
+      ],
+      "roughness": 0.9,
+      "alphaGain": 1.5
+    },
+    "hoodie": {
+      "base": "hue",
+      "hue": [
+        131,
+        143,
+        157
+      ],
+      "albedo": 0.281,
+      "roughness": [
+        0.85,
+        0.97
+      ],
+      "normalStrength": 1.0,
+      "scan": {
+        "color": "polyhaven/jogging_melange@1k:jogging_melange_diff_1k.png",
+        "normal": "polyhaven/jogging_melange@1k:jogging_melange_nor_gl_1k.png",
+        "rough": "polyhaven/jogging_melange@1k:jogging_melange_rough_1k.png",
+        "tileM": 0.2735,
+        "contrast": 0.6,
+        "normalStrength": 0.3
+      }
+    },
+    "jeans": {
+      "base": "texture",
+      "saturation": 0.7,
+      "albedo": 0.246,
+      "roughness": [
+        0.8,
+        0.92
+      ],
+      "normalStrength": 1.0
+    },
+    "shoe_upper": {
+      "base": "hue",
+      "hue": [
+        123,
+        142,
+        164
+      ],
+      "textureDetail": 0.2,
+      "albedo": 0.18,
+      "roughness": [
+        0.6,
+        0.75
+      ]
+    },
+    "shoe_sole": {
+      "base": "hue",
+      "hue": [
+        236,
+        234,
+        228
+      ],
+      "textureDetail": 0.15,
+      "albedo": 0.6,
+      "roughness": [
+        0.7,
+        0.85
+      ]
+    },
+    "sock": {
+      "base": "hue",
+      "hue": [
+        123,
+        142,
+        164
+      ],
+      "albedo": 0.12,
+      "roughness": [
+        0.85,
+        0.95
+      ]
+    }
+  }
+}

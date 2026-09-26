@@ -1,0 +1,18 @@
+// Suspended cymbal: hits, swells, rolls: Versilian Community Sample Library (VCSL) (CC0), sgossner/VCSL@c1ea7bcc3c, folder 'Idiophones/Struck Idiophones/Suspended Cymbal 1'.
+// Written by tools/music/build.mjs (tools/music/instruments.mjs); played by tools/music/sampler.mjs.
+// Gain staging: loudest layer calibrated to -20 LUFS-M on susCymb1_hit_fff1.wav (measured -15.0).
+<control> default_path=../../../assets/cache/vcsl/cymbal/
+<global> pitch_keytrack=0 ampeg_release=2.5 amp_veltrack=70 loop_mode=one_shot offset_auto=1 volume=-5
+<group> lovel=1 hivel=127
+<region> lokey=52 hikey=52 pitch_keycenter=52 sample=susCymb1_cresc_1.5s.wav
+<region> lokey=53 hikey=53 pitch_keycenter=53 sample=susCymb1_cresc_2s.wav
+<region> lokey=54 hikey=54 pitch_keycenter=54 sample=susCymb1_cresc_4s.wav
+<region> lokey=55 hikey=55 pitch_keycenter=55 sample=susCymb1_cresc_7.5s.wav
+<group> lovel=1 hivel=50
+<region> lokey=49 hikey=49 pitch_keycenter=49 sample=susCymb1_hit_pp1.wav
+<group> lovel=51 hivel=85
+<region> lokey=49 hikey=49 pitch_keycenter=49 sample=susCymb1_hit_mp1.wav
+<group> lovel=86 hivel=112
+<region> lokey=49 hikey=49 pitch_keycenter=49 sample=susCymb1_hit_f1.wav
+<group> lovel=113 hivel=127
+<region> lokey=49 hikey=49 pitch_keycenter=49 sample=susCymb1_hit_fff1.wav

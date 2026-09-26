@@ -1,0 +1,51 @@
+// Violin section, spiccato: VSCO 2 Community Edition (CC0), sgossner/VSCO-2-CE@440300901d, folder 'Strings/Violin Section/Spic'.
+// Written by tools/music/build.mjs (tools/music/instruments.mjs); played by tools/music/sampler.mjs.
+// Gain staging: loudest layer calibrated to -20 LUFS-M on VlnEns_Spic_A3_v2_rr1.wav (measured -24.1).
+<control> default_path=../../../assets/cache/vsco2ce/violins-spic/
+<global> ampeg_release=0.12 amp_veltrack=55 loop_mode=one_shot offset_auto=1 volume=4.1
+<group> lovel=1 hivel=90
+<region> lokey=0 hikey=56 pitch_keycenter=55 seq_length=2 seq_position=1 sample=VlnEns_Spic_G2_v1_rr1.wav
+<region> lokey=0 hikey=56 pitch_keycenter=55 seq_length=2 seq_position=2 sample=VlnEns_Spic_G2_v1_rr2.wav
+<region> lokey=57 hikey=58 pitch_keycenter=57 seq_length=2 seq_position=1 sample=VlnEns_Spic_A2_v1_rr1.wav
+<region> lokey=57 hikey=58 pitch_keycenter=57 seq_length=2 seq_position=2 sample=VlnEns_Spic_A2_v1_rr2.wav
+<region> lokey=59 hikey=60 pitch_keycenter=59 seq_length=2 seq_position=1 sample=VlnEns_Spic_B2_v1_rr1.wav
+<region> lokey=59 hikey=60 pitch_keycenter=59 seq_length=2 seq_position=2 sample=VlnEns_Spic_B2_v1_rr2.wav
+<region> lokey=61 hikey=64 pitch_keycenter=62 seq_length=2 seq_position=1 sample=VlnEns_Spic_D3_v1_rr1.wav
+<region> lokey=61 hikey=64 pitch_keycenter=62 seq_length=2 seq_position=2 sample=VlnEns_Spic_D3_v1_rr2.wav
+<region> lokey=65 hikey=67 pitch_keycenter=66 seq_length=2 seq_position=1 sample=VlnEns_Spic_F#3_v1_rr1.wav
+<region> lokey=65 hikey=67 pitch_keycenter=66 seq_length=2 seq_position=2 sample=VlnEns_Spic_F#3_v1_rr2.wav
+<region> lokey=68 hikey=70 pitch_keycenter=69 seq_length=2 seq_position=1 sample=VlnEns_Spic_A3_v1_rr1.wav
+<region> lokey=68 hikey=70 pitch_keycenter=69 seq_length=2 seq_position=2 sample=VlnEns_Spic_A3_v1_rr2.wav
+<region> lokey=71 hikey=74 pitch_keycenter=72 seq_length=2 seq_position=1 sample=VlnEns_Spic_C4_v1_rr1.wav
+<region> lokey=71 hikey=74 pitch_keycenter=72 seq_length=2 seq_position=2 sample=VlnEns_Spic_C4_v1_rr2.wav
+<region> lokey=75 hikey=77 pitch_keycenter=76 seq_length=2 seq_position=1 sample=VlnEns_Spic_E4_v1_rr1.wav
+<region> lokey=75 hikey=77 pitch_keycenter=76 seq_length=2 seq_position=2 sample=VlnEns_Spic_E4_v1_rr2.wav
+<region> lokey=78 hikey=81 pitch_keycenter=79 seq_length=2 seq_position=1 sample=VlnEns_Spic_G4_v1_rr1.wav
+<region> lokey=78 hikey=81 pitch_keycenter=79 seq_length=2 seq_position=2 sample=VlnEns_Spic_G4_v1_rr2.wav
+<region> lokey=82 hikey=84 pitch_keycenter=83 seq_length=2 seq_position=1 sample=VlnEns_Spic_B4_v1_rr1.wav
+<region> lokey=82 hikey=84 pitch_keycenter=83 seq_length=2 seq_position=2 sample=VlnEns_Spic_B4_v1_rr2.wav
+<region> lokey=85 hikey=127 pitch_keycenter=86 seq_length=2 seq_position=1 sample=VlnEns_Spic_D5_v1_rr1.wav
+<region> lokey=85 hikey=127 pitch_keycenter=86 seq_length=2 seq_position=2 sample=VlnEns_Spic_D5_v1_rr2.wav
+<group> lovel=91 hivel=127
+<region> lokey=0 hikey=56 pitch_keycenter=55 seq_length=2 seq_position=1 sample=VlnEns_Spic_G2_v2_rr1.wav
+<region> lokey=0 hikey=56 pitch_keycenter=55 seq_length=2 seq_position=2 sample=VlnEns_Spic_G2_v2_rr2.wav
+<region> lokey=57 hikey=58 pitch_keycenter=57 seq_length=2 seq_position=1 sample=VlnEns_Spic_A2_v2_rr1.wav
+<region> lokey=57 hikey=58 pitch_keycenter=57 seq_length=2 seq_position=2 sample=VlnEns_Spic_A2_v2_rr2.wav
+<region> lokey=59 hikey=60 pitch_keycenter=59 seq_length=2 seq_position=1 sample=VlnEns_Spic_B2_v2_rr1.wav
+<region> lokey=59 hikey=60 pitch_keycenter=59 seq_length=2 seq_position=2 sample=VlnEns_Spic_B2_v2_rr2.wav
+<region> lokey=61 hikey=64 pitch_keycenter=62 seq_length=2 seq_position=1 sample=VlnEns_Spic_D3_v2_rr1.wav
+<region> lokey=61 hikey=64 pitch_keycenter=62 seq_length=2 seq_position=2 sample=VlnEns_Spic_D3_v2_rr2.wav
+<region> lokey=65 hikey=67 pitch_keycenter=66 seq_length=2 seq_position=1 sample=VlnEns_Spic_F#3_v2_rr1.wav
+<region> lokey=65 hikey=67 pitch_keycenter=66 seq_length=2 seq_position=2 sample=VlnEns_Spic_F#3_v2_rr2.wav
+<region> lokey=68 hikey=70 pitch_keycenter=69 seq_length=2 seq_position=1 sample=VlnEns_Spic_A3_v2_rr1.wav
+<region> lokey=68 hikey=70 pitch_keycenter=69 seq_length=2 seq_position=2 sample=VlnEns_Spic_A3_v2_rr2.wav
+<region> lokey=71 hikey=74 pitch_keycenter=72 seq_length=2 seq_position=1 sample=VlnEns_Spic_C4_v2_rr1.wav
+<region> lokey=71 hikey=74 pitch_keycenter=72 seq_length=2 seq_position=2 sample=VlnEns_Spic_C4_v2_rr2.wav
+<region> lokey=75 hikey=77 pitch_keycenter=76 seq_length=2 seq_position=1 sample=VlnEns_Spic_E4_v2_rr1.wav
+<region> lokey=75 hikey=77 pitch_keycenter=76 seq_length=2 seq_position=2 sample=VlnEns_Spic_E4_v2_rr2.wav
+<region> lokey=78 hikey=81 pitch_keycenter=79 seq_length=2 seq_position=1 sample=VlnEns_Spic_G4_v2_rr1.wav
+<region> lokey=78 hikey=81 pitch_keycenter=79 seq_length=2 seq_position=2 sample=VlnEns_Spic_G4_v2_rr2.wav
+<region> lokey=82 hikey=84 pitch_keycenter=83 seq_length=2 seq_position=1 sample=VlnEns_Spic_B4_v2_rr1.wav
+<region> lokey=82 hikey=84 pitch_keycenter=83 seq_length=2 seq_position=2 sample=VlnEns_Spic_B4_v2_rr2.wav
+<region> lokey=85 hikey=127 pitch_keycenter=86 seq_length=2 seq_position=1 sample=VlnEns_Spic_D5_v2_rr1.wav
+<region> lokey=85 hikey=127 pitch_keycenter=86 seq_length=2 seq_position=2 sample=VlnEns_Spic_D5_v2_rr2.wav

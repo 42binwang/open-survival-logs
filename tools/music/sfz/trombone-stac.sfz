@@ -1,0 +1,65 @@
+// Tenor trombone, staccato: VSCO 2 Community Edition (CC0), sgossner/VSCO-2-CE@440300901d, folder 'Brass/Tenor Trombone/stac'.
+// Written by tools/music/build.mjs (tools/music/instruments.mjs); played by tools/music/sampler.mjs.
+// Gain staging: loudest layer calibrated to -20 LUFS-M on tenortbn_stac_F2_v4_rr1.wav (measured -26.7).
+<control> default_path=../../../assets/cache/vsco2ce/trombone-stac/
+<global> ampeg_release=0.18 amp_veltrack=50 loop_mode=one_shot offset_auto=1 volume=6.7
+<group> lovel=1 hivel=56
+<region> lokey=0 hikey=37 pitch_keycenter=34 seq_length=2 seq_position=1 sample=tenortbn_stac_A#0_v1_rr1.wav
+<region> lokey=0 hikey=37 pitch_keycenter=34 seq_length=2 seq_position=2 sample=tenortbn_stac_A#0_v1_rr2.wav
+<region> lokey=38 hikey=43 pitch_keycenter=41 seq_length=2 seq_position=1 sample=tenortbn_stac_F1_v1_rr1.wav
+<region> lokey=38 hikey=43 pitch_keycenter=41 seq_length=2 seq_position=2 sample=tenortbn_stac_F1_v1_rr2.wav
+<region> lokey=44 hikey=49 pitch_keycenter=46 seq_length=2 seq_position=1 sample=tenortbn_stac_A#1_v1_rr1.wav
+<region> lokey=44 hikey=49 pitch_keycenter=46 seq_length=2 seq_position=2 sample=tenortbn_stac_A#1_v1_rr2.wav
+<region> lokey=50 hikey=55 pitch_keycenter=53 seq_length=2 seq_position=1 sample=tenortbn_stac_F2_v1_rr1.wav
+<region> lokey=50 hikey=55 pitch_keycenter=53 seq_length=2 seq_position=2 sample=tenortbn_stac_F2_v1_rr2.wav
+<region> lokey=56 hikey=60 pitch_keycenter=58 seq_length=2 seq_position=1 sample=tenortbn_stac_A#2_v1_rr1.wav
+<region> lokey=56 hikey=60 pitch_keycenter=58 seq_length=2 seq_position=2 sample=tenortbn_stac_A#2_v1_rr2.wav
+<region> lokey=61 hikey=63 pitch_keycenter=62 seq_length=2 seq_position=1 sample=tenortbn_stac_D3_v1_rr1.wav
+<region> lokey=61 hikey=63 pitch_keycenter=62 seq_length=2 seq_position=2 sample=tenortbn_stac_D3_v1_rr2.wav
+<region> lokey=64 hikey=127 pitch_keycenter=65 seq_length=2 seq_position=1 sample=tenortbn_stac_F3_v1_rr1.wav
+<region> lokey=64 hikey=127 pitch_keycenter=65 seq_length=2 seq_position=2 sample=tenortbn_stac_F3_v1_rr2.wav
+<group> lovel=57 hivel=84
+<region> lokey=0 hikey=37 pitch_keycenter=34 seq_length=2 seq_position=1 sample=tenortbn_stac_A#0_v2_rr1.wav
+<region> lokey=0 hikey=37 pitch_keycenter=34 seq_length=2 seq_position=2 sample=tenortbn_stac_A#0_v2_rr2.wav
+<region> lokey=38 hikey=43 pitch_keycenter=41 seq_length=2 seq_position=1 sample=tenortbn_stac_F1_v2_rr1.wav
+<region> lokey=38 hikey=43 pitch_keycenter=41 seq_length=2 seq_position=2 sample=tenortbn_stac_F1_v2_rr2.wav
+<region> lokey=44 hikey=49 pitch_keycenter=46 seq_length=2 seq_position=1 sample=tenortbn_stac_A#1_v2_rr1.wav
+<region> lokey=44 hikey=49 pitch_keycenter=46 seq_length=2 seq_position=2 sample=tenortbn_stac_A#1_v2_rr2.wav
+<region> lokey=50 hikey=55 pitch_keycenter=53 seq_length=2 seq_position=1 sample=tenortbn_stac_F2_v2_rr1.wav
+<region> lokey=50 hikey=55 pitch_keycenter=53 seq_length=2 seq_position=2 sample=tenortbn_stac_F2_v2_rr2.wav
+<region> lokey=56 hikey=60 pitch_keycenter=58 seq_length=2 seq_position=1 sample=tenortbn_stac_A#2_v2_rr1.wav
+<region> lokey=56 hikey=60 pitch_keycenter=58 seq_length=2 seq_position=2 sample=tenortbn_stac_A#2_v2_rr2.wav
+<region> lokey=61 hikey=63 pitch_keycenter=62 seq_length=2 seq_position=1 sample=tenortbn_stac_D3_v2_rr1.wav
+<region> lokey=61 hikey=63 pitch_keycenter=62 seq_length=2 seq_position=2 sample=tenortbn_stac_D3_v2_rr2.wav
+<region> lokey=64 hikey=127 pitch_keycenter=65 seq_length=2 seq_position=1 sample=tenortbn_stac_F3_v2_rr1.wav
+<region> lokey=64 hikey=127 pitch_keycenter=65 seq_length=2 seq_position=2 sample=tenortbn_stac_F3_v2_rr2.wav
+<group> lovel=85 hivel=108
+<region> lokey=0 hikey=37 pitch_keycenter=34 seq_length=2 seq_position=1 sample=tenortbn_stac_A#0_v3_rr1.wav
+<region> lokey=0 hikey=37 pitch_keycenter=34 seq_length=2 seq_position=2 sample=tenortbn_stac_A#0_v3_rr2.wav
+<region> lokey=38 hikey=43 pitch_keycenter=41 seq_length=2 seq_position=1 sample=tenortbn_stac_F1_v3_rr1.wav
+<region> lokey=38 hikey=43 pitch_keycenter=41 seq_length=2 seq_position=2 sample=tenortbn_stac_F1_v3_rr2.wav
+<region> lokey=44 hikey=49 pitch_keycenter=46 seq_length=2 seq_position=1 sample=tenortbn_stac_A#1_v3_rr1.wav
+<region> lokey=44 hikey=49 pitch_keycenter=46 seq_length=2 seq_position=2 sample=tenortbn_stac_A#1_v3_rr2.wav
+<region> lokey=50 hikey=55 pitch_keycenter=53 seq_length=2 seq_position=1 sample=tenortbn_stac_F2_v3_rr1.wav
+<region> lokey=50 hikey=55 pitch_keycenter=53 seq_length=2 seq_position=2 sample=tenortbn_stac_F2_v3_rr2.wav
+<region> lokey=56 hikey=60 pitch_keycenter=58 seq_length=2 seq_position=1 sample=tenortbn_stac_A#2_v3_rr1.wav
+<region> lokey=56 hikey=60 pitch_keycenter=58 seq_length=2 seq_position=2 sample=tenortbn_stac_A#2_v3_rr2.wav
+<region> lokey=61 hikey=63 pitch_keycenter=62 seq_length=2 seq_position=1 sample=tenortbn_stac_D3_v3_rr1.wav
+<region> lokey=61 hikey=63 pitch_keycenter=62 seq_length=2 seq_position=2 sample=tenortbn_stac_D3_v3_rr2.wav
+<region> lokey=64 hikey=127 pitch_keycenter=65 seq_length=2 seq_position=1 sample=tenortbn_stac_F3_v3_rr1.wav
+<region> lokey=64 hikey=127 pitch_keycenter=65 seq_length=2 seq_position=2 sample=tenortbn_stac_F3_v3_rr2.wav
+<group> lovel=109 hivel=127
+<region> lokey=0 hikey=37 pitch_keycenter=34 seq_length=2 seq_position=1 sample=tenortbn_stac_A#0_v4_rr1.wav
+<region> lokey=0 hikey=37 pitch_keycenter=34 seq_length=2 seq_position=2 sample=tenortbn_stac_A#0_v4_rr2.wav
+<region> lokey=38 hikey=43 pitch_keycenter=41 seq_length=2 seq_position=1 sample=tenortbn_stac_F1_v4_rr1.wav
+<region> lokey=38 hikey=43 pitch_keycenter=41 seq_length=2 seq_position=2 sample=tenortbn_stac_F1_v4_rr2.wav
+<region> lokey=44 hikey=49 pitch_keycenter=46 seq_length=2 seq_position=1 sample=tenortbn_stac_A#1_v4_rr1.wav
+<region> lokey=44 hikey=49 pitch_keycenter=46 seq_length=2 seq_position=2 sample=tenortbn_stac_A#1_v4_rr2.wav
+<region> lokey=50 hikey=55 pitch_keycenter=53 seq_length=2 seq_position=1 sample=tenortbn_stac_F2_v4_rr1.wav
+<region> lokey=50 hikey=55 pitch_keycenter=53 seq_length=2 seq_position=2 sample=tenortbn_stac_F2_v4_rr2.wav
+<region> lokey=56 hikey=60 pitch_keycenter=58 seq_length=2 seq_position=1 sample=tenortbn_stac_A#2_v4_rr1.wav
+<region> lokey=56 hikey=60 pitch_keycenter=58 seq_length=2 seq_position=2 sample=tenortbn_stac_A#2_v4_r2.wav
+<region> lokey=61 hikey=63 pitch_keycenter=62 seq_length=2 seq_position=1 sample=tenortbn_stac_D3_v4_rr1.wav
+<region> lokey=61 hikey=63 pitch_keycenter=62 seq_length=2 seq_position=2 sample=tenortbn_stac_D3_v4_rr2.wav
+<region> lokey=64 hikey=127 pitch_keycenter=65 seq_length=2 seq_position=1 sample=tenortbn_stac_F3_v4_rr1.wav
+<region> lokey=64 hikey=127 pitch_keycenter=65 seq_length=2 seq_position=2 sample=tenortbn_stac_F3_v4_rr2.wav

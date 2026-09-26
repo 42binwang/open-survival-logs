@@ -1,0 +1,45 @@
+---
+description: Survival Log project rules for every agent (ownership, contracts, key registry, tests, assets, gate)
+alwaysApply: true
+---
+
+# Survival Log: project rules
+
+Read `docs/wp/README.md` (rules for every writer) and your package in `docs/wp/` first. Start with `AGENTS.md`.
+The code is MIT-licensed; the original game's material and the third-party assets keep their own terms (README.md).
+
+## Ownership
+- Write only your package's exclusive paths; read anything. Every other change is a hook request in your report.
+- Only the architect or the integrator writes shared files: `src/contracts/`, `src/main.js`, `src/systems.js`,
+  `package.json` and the lockfile, the Vite / TypeScript / ESLint / Playwright configs, `.gitattributes`, `.gitignore`,
+  `tools/gate*`, `tools/coverage*`, `tools/keys-audit.mjs` and the ledgers (`docs/FEATURES.md`, `docs/bugs.jsonl`,
+  `assets/sources.lock.json`, `assets/CREDITS.md`).
+- The interfaces in `src/contracts/` are frozen for P0; a change is an interface request to the architect.
+- Branch `wp/<id>`; `npm run dev` picks your port (5200 + slot); use your own browser tab and Playwright run.
+
+## Code
+- New JS files start with `// @ts-check` and pass `npm run typecheck` and `npm run lint`.
+- The sim (`src/sim`) never imports render code. Renderers read only the view model (`src/contracts/view.js`) through
+  the renderer interface (`src/contracts/render.js`) and are registered in `src/main.js`.
+- Randomness only through `src/engine/rng.js`, persistent data only in `state`: the determinism check replays runs
+  and continues them from a save.
+
+## Keys
+- Every counter, story tag, flag, bus event and storage key is declared once in `src/contracts/keys.js` with its
+  meaning and owner; `node tools/keys-audit.mjs` must report no problems.
+
+## Tests
+- `npm test` runs `node --test tests/*.test.js` (keep the glob). Never delete or weaken a test, never add `.only`,
+  `.skip` or `.todo`, and log every golden-value change with its reason.
+- Browser tests are `tests/e2e/*.spec.js`; tag the fast must-pass tier `@smoke`.
+
+## Assets
+- Allowed sources only (`docs/wp/README.md`); pin URL, license and SHA-256 in `assets/lock/<wp>.json` and credit in
+  `assets/credits/<wp>.md`. The image tool is for concept work only.
+- Binaries under `assets/` go through git LFS; manifests follow `src/contracts/assets.js` (`checkAssetManifest`).
+
+## Gate
+- Before you hand off, `npm run gate -- --quick` passes (a `pending` check is fine until its tool lands).
+- `npm run gate -- --status` shows the phase, every check and the ledgers; `--signoff P<n>` and `--final` fail on
+  anything pending or failing.
+- End with the JSON report defined in `docs/wp/README.md`.

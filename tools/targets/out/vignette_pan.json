@@ -1,0 +1,224 @@
+{
+ "about": "vignette V(r) (display-linear, 1 at centre, r = 1 at the corner of the 16:9 game frame) from trailer pans in shots whose HUD stays on screen; bootstrap over pairs with the same robust estimator",
+ "pairs": 11,
+ "shots": [
+  5,
+  8,
+  11,
+  27,
+  41
+ ],
+ "rejected_pairs_hud_moving": 23,
+ "a1": 0.7846,
+ "a2": -1.1282,
+ "V": {
+  "0.25": 1.046,
+  "0.50": 1.134,
+  "0.60": 1.146,
+  "0.70": 1.12,
+  "0.75": 1.088,
+  "0.80": 1.041,
+  "0.90": 0.901,
+  "1.00": 0.709
+ },
+ "V_ci68": {
+  "0.50": [
+   0.886,
+   1.286
+  ],
+  "0.75": [
+   0.821,
+   1.138
+  ],
+  "1.00": [
+   0.297,
+   1.232
+  ]
+ },
+ "pairs_used": [
+  {
+   "t": 9.25,
+   "shot": 5
+  },
+  {
+   "t": 9.625,
+   "shot": 5
+  },
+  {
+   "t": 12.0,
+   "shot": 8
+  },
+  {
+   "t": 12.125,
+   "shot": 8
+  },
+  {
+   "t": 12.375,
+   "shot": 8
+  },
+  {
+   "t": 12.5,
+   "shot": 8
+  },
+  {
+   "t": 12.625,
+   "shot": 8
+  },
+  {
+   "t": 20.0,
+   "shot": 11
+  },
+  {
+   "t": 37.5,
+   "shot": 27
+  },
+  {
+   "t": 37.625,
+   "shot": 27
+  },
+  {
+   "t": 65.0,
+   "shot": 41
+  }
+ ],
+ "pairs_rejected": [
+  {
+   "t": 0.375,
+   "shot": 2,
+   "hud_strip_diff": 0.0145,
+   "scene_diff": 0.0752
+  },
+  {
+   "t": 7.625,
+   "shot": 5,
+   "hud_strip_diff": 0.0153,
+   "scene_diff": 0.0381
+  },
+  {
+   "t": 18.875,
+   "shot": 10,
+   "hud_strip_diff": 0.0682,
+   "scene_diff": 0.0724
+  },
+  {
+   "t": 19.0,
+   "shot": 10,
+   "hud_strip_diff": 0.077,
+   "scene_diff": 0.0821
+  },
+  {
+   "t": 28.875,
+   "shot": 21,
+   "hud_strip_diff": 0.0327,
+   "scene_diff": 0.0517
+  },
+  {
+   "t": 29.0,
+   "shot": 21,
+   "hud_strip_diff": 0.0372,
+   "scene_diff": 0.0575
+  },
+  {
+   "t": 66.875,
+   "shot": 42,
+   "hud_strip_diff": 0.019,
+   "scene_diff": 0.0359
+  },
+  {
+   "t": 67.0,
+   "shot": 42,
+   "hud_strip_diff": 0.0307,
+   "scene_diff": 0.053
+  },
+  {
+   "t": 72.875,
+   "shot": 46,
+   "hud_strip_diff": 0.035,
+   "scene_diff": 0.0593
+  },
+  {
+   "t": 73.0,
+   "shot": 46,
+   "hud_strip_diff": 0.0361,
+   "scene_diff": 0.0568
+  },
+  {
+   "t": 74.0,
+   "shot": 46,
+   "hud_strip_diff": 0.0301,
+   "scene_diff": 0.0574
+  },
+  {
+   "t": 76.25,
+   "shot": 48,
+   "hud_strip_diff": 0.0309,
+   "scene_diff": 0.0576
+  },
+  {
+   "t": 76.375,
+   "shot": 48,
+   "hud_strip_diff": 0.0257,
+   "scene_diff": 0.0465
+  },
+  {
+   "t": 76.5,
+   "shot": 48,
+   "hud_strip_diff": 0.0273,
+   "scene_diff": 0.0559
+  },
+  {
+   "t": 76.625,
+   "shot": 48,
+   "hud_strip_diff": 0.0265,
+   "scene_diff": 0.0492
+  },
+  {
+   "t": 76.75,
+   "shot": 48,
+   "hud_strip_diff": 0.0324,
+   "scene_diff": 0.0525
+  },
+  {
+   "t": 76.875,
+   "shot": 48,
+   "hud_strip_diff": 0.0327,
+   "scene_diff": 0.043
+  },
+  {
+   "t": 77.0,
+   "shot": 48,
+   "hud_strip_diff": 0.0392,
+   "scene_diff": 0.0472
+  },
+  {
+   "t": 77.125,
+   "shot": 48,
+   "hud_strip_diff": 0.0398,
+   "scene_diff": 0.0419
+  },
+  {
+   "t": 77.25,
+   "shot": 48,
+   "hud_strip_diff": 0.0423,
+   "scene_diff": 0.042
+  },
+  {
+   "t": 77.375,
+   "shot": 48,
+   "hud_strip_diff": 0.0431,
+   "scene_diff": 0.0419
+  },
+  {
+   "t": 77.5,
+   "shot": 48,
+   "hud_strip_diff": 0.0412,
+   "scene_diff": 0.0443
+  },
+  {
+   "t": 78.0,
+   "shot": 49,
+   "hud_strip_diff": 0.0063,
+   "scene_diff": 0.0269
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+  "file": "pages/ui-tile/backdrop.jpg",
+  "shows": "The Wage Slave's apartment, 1F living room by day: the WP-P0-13 shell render (walls, floor, ladder to 2F, baked lightmap) at the game camera. No furniture yet.",
+  "why": "The WP-P0-08 spike room is not built. Of the stills that exist, this one has the source's value range under the windows: Rec. 709 luma p50 59 / p90 93 / p99 114 against the eight source screenshots' p50 23-68 / p90 56-136, so the panels' translucency composites as it would in game. WP-P0-10's room_game_50.png (furniture on a grey void, p50 104) would make every panel read lighter than in the source.",
+  "source": {
+    "branch": "wp/P0-13",
+    "path": "docs/art/homes/apartment-1F-day-spike.png",
+    "readAt": "432146a3c295793986ba302c3445bf5d48b03b2e",
+    "lastChangedIn": "0347c165c30eab8ebaa5c49586eaa560030b7596",
+    "unchangedAt": "46619d9f019a1b18dd8638b4d34c205c7565871e",
+    "sha256": "5008e587e3c7dd60e145f4da8a91e19ee418cc32ea57aa138134c4fb958b82e7",
+    "bytes": 2580982,
+    "license": "project-original render (WP-P0-13); no external source"
+  },
+  "derived": {
+    "tool": "Pillow",
+    "settings": "RGB, 1920 x 1080 as rendered (no crop, no resize), JPEG quality 90, 4:4:4 chroma (subsampling 0), optimize",
+    "sha256": "ebb03f3e1e2f5b01d7b69fc1e5e318f36316d497c445c16e6bcc8b4cb20a3c6d",
+    "bytes": 300731
+  },
+  "swap": [
+    "Replace pages/ui-tile/backdrop.jpg with any 1920 x 1080 still (the WP-P0-08 spike still, from docs/art/spike/, once it exists) and update this file; nothing else refers to the image.",
+    "Or try one without replacing anything: pages/ui-tile.html?backdrop=<url> (also with &lang=zh and &view=kit).",
+    "Then re-run tests/e2e/ui-tile.spec.js: the contrast check measures every text run against the new still, and UI_TILE_OUT=docs/art/ui rewrites the screenshots and boards."
+  ]
+}

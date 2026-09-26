@@ -1,0 +1,7 @@
+/* Survival Log UI kit (docs/UI.md): load this one file; the typefaces and tokens first, then base, components, inventory, HUD. */
+@import './fonts.css';
+@import './tokens.css';
+@import './base.css';
+@import './components.css';
+@import './inventory.css';
+@import './hud.css';

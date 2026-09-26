@@ -1,0 +1,2040 @@
+{
+  "generatedBy": "tools/targets/fetch-targets.mjs",
+  "generatedAt": "2026-09-23T06:21:42.936Z",
+  "app": {
+    "id": 4164790,
+    "name": "Survival Log",
+    "developers": [
+      "Midnight Workshop"
+    ],
+    "publishers": [
+      "Lilith Games"
+    ]
+  },
+  "usage": "Look reference only: never traced, never shipped, never part of the build.",
+  "rights": "© Midnight Workshop / Lilith Games. Steam store media fetched for internal look reference.",
+  "appdetailsFrom": "research/store_appdetails.json (outside this checkout)",
+  "ffmpeg": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "counts": {
+    "screenshots": 8,
+    "storeArt": 4,
+    "trailerEven": 30,
+    "trailerShots": 49
+  },
+  "trailer": {
+    "id": 257229528,
+    "name": "Survival Log - Official Trailer",
+    "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+    "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+    "variant": "1920x1080@30",
+    "duration": 87.5,
+    "fps": 30,
+    "frames": 2625,
+    "color": {
+      "space": "bt709",
+      "primaries": "bt709",
+      "transfer": "bt709",
+      "range": "tv"
+    },
+    "decode": "BT.709 limited range -> full-range BT.601 YCbCr 4:4:4 JPEG (q:v 2)",
+    "remuxSha256": "357c1b0341ded425eb86ce27e68347a6678c9fa4e9c44f2caa345edeb4ed40c0",
+    "innerCrop": "1700:880:110:20",
+    "sceneThreshold": 0.12,
+    "dissolveThreshold": 15,
+    "minShot": 0.3,
+    "dedupeMeanAbsDiff": 5,
+    "cuts": [
+      {
+        "t": 0.133,
+        "timecode": "00:00:00.133",
+        "kind": "cut",
+        "score": 0.453
+      },
+      {
+        "t": 1.8,
+        "timecode": "00:00:01.800",
+        "kind": "cut",
+        "score": 0.3
+      },
+      {
+        "t": 5.125,
+        "timecode": "00:00:05.125",
+        "kind": "dissolve",
+        "score": 0.207
+      },
+      {
+        "t": 7.4,
+        "timecode": "00:00:07.400",
+        "kind": "cut",
+        "score": 0.258
+      },
+      {
+        "t": 10,
+        "timecode": "00:00:10.000",
+        "kind": "cut",
+        "score": 0.163
+      },
+      {
+        "t": 10.875,
+        "timecode": "00:00:10.875",
+        "kind": "dissolve",
+        "score": 0.107
+      },
+      {
+        "t": 11.767,
+        "timecode": "00:00:11.767",
+        "kind": "cut",
+        "score": 0.357
+      },
+      {
+        "t": 17.633,
+        "timecode": "00:00:17.633",
+        "kind": "cut",
+        "score": 0.427
+      },
+      {
+        "t": 18.7,
+        "timecode": "00:00:18.700",
+        "kind": "cut",
+        "score": 0.478
+      },
+      {
+        "t": 19.267,
+        "timecode": "00:00:19.267",
+        "kind": "cut",
+        "score": 0.306
+      },
+      {
+        "t": 20.867,
+        "timecode": "00:00:20.867",
+        "kind": "cut",
+        "score": 0.312
+      },
+      {
+        "t": 21.533,
+        "timecode": "00:00:21.533",
+        "kind": "cut",
+        "score": 0.154
+      },
+      {
+        "t": 22.233,
+        "timecode": "00:00:22.233",
+        "kind": "cut",
+        "score": 0.244
+      },
+      {
+        "t": 23.067,
+        "timecode": "00:00:23.067",
+        "kind": "cut",
+        "score": 0.13
+      },
+      {
+        "t": 24.067,
+        "timecode": "00:00:24.067",
+        "kind": "cut",
+        "score": 0.289
+      },
+      {
+        "t": 25.8,
+        "timecode": "00:00:25.800",
+        "kind": "cut",
+        "score": 0.262
+      },
+      {
+        "t": 26.633,
+        "timecode": "00:00:26.633",
+        "kind": "cut",
+        "score": 0.22
+      },
+      {
+        "t": 27.2,
+        "timecode": "00:00:27.200",
+        "kind": "cut",
+        "score": 0.269
+      },
+      {
+        "t": 27.6,
+        "timecode": "00:00:27.600",
+        "kind": "cut",
+        "score": 0.306
+      },
+      {
+        "t": 28.4,
+        "timecode": "00:00:28.400",
+        "kind": "cut",
+        "score": 0.228
+      },
+      {
+        "t": 30.2,
+        "timecode": "00:00:30.200",
+        "kind": "cut",
+        "score": 0.423
+      },
+      {
+        "t": 31.9,
+        "timecode": "00:00:31.900",
+        "kind": "cut",
+        "score": 0.412
+      },
+      {
+        "t": 32.7,
+        "timecode": "00:00:32.700",
+        "kind": "cut",
+        "score": 0.61
+      },
+      {
+        "t": 34.3,
+        "timecode": "00:00:34.300",
+        "kind": "cut",
+        "score": 0.389
+      },
+      {
+        "t": 36.125,
+        "timecode": "00:00:36.125",
+        "kind": "dissolve",
+        "score": 0.11
+      },
+      {
+        "t": 37.267,
+        "timecode": "00:00:37.267",
+        "kind": "cut",
+        "score": 0.144
+      },
+      {
+        "t": 39.4,
+        "timecode": "00:00:39.400",
+        "kind": "cut",
+        "score": 0.285
+      },
+      {
+        "t": 39.867,
+        "timecode": "00:00:39.867",
+        "kind": "cut",
+        "score": 0.411
+      },
+      {
+        "t": 42.967,
+        "timecode": "00:00:42.967",
+        "kind": "cut",
+        "score": 0.254
+      },
+      {
+        "t": 43.533,
+        "timecode": "00:00:43.533",
+        "kind": "cut",
+        "score": 0.142
+      },
+      {
+        "t": 44.875,
+        "timecode": "00:00:44.875",
+        "kind": "dissolve",
+        "score": 0.213
+      },
+      {
+        "t": 46.7,
+        "timecode": "00:00:46.700",
+        "kind": "cut",
+        "score": 0.391
+      },
+      {
+        "t": 51.375,
+        "timecode": "00:00:51.375",
+        "kind": "dissolve",
+        "score": 0.083
+      },
+      {
+        "t": 53.333,
+        "timecode": "00:00:53.333",
+        "kind": "cut",
+        "score": 0.199
+      },
+      {
+        "t": 56.625,
+        "timecode": "00:00:56.625",
+        "kind": "dissolve",
+        "score": 0.06
+      },
+      {
+        "t": 58.567,
+        "timecode": "00:00:58.567",
+        "kind": "cut",
+        "score": 0.495
+      },
+      {
+        "t": 60.267,
+        "timecode": "00:01:00.267",
+        "kind": "cut",
+        "score": 0.527
+      },
+      {
+        "t": 62.033,
+        "timecode": "00:01:02.033",
+        "kind": "cut",
+        "score": 0.26
+      },
+      {
+        "t": 62.6,
+        "timecode": "00:01:02.600",
+        "kind": "cut",
+        "score": 0.181
+      },
+      {
+        "t": 63.067,
+        "timecode": "00:01:03.067",
+        "kind": "cut",
+        "score": 0.217
+      },
+      {
+        "t": 65.875,
+        "timecode": "00:01:05.875",
+        "kind": "dissolve",
+        "score": 0.059
+      },
+      {
+        "t": 68.467,
+        "timecode": "00:01:08.467",
+        "kind": "cut",
+        "score": 0.254
+      },
+      {
+        "t": 69.3,
+        "timecode": "00:01:09.300",
+        "kind": "cut",
+        "score": 0.254
+      },
+      {
+        "t": 70.3,
+        "timecode": "00:01:10.300",
+        "kind": "cut",
+        "score": 0.355
+      },
+      {
+        "t": 72.633,
+        "timecode": "00:01:12.633",
+        "kind": "cut",
+        "score": 0.33
+      },
+      {
+        "t": 74.967,
+        "timecode": "00:01:14.967",
+        "kind": "cut",
+        "score": 0.192
+      },
+      {
+        "t": 76.1,
+        "timecode": "00:01:16.100",
+        "kind": "cut",
+        "score": 0.188
+      },
+      {
+        "t": 77.8,
+        "timecode": "00:01:17.800",
+        "kind": "cut",
+        "score": 0.193
+      },
+      {
+        "t": 81.625,
+        "timecode": "00:01:21.625",
+        "kind": "dissolve",
+        "score": 0.115
+      },
+      {
+        "t": 82.875,
+        "timecode": "00:01:22.875",
+        "kind": "dissolve",
+        "score": 0.245
+      }
+    ],
+    "shots": [
+      {
+        "index": 1,
+        "start": 0,
+        "end": 0.133
+      },
+      {
+        "index": 2,
+        "start": 0.133,
+        "end": 1.8
+      },
+      {
+        "index": 3,
+        "start": 1.8,
+        "end": 5.125
+      },
+      {
+        "index": 4,
+        "start": 5.125,
+        "end": 7.4
+      },
+      {
+        "index": 5,
+        "start": 7.4,
+        "end": 10
+      },
+      {
+        "index": 6,
+        "start": 10,
+        "end": 10.875
+      },
+      {
+        "index": 7,
+        "start": 10.875,
+        "end": 11.767
+      },
+      {
+        "index": 8,
+        "start": 11.767,
+        "end": 17.633
+      },
+      {
+        "index": 9,
+        "start": 17.633,
+        "end": 18.7
+      },
+      {
+        "index": 10,
+        "start": 18.7,
+        "end": 19.267
+      },
+      {
+        "index": 11,
+        "start": 19.267,
+        "end": 20.867
+      },
+      {
+        "index": 12,
+        "start": 20.867,
+        "end": 21.533
+      },
+      {
+        "index": 13,
+        "start": 21.533,
+        "end": 22.233
+      },
+      {
+        "index": 14,
+        "start": 22.233,
+        "end": 23.067
+      },
+      {
+        "index": 15,
+        "start": 23.067,
+        "end": 24.067
+      },
+      {
+        "index": 16,
+        "start": 24.067,
+        "end": 25.8
+      },
+      {
+        "index": 17,
+        "start": 25.8,
+        "end": 26.633
+      },
+      {
+        "index": 18,
+        "start": 26.633,
+        "end": 27.2
+      },
+      {
+        "index": 19,
+        "start": 27.2,
+        "end": 27.6
+      },
+      {
+        "index": 20,
+        "start": 27.6,
+        "end": 28.4
+      },
+      {
+        "index": 21,
+        "start": 28.4,
+        "end": 30.2
+      },
+      {
+        "index": 22,
+        "start": 30.2,
+        "end": 31.9
+      },
+      {
+        "index": 23,
+        "start": 31.9,
+        "end": 32.7
+      },
+      {
+        "index": 24,
+        "start": 32.7,
+        "end": 34.3
+      },
+      {
+        "index": 25,
+        "start": 34.3,
+        "end": 36.125
+      },
+      {
+        "index": 26,
+        "start": 36.125,
+        "end": 37.267
+      },
+      {
+        "index": 27,
+        "start": 37.267,
+        "end": 39.4
+      },
+      {
+        "index": 28,
+        "start": 39.4,
+        "end": 39.867
+      },
+      {
+        "index": 29,
+        "start": 39.867,
+        "end": 42.967
+      },
+      {
+        "index": 30,
+        "start": 42.967,
+        "end": 43.533
+      },
+      {
+        "index": 31,
+        "start": 43.533,
+        "end": 44.875
+      },
+      {
+        "index": 32,
+        "start": 44.875,
+        "end": 46.7
+      },
+      {
+        "index": 33,
+        "start": 46.7,
+        "end": 51.375
+      },
+      {
+        "index": 34,
+        "start": 51.375,
+        "end": 53.333
+      },
+      {
+        "index": 35,
+        "start": 53.333,
+        "end": 56.625
+      },
+      {
+        "index": 36,
+        "start": 56.625,
+        "end": 58.567
+      },
+      {
+        "index": 37,
+        "start": 58.567,
+        "end": 60.267
+      },
+      {
+        "index": 38,
+        "start": 60.267,
+        "end": 62.033
+      },
+      {
+        "index": 39,
+        "start": 62.033,
+        "end": 62.6
+      },
+      {
+        "index": 40,
+        "start": 62.6,
+        "end": 63.067
+      },
+      {
+        "index": 41,
+        "start": 63.067,
+        "end": 65.875
+      },
+      {
+        "index": 42,
+        "start": 65.875,
+        "end": 68.467
+      },
+      {
+        "index": 43,
+        "start": 68.467,
+        "end": 69.3
+      },
+      {
+        "index": 44,
+        "start": 69.3,
+        "end": 70.3
+      },
+      {
+        "index": 45,
+        "start": 70.3,
+        "end": 72.633
+      },
+      {
+        "index": 46,
+        "start": 72.633,
+        "end": 74.967
+      },
+      {
+        "index": 47,
+        "start": 74.967,
+        "end": 76.1
+      },
+      {
+        "index": 48,
+        "start": 76.1,
+        "end": 77.8
+      },
+      {
+        "index": 49,
+        "start": 77.8,
+        "end": 81.625
+      },
+      {
+        "index": 50,
+        "start": 81.625,
+        "end": 82.875
+      },
+      {
+        "index": 51,
+        "start": 82.875,
+        "end": 87.5
+      }
+    ],
+    "droppedShots": [
+      {
+        "shot": 1,
+        "start": 0,
+        "end": 0.133,
+        "reason": "shorter than --min-shot"
+      },
+      {
+        "shot": 28,
+        "start": 39.4,
+        "end": 39.867,
+        "reason": "same picture as the previous shot (mean abs diff 0.7)"
+      }
+    ]
+  },
+  "files": [
+    {
+      "file": "screenshots/ss_01_8f2609d8.jpg",
+      "kind": "screenshot",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4164790/8f2609d80b00e37986be11a2f02b2d8b653d8580/ss_8f2609d80b00e37986be11a2f02b2d8b653d8580.1920x1080.jpg?t=1788919491",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 361167,
+      "sha256": "c883fbb4de50bee2ec69f3d6e2fe5a5af47952fbfd0d0e6a7eb19df9cf5fc877",
+      "steamIndex": 0
+    },
+    {
+      "file": "screenshots/ss_02_dede236e.jpg",
+      "kind": "screenshot",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4164790/dede236eb4cd942cb00d0242880a360408a5f23b/ss_dede236eb4cd942cb00d0242880a360408a5f23b.1920x1080.jpg?t=1788919491",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 372467,
+      "sha256": "540b465ef63979e50c2f245db04fc39095d3e0fce4095949f2d706888308d9d9",
+      "steamIndex": 1
+    },
+    {
+      "file": "screenshots/ss_03_36037296.jpg",
+      "kind": "screenshot",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4164790/36037296bb7a5e54b1e9914d7176f4f561057e2c/ss_36037296bb7a5e54b1e9914d7176f4f561057e2c.1920x1080.jpg?t=1788919491",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 228005,
+      "sha256": "7c0d20979c956d4e39995c8d3b8d44aacb94264a41c6f18131eebe4d25e38e25",
+      "steamIndex": 2
+    },
+    {
+      "file": "screenshots/ss_04_344f0472.jpg",
+      "kind": "screenshot",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4164790/344f04724489d5a6daca4ef522c984429e0e7194/ss_344f04724489d5a6daca4ef522c984429e0e7194.1920x1080.jpg?t=1788919491",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 354610,
+      "sha256": "99a17fbb25b4c1466aa1f8ad3805f30a388912606fd21fa79648249320aa132f",
+      "steamIndex": 3
+    },
+    {
+      "file": "screenshots/ss_05_d6bcfba5.jpg",
+      "kind": "screenshot",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4164790/d6bcfba5f75bec8c737052724e55d524d52b3117/ss_d6bcfba5f75bec8c737052724e55d524d52b3117.1920x1080.jpg?t=1788919491",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 259444,
+      "sha256": "88c9e0d3648a07578769dfb2d78e55e4f05b0a9bb9052f1b2aa2d9ccd8ec2e34",
+      "steamIndex": 4
+    },
+    {
+      "file": "screenshots/ss_06_bdcdf4bc.jpg",
+      "kind": "screenshot",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4164790/bdcdf4bcaaa365fe88b110f50f187b36b8d86916/ss_bdcdf4bcaaa365fe88b110f50f187b36b8d86916.1920x1080.jpg?t=1788919491",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 418997,
+      "sha256": "c40e4684e762d9f6c32e38b298121efdcc8171f0411bdae3b9a0a2760cee99ac",
+      "steamIndex": 5
+    },
+    {
+      "file": "screenshots/ss_07_02c2b148.jpg",
+      "kind": "screenshot",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4164790/02c2b1486e8cd319d75c8805a4214617f8c671cf/ss_02c2b1486e8cd319d75c8805a4214617f8c671cf.1920x1080.jpg?t=1788919491",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 361191,
+      "sha256": "125b7dfe785b582a548f6c2b3d2f9a850f907aba9e96495815697abbbd998c7f",
+      "steamIndex": 6
+    },
+    {
+      "file": "screenshots/ss_08_1502124d.jpg",
+      "kind": "screenshot",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4164790/1502124d7d29b7a475ef479f96e203c0816f2908/ss_1502124d7d29b7a475ef479f96e203c0816f2908.1920x1080.jpg?t=1788919491",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 423444,
+      "sha256": "f595737cb2d19016becf39a75ce627f7c43d5330d476f3d0249fd962e28dc75c",
+      "steamIndex": 7
+    },
+    {
+      "file": "store/header.jpg",
+      "kind": "store-art",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4164790/5f5a1a66f988690c1507b383be89b2869c17e17f/header.jpg?t=1788919491",
+      "width": 460,
+      "height": 215,
+      "bytes": 47404,
+      "sha256": "e697ef402e7949bf1bbabd4ac1b893cac684bf9fa1acd0d9333fb5b29f7c8c48"
+    },
+    {
+      "file": "store/capsule.jpg",
+      "kind": "store-art",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4164790/fd42f9bb4e955c05ed5d086216d0c9c724893d40/capsule_184x69.jpg?t=1788919491",
+      "width": 184,
+      "height": 69,
+      "bytes": 7370,
+      "sha256": "637af745f8ba7ae54234f144616d7db4e3b1dcbd183bc58c193a6fc6cf11542d"
+    },
+    {
+      "file": "store/page_background.jpg",
+      "kind": "store-art",
+      "sourceUrl": "https://store.akamai.steamstatic.com/images/storepagebackground/app/4164790?t=1788919491",
+      "width": 0,
+      "height": 0,
+      "bytes": 13748,
+      "sha256": "ac3171cfc1192dec3a0d2b3881e8b18f463d3268b33a13f3a84450217d23b58c"
+    },
+    {
+      "file": "store/trailer_thumbnail.jpg",
+      "kind": "store-art",
+      "sourceUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257229528/6a6e8950f7f13516680c1f6b95ea8dca416cb58b/movie_600x337.jpg?t=1786521311",
+      "width": 600,
+      "height": 337,
+      "bytes": 35860,
+      "sha256": "87e94a507a86532f9c1f041092b59e236cd45c1081e642a6f2a5006efdc6d4a9"
+    },
+    {
+      "file": "trailer/even_01_t001.458s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:01.458",
+      "t": 1.458,
+      "frame": 44,
+      "shot": 2,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 256182,
+      "sha256": "0e687c035bab92892b0b1c56690e3bd8304b3d42d6b18921a3835c1e4af879f1"
+    },
+    {
+      "file": "trailer/even_02_t004.375s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:04.375",
+      "t": 4.375,
+      "frame": 131,
+      "shot": 3,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 64978,
+      "sha256": "f6879af086812f539e73949c579423764e622c86ea0f311b816f5a0c50bb998e"
+    },
+    {
+      "file": "trailer/even_03_t007.292s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:07.292",
+      "t": 7.292,
+      "frame": 219,
+      "shot": 4,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 257482,
+      "sha256": "860ce50d4b6c8a4e838a5f76e565c5b78ec23f9100155e9bf9d37054a33897c0"
+    },
+    {
+      "file": "trailer/even_04_t010.208s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:10.208",
+      "t": 10.208,
+      "frame": 306,
+      "shot": 6,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 214742,
+      "sha256": "f8aed06562309fc53ad378aaeb9a26eb0df6b84aa07027cf34c384c6b871a919"
+    },
+    {
+      "file": "trailer/even_05_t013.125s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:13.125",
+      "t": 13.125,
+      "frame": 394,
+      "shot": 8,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 301151,
+      "sha256": "86499d763020e4d816ee2725c5b5552639b5c2260f8f263ea5bbfe38077951e3"
+    },
+    {
+      "file": "trailer/even_06_t016.042s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:16.042",
+      "t": 16.042,
+      "frame": 481,
+      "shot": 8,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 313391,
+      "sha256": "6af7105ed19ac91e16d326306cc63bc1411627f58d13fbb073ecced4f59c2f5d"
+    },
+    {
+      "file": "trailer/even_07_t018.958s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:18.958",
+      "t": 18.958,
+      "frame": 569,
+      "shot": 10,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 369494,
+      "sha256": "b73a3a3bf851853d0afd1f435be5e4f4eb48c629364114a0ca3d0921e3829a3c"
+    },
+    {
+      "file": "trailer/even_08_t021.875s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:21.875",
+      "t": 21.875,
+      "frame": 656,
+      "shot": 13,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 300854,
+      "sha256": "c912009164c5073e98b199723fb4ed860455fefb680f9070af9ebda0c8ec520c"
+    },
+    {
+      "file": "trailer/even_09_t024.792s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:24.792",
+      "t": 24.792,
+      "frame": 744,
+      "shot": 16,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 317255,
+      "sha256": "cfb4999b4664ab7cb1d678e407d4979e41d15525e99fa5f7c2cf645d48f26676"
+    },
+    {
+      "file": "trailer/even_10_t027.708s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:27.708",
+      "t": 27.708,
+      "frame": 831,
+      "shot": 20,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 332633,
+      "sha256": "74b3b7e2957956ef3739261fdab8ce4f595f265f189daee96035238d51eee49c"
+    },
+    {
+      "file": "trailer/even_11_t030.625s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:30.625",
+      "t": 30.625,
+      "frame": 919,
+      "shot": 22,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 349017,
+      "sha256": "bb22cb44bc130a522cdd5ae0e4698c951568251600b0687cf439327384dbae38"
+    },
+    {
+      "file": "trailer/even_12_t033.542s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:33.542",
+      "t": 33.542,
+      "frame": 1006,
+      "shot": 24,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 308411,
+      "sha256": "995ce29654cd6e89f949e463b5c70303533e140b5e882501ed49183f99c0086e"
+    },
+    {
+      "file": "trailer/even_13_t036.458s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:36.458",
+      "t": 36.458,
+      "frame": 1094,
+      "shot": 26,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 275404,
+      "sha256": "9992c77c8b36c39de7cfccb0eae9c6817333498855a0e6759ee65d852f4131f2"
+    },
+    {
+      "file": "trailer/even_14_t039.375s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:39.375",
+      "t": 39.375,
+      "frame": 1181,
+      "shot": 27,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 364850,
+      "sha256": "66897af7274a4c876bf6bf01bd04fd352486ea10179db6308b4e7bd2be27d1cd"
+    },
+    {
+      "file": "trailer/even_15_t042.292s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:42.292",
+      "t": 42.292,
+      "frame": 1269,
+      "shot": 29,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 340291,
+      "sha256": "45adf00390aee7b4a90fc13386feab0319a1bdd917bb4043bcd7e4b2d1546d94"
+    },
+    {
+      "file": "trailer/even_16_t045.208s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:45.208",
+      "t": 45.208,
+      "frame": 1356,
+      "shot": 32,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 213645,
+      "sha256": "d7ef3efba44d8e1a7540378e02cbf9a5deaee3fa35727b1746293908eb9b22a0"
+    },
+    {
+      "file": "trailer/even_17_t048.125s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:48.125",
+      "t": 48.125,
+      "frame": 1444,
+      "shot": 33,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 324995,
+      "sha256": "37a870f6bfe62691c2b60cb104cc72dba2be8404e67a47bc355a01d412c64296"
+    },
+    {
+      "file": "trailer/even_18_t051.042s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:51.042",
+      "t": 51.042,
+      "frame": 1531,
+      "shot": 33,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 272572,
+      "sha256": "62ac468d2e0eeda3e9c0e18a11d2b19002bd41cc8f28ea208ad2d77f202c0e6a"
+    },
+    {
+      "file": "trailer/even_19_t053.958s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:53.958",
+      "t": 53.958,
+      "frame": 1619,
+      "shot": 35,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 246228,
+      "sha256": "96d586dd129951555f9e6f3fd44650e89a2004ce4693eac44c7220529758ac31"
+    },
+    {
+      "file": "trailer/even_20_t056.875s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:56.875",
+      "t": 56.875,
+      "frame": 1706,
+      "shot": 36,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 307681,
+      "sha256": "64bb120b5b72f877177cbad58d0cde57d933a3ef177e74cbb78e3c5a179f5a2b"
+    },
+    {
+      "file": "trailer/even_21_t059.792s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:59.792",
+      "t": 59.792,
+      "frame": 1794,
+      "shot": 37,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 464394,
+      "sha256": "cd2587f8983bb6e83c9f36c1f93ed42baa529aa69581c027a7a270855102db32"
+    },
+    {
+      "file": "trailer/even_22_t062.708s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:02.708",
+      "t": 62.708,
+      "frame": 1881,
+      "shot": 40,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 429737,
+      "sha256": "b8c8cd3f5808df1d14eefa24d35ca99f316bd65be1034e03197ceda7a401fc98"
+    },
+    {
+      "file": "trailer/even_23_t065.625s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:05.625",
+      "t": 65.625,
+      "frame": 1969,
+      "shot": 41,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 324442,
+      "sha256": "c18e7db7aff02ff85440a103cd851e5ba1edfa80558f3d20bf6fd522815c0c7a"
+    },
+    {
+      "file": "trailer/even_24_t068.542s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:08.542",
+      "t": 68.542,
+      "frame": 2056,
+      "shot": 43,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 341347,
+      "sha256": "35747a5d3232ef395518f534ff021d23cdd60ada467dcd588ba5e84d9094ac22"
+    },
+    {
+      "file": "trailer/even_25_t071.458s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:11.458",
+      "t": 71.458,
+      "frame": 2144,
+      "shot": 45,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 359993,
+      "sha256": "d6c1128a6579f7084ebb293a1737563ceb5805f8dd3ae07b1c416ef1483ad9b9"
+    },
+    {
+      "file": "trailer/even_26_t074.375s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:14.375",
+      "t": 74.375,
+      "frame": 2231,
+      "shot": 46,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 338788,
+      "sha256": "64e58c5fb095855b984d1b10384a4a359a144c4b38aa429a071a26a6b5e958e3"
+    },
+    {
+      "file": "trailer/even_27_t077.292s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:17.292",
+      "t": 77.292,
+      "frame": 2319,
+      "shot": 48,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 345677,
+      "sha256": "9f70e885b26ccfa2a4078830ccc6c44cbc5cb2f3c7f824addc592eda57bbf2f7"
+    },
+    {
+      "file": "trailer/even_28_t080.208s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:20.208",
+      "t": 80.208,
+      "frame": 2406,
+      "shot": 49,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 273045,
+      "sha256": "4a31c6ddbe88a3f7f00dbf5fc16064469e98670b35f8195e5386329b6701ff85"
+    },
+    {
+      "file": "trailer/even_29_t083.125s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:23.125",
+      "t": 83.125,
+      "frame": 2494,
+      "shot": 51,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 233014,
+      "sha256": "93239eb3023f43a17d72c2f81a05d535b19138ec27dfe3ea5fc5206a05eb0e2e"
+    },
+    {
+      "file": "trailer/even_30_t086.042s.jpg",
+      "kind": "trailer-even",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:26.042",
+      "t": 86.042,
+      "frame": 2581,
+      "shot": 51,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 329250,
+      "sha256": "6c82b8f53c35ad030201950ba632fc16a8b7db7821ea3c5699bc1f6b855be418"
+    },
+    {
+      "file": "trailer/shot_01_t000.967s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:00.967",
+      "t": 0.967,
+      "frame": 29,
+      "shot": 2,
+      "shotStart": 0.133,
+      "shotEnd": 1.8,
+      "cutKind": "cut",
+      "cutScore": 0.453,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 236100,
+      "sha256": "ab208effef2baca1236c2de6847f33e316e83993e10252e940f99e544970fc13"
+    },
+    {
+      "file": "trailer/shot_02_t003.462s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:03.463",
+      "t": 3.462,
+      "frame": 104,
+      "shot": 3,
+      "shotStart": 1.8,
+      "shotEnd": 5.125,
+      "cutKind": "cut",
+      "cutScore": 0.3,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 96502,
+      "sha256": "a88afde4cf7d0426a45ddf298cc166feb67849219f862f2dfc8865d61b099096"
+    },
+    {
+      "file": "trailer/shot_03_t006.263s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:06.263",
+      "t": 6.263,
+      "frame": 188,
+      "shot": 4,
+      "shotStart": 5.125,
+      "shotEnd": 7.4,
+      "cutKind": "dissolve",
+      "cutScore": 0.207,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 262716,
+      "sha256": "51df567031983596ffb5195e8a8b2b08a8e7a2a8935f5797455005ad0b401cff"
+    },
+    {
+      "file": "trailer/shot_04_t008.700s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:08.700",
+      "t": 8.7,
+      "frame": 261,
+      "shot": 5,
+      "shotStart": 7.4,
+      "shotEnd": 10,
+      "cutKind": "cut",
+      "cutScore": 0.258,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 220506,
+      "sha256": "2d02c3d841d295a99b28f07a8266a41d16e17e71bc5a18bb59a0b6ccba7cf18f"
+    },
+    {
+      "file": "trailer/shot_05_t010.438s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:10.438",
+      "t": 10.438,
+      "frame": 313,
+      "shot": 6,
+      "shotStart": 10,
+      "shotEnd": 10.875,
+      "cutKind": "cut",
+      "cutScore": 0.163,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 198092,
+      "sha256": "079552232c52efae35a77fe5911fd032ae04a681d161c1e0c9ae7eb49f10d66e"
+    },
+    {
+      "file": "trailer/shot_06_t011.321s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:11.321",
+      "t": 11.321,
+      "frame": 340,
+      "shot": 7,
+      "shotStart": 10.875,
+      "shotEnd": 11.767,
+      "cutKind": "dissolve",
+      "cutScore": 0.107,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 304509,
+      "sha256": "78a9f5e75caade0de69532f8475a69abe0d8387b4b6936a045ec6a6bf8971107"
+    },
+    {
+      "file": "trailer/shot_07_t014.700s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:14.700",
+      "t": 14.7,
+      "frame": 441,
+      "shot": 8,
+      "shotStart": 11.767,
+      "shotEnd": 17.633,
+      "cutKind": "cut",
+      "cutScore": 0.357,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 309381,
+      "sha256": "643355ae6a5bd91d12837d44277cc7db4d61213709fb4dab6f995746ed6d2d42"
+    },
+    {
+      "file": "trailer/shot_08_t018.167s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:18.167",
+      "t": 18.167,
+      "frame": 545,
+      "shot": 9,
+      "shotStart": 17.633,
+      "shotEnd": 18.7,
+      "cutKind": "cut",
+      "cutScore": 0.427,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 356322,
+      "sha256": "f391dfd14d81467368e508cc6c91c1a078064665500d0fa69eaa15979a4294c4"
+    },
+    {
+      "file": "trailer/shot_09_t018.983s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:18.983",
+      "t": 18.983,
+      "frame": 570,
+      "shot": 10,
+      "shotStart": 18.7,
+      "shotEnd": 19.267,
+      "cutKind": "cut",
+      "cutScore": 0.478,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 364633,
+      "sha256": "8e8d752204e13f87ae1ca4e58b3177d93e09e3c57d355f1ef8425be6ef69b815"
+    },
+    {
+      "file": "trailer/shot_10_t020.067s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:20.067",
+      "t": 20.067,
+      "frame": 602,
+      "shot": 11,
+      "shotStart": 19.267,
+      "shotEnd": 20.867,
+      "cutKind": "cut",
+      "cutScore": 0.306,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 304014,
+      "sha256": "2e3c003b6124a84a26626816ce24f600c6edd1694c7605ff5537a50128e1cef8"
+    },
+    {
+      "file": "trailer/shot_11_t021.200s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:21.200",
+      "t": 21.2,
+      "frame": 636,
+      "shot": 12,
+      "shotStart": 20.867,
+      "shotEnd": 21.533,
+      "cutKind": "cut",
+      "cutScore": 0.312,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 305248,
+      "sha256": "846aec185fdef7cee67a6fa6d3ba23ee5c555e3ae4e7dbf2797fc062e7b823ea"
+    },
+    {
+      "file": "trailer/shot_12_t021.883s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:21.883",
+      "t": 21.883,
+      "frame": 656,
+      "shot": 13,
+      "shotStart": 21.533,
+      "shotEnd": 22.233,
+      "cutKind": "cut",
+      "cutScore": 0.154,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 300854,
+      "sha256": "c912009164c5073e98b199723fb4ed860455fefb680f9070af9ebda0c8ec520c"
+    },
+    {
+      "file": "trailer/shot_13_t022.650s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:22.650",
+      "t": 22.65,
+      "frame": 680,
+      "shot": 14,
+      "shotStart": 22.233,
+      "shotEnd": 23.067,
+      "cutKind": "cut",
+      "cutScore": 0.244,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 236316,
+      "sha256": "491270d3ccb127812a0a5265dcd61eb142995b8d6b28ac7c8db4353584e509a2"
+    },
+    {
+      "file": "trailer/shot_14_t023.567s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:23.567",
+      "t": 23.567,
+      "frame": 707,
+      "shot": 15,
+      "shotStart": 23.067,
+      "shotEnd": 24.067,
+      "cutKind": "cut",
+      "cutScore": 0.13,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 282784,
+      "sha256": "ac0e9ae931c262b708cd407550c8f40d83d913357773ee3bf3e97f606e0de27e"
+    },
+    {
+      "file": "trailer/shot_15_t024.933s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:24.933",
+      "t": 24.933,
+      "frame": 748,
+      "shot": 16,
+      "shotStart": 24.067,
+      "shotEnd": 25.8,
+      "cutKind": "cut",
+      "cutScore": 0.289,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 329307,
+      "sha256": "b9c37887d1c5608664bf74262ea4c417637b2912c9c12f20330c2dd3be434c42"
+    },
+    {
+      "file": "trailer/shot_16_t026.217s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:26.217",
+      "t": 26.217,
+      "frame": 786,
+      "shot": 17,
+      "shotStart": 25.8,
+      "shotEnd": 26.633,
+      "cutKind": "cut",
+      "cutScore": 0.262,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 320024,
+      "sha256": "4ac600f9e0caff8037547c27e8218f55f9f323765520ced769ed56386e51405d"
+    },
+    {
+      "file": "trailer/shot_17_t026.917s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:26.917",
+      "t": 26.917,
+      "frame": 807,
+      "shot": 18,
+      "shotStart": 26.633,
+      "shotEnd": 27.2,
+      "cutKind": "cut",
+      "cutScore": 0.22,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 335920,
+      "sha256": "5a5ff1deea90efcb39e78ecd4990d3eae7b2e2c47282c3d26907b0aa2e9d9df5"
+    },
+    {
+      "file": "trailer/shot_18_t027.400s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:27.400",
+      "t": 27.4,
+      "frame": 822,
+      "shot": 19,
+      "shotStart": 27.2,
+      "shotEnd": 27.6,
+      "cutKind": "cut",
+      "cutScore": 0.269,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 287060,
+      "sha256": "b908bc97e958fbdd538e77e6b1e81e6f8f2c59acb0f0b80de4bd9c5cc47a9dfe"
+    },
+    {
+      "file": "trailer/shot_19_t028.000s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:28.000",
+      "t": 28,
+      "frame": 840,
+      "shot": 20,
+      "shotStart": 27.6,
+      "shotEnd": 28.4,
+      "cutKind": "cut",
+      "cutScore": 0.306,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 336629,
+      "sha256": "6859dac445edefb2b56e6a8d06c6d48e4351ac97198ac9f107eb7c9fac75556a"
+    },
+    {
+      "file": "trailer/shot_20_t029.300s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:29.300",
+      "t": 29.3,
+      "frame": 879,
+      "shot": 21,
+      "shotStart": 28.4,
+      "shotEnd": 30.2,
+      "cutKind": "cut",
+      "cutScore": 0.228,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 313226,
+      "sha256": "f0bc3c9e3200b17414e4aa0abd853a92d0e47d1d66dc825539a81a85c78b3047"
+    },
+    {
+      "file": "trailer/shot_21_t031.050s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:31.050",
+      "t": 31.05,
+      "frame": 931,
+      "shot": 22,
+      "shotStart": 30.2,
+      "shotEnd": 31.9,
+      "cutKind": "cut",
+      "cutScore": 0.423,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 371434,
+      "sha256": "8e0a7bc60c0582a1435ea07739b45b9c7274c0ea9bd62b17302157edc2d7f902"
+    },
+    {
+      "file": "trailer/shot_22_t032.300s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:32.300",
+      "t": 32.3,
+      "frame": 969,
+      "shot": 23,
+      "shotStart": 31.9,
+      "shotEnd": 32.7,
+      "cutKind": "cut",
+      "cutScore": 0.412,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 456388,
+      "sha256": "e9ed06bc85d98321d0bdcfac7bfd66c9a17b9b6c3aaf3b47c46e5524d151e582"
+    },
+    {
+      "file": "trailer/shot_23_t033.500s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:33.500",
+      "t": 33.5,
+      "frame": 1005,
+      "shot": 24,
+      "shotStart": 32.7,
+      "shotEnd": 34.3,
+      "cutKind": "cut",
+      "cutScore": 0.61,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 307679,
+      "sha256": "59e8e97ba293e2bf756ff89ec56f69894ff716426b8ca64be7bfb4448b856185"
+    },
+    {
+      "file": "trailer/shot_24_t035.212s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:35.213",
+      "t": 35.212,
+      "frame": 1056,
+      "shot": 25,
+      "shotStart": 34.3,
+      "shotEnd": 36.125,
+      "cutKind": "cut",
+      "cutScore": 0.389,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 355740,
+      "sha256": "5f498849d76bd8d5f9c2393b4cdd6b2bb417fcb5dc95ed0a70d99fbcfd57bf83"
+    },
+    {
+      "file": "trailer/shot_25_t036.696s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:36.696",
+      "t": 36.696,
+      "frame": 1101,
+      "shot": 26,
+      "shotStart": 36.125,
+      "shotEnd": 37.267,
+      "cutKind": "dissolve",
+      "cutScore": 0.11,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 282752,
+      "sha256": "1d7fc6e4a2fd89eefc833668c9d9cb07ece4b6fd01b79a9a3363790351ba5855"
+    },
+    {
+      "file": "trailer/shot_26_t038.333s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:38.333",
+      "t": 38.333,
+      "frame": 1150,
+      "shot": 27,
+      "shotStart": 37.267,
+      "shotEnd": 39.4,
+      "cutKind": "cut",
+      "cutScore": 0.144,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 284235,
+      "sha256": "321a7c24dd9e28be2a19cfcab75844bec88e4cef6d870f114396bf0e9782ea25"
+    },
+    {
+      "file": "trailer/shot_27_t041.417s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:41.417",
+      "t": 41.417,
+      "frame": 1243,
+      "shot": 29,
+      "shotStart": 39.867,
+      "shotEnd": 42.967,
+      "cutKind": "cut",
+      "cutScore": 0.411,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 399791,
+      "sha256": "420bac6fd725ec0bcb31e84ab1108eb21ee47e2195699ae68c0ef1eb10b2c179"
+    },
+    {
+      "file": "trailer/shot_28_t043.250s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:43.250",
+      "t": 43.25,
+      "frame": 1298,
+      "shot": 30,
+      "shotStart": 42.967,
+      "shotEnd": 43.533,
+      "cutKind": "cut",
+      "cutScore": 0.254,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 326972,
+      "sha256": "3123a6a7d2acac5fa01071c9b486b7049cf6bdf80f52f83165c57a8214a0310a"
+    },
+    {
+      "file": "trailer/shot_29_t044.204s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:44.204",
+      "t": 44.204,
+      "frame": 1326,
+      "shot": 31,
+      "shotStart": 43.533,
+      "shotEnd": 44.875,
+      "cutKind": "cut",
+      "cutScore": 0.142,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 186501,
+      "sha256": "c04e3dc37fa98630eefa7e12af7dcc639a019b10ccd332aae7b441d46fe41bf8"
+    },
+    {
+      "file": "trailer/shot_30_t045.788s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:45.788",
+      "t": 45.788,
+      "frame": 1374,
+      "shot": 32,
+      "shotStart": 44.875,
+      "shotEnd": 46.7,
+      "cutKind": "dissolve",
+      "cutScore": 0.213,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 222568,
+      "sha256": "a7676c5e7295729ae2cf2a1768660b507522f47d6ecaf32764af82e3c7c15f8e"
+    },
+    {
+      "file": "trailer/shot_31_t049.038s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:49.038",
+      "t": 49.038,
+      "frame": 1471,
+      "shot": 33,
+      "shotStart": 46.7,
+      "shotEnd": 51.375,
+      "cutKind": "cut",
+      "cutScore": 0.391,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 300565,
+      "sha256": "c2d3238f04753e7ac2f4a54fb9021738c23f45e767399b9a16897daa825b6261"
+    },
+    {
+      "file": "trailer/shot_32_t052.354s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:52.354",
+      "t": 52.354,
+      "frame": 1571,
+      "shot": 34,
+      "shotStart": 51.375,
+      "shotEnd": 53.333,
+      "cutKind": "dissolve",
+      "cutScore": 0.083,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 220964,
+      "sha256": "9404081b8de518650bf6703f2929d3e01e0f89c8f18b3995a605f0d52338b572"
+    },
+    {
+      "file": "trailer/shot_33_t054.979s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:54.979",
+      "t": 54.979,
+      "frame": 1649,
+      "shot": 35,
+      "shotStart": 53.333,
+      "shotEnd": 56.625,
+      "cutKind": "cut",
+      "cutScore": 0.199,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 242544,
+      "sha256": "eeee57357c12da09db25bbcaec53470c008a0aafcbe4cbb3b4a11a6d35697393"
+    },
+    {
+      "file": "trailer/shot_34_t057.596s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:57.596",
+      "t": 57.596,
+      "frame": 1728,
+      "shot": 36,
+      "shotStart": 56.625,
+      "shotEnd": 58.567,
+      "cutKind": "dissolve",
+      "cutScore": 0.06,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 329804,
+      "sha256": "7cc97edda01c0dd59cda47a0a473ff67ca6b479699dd595d4435a768617df84f"
+    },
+    {
+      "file": "trailer/shot_35_t059.417s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:00:59.417",
+      "t": 59.417,
+      "frame": 1783,
+      "shot": 37,
+      "shotStart": 58.567,
+      "shotEnd": 60.267,
+      "cutKind": "cut",
+      "cutScore": 0.495,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 464921,
+      "sha256": "9173d197a30b5a9e6fda255c2af7be332783c15435e07faf6d342373c8552ebf"
+    },
+    {
+      "file": "trailer/shot_36_t061.150s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:01.150",
+      "t": 61.15,
+      "frame": 1835,
+      "shot": 38,
+      "shotStart": 60.267,
+      "shotEnd": 62.033,
+      "cutKind": "cut",
+      "cutScore": 0.527,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 382245,
+      "sha256": "347141d25bb34b3be83b196ac48fd76f5b9c020a2474c530a5e0c80ec845a88d"
+    },
+    {
+      "file": "trailer/shot_37_t062.317s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:02.317",
+      "t": 62.317,
+      "frame": 1869,
+      "shot": 39,
+      "shotStart": 62.033,
+      "shotEnd": 62.6,
+      "cutKind": "cut",
+      "cutScore": 0.26,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 414782,
+      "sha256": "b0ba1bed3e6384dedbb60afef0a60de2f28730116cf787c9bcd9aaf0f2b5774a"
+    },
+    {
+      "file": "trailer/shot_38_t062.833s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:02.833",
+      "t": 62.833,
+      "frame": 1885,
+      "shot": 40,
+      "shotStart": 62.6,
+      "shotEnd": 63.067,
+      "cutKind": "cut",
+      "cutScore": 0.181,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 430371,
+      "sha256": "7464bc9fe7677444a5d7938e96847c6fae0f9de6096cf9d77789e80f2d764ca1"
+    },
+    {
+      "file": "trailer/shot_39_t064.471s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:04.471",
+      "t": 64.471,
+      "frame": 1934,
+      "shot": 41,
+      "shotStart": 63.067,
+      "shotEnd": 65.875,
+      "cutKind": "cut",
+      "cutScore": 0.217,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 370834,
+      "sha256": "0ebd4b8848737076479e16a0fcb8cc58803b54985906bdb70b02206b7c8b57a4"
+    },
+    {
+      "file": "trailer/shot_40_t067.171s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:07.171",
+      "t": 67.171,
+      "frame": 2015,
+      "shot": 42,
+      "shotStart": 65.875,
+      "shotEnd": 68.467,
+      "cutKind": "dissolve",
+      "cutScore": 0.059,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 322124,
+      "sha256": "48b3d1b5e6b322699fc68d9f5fe7b60a7c8ae30302737bfca09081af97f1c681"
+    },
+    {
+      "file": "trailer/shot_41_t068.883s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:08.883",
+      "t": 68.883,
+      "frame": 2067,
+      "shot": 43,
+      "shotStart": 68.467,
+      "shotEnd": 69.3,
+      "cutKind": "cut",
+      "cutScore": 0.254,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 344321,
+      "sha256": "eca6b8636570b1956471c0f33d611b4225a06bd7eb3fbb07cb44c09e1e1908b6"
+    },
+    {
+      "file": "trailer/shot_42_t069.800s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:09.800",
+      "t": 69.8,
+      "frame": 2094,
+      "shot": 44,
+      "shotStart": 69.3,
+      "shotEnd": 70.3,
+      "cutKind": "cut",
+      "cutScore": 0.254,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 349529,
+      "sha256": "308469f4b0bb860434cc2701380bf44212051bd5b7f8331bfd62b59312cd0776"
+    },
+    {
+      "file": "trailer/shot_43_t071.467s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:11.467",
+      "t": 71.467,
+      "frame": 2144,
+      "shot": 45,
+      "shotStart": 70.3,
+      "shotEnd": 72.633,
+      "cutKind": "cut",
+      "cutScore": 0.355,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 360017,
+      "sha256": "d05658088149284cade69c3b75505b49272762bb4a7130657a263f6e956eeb38"
+    },
+    {
+      "file": "trailer/shot_44_t073.800s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:13.800",
+      "t": 73.8,
+      "frame": 2214,
+      "shot": 46,
+      "shotStart": 72.633,
+      "shotEnd": 74.967,
+      "cutKind": "cut",
+      "cutScore": 0.33,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 349114,
+      "sha256": "8ae33ccc3e179877a0fa16e544de42106564617f9c84ce8384b78cda2757ac9a"
+    },
+    {
+      "file": "trailer/shot_45_t075.533s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:15.533",
+      "t": 75.533,
+      "frame": 2266,
+      "shot": 47,
+      "shotStart": 74.967,
+      "shotEnd": 76.1,
+      "cutKind": "cut",
+      "cutScore": 0.192,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 314752,
+      "sha256": "b357369ec961181cd6f1b5bdfe7bfdc6adc417d7f028d91e0288f86453038a4e"
+    },
+    {
+      "file": "trailer/shot_46_t076.950s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:16.950",
+      "t": 76.95,
+      "frame": 2308,
+      "shot": 48,
+      "shotStart": 76.1,
+      "shotEnd": 77.8,
+      "cutKind": "cut",
+      "cutScore": 0.188,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 355374,
+      "sha256": "6936461ee937a89dbd095be1e764d7f1087e5cfa20d93294b0469acfffc12151"
+    },
+    {
+      "file": "trailer/shot_47_t079.713s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:19.713",
+      "t": 79.713,
+      "frame": 2391,
+      "shot": 49,
+      "shotStart": 77.8,
+      "shotEnd": 81.625,
+      "cutKind": "cut",
+      "cutScore": 0.193,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 272830,
+      "sha256": "077ad4fcf629b680d26bd893a3984c7309ad63150d9e6a753b6f9eb8a2d181d7"
+    },
+    {
+      "file": "trailer/shot_48_t082.250s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:22.250",
+      "t": 82.25,
+      "frame": 2468,
+      "shot": 50,
+      "shotStart": 81.625,
+      "shotEnd": 82.875,
+      "cutKind": "dissolve",
+      "cutScore": 0.115,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 67245,
+      "sha256": "ead8b9b848699210e2e95a21d97362698e6096d155bf30080d39bdb306b370f4"
+    },
+    {
+      "file": "trailer/shot_49_t085.188s.jpg",
+      "kind": "trailer-shot",
+      "sourceUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_master.m3u8?t=1786521311",
+      "variantUrl": "https://video.akamai.steamstatic.com/store_trailers/4164790/678492669/abe066308afd60f5aeca5d88850b4ebd26f2ad17/1786517753/hls_264_0_video.m3u8",
+      "timecode": "00:01:25.188",
+      "t": 85.188,
+      "frame": 2556,
+      "shot": 51,
+      "shotStart": 82.875,
+      "shotEnd": 87.5,
+      "cutKind": "dissolve",
+      "cutScore": 0.245,
+      "width": 1920,
+      "height": 1080,
+      "bytes": 318565,
+      "sha256": "b81690c80fb1946d718f0a04065de15b91feb42d40f780fa7db6c67ee9a93e79"
+    }
+  ]
+}

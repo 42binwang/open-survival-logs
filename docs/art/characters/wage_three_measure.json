@@ -1,0 +1,842 @@
+{
+  "page": "tools/blender/characters/three/view.html",
+  "three": "186",
+  "gl": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)",
+  "camera": {
+    "vfovDefault": 60,
+    "vfovMin": 50,
+    "pitchDeg": 40,
+    "yawDeg": 30,
+    "lookDistance": 10.47,
+    "cutWallHeight": 0.9,
+    "near": 1,
+    "far": 80,
+    "offset": [
+      4.010242659727849,
+      6.729986273418066,
+      6.945944037328786
+    ]
+  },
+  "extensionsRequired": [
+    "EXT_meshopt_compression",
+    "KHR_mesh_quantization",
+    "KHR_texture_basisu"
+  ],
+  "textures": [
+    {
+      "material": "wage_skin",
+      "slot": "map",
+      "width": 512,
+      "height": 512,
+      "compressed": true
+    },
+    {
+      "material": "wage_skin",
+      "slot": "normalMap",
+      "width": 512,
+      "height": 512,
+      "compressed": true
+    },
+    {
+      "material": "wage_skin",
+      "slot": "roughnessMap",
+      "width": 512,
+      "height": 512,
+      "compressed": true
+    },
+    {
+      "material": "wage_skin",
+      "slot": "aoMap",
+      "width": 512,
+      "height": 512,
+      "compressed": true
+    },
+    {
+      "material": "wage_hair",
+      "slot": "map",
+      "width": 256,
+      "height": 256,
+      "compressed": true
+    },
+    {
+      "material": "wage_hair",
+      "slot": "normalMap",
+      "width": 256,
+      "height": 256,
+      "compressed": true
+    },
+    {
+      "material": "wage_hair",
+      "slot": "roughnessMap",
+      "width": 256,
+      "height": 256,
+      "compressed": true
+    },
+    {
+      "material": "wage_hair",
+      "slot": "aoMap",
+      "width": 256,
+      "height": 256,
+      "compressed": true
+    },
+    {
+      "material": "wage_cloth",
+      "slot": "map",
+      "width": 1024,
+      "height": 1024,
+      "compressed": true
+    },
+    {
+      "material": "wage_cloth",
+      "slot": "normalMap",
+      "width": 1024,
+      "height": 1024,
+      "compressed": true
+    },
+    {
+      "material": "wage_cloth",
+      "slot": "roughnessMap",
+      "width": 1024,
+      "height": 1024,
+      "compressed": true
+    },
+    {
+      "material": "wage_cloth",
+      "slot": "aoMap",
+      "width": 1024,
+      "height": 1024,
+      "compressed": true
+    }
+  ],
+  "stills": {
+    "day_60": {
+      "rig": "day",
+      "rigLabel": "day interior (ART.md §4.2: E 0.419, 0.18 card 43)",
+      "fov": 60,
+      "hemisphere": {
+        "skyHex": "#fffcf4",
+        "groundHex": "#b89876",
+        "intensity": 0.4372,
+        "nominalE": 0.419,
+        "scale": 1.0434
+      },
+      "card": {
+        "want": 43,
+        "read": 43,
+        "rgb": [
+          47,
+          42,
+          40
+        ],
+        "iterations": [
+          {
+            "scale": 1,
+            "card": 42
+          },
+          {
+            "scale": 1.0434,
+            "card": 43
+          }
+        ]
+      },
+      "samples": {
+        "hoodie": {
+          "px": [
+            908,
+            456
+          ],
+          "rgb": [
+            37,
+            38,
+            36
+          ],
+          "hex": "#252624",
+          "lum": 37.5
+        },
+        "hoodieBack": {
+          "px": [
+            1010,
+            459
+          ],
+          "rgb": [
+            44,
+            44,
+            46
+          ],
+          "hex": "#2c2c2e",
+          "lum": 44.1
+        },
+        "jeans": {
+          "px": [
+            917,
+            487
+          ],
+          "rgb": [
+            44,
+            44,
+            42
+          ],
+          "hex": "#2c2c2a",
+          "lum": 43.7
+        },
+        "jeansBack": {
+          "px": [
+            1019,
+            493
+          ],
+          "rgb": [
+            40,
+            45,
+            47
+          ],
+          "hex": "#282d2f",
+          "lum": 43.9
+        },
+        "hair": {
+          "px": [
+            908,
+            410
+          ],
+          "rgb": [
+            25,
+            29,
+            33
+          ],
+          "hex": "#191d21",
+          "lum": 28.5
+        },
+        "hairBack": {
+          "px": [
+            1015,
+            411
+          ],
+          "rgb": [
+            22,
+            25,
+            29
+          ],
+          "hex": "#16191d",
+          "lum": 24.9
+        },
+        "face": {
+          "px": [
+            914,
+            425
+          ],
+          "rgb": [
+            75,
+            48,
+            34
+          ],
+          "hex": "#4b3022",
+          "lum": 54
+        },
+        "floor": {
+          "px": [
+            799,
+            540
+          ],
+          "rgb": [
+            74,
+            65,
+            59
+          ],
+          "hex": "#4a413b",
+          "lum": 66.3
+        }
+      },
+      "heightPx": {
+        "idle": 147,
+        "walk": 152
+      },
+      "centre": [
+        960,
+        475
+      ],
+      "file": "wage_three_day_60.png"
+    },
+    "day_50": {
+      "rig": "day",
+      "rigLabel": "day interior (ART.md §4.2: E 0.419, 0.18 card 43)",
+      "fov": 50,
+      "hemisphere": {
+        "skyHex": "#fffcf4",
+        "groundHex": "#b89876",
+        "intensity": 0.4372,
+        "nominalE": 0.419,
+        "scale": 1.0434
+      },
+      "card": {
+        "want": 43,
+        "read": 43,
+        "rgb": [
+          47,
+          42,
+          40
+        ],
+        "iterations": [
+          {
+            "scale": 1,
+            "card": 42
+          },
+          {
+            "scale": 1.0434,
+            "card": 43
+          }
+        ]
+      },
+      "samples": {
+        "hoodie": {
+          "px": [
+            896,
+            436
+          ],
+          "rgb": [
+            37,
+            37,
+            35
+          ],
+          "hex": "#252523",
+          "lum": 37
+        },
+        "hoodieBack": {
+          "px": [
+            1022,
+            440
+          ],
+          "rgb": [
+            43,
+            44,
+            47
+          ],
+          "hex": "#2b2c2f",
+          "lum": 44.4
+        },
+        "jeans": {
+          "px": [
+            907,
+            475
+          ],
+          "rgb": [
+            45,
+            45,
+            44
+          ],
+          "hex": "#2d2d2c",
+          "lum": 44.7
+        },
+        "jeansBack": {
+          "px": [
+            1033,
+            482
+          ],
+          "rgb": [
+            40,
+            45,
+            47
+          ],
+          "hex": "#282d2f",
+          "lum": 44.6
+        },
+        "hair": {
+          "px": [
+            895,
+            379
+          ],
+          "rgb": [
+            24,
+            28,
+            32
+          ],
+          "hex": "#181c20",
+          "lum": 27.4
+        },
+        "hairBack": {
+          "px": [
+            1028,
+            381
+          ],
+          "rgb": [
+            22,
+            25,
+            29
+          ],
+          "hex": "#16191d",
+          "lum": 24.8
+        },
+        "face": {
+          "px": [
+            904,
+            397
+          ],
+          "rgb": [
+            75,
+            47,
+            32
+          ],
+          "hex": "#4b2f20",
+          "lum": 53.3
+        },
+        "floor": {
+          "px": [
+            761,
+            540
+          ],
+          "rgb": [
+            74,
+            65,
+            59
+          ],
+          "hex": "#4a413b",
+          "lum": 66.6
+        }
+      },
+      "heightPx": {
+        "idle": 182,
+        "walk": 188
+      },
+      "centre": [
+        960,
+        459
+      ],
+      "file": "wage_three_day_50.png"
+    },
+    "dusk_60": {
+      "rig": "dusk",
+      "rigLabel": "dusk interior with lamps (ART.md §4.2: E 0.237, 0.18 card 26)",
+      "fov": 60,
+      "hemisphere": {
+        "skyHex": "#fff3db",
+        "groundHex": "#d58e46",
+        "intensity": 0.2518,
+        "nominalE": 0.237,
+        "scale": 1.0626
+      },
+      "card": {
+        "want": 26,
+        "read": 26.3,
+        "rgb": [
+          37,
+          23,
+          18
+        ],
+        "iterations": [
+          {
+            "scale": 1,
+            "card": 25
+          },
+          {
+            "scale": 1.0626,
+            "card": 26.3
+          }
+        ]
+      },
+      "samples": {
+        "hoodie": {
+          "px": [
+            908,
+            456
+          ],
+          "rgb": [
+            29,
+            19,
+            13
+          ],
+          "hex": "#1d130d",
+          "lum": 21.2
+        },
+        "hoodieBack": {
+          "px": [
+            1010,
+            459
+          ],
+          "rgb": [
+            34,
+            24,
+            21
+          ],
+          "hex": "#221815",
+          "lum": 26.3
+        },
+        "jeans": {
+          "px": [
+            917,
+            487
+          ],
+          "rgb": [
+            35,
+            25,
+            17
+          ],
+          "hex": "#231911",
+          "lum": 26.7
+        },
+        "jeansBack": {
+          "px": [
+            1019,
+            493
+          ],
+          "rgb": [
+            31,
+            24,
+            20
+          ],
+          "hex": "#1f1814",
+          "lum": 25.6
+        },
+        "hair": {
+          "px": [
+            908,
+            410
+          ],
+          "rgb": [
+            18,
+            13,
+            13
+          ],
+          "hex": "#120d0d",
+          "lum": 14.3
+        },
+        "hairBack": {
+          "px": [
+            1015,
+            411
+          ],
+          "rgb": [
+            15,
+            11,
+            10
+          ],
+          "hex": "#0f0b0a",
+          "lum": 11.6
+        },
+        "face": {
+          "px": [
+            914,
+            425
+          ],
+          "rgb": [
+            63,
+            28,
+            13
+          ],
+          "hex": "#3f1c0d",
+          "lum": 37.9
+        },
+        "floor": {
+          "px": [
+            799,
+            540
+          ],
+          "rgb": [
+            62,
+            42,
+            33
+          ],
+          "hex": "#3e2a21",
+          "lum": 46.2
+        }
+      },
+      "heightPx": {
+        "idle": 147,
+        "walk": 152
+      },
+      "centre": [
+        960,
+        475
+      ],
+      "file": "wage_three_dusk_60.png"
+    },
+    "dusk_50": {
+      "rig": "dusk",
+      "rigLabel": "dusk interior with lamps (ART.md §4.2: E 0.237, 0.18 card 26)",
+      "fov": 50,
+      "hemisphere": {
+        "skyHex": "#fff3db",
+        "groundHex": "#d58e46",
+        "intensity": 0.2518,
+        "nominalE": 0.237,
+        "scale": 1.0626
+      },
+      "card": {
+        "want": 26,
+        "read": 26.3,
+        "rgb": [
+          37,
+          23,
+          18
+        ],
+        "iterations": [
+          {
+            "scale": 1,
+            "card": 25
+          },
+          {
+            "scale": 1.0626,
+            "card": 26.3
+          }
+        ]
+      },
+      "samples": {
+        "hoodie": {
+          "px": [
+            896,
+            436
+          ],
+          "rgb": [
+            28,
+            19,
+            13
+          ],
+          "hex": "#1c130d",
+          "lum": 20.8
+        },
+        "hoodieBack": {
+          "px": [
+            1022,
+            440
+          ],
+          "rgb": [
+            34,
+            25,
+            22
+          ],
+          "hex": "#221916",
+          "lum": 26.6
+        },
+        "jeans": {
+          "px": [
+            907,
+            475
+          ],
+          "rgb": [
+            36,
+            25,
+            18
+          ],
+          "hex": "#241912",
+          "lum": 27.2
+        },
+        "jeansBack": {
+          "px": [
+            1033,
+            482
+          ],
+          "rgb": [
+            31,
+            25,
+            21
+          ],
+          "hex": "#1f1915",
+          "lum": 26.3
+        },
+        "hair": {
+          "px": [
+            895,
+            379
+          ],
+          "rgb": [
+            17,
+            13,
+            12
+          ],
+          "hex": "#110d0c",
+          "lum": 13.6
+        },
+        "hairBack": {
+          "px": [
+            1028,
+            381
+          ],
+          "rgb": [
+            15,
+            11,
+            10
+          ],
+          "hex": "#0f0b0a",
+          "lum": 11.6
+        },
+        "face": {
+          "px": [
+            904,
+            397
+          ],
+          "rgb": [
+            63,
+            27,
+            12
+          ],
+          "hex": "#3f1b0c",
+          "lum": 37.4
+        },
+        "floor": {
+          "px": [
+            761,
+            540
+          ],
+          "rgb": [
+            62,
+            42,
+            33
+          ],
+          "hex": "#3e2a21",
+          "lum": 46.5
+        }
+      },
+      "heightPx": {
+        "idle": 182,
+        "walk": 188
+      },
+      "centre": [
+        960,
+        459
+      ],
+      "file": "wage_three_dusk_50.png"
+    }
+  },
+  "clips": {
+    "idle": {
+      "duration": 6.833333492279053,
+      "extras": {
+        "loop": true,
+        "source": "CMU 82_08",
+        "title": "Stand still (then a casual walk forward)",
+        "durationSec": 6.8333,
+        "rootMotion": {
+          "mode": "pin",
+          "forward": [
+            0,
+            0,
+            1
+          ],
+          "distanceM": 0,
+          "speedMps": 0,
+          "pelvisPathSpeedMps": 0,
+          "yawDegPerLoop": 0
+        },
+        "soleSlideMps": {
+          "medianMps": 0,
+          "p95Mps": 0.0003,
+          "lowestSoleM": 0
+        },
+        "loopContinuity": {
+          "worstBone": "foot_l",
+          "wrapRadPerS2": 15.1,
+          "typicalRadPerS2": 11,
+          "ratio": 1.37
+        }
+      }
+    },
+    "run": {
+      "duration": 0.6666666865348816,
+      "extras": {
+        "loop": true,
+        "source": "CMU 16_46",
+        "title": "Run",
+        "durationSec": 0.6667,
+        "rootMotion": {
+          "mode": "extract",
+          "forward": [
+            0,
+            0,
+            1
+          ],
+          "distanceM": 2.9483,
+          "speedMps": 4.4225,
+          "pelvisPathSpeedMps": 3.9624,
+          "yawDegPerLoop": 0.16
+        },
+        "stride": {
+          "cycleSec": 0.6667,
+          "strideM": 2.9483,
+          "stepsPerCycle": 2,
+          "cadenceStepsPerMin": 180
+        },
+        "soleSlideMps": {
+          "medianMps": 0.179,
+          "p95Mps": 0.6657,
+          "lowestSoleM": -0.0089
+        },
+        "loopContinuity": {
+          "worstBone": "thigh_r",
+          "wrapRadPerS2": 159.7,
+          "typicalRadPerS2": 101.6,
+          "ratio": 1.573
+        }
+      }
+    },
+    "walk": {
+      "duration": 1.1166666746139526,
+      "extras": {
+        "loop": true,
+        "source": "CMU 35_01",
+        "title": "Walk",
+        "durationSec": 1.1167,
+        "rootMotion": {
+          "mode": "extract",
+          "forward": [
+            0,
+            0,
+            1
+          ],
+          "distanceM": 1.3368,
+          "speedMps": 1.1971,
+          "pelvisPathSpeedMps": 1.2428,
+          "yawDegPerLoop": -0.3
+        },
+        "stride": {
+          "cycleSec": 1.1167,
+          "strideM": 1.3368,
+          "stepsPerCycle": 2,
+          "cadenceStepsPerMin": 107.5
+        },
+        "soleSlideMps": {
+          "medianMps": 0.0989,
+          "p95Mps": 0.7064,
+          "lowestSoleM": -0.0079
+        },
+        "loopContinuity": {
+          "worstBone": "head",
+          "wrapRadPerS2": 19.9,
+          "typicalRadPerS2": 11.8,
+          "ratio": 1.68
+        }
+      }
+    }
+  },
+  "locomotion": {
+    "simSpeedMps": 5,
+    "speedMultipliers": {
+      "encumbered": 0.7,
+      "caffeine": 1.25
+    },
+    "moveClip": "run",
+    "idleClip": "idle",
+    "rate": "simSpeedMps / clip.extras.rootMotion.speedMps",
+    "rateClamp": [
+      0.75,
+      1.35
+    ],
+    "crossfadeSec": 0.2,
+    "clipSpeedMps": 4.4225,
+    "strideM": 2.9483,
+    "cycleSec": 0.6667,
+    "ratesAt": {
+      "normal": {
+        "simSpeedMps": 5,
+        "rate": 1.131,
+        "clamped": false
+      },
+      "encumbered": {
+        "simSpeedMps": 3.5,
+        "rate": 0.791,
+        "clamped": false
+      },
+      "caffeine": {
+        "simSpeedMps": 6.25,
+        "rate": 1.35,
+        "clamped": true
+      }
+    }
+  }
+}

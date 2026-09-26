@@ -1,0 +1,2132 @@
+{
+  "$comment": [
+    "Material graph for the library. build.py runs each node through fixed stages in this order:",
+    "load -> tile (rescale | repeat | crop+seam repair, to targets.tileM at the tier's texel density, docs/ART.md \u00a73) -> masks ->",
+    "albedo (flatten low frequencies, neutralize, fit the family's ART.md \u00a77.2 median band, soft-limit to the hard limits) ->",
+    "roughness -> normal -> ao -> metal -> seam heal -> mips (linear-light base color, renormalized normals with Toksvig",
+    "roughness) -> KTX2 -> checks -> library.json. 'target' is the median linear luminance of the untinted base color.",
+    "Units: meters. Colors: sRGB hex. 'rooms' use the room ids of src/content/homes.js (apartment)."
+  ],
+  "materials": [
+    {
+      "id": "plaster_painted",
+      "name": "Painted plaster",
+      "family": "plaster_paint",
+      "tier": "regular",
+      "rooms": [
+        "living",
+        "bed",
+        "kitchen",
+        "bath",
+        "store",
+        "bed2"
+      ],
+      "source": "ambientcg/PaintedPlaster017@2K-PNG",
+      "sizeM": [
+        1.0,
+        1.0
+      ],
+      "sizeNote": "ambientCG publishes no physical size for this scan; 1.0 m estimated from the roller-texture scale",
+      "tiling": {
+        "mode": "rescale",
+        "tileM": 1
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.12,
+          "strength": 0.7
+        },
+        "desaturate": 1.0,
+        "hue": "#efe8d6",
+        "target": 0.58,
+        "contrast": 1.2
+      },
+      "roughness": {
+        "range": [
+          0.86,
+          0.94
+        ]
+      },
+      "normal": {
+        "strength": 0.85
+      },
+      "ao": {
+        "strength": 0.7,
+        "floor": 0.55
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "white",
+        "presets": {
+          "white": "#f5f2ec",
+          "warm_white": "#efe6d6",
+          "greige": "#d7cdbd",
+          "sage": "#bac4aa",
+          "dusty_blue": "#afbccb",
+          "terracotta": "#cf9a7d",
+          "nicotine": "#e2d2a4"
+        },
+        "jitter": {
+          "hue": 0.008,
+          "saturation": 0.03,
+          "value": 0.025
+        }
+      },
+      "variation": {
+        "value": 0.05,
+        "hue": 0.004,
+        "roughness": 0.05,
+        "grime": 0.25
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.35,
+          "width": 0.3,
+          "breakup": 0.7,
+          "exposed": {
+            "baseColor": "#d8d1c3",
+            "roughness": 0.9,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.2,
+          "roughness": 0.05
+        }
+      },
+      "dirt": {
+        "color": "#5b5042",
+        "roughness": 0.9,
+        "amount": 0.15,
+        "gravity": {
+          "up": 0.1,
+          "bottomM": 0.25,
+          "falloff": 0.6
+        },
+        "cavity": 0.3,
+        "grime": 0.3
+      }
+    },
+    {
+      "id": "wallpaper_woodchip",
+      "name": "Woodchip wallpaper",
+      "family": "plaster_paint",
+      "tier": "regular",
+      "rooms": [
+        "living",
+        "bed",
+        "bed2"
+      ],
+      "source": "ambientcg/Wallpaper001A@2K-PNG",
+      "sizeM": [
+        1.0,
+        1.0
+      ],
+      "sizeNote": "procedural source without a physical size; 1.0 m gives 2-5 mm wood chips, typical of painted woodchip paper",
+      "tiling": {
+        "mode": "rescale",
+        "tileM": 1
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.12,
+          "strength": 0.8
+        },
+        "desaturate": 1.0,
+        "hue": "#efe9da",
+        "target": 0.55,
+        "contrast": 1.5
+      },
+      "roughness": {
+        "range": [
+          0.86,
+          0.94
+        ]
+      },
+      "normal": {
+        "strength": 1.0
+      },
+      "ao": {
+        "strength": 0.8,
+        "floor": 0.5
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "white",
+        "presets": {
+          "white": "#f6f3ec",
+          "cream": "#efe4cc",
+          "pale_green": "#d3dcc4",
+          "pale_pink": "#ecd6d0",
+          "grey": "#c9c9c5",
+          "nicotine": "#e0cd9c"
+        },
+        "jitter": {
+          "hue": 0.008,
+          "saturation": 0.03,
+          "value": 0.03
+        }
+      },
+      "variation": {
+        "value": 0.05,
+        "hue": 0.005,
+        "roughness": 0.04,
+        "grime": 0.3
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.4,
+          "width": 0.35,
+          "breakup": 0.8,
+          "exposed": {
+            "baseColor": "#d9cdb2",
+            "roughness": 0.92,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.25,
+          "roughness": 0.03
+        }
+      },
+      "dirt": {
+        "color": "#5e513f",
+        "roughness": 0.92,
+        "amount": 0.2,
+        "gravity": {
+          "up": 0.1,
+          "bottomM": 0.3,
+          "falloff": 0.6
+        },
+        "cavity": 0.4,
+        "grime": 0.35
+      },
+      "familyNote": "woodchip paper painted like the wall: ART.md \u00a77.2 'plaster walls' is the on-screen wall family"
+    },
+    {
+      "id": "wood_floor_oak",
+      "name": "Oak plank floor (varnished)",
+      "family": "wood_floor",
+      "tier": "regular",
+      "rooms": [
+        "living",
+        "bed"
+      ],
+      "source": "polyhaven/oak_wood_planks@2k",
+      "tiling": {
+        "mode": "planks",
+        "tileM": 2,
+        "plankM": 0.092,
+        "lengthM": [
+          0.45,
+          1.15
+        ],
+        "staggerM": 0.2,
+        "toneJitter": 0.04,
+        "knots": {
+          "k": 3.0
+        }
+      },
+      "grain": "u",
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.25,
+          "strength": 0.6
+        },
+        "target": 0.325,
+        "contrast": 0.85,
+        "tame": {
+          "sigmaM": [
+            0.006,
+            0.08
+          ],
+          "k": 2.5
+        }
+      },
+      "roughness": {
+        "range": [
+          0.47,
+          0.63
+        ]
+      },
+      "normal": {
+        "strength": 1.6
+      },
+      "ao": {
+        "strength": 1.0,
+        "floor": 0.35
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "natural",
+        "presets": {
+          "natural": "#ffffff",
+          "honey": "#f3dfbd",
+          "smoked": "#b8a18a",
+          "whitewash": "#fbf7f0"
+        },
+        "jitter": {
+          "hue": 0.01,
+          "saturation": 0.05,
+          "value": 0.05
+        },
+        "presetUse": {
+          "smoked": [
+            "furniture",
+            "accent"
+          ]
+        }
+      },
+      "variation": {
+        "value": 0.07,
+        "hue": 0.008,
+        "roughness": 0.08,
+        "grime": 0.3
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.3,
+          "width": 0.25,
+          "breakup": 0.6,
+          "exposed": {
+            "baseColor": "#c9a67c",
+            "roughness": 0.75,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.35,
+          "roughness": 0.1
+        }
+      },
+      "dirt": {
+        "color": "#4a3f33",
+        "roughness": 0.85,
+        "amount": 0.15,
+        "gravity": {
+          "up": 0.2,
+          "bottomM": 0.0,
+          "falloff": 0.5
+        },
+        "cavity": 0.6,
+        "grime": 0.35
+      },
+      "presetUseNote": "smoked has a median near 0.11: ART.md \u00a77.2 stained accents (0.10-0.20), below the floor band 0.25-0.39"
+    },
+    {
+      "id": "wood_floor_pine",
+      "name": "Stained pine plank floor",
+      "family": "wood_floor",
+      "tier": "regular",
+      "rooms": [
+        "bed2",
+        "store"
+      ],
+      "source": "polyhaven/stained_pine@2k",
+      "tiling": {
+        "mode": "planks",
+        "tileM": 2,
+        "plankM": 0.12,
+        "lengthM": [
+          0.4,
+          0.85
+        ],
+        "staggerM": 0.18,
+        "toneJitter": 0.04,
+        "knots": {
+          "k": 3.0
+        }
+      },
+      "grain": "u",
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.25,
+          "strength": 0.5
+        },
+        "desaturate": 0.6,
+        "target": 0.33,
+        "hue": "#c49058",
+        "hueNote": "lacquered pine honey-brown: the scan is a dark red stain, and lifted to the floor band its red reads pink"
+      },
+      "roughness": {
+        "derive": {
+          "from": [
+            "albedo",
+            "cavity"
+          ],
+          "base": 0.55,
+          "albedo": -0.1,
+          "cavity": 0.25
+        },
+        "range": [
+          0.47,
+          0.63
+        ]
+      },
+      "normal": {
+        "strength": 1.0
+      },
+      "ao": {
+        "derive": {
+          "sigmaM": 0.004,
+          "strength": 0.7
+        },
+        "floor": 0.4
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "natural",
+        "presets": {
+          "natural": "#ffffff",
+          "faded": "#f7efe6",
+          "dark": "#eee3d7"
+        },
+        "jitter": {
+          "hue": 0.01,
+          "saturation": 0.05,
+          "value": 0.05
+        }
+      },
+      "variation": {
+        "value": 0.07,
+        "hue": 0.008,
+        "roughness": 0.08,
+        "grime": 0.35
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.35,
+          "width": 0.25,
+          "breakup": 0.6,
+          "exposed": {
+            "baseColor": "#b98d62",
+            "roughness": 0.78,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.35,
+          "roughness": 0.1
+        }
+      },
+      "dirt": {
+        "color": "#46392c",
+        "roughness": 0.85,
+        "amount": 0.2,
+        "gravity": {
+          "up": 0.2,
+          "bottomM": 0.0,
+          "falloff": 0.5
+        },
+        "cavity": 0.6,
+        "grime": 0.4
+      },
+      "familyNote": "a floor (rooms bed2, store): ART.md \u00a77.2 wood floors 0.25-0.39, not the 0.10-0.20 stained-accent band; the faded and dark presets stay inside the floor band"
+    },
+    {
+      "id": "tile_ceramic",
+      "name": "Glazed ceramic floor tile, 25 cm",
+      "family": "tile_ceramic",
+      "tier": "regular",
+      "rooms": [
+        "kitchen",
+        "bath"
+      ],
+      "source": "polyhaven/tiled_floor_001@2k",
+      "tiling": {
+        "mode": "grid",
+        "tileM": 1,
+        "cells": 5,
+        "keep": 4
+      },
+      "features": {
+        "tileSizeM": 0.25
+      },
+      "masks": {
+        "grout": {
+          "from": "height",
+          "low": 0.1,
+          "high": 0.5
+        }
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.1,
+          "strength": 0.35
+        },
+        "desaturate": 0.9,
+        "target": 0.72,
+        "contrast": 0.5,
+        "grout": {
+          "target": 0.35,
+          "desaturate": 1.0,
+          "rimToFace": true
+        },
+        "tame": {
+          "sigmaM": [
+            0.002,
+            0.03
+          ],
+          "k": 1.5
+        }
+      },
+      "roughness": {
+        "range": [
+          0.17,
+          0.27
+        ],
+        "grout": [
+          0.84,
+          0.94
+        ]
+      },
+      "normal": {
+        "strength": 1.0
+      },
+      "ao": {
+        "strength": 1.0,
+        "floor": 0.4
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "alpha",
+        "default": "white",
+        "presets": {
+          "white": "#f7f6f2",
+          "cream": "#efe7d2",
+          "mint": "#c9ddd1",
+          "blue": "#a4bbce",
+          "terracotta": "#c98a6a",
+          "charcoal": "#5f6163"
+        },
+        "secondary": {
+          "name": "grout",
+          "default": "grey",
+          "presets": {
+            "grey": "#ffffff",
+            "white": "#fbfaf6",
+            "dark": "#77736e"
+          }
+        },
+        "jitter": {
+          "hue": 0.005,
+          "saturation": 0.02,
+          "value": 0.02
+        }
+      },
+      "variation": {
+        "value": 0.03,
+        "hue": 0.003,
+        "roughness": 0.04,
+        "grime": 0.3
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.25,
+          "width": 0.2,
+          "breakup": 0.8,
+          "exposed": {
+            "baseColor": "#bfae99",
+            "roughness": 0.8,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.3,
+          "roughness": 0.1
+        }
+      },
+      "dirt": {
+        "color": "#4f463b",
+        "roughness": 0.85,
+        "amount": 0.15,
+        "gravity": {
+          "up": 0.2,
+          "bottomM": 0.2,
+          "falloff": 0.5
+        },
+        "cavity": 0.7,
+        "grime": 0.3
+      }
+    },
+    {
+      "id": "grout",
+      "name": "Cement grout",
+      "family": "grout",
+      "tier": "regular",
+      "rooms": [
+        "kitchen",
+        "bath"
+      ],
+      "source": "polyhaven/scuffed_cement@2k",
+      "tiling": {
+        "mode": "rescale",
+        "tileM": 2
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.08,
+          "strength": 0.85
+        },
+        "desaturate": 0.85,
+        "target": 0.38,
+        "contrast": 0.6
+      },
+      "roughness": {
+        "range": [
+          0.82,
+          0.93
+        ]
+      },
+      "normal": {
+        "strength": 0.6
+      },
+      "ao": {
+        "strength": 0.7,
+        "floor": 0.55
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "grey",
+        "presets": {
+          "grey": "#ffffff",
+          "white": "#f7f5f0",
+          "sand": "#e6d8bf",
+          "dark": "#7a7671"
+        },
+        "jitter": {
+          "hue": 0.004,
+          "saturation": 0.02,
+          "value": 0.03
+        }
+      },
+      "variation": {
+        "value": 0.06,
+        "hue": 0.004,
+        "roughness": 0.04,
+        "grime": 0.4
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.2,
+          "width": 0.3,
+          "breakup": 0.8,
+          "exposed": {
+            "baseColor": "#b7ae9f",
+            "roughness": 0.95,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.3,
+          "roughness": 0.02
+        }
+      },
+      "dirt": {
+        "color": "#4a4136",
+        "roughness": 0.9,
+        "amount": 0.3,
+        "gravity": {
+          "up": 0.2,
+          "bottomM": 0.2,
+          "falloff": 0.5
+        },
+        "cavity": 0.6,
+        "grime": 0.5
+      }
+    },
+    {
+      "id": "concrete",
+      "name": "Cast concrete floor",
+      "family": "concrete",
+      "tier": "regular",
+      "rooms": [
+        "gen",
+        "cellar",
+        "terrace"
+      ],
+      "source": "polyhaven/concrete_floor_02@2k",
+      "tiling": {
+        "mode": "rescale",
+        "tileM": 2
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.1,
+          "strength": 0.85
+        },
+        "desaturate": 0.6,
+        "target": 0.27,
+        "contrast": 0.7
+      },
+      "roughness": {
+        "range": [
+          0.72,
+          0.88
+        ]
+      },
+      "normal": {
+        "strength": 1.0
+      },
+      "ao": {
+        "strength": 1.0,
+        "floor": 0.4
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "raw",
+        "presets": {
+          "raw": "#ffffff",
+          "warm": "#f1e7d8",
+          "cool": "#e3e8ec",
+          "sealed_grey": "#c9cccd"
+        },
+        "jitter": {
+          "hue": 0.005,
+          "saturation": 0.03,
+          "value": 0.05
+        }
+      },
+      "variation": {
+        "value": 0.1,
+        "hue": 0.006,
+        "roughness": 0.08,
+        "grime": 0.5
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.4,
+          "width": 0.3,
+          "breakup": 0.8,
+          "exposed": {
+            "baseColor": "#b3aa9b",
+            "roughness": 0.95,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.35,
+          "roughness": 0.03
+        }
+      },
+      "dirt": {
+        "color": "#3f372d",
+        "roughness": 0.9,
+        "amount": 0.35,
+        "gravity": {
+          "up": 0.25,
+          "bottomM": 0.3,
+          "falloff": 0.5
+        },
+        "cavity": 0.6,
+        "grime": 0.6
+      }
+    },
+    {
+      "id": "fabric_sofa",
+      "name": "Upholstery fabric (poly-wool herringbone)",
+      "family": "fabric",
+      "tier": "regular",
+      "rooms": [
+        "living",
+        "bed"
+      ],
+      "source": "polyhaven/poly_wool_herringbone@2k",
+      "tiling": {
+        "mode": "synth",
+        "tileM": 1
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.05,
+          "strength": 0.8
+        },
+        "desaturate": 1.0,
+        "target": 0.4
+      },
+      "roughness": {
+        "range": [
+          0.87,
+          0.96
+        ],
+        "pct": [
+          5,
+          95
+        ]
+      },
+      "normal": {
+        "strength": 0.9
+      },
+      "ao": {
+        "strength": 0.8,
+        "floor": 0.5
+      },
+      "metal": 0,
+      "pbr": {
+        "sheen": {
+          "roughness": 0.55,
+          "colorFromTint": 0.6
+        }
+      },
+      "tint": {
+        "mask": "full",
+        "default": "grey",
+        "presets": {
+          "grey": "#cacaca",
+          "charcoal": "#6d6f72",
+          "navy": "#4d5a74",
+          "olive": "#7d7c58",
+          "rust": "#a8654a",
+          "mustard": "#c69d45",
+          "beige": "#cdbfa2"
+        },
+        "jitter": {
+          "hue": 0.01,
+          "saturation": 0.04,
+          "value": 0.04
+        }
+      },
+      "variation": {
+        "value": 0.06,
+        "hue": 0.006,
+        "roughness": 0.03,
+        "grime": 0.35
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.35,
+          "width": 0.35,
+          "breakup": 0.7,
+          "exposed": {
+            "baseColor": "#b9b6b0",
+            "roughness": 0.97,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.3,
+          "roughness": 0.02
+        }
+      },
+      "dirt": {
+        "color": "#4d4336",
+        "roughness": 0.95,
+        "amount": 0.15,
+        "gravity": {
+          "up": 0.3,
+          "bottomM": 0.15,
+          "falloff": 0.5
+        },
+        "cavity": 0.5,
+        "grime": 0.4
+      },
+      "detail": {
+        "sizeM": 0.1,
+        "strength": 1.0,
+        "fadeM": [
+          1.0,
+          3.0
+        ]
+      }
+    },
+    {
+      "id": "fabric_curtain",
+      "name": "Curtain fabric (linen-look loose weave)",
+      "family": "fabric",
+      "tier": "regular",
+      "rooms": [
+        "living",
+        "bed",
+        "bed2"
+      ],
+      "source": "polyhaven/hessian_380@2k",
+      "sourceNote": "fine hessian weave scan, neutralized for tinting; chosen over finer weaves whose structure vanishes at 512 px/m",
+      "tiling": {
+        "mode": "synth",
+        "tileM": 1
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.05,
+          "strength": 0.3
+        },
+        "desaturate": 1.0,
+        "target": 0.4,
+        "contrast": 1.6
+      },
+      "roughness": {
+        "range": [
+          0.87,
+          0.96
+        ]
+      },
+      "normal": {
+        "strength": 0.8
+      },
+      "ao": {
+        "strength": 0.6,
+        "floor": 0.6
+      },
+      "metal": 0,
+      "pbr": {
+        "sheen": {
+          "roughness": 0.6,
+          "colorFromTint": 0.5
+        },
+        "diffuseTransmission": 0.35,
+        "doubleSided": true
+      },
+      "tint": {
+        "mask": "full",
+        "default": "cream",
+        "presets": {
+          "cream": "#f0e7d4",
+          "sage": "#bac6a8",
+          "grey": "#bfbfbf",
+          "blue": "#a3b3c8",
+          "rose": "#dbada7",
+          "ochre": "#d6b173"
+        },
+        "jitter": {
+          "hue": 0.01,
+          "saturation": 0.04,
+          "value": 0.04
+        }
+      },
+      "variation": {
+        "value": 0.05,
+        "hue": 0.005,
+        "roughness": 0.03,
+        "grime": 0.3
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.25,
+          "width": 0.3,
+          "breakup": 0.8,
+          "exposed": {
+            "baseColor": "#d2cdc2",
+            "roughness": 0.95,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.25,
+          "roughness": 0.02
+        }
+      },
+      "dirt": {
+        "color": "#5a4f40",
+        "roughness": 0.95,
+        "amount": 0.2,
+        "gravity": {
+          "up": 0.2,
+          "bottomM": 0.3,
+          "falloff": 0.5
+        },
+        "cavity": 0.3,
+        "grime": 0.4
+      },
+      "detail": {
+        "sizeM": 0.1,
+        "strength": 1.0,
+        "fadeM": [
+          1.0,
+          3.0
+        ]
+      }
+    },
+    {
+      "id": "leather",
+      "name": "Upholstery leather",
+      "family": "leather",
+      "tier": "regular",
+      "rooms": [
+        "living"
+      ],
+      "source": "polyhaven/leather_white@2k",
+      "tiling": {
+        "mode": "synth",
+        "tileM": 1,
+        "blockPx": 32,
+        "overlapFrac": 0.5,
+        "jitter": 0.35,
+        "feather": 3,
+        "candidates": 128,
+        "equalize": {
+          "sigmaM": 0.03,
+          "amount": 0.8
+        }
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.05,
+          "strength": 0.4
+        },
+        "desaturate": 1.0,
+        "target": 0.26,
+        "contrast": 2.0
+      },
+      "roughness": {
+        "range": [
+          0.42,
+          0.58
+        ]
+      },
+      "normal": {
+        "strength": 1.0
+      },
+      "ao": {
+        "strength": 0.8,
+        "floor": 0.5
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "cognac",
+        "presets": {
+          "cognac": "#a0633d",
+          "brown": "#74503a",
+          "black": "#4d4845",
+          "oxblood": "#743633",
+          "tan": "#bd9064",
+          "cream": "#eee8dc"
+        },
+        "jitter": {
+          "hue": 0.008,
+          "saturation": 0.04,
+          "value": 0.05
+        }
+      },
+      "variation": {
+        "value": 0.06,
+        "hue": 0.006,
+        "roughness": 0.06,
+        "grime": 0.3
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.45,
+          "width": 0.35,
+          "breakup": 0.6,
+          "exposed": {
+            "baseColor": "#c9b39a",
+            "roughness": 0.34,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.35,
+          "roughness": 0.1
+        }
+      },
+      "dirt": {
+        "color": "#3d342b",
+        "roughness": 0.75,
+        "amount": 0.15,
+        "gravity": {
+          "up": 0.25,
+          "bottomM": 0.1,
+          "falloff": 0.5
+        },
+        "cavity": 0.6,
+        "grime": 0.35
+      },
+      "detail": {
+        "sizeM": 0.1,
+        "strength": 1.0,
+        "fadeM": [
+          1.0,
+          3.0
+        ]
+      }
+    },
+    {
+      "id": "laminate",
+      "name": "Wood-print laminate (furniture board)",
+      "family": "laminate",
+      "tier": "regular",
+      "rooms": [
+        "living",
+        "bed",
+        "kitchen",
+        "bath",
+        "bed2",
+        "store"
+      ],
+      "source": "polyhaven/oak_veneer_05@2k",
+      "sourceNote": "oak veneer scan used as the printed decor layer; laminate relief and gloss are authored here (flattened normal, narrow satin roughness)",
+      "tiling": {
+        "mode": "rescale",
+        "tileM": 1
+      },
+      "grain": "u",
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.2,
+          "strength": 0.6
+        },
+        "desaturate": 0.3,
+        "target": 0.3
+      },
+      "roughness": {
+        "range": [
+          0.47,
+          0.6
+        ]
+      },
+      "normal": {
+        "strength": 0.2
+      },
+      "ao": {
+        "strength": 0.3,
+        "floor": 0.85
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "natural",
+        "presets": {
+          "natural": "#ffffff",
+          "walnut": "#9e7d62",
+          "ash_grey": "#c9c4bc",
+          "cherry": "#d59a7c"
+        },
+        "jitter": {
+          "hue": 0.006,
+          "saturation": 0.03,
+          "value": 0.03
+        }
+      },
+      "variation": {
+        "value": 0.04,
+        "hue": 0.004,
+        "roughness": 0.04,
+        "grime": 0.25
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.3,
+          "width": 0.2,
+          "breakup": 0.8,
+          "exposed": {
+            "baseColor": "#b69c7c",
+            "roughness": 0.9,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.2,
+          "roughness": 0.05
+        }
+      },
+      "dirt": {
+        "color": "#4b4136",
+        "roughness": 0.8,
+        "amount": 0.15,
+        "gravity": {
+          "up": 0.3,
+          "bottomM": 0.1,
+          "falloff": 0.5
+        },
+        "cavity": 0.4,
+        "grime": 0.3
+      }
+    },
+    {
+      "id": "metal_brushed",
+      "name": "Brushed stainless steel",
+      "family": "metal_bare",
+      "tier": "regular",
+      "rooms": [
+        "kitchen",
+        "bath"
+      ],
+      "source": "ambientcg/Metal009@2K-PNG",
+      "sizeM": [
+        1.0,
+        1.0
+      ],
+      "sizeNote": "procedural source without a physical size; 1.0 m keeps the brush streaks at sub-millimetre pitch",
+      "tiling": {
+        "mode": "rescale",
+        "tileM": 1
+      },
+      "grain": "u",
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.1,
+          "strength": 0.5
+        },
+        "desaturate": 0.85,
+        "hue": "#e9e7e3",
+        "target": 0.62,
+        "contrast": 0.5
+      },
+      "roughness": {
+        "range": [
+          0.24,
+          0.38
+        ]
+      },
+      "normal": {
+        "strength": 0.8
+      },
+      "ao": {
+        "strength": 0.3,
+        "floor": 0.85
+      },
+      "metal": 1,
+      "pbr": {
+        "anisotropy": {
+          "strength": 0.55,
+          "rotation": 0.0,
+          "axis": "u"
+        }
+      },
+      "tint": {
+        "mask": "full",
+        "default": "steel",
+        "presets": {
+          "steel": "#ffffff",
+          "aluminium": "#fbfcff"
+        },
+        "jitter": {
+          "hue": 0.003,
+          "saturation": 0.01,
+          "value": 0.02
+        }
+      },
+      "variation": {
+        "value": 0.03,
+        "hue": 0.002,
+        "roughness": 0.07,
+        "grime": 0.35
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.3,
+          "width": 0.25,
+          "breakup": 0.5,
+          "exposed": {
+            "baseColor": "#d9d8d4",
+            "roughness": 0.16,
+            "metalness": 1
+          }
+        },
+        "cavity": {
+          "darken": 0.3,
+          "roughness": 0.15
+        }
+      },
+      "dirt": {
+        "color": "#3e3a34",
+        "roughness": 0.7,
+        "amount": 0.15,
+        "gravity": {
+          "up": 0.25,
+          "bottomM": 0.1,
+          "falloff": 0.5
+        },
+        "cavity": 0.5,
+        "grime": 0.35
+      },
+      "tintNote": "brass and copper removed: tints of steel cannot reach their F0 (0.72-0.78); they would be materials of their own"
+    },
+    {
+      "id": "metal_painted",
+      "name": "Painted sheet metal",
+      "family": "metal_painted",
+      "tier": "regular",
+      "rooms": [
+        "gen",
+        "cellar",
+        "kitchen",
+        "store"
+      ],
+      "source": "polyhaven/green_metal_rust@2k",
+      "tiling": {
+        "mode": "rescale",
+        "tileM": 1
+      },
+      "sourceNote": "the scan has no bare-metal scratches (its marks are darker paint drips and rust holes), so bare steel only appears through curvature wear",
+      "masks": {
+        "paint": {
+          "from": "albedo",
+          "rustHue": [
+            0.02,
+            0.08
+          ],
+          "harden": [
+            0.35,
+            0.65
+          ]
+        }
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.15,
+          "strength": 0.7
+        },
+        "desaturate": 1.0,
+        "target": 0.46,
+        "tame": {
+          "sigmaM": [
+            0.004,
+            0.12
+          ],
+          "k": 1.6
+        },
+        "rust": {
+          "baseColor": "#5e3a28"
+        },
+        "rustNote": "iron oxide, linear albedo about 0.05-0.1; the calibrated scan left rust holes pale grey, brighter than the tinted paint"
+      },
+      "roughness": {
+        "range": [
+          0.38,
+          0.56
+        ],
+        "rust": 0.8
+      },
+      "normal": {
+        "strength": 1.0
+      },
+      "ao": {
+        "strength": 0.6,
+        "floor": 0.6
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "alpha",
+        "default": "green",
+        "presets": {
+          "green": "#6a8566",
+          "white": "#efefeb",
+          "grey": "#a2a7aa",
+          "blue": "#56708c",
+          "red": "#a2443a",
+          "cream": "#e6ddc4",
+          "black": "#3f4041"
+        },
+        "jitter": {
+          "hue": 0.008,
+          "saturation": 0.04,
+          "value": 0.04
+        }
+      },
+      "variation": {
+        "value": 0.05,
+        "hue": 0.005,
+        "roughness": 0.06,
+        "grime": 0.45
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.4,
+          "width": 0.25,
+          "breakup": 0.8,
+          "exposed": {
+            "baseColor": "#b9b8b4",
+            "roughness": 0.38,
+            "metalness": 1
+          }
+        },
+        "cavity": {
+          "darken": 0.3,
+          "roughness": 0.1
+        }
+      },
+      "dirt": {
+        "color": "#4a3a2c",
+        "roughness": 0.85,
+        "amount": 0.25,
+        "gravity": {
+          "up": 0.25,
+          "bottomM": 0.2,
+          "falloff": 0.5
+        },
+        "cavity": 0.6,
+        "grime": 0.5
+      }
+    },
+    {
+      "id": "glass",
+      "name": "Window glass (with smudges)",
+      "family": "glass",
+      "tier": "regular",
+      "rooms": [
+        "living",
+        "bed",
+        "kitchen",
+        "bath",
+        "bed2"
+      ],
+      "source": "ambientcg/SurfaceImperfections013@2K-PNG",
+      "sizeM": [
+        1.0,
+        1.0
+      ],
+      "sizeNote": "imperfection overlay without a physical size; 1.0 m sizes the smudges like hand marks",
+      "tiling": {
+        "mode": "rescale",
+        "tileM": 1
+      },
+      "albedo": {
+        "constant": "#f4f6f5",
+        "smudge": 0.3
+      },
+      "roughness": {
+        "range": [
+          0.06,
+          0.2
+        ],
+        "from": "smudge"
+      },
+      "normal": {
+        "strength": 0.08
+      },
+      "ao": {
+        "constant": 1.0
+      },
+      "metal": 0,
+      "pbr": {
+        "transmission": 1.0,
+        "ior": 1.52,
+        "thicknessM": 0.004,
+        "attenuationColor": "#e3efe9",
+        "attenuationDistanceM": 0.6,
+        "opacityFallback": 0.18,
+        "doubleSided": true
+      },
+      "tint": {
+        "mask": "full",
+        "default": "clear",
+        "presets": {
+          "clear": "#ffffff",
+          "frosted": "#f2f2f2",
+          "tinted": "#dfe6e2"
+        },
+        "jitter": {
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      },
+      "variation": {
+        "value": 0.0,
+        "hue": 0.0,
+        "roughness": 0.06,
+        "grime": 0.3
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.0,
+          "width": 0.2,
+          "breakup": 0.5,
+          "exposed": {
+            "baseColor": "#f4f6f5",
+            "roughness": 0.2,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.0,
+          "roughness": 0.1
+        }
+      },
+      "dirt": {
+        "color": "#6b6252",
+        "roughness": 0.6,
+        "amount": 0.2,
+        "gravity": {
+          "up": 0.2,
+          "bottomM": 0.15,
+          "falloff": 0.4
+        },
+        "cavity": 0.3,
+        "grime": 0.4
+      }
+    },
+    {
+      "id": "rubber",
+      "name": "Black rubber",
+      "family": "rubber",
+      "tier": "regular",
+      "rooms": [
+        "gen",
+        "cellar",
+        "kitchen"
+      ],
+      "source": "ambientcg/Rubber004@2K-PNG",
+      "tiling": {
+        "mode": "rescale",
+        "tileM": 1
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.1,
+          "strength": 0.7
+        },
+        "desaturate": 0.9,
+        "target": 0.03,
+        "contrast": 0.4
+      },
+      "roughness": {
+        "range": [
+          0.42,
+          0.58
+        ]
+      },
+      "normal": {
+        "strength": 0.8
+      },
+      "ao": {
+        "strength": 0.6,
+        "floor": 0.6
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "black",
+        "presets": {
+          "black": "#ffffff",
+          "grey": "#f2f2f2",
+          "red_brown": "#fff0ea"
+        },
+        "jitter": {
+          "hue": 0.0,
+          "saturation": 0.01,
+          "value": 0.03
+        }
+      },
+      "variation": {
+        "value": 0.06,
+        "hue": 0.0,
+        "roughness": 0.05,
+        "grime": 0.4
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.4,
+          "width": 0.3,
+          "breakup": 0.7,
+          "exposed": {
+            "baseColor": "#5a5856",
+            "roughness": 0.95,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.1,
+          "roughness": 0.03
+        }
+      },
+      "dirt": {
+        "color": "#6b5f4f",
+        "roughness": 0.95,
+        "amount": 0.3,
+        "gravity": {
+          "up": 0.35,
+          "bottomM": 0.1,
+          "falloff": 0.5
+        },
+        "cavity": 0.5,
+        "grime": 0.4
+      }
+    },
+    {
+      "id": "cardboard",
+      "name": "Kraft cardboard",
+      "family": "cardboard",
+      "tier": "regular",
+      "rooms": [
+        "living",
+        "store",
+        "cellar",
+        "kitchen"
+      ],
+      "source": "ambientcg/Paper004@2K-PNG",
+      "tiling": {
+        "mode": "synth",
+        "tileM": 1
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.08,
+          "strength": 0.2
+        },
+        "target": 0.27,
+        "contrast": 2.2
+      },
+      "roughness": {
+        "range": [
+          0.86,
+          0.94
+        ],
+        "pct": [
+          10,
+          90
+        ]
+      },
+      "normal": {
+        "strength": 1.0
+      },
+      "ao": {
+        "strength": 0.5,
+        "floor": 0.7
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "kraft",
+        "presets": {
+          "kraft": "#ffffff",
+          "light": "#fff6e8",
+          "dark": "#d7c2a8",
+          "grey_board": "#d9d9d9"
+        },
+        "jitter": {
+          "hue": 0.01,
+          "saturation": 0.05,
+          "value": 0.06
+        }
+      },
+      "variation": {
+        "value": 0.07,
+        "hue": 0.008,
+        "roughness": 0.04,
+        "grime": 0.4
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.5,
+          "width": 0.35,
+          "breakup": 0.8,
+          "exposed": {
+            "baseColor": "#c9b08c",
+            "roughness": 0.97,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.3,
+          "roughness": 0.02
+        }
+      },
+      "dirt": {
+        "color": "#4f4334",
+        "roughness": 0.95,
+        "amount": 0.25,
+        "gravity": {
+          "up": 0.35,
+          "bottomM": 0.1,
+          "falloff": 0.5
+        },
+        "cavity": 0.5,
+        "grime": 0.45
+      },
+      "detail": {
+        "sizeM": 0.1,
+        "strength": 1.0,
+        "fadeM": [
+          1.0,
+          3.0
+        ]
+      },
+      "sourceNote": "Paper004 replaces Paper005, whose colour map is flat at every scale (a copied-looking tile under any shift test)"
+    },
+    {
+      "id": "plastic",
+      "name": "Moulded plastic housing (TV, radio)",
+      "family": "plastic",
+      "tier": "regular",
+      "rooms": [
+        "living"
+      ],
+      "source": "ambientcg/Plastic001@2K-PNG",
+      "sizeM": [
+        0.5,
+        0.5
+      ],
+      "sizeNote": "ambientCG publishes no physical size; 0.5 m estimated from the scratch scale",
+      "tiling": {
+        "mode": "synth",
+        "tileM": 1,
+        "blockPx": 32,
+        "overlapFrac": 0.5,
+        "jitter": 0.35,
+        "feather": 3,
+        "candidates": 128,
+        "preFlattenDiv": 16,
+        "equalize": {
+          "sigmaM": 0.03,
+          "amount": 0.6
+        }
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.06,
+          "strength": 0.9
+        },
+        "desaturate": 1.0,
+        "target": 0.3,
+        "contrast": 0.45,
+        "tame": {
+          "sigmaM": [
+            0.002,
+            0.03
+          ],
+          "k": 2.0
+        },
+        "ceiling": {
+          "ratioToMedian": 1.4
+        }
+      },
+      "roughness": {
+        "range": [
+          0.38,
+          0.52
+        ]
+      },
+      "normal": {
+        "strength": 0.5
+      },
+      "ao": {
+        "strength": 0.4,
+        "floor": 0.8
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "black",
+        "presets": {
+          "black": "#4f4f4f",
+          "grey": "#9a9a9a",
+          "cream": "#e6ddc8",
+          "bakelite": "#7b5a44",
+          "white": "#ffffff"
+        },
+        "jitter": {
+          "hue": 0.004,
+          "saturation": 0.02,
+          "value": 0.03
+        }
+      },
+      "variation": {
+        "value": 0.04,
+        "hue": 0.003,
+        "roughness": 0.05,
+        "grime": 0.3
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.3,
+          "width": 0.25,
+          "breakup": 0.7,
+          "exposed": {
+            "baseColor": "#8c8a86",
+            "roughness": 0.3,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.25,
+          "roughness": 0.05
+        }
+      },
+      "dirt": {
+        "color": "#4a4136",
+        "roughness": 0.9,
+        "amount": 0.15,
+        "gravity": {
+          "up": 0.25,
+          "bottomM": 0.15,
+          "falloff": 0.5
+        },
+        "cavity": 0.5,
+        "grime": 0.4
+      }
+    },
+    {
+      "id": "bark",
+      "name": "Tree bark (firewood)",
+      "family": "bark",
+      "tier": "regular",
+      "rooms": [
+        "living",
+        "gen"
+      ],
+      "source": "polyhaven/bark_brown_01@2k",
+      "tiling": {
+        "mode": "rescale",
+        "tileM": 1
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.05,
+          "strength": 0.95
+        },
+        "desaturate": 0.3,
+        "target": 0.13,
+        "contrast": 0.7,
+        "tame": {
+          "sigmaM": [
+            0.006,
+            0.08
+          ],
+          "k": 2.5
+        }
+      },
+      "roughness": {
+        "range": [
+          0.74,
+          0.86
+        ]
+      },
+      "normal": {
+        "strength": 0.6
+      },
+      "ao": {
+        "strength": 0.7,
+        "floor": 0.5
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "natural",
+        "presets": {
+          "natural": "#ffffff",
+          "grey": "#d4d2cc",
+          "dark": "#b9ad9f"
+        },
+        "jitter": {
+          "hue": 0.01,
+          "saturation": 0.05,
+          "value": 0.06
+        }
+      },
+      "variation": {
+        "value": 0.07,
+        "hue": 0.008,
+        "roughness": 0.05,
+        "grime": 0.4
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.4,
+          "width": 0.3,
+          "breakup": 0.8,
+          "exposed": {
+            "baseColor": "#b59a78",
+            "roughness": 0.8,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.35,
+          "roughness": 0.05
+        }
+      },
+      "dirt": {
+        "color": "#3f352b",
+        "roughness": 0.9,
+        "amount": 0.2,
+        "gravity": {
+          "up": 0.25,
+          "bottomM": 0.15,
+          "falloff": 0.5
+        },
+        "cavity": 0.5,
+        "grime": 0.4
+      },
+      "grain": "v"
+    },
+    {
+      "id": "soil",
+      "name": "Potting soil",
+      "family": "soil",
+      "tier": "regular",
+      "rooms": [
+        "living",
+        "terrace"
+      ],
+      "source": "polyhaven/brown_mud@2k",
+      "tiling": {
+        "mode": "rescale",
+        "tileM": 1
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.12,
+          "strength": 0.7
+        },
+        "desaturate": 0.2,
+        "target": 0.1,
+        "contrast": 0.8
+      },
+      "roughness": {
+        "range": [
+          0.85,
+          0.93
+        ]
+      },
+      "normal": {
+        "strength": 1.0
+      },
+      "ao": {
+        "strength": 0.7,
+        "floor": 0.55
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "natural",
+        "presets": {
+          "natural": "#ffffff",
+          "peat": "#b8a898",
+          "clay": "#f0dccb"
+        },
+        "jitter": {
+          "hue": 0.01,
+          "saturation": 0.05,
+          "value": 0.06
+        }
+      },
+      "variation": {
+        "value": 0.08,
+        "hue": 0.008,
+        "roughness": 0.04,
+        "grime": 0.3
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.0,
+          "width": 0.3,
+          "breakup": 0.8,
+          "exposed": {
+            "baseColor": "#6b5a48",
+            "roughness": 0.95,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.3,
+          "roughness": 0.02
+        }
+      },
+      "dirt": {
+        "color": "#3a3028",
+        "roughness": 0.9,
+        "amount": 0.0,
+        "gravity": {
+          "up": 0.25,
+          "bottomM": 0.15,
+          "falloff": 0.5
+        },
+        "cavity": 0.5,
+        "grime": 0.4
+      }
+    },
+    {
+      "id": "newsprint",
+      "name": "Newsprint (stacked newspapers)",
+      "family": "newsprint",
+      "tier": "regular",
+      "rooms": [
+        "living",
+        "store"
+      ],
+      "source": "ambientcg/Paper001@2K-PNG",
+      "sizeM": [
+        0.5,
+        0.5
+      ],
+      "sizeNote": "ambientCG publishes no physical size; 0.5 m estimated from the fibre scale",
+      "tiling": {
+        "mode": "synth",
+        "tileM": 1
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.06,
+          "strength": 0.8
+        },
+        "desaturate": 1.0,
+        "hue": "#e8e4d8",
+        "target": 0.55,
+        "contrast": 1.6
+      },
+      "roughness": {
+        "range": [
+          0.86,
+          0.94
+        ],
+        "pct": [
+          10,
+          90
+        ]
+      },
+      "normal": {
+        "strength": 0.8
+      },
+      "ao": {
+        "strength": 0.5,
+        "floor": 0.7
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "fresh",
+        "presets": {
+          "fresh": "#ffffff",
+          "yellowed": "#f2e3c2",
+          "grey": "#d9d9d6"
+        },
+        "jitter": {
+          "hue": 0.008,
+          "saturation": 0.04,
+          "value": 0.05
+        }
+      },
+      "variation": {
+        "value": 0.05,
+        "hue": 0.006,
+        "roughness": 0.03,
+        "grime": 0.4
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.4,
+          "width": 0.35,
+          "breakup": 0.8,
+          "exposed": {
+            "baseColor": "#e0d8c4",
+            "roughness": 0.95,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.25,
+          "roughness": 0.02
+        }
+      },
+      "dirt": {
+        "color": "#5a4e3e",
+        "roughness": 0.9,
+        "amount": 0.2,
+        "gravity": {
+          "up": 0.25,
+          "bottomM": 0.15,
+          "falloff": 0.5
+        },
+        "cavity": 0.5,
+        "grime": 0.4
+      },
+      "sourceNote": "plain paper scan calibrated to newsprint grey; printed columns are not legible at 256 px/m and would trip the text-artifact check"
+    },
+    {
+      "id": "rattan",
+      "name": "Woven rattan (cane)",
+      "family": "rattan",
+      "tier": "regular",
+      "rooms": [
+        "living"
+      ],
+      "source": "ambientcg/Wicker013@2K-PNG",
+      "tiling": {
+        "mode": "synth",
+        "tileM": 1,
+        "blockPx": 32,
+        "overlapFrac": 0.5,
+        "jitter": 0.3,
+        "feather": 3,
+        "candidates": 128,
+        "preFlattenDiv": 16
+      },
+      "albedo": {
+        "flatten": {
+          "sigmaM": 0.06,
+          "strength": 0.7
+        },
+        "desaturate": 0.2,
+        "target": 0.35,
+        "tame": {
+          "sigmaM": [
+            0.002,
+            0.04
+          ],
+          "k": 1.6
+        }
+      },
+      "roughness": {
+        "range": [
+          0.48,
+          0.62
+        ]
+      },
+      "normal": {
+        "strength": 1.0
+      },
+      "ao": {
+        "strength": 1.0,
+        "floor": 0.4
+      },
+      "metal": 0,
+      "tint": {
+        "mask": "full",
+        "default": "natural",
+        "presets": {
+          "natural": "#ffffff",
+          "honey": "#f3dfbd",
+          "dark": "#a58a70"
+        },
+        "jitter": {
+          "hue": 0.01,
+          "saturation": 0.05,
+          "value": 0.05
+        }
+      },
+      "variation": {
+        "value": 0.05,
+        "hue": 0.006,
+        "roughness": 0.05,
+        "grime": 0.35
+      },
+      "wear": {
+        "edge": {
+          "amount": 0.35,
+          "width": 0.3,
+          "breakup": 0.7,
+          "exposed": {
+            "baseColor": "#d6bf98",
+            "roughness": 0.7,
+            "metalness": 0
+          }
+        },
+        "cavity": {
+          "darken": 0.35,
+          "roughness": 0.05
+        }
+      },
+      "dirt": {
+        "color": "#4a3f33",
+        "roughness": 0.9,
+        "amount": 0.15,
+        "gravity": {
+          "up": 0.25,
+          "bottomM": 0.15,
+          "falloff": 0.5
+        },
+        "cavity": 0.5,
+        "grime": 0.4
+      }
+    }
+  ]
+}

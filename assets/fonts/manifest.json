@@ -1,0 +1,179 @@
+{
+  "schema": "survival-logs/asset-manifest@1",
+  "wp": "WP-P1-fonts",
+  "note": "UI typefaces (SIL OFL 1.1), WOFF2 with a variable weight axis 400 … 700, subset by tools/fonts/build.py from the locked Google Fonts TTFs to tools/fonts/charset.json. OFL.txt ships beside each face. The @font-face rules are in src/ui/kit/fonts.css; the tokens --ui-font-latin and --ui-font-cjk name the families (docs/UI.md §3.2).",
+  "rebuild": {
+    "fonts": {
+      "entry": "tools/fonts/build.sh",
+      "args": [
+        "--only",
+        "{name}"
+      ],
+      "inputs": [
+        "tools/fonts/",
+        "tools/fetch-assets.mjs",
+        "assets/sources.lock.json"
+      ],
+      "shared": [
+        "assets/cache"
+      ],
+      "persist": [
+        "tools/fonts/.venv"
+      ],
+      "tools": {
+        "python": ">=3.9",
+        "fonttools": "4.60.2",
+        "brotli": "1.2.0"
+      },
+      "cost": 60,
+      "timeoutSec": 600
+    }
+  },
+  "assets": [
+    {
+      "id": "fonts/noto-sans",
+      "kind": "font",
+      "path": "assets/fonts/noto-sans/NotoSans.woff2",
+      "license": "OFL-1.1",
+      "sources": [
+        "googlefonts/notosans@b5efa9c32e8f"
+      ],
+      "files": {
+        "woff2": "assets/fonts/noto-sans/NotoSans.woff2",
+        "license": "assets/fonts/noto-sans/OFL.txt"
+      },
+      "rebuild": "fonts",
+      "digests": {
+        "assets/fonts/noto-sans/NotoSans.woff2": "90153454cc7069b0955e343c1e93bb3e4a76c8afc52be4c2e8567e9af32d5705",
+        "assets/fonts/noto-sans/OFL.txt": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a"
+      },
+      "params": {
+        "title": "Noto Sans (Latin UI text)",
+        "family": "Noto Sans",
+        "format": "woff2",
+        "weights": [
+          400,
+          700
+        ],
+        "axes": {
+          "wdth": 100,
+          "wght": [
+            400,
+            700
+          ]
+        },
+        "fontDisplay": "swap",
+        "unicodeRange": "U+20-7E, U+A0-FF, U+3B2, U+3B8, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2122, U+2212"
+      },
+      "meta": {
+        "sizeBytes": 28956,
+        "glyphs": 400,
+        "characters": 207,
+        "cjkCharacters": 0,
+        "axes": {
+          "wght": [
+            400,
+            400,
+            700
+          ]
+        }
+      }
+    },
+    {
+      "id": "fonts/noto-sans-sc",
+      "kind": "font",
+      "path": "assets/fonts/noto-sans-sc/NotoSansSC.woff2",
+      "license": "OFL-1.1",
+      "sources": [
+        "googlefonts/notosanssc@b5efa9c32e8f"
+      ],
+      "files": {
+        "woff2": "assets/fonts/noto-sans-sc/NotoSansSC.woff2",
+        "license": "assets/fonts/noto-sans-sc/OFL.txt"
+      },
+      "rebuild": "fonts",
+      "digests": {
+        "assets/fonts/noto-sans-sc/NotoSansSC.woff2": "b2d65857fa3806036220ecfc79ac16a8ac285cd1c4916ddf379c742d912eae2c",
+        "assets/fonts/noto-sans-sc/OFL.txt": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+      },
+      "params": {
+        "title": "Noto Sans SC (Chinese UI text), subset to the characters the game shows",
+        "family": "Noto Sans SC",
+        "format": "woff2",
+        "weights": [
+          400,
+          700
+        ],
+        "axes": {
+          "wght": [
+            400,
+            700
+          ]
+        },
+        "fontDisplay": "swap",
+        "unicodeRange": "U+20-7E, U+A0-FF, U+2000-206F, U+2E80-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF"
+      },
+      "meta": {
+        "sizeBytes": 632420,
+        "glyphs": 2892,
+        "characters": 2458,
+        "cjkCharacters": 2256,
+        "axes": {
+          "wght": [
+            400,
+            400,
+            700
+          ]
+        }
+      }
+    },
+    {
+      "id": "fonts/noto-sans-sc-lang",
+      "kind": "font",
+      "path": "assets/fonts/noto-sans-sc/NotoSansSC-lang.woff2",
+      "license": "OFL-1.1",
+      "sources": [
+        "googlefonts/notosanssc@b5efa9c32e8f"
+      ],
+      "files": {
+        "woff2": "assets/fonts/noto-sans-sc/NotoSansSC-lang.woff2",
+        "license": "assets/fonts/noto-sans-sc/OFL.txt"
+      },
+      "rebuild": "fonts",
+      "digests": {
+        "assets/fonts/noto-sans-sc/NotoSansSC-lang.woff2": "f0dc39c759b531b529f0d8e36d5bdcbc696c260353c324183a68e3891844c59d",
+        "assets/fonts/noto-sans-sc/OFL.txt": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+      },
+      "params": {
+        "title": "Noto Sans SC, the language names only (the Chinese an English session shows)",
+        "family": "Noto Sans SC",
+        "format": "woff2",
+        "weights": [
+          400,
+          700
+        ],
+        "axes": {
+          "wght": [
+            400,
+            700
+          ]
+        },
+        "fontDisplay": "swap",
+        "unicodeRange": "U+4E2D, U+4F53, U+6587, U+7B80"
+      },
+      "meta": {
+        "sizeBytes": 1828,
+        "glyphs": 5,
+        "characters": 4,
+        "cjkCharacters": 4,
+        "axes": {
+          "wght": [
+            400,
+            400,
+            700
+          ]
+        }
+      }
+    }
+  ]
+}

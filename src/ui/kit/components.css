@@ -1,0 +1,839 @@
+/*
+ * Kit components: panels, section heads, buttons, tabs, chips and tags, badges, tooltips, bars, list rows, key/value
+ * rows, toasts and modals (docs/UI.md §4). State classes (.is-hover, .is-active, .is-focus, .is-selected) render a
+ * state in a still (the kit sheet) exactly as the pseudo-class does.
+ */
+
+/* ---- panel ----------------------------------------------------------------------------------------------------- */
+.sl-panel {
+  position: relative;
+  animation: sl-open var(--ui-dur-open) var(--ui-ease-out) both;
+  background: var(--ui-panel-bg);
+  border: 1px solid var(--ui-panel-edge);
+  border-radius: var(--ui-radius-panel);
+  box-shadow: var(--ui-shadow-panel);
+  padding: var(--ui-space-5);
+  color: var(--ui-text);
+}
+.sl-panel--solid {
+  background: var(--ui-panel-solid);
+}
+.sl-panel--flush {
+  padding: 0;
+}
+.sl-panel__head {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-3);
+  min-height: var(--ui-lh-heading);
+  margin-bottom: var(--ui-space-3);
+}
+.sl-panel__title {
+  flex: 1;
+  font-size: var(--ui-fs-heading);
+  line-height: var(--ui-lh-heading);
+  font-weight: var(--ui-fw-bold);
+  color: var(--ui-text-strong);
+  white-space: nowrap;
+}
+.sl-panel__foot {
+  margin-top: var(--ui-space-3);
+  text-align: center;
+  color: var(--ui-text-dim);
+}
+.sl-panel__sunk {
+  background: var(--ui-panel-sunk);
+  border-radius: var(--ui-radius-slot);
+}
+
+/* Station window (ss_07 workbench, ss_08 cooking): a frosted, warm frame around several panes. The frame blurs the
+   room behind it; the panes on it are ordinary panels. */
+.sl-frame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-3);
+  padding: var(--ui-space-3);
+  animation: sl-open var(--ui-dur-open) var(--ui-ease-out) both;
+  background: var(--ui-frame-fill);
+  backdrop-filter: blur(var(--ui-frame-blur)) saturate(1.15);
+  border: 1px solid var(--ui-panel-edge);
+  border-radius: var(--ui-radius-panel);
+  box-shadow: var(--ui-shadow-panel);
+  color: var(--ui-text);
+}
+.sl-frame__head {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-3);
+  padding: var(--ui-space-1) var(--ui-space-2) 0;
+}
+.sl-frame__head > .sl-close {
+  margin-left: auto;
+}
+.sl-frame__panes {
+  display: flex;
+  align-items: stretch;
+  gap: var(--ui-space-3);
+}
+.sl-panel--pane {
+  flex: 1;
+  padding: var(--ui-space-4);
+  animation: none;
+  border-radius: var(--ui-radius-slot);
+  box-shadow: var(--ui-shadow-pane);
+}
+.sl-close {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border: 0;
+  border-radius: var(--ui-radius-control);
+  background: transparent;
+  color: var(--ui-text-dim);
+  font-size: var(--ui-fs-title);
+  cursor: pointer;
+  transition:
+    color var(--ui-dur-hover) var(--ui-ease-out),
+    background-color var(--ui-dur-hover) var(--ui-ease-out);
+}
+.sl-close:hover,
+.sl-close.is-hover {
+  color: var(--ui-text-strong);
+  background: var(--ui-row-hover);
+}
+
+/* Section head: the gold accent bar and caps label of the cooking and recipe panels (ss_08, t043). */
+.sl-section {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  font-size: var(--ui-fs-hud);
+  line-height: var(--ui-lh-hud);
+  font-weight: var(--ui-fw-bold);
+  letter-spacing: var(--ui-track-caps);
+  color: var(--ui-primary);
+  white-space: nowrap;
+}
+.sl-root:lang(en) .sl-section {
+  text-transform: uppercase;
+}
+.sl-section::before {
+  content: '';
+  width: 4px;
+  height: 18px;
+  border-radius: 2px;
+  background: var(--ui-primary);
+  flex: none;
+}
+.sl-section__sub {
+  color: var(--ui-text-strong);
+  letter-spacing: 0.02em;
+}
+.sl-section__aside {
+  margin-left: auto;
+  color: var(--ui-text-dim);
+  font-weight: var(--ui-fw-medium);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ---- buttons --------------------------------------------------------------------------------------------------- */
+.sl-btn {
+  --btn-bg: linear-gradient(var(--ui-control), var(--ui-control-deep));
+  --btn-fg: var(--ui-btn-fg);
+  --btn-edge: var(--ui-control-edge);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ui-space-2);
+  height: var(--ui-control-h);
+  padding: 0 var(--ui-space-4);
+  border: 1px solid var(--btn-edge);
+  border-radius: var(--ui-radius-control);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-size: var(--ui-fs-hud);
+  line-height: 1;
+  font-weight: var(--ui-fw-bold);
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 var(--ui-btn-shadow);
+  transition:
+    filter var(--ui-dur-hover) var(--ui-ease-out),
+    box-shadow var(--ui-dur-hover) var(--ui-ease-out),
+    transform var(--ui-dur-press) var(--ui-ease-out);
+  user-select: none;
+}
+.sl-btn:hover,
+.sl-btn.is-hover {
+  box-shadow:
+    inset 0 1px 0 var(--ui-btn-hover-shadow),
+    inset 0 0 0 1px var(--ui-btn-hover-shadow-2);
+}
+.sl-btn:active,
+.sl-btn.is-active {
+  transform: translateY(1px);
+  filter: brightness(0.9);
+  box-shadow: inset 0 2px 3px var(--ui-btn-active-shadow);
+}
+.sl-btn:focus-visible,
+.sl-btn.is-focus {
+  box-shadow:
+    inset 0 1px 0 var(--ui-btn-focus-visible-shadow),
+    var(--ui-focus-ring);
+}
+.sl-btn--sm {
+  height: var(--ui-control-h-sm);
+  padding: 0 var(--ui-space-3);
+  font-size: var(--ui-fs-body);
+}
+.sl-btn--lg {
+  height: var(--ui-control-h-lg);
+  padding: 0 var(--ui-space-6);
+  font-size: var(--ui-fs-title);
+  letter-spacing: var(--ui-track-button);
+}
+.sl-btn--block {
+  display: flex;
+  width: 100%;
+}
+.sl-root:lang(en) .sl-btn--caps {
+  text-transform: uppercase;
+}
+.sl-btn--primary {
+  --btn-bg: linear-gradient(var(--ui-btn-primary-bg), var(--ui-primary) 55%, var(--ui-btn-primary-bg-2));
+  --btn-fg: var(--ui-text-on-light);
+  --btn-edge: var(--ui-btn-primary-edge);
+  box-shadow:
+    inset 0 1px 0 var(--ui-btn-primary-shadow),
+    0 0 14px var(--ui-btn-primary-shadow-2);
+}
+.sl-btn--secondary {
+  --btn-bg: linear-gradient(var(--ui-secondary-light), var(--ui-secondary));
+  --btn-fg: var(--ui-btn-secondary-fg);
+  --btn-edge: var(--ui-btn-secondary-edge);
+  box-shadow: inset 0 1px 0 var(--ui-btn-secondary-shadow);
+}
+/* The measured confirm green (#328a33) holds a white label at 4.2 : 1: enough for the large 20 px bold "Confirm
+   Purchase" (3 : 1), not for 14–17 px labels, whose face steps down to 4.6 : 1. */
+.sl-btn--confirm {
+  --btn-bg: linear-gradient(var(--ui-btn-confirm-bg), var(--ui-btn-confirm-bg-2) 50%, var(--ui-btn-confirm-bg-3));
+  --btn-fg: var(--ui-btn-confirm-fg);
+  --btn-edge: var(--ui-btn-confirm-edge);
+}
+.sl-btn--confirm.sl-btn--lg {
+  --btn-bg: linear-gradient(var(--ui-btn-confirm-btn-lg-bg), var(--ui-confirm) 50%, var(--ui-btn-confirm-btn-lg-bg-2));
+  --btn-edge: var(--ui-btn-confirm-btn-lg-edge);
+}
+/* Buy (ss_01): all six are 64 × 32, lighter at the top like the source. The face under the label is the AA stop, 4 px
+   into the gradient (above the tallest Chinese label box). Hovered it is --ui-buy-face, the measured rest green
+   darkened to 4.52 : 1 under white; at rest the whole gradient sits 4 L* lower, the source's rest-to-hover step.
+   Hover lifts the face evenly, with no ring. */
+.sl-btn--buy {
+  --btn-bg: linear-gradient(var(--ui-buy-rest-top), var(--ui-buy-rest-face) 4px, var(--ui-buy-rest-bottom));
+  --btn-fg: var(--ui-buy-label);
+  --btn-edge: var(--ui-buy-edge);
+  width: 64px;
+  height: 32px;
+  padding: 0;
+  font-size: var(--ui-fs-body);
+  box-shadow: none;
+}
+.sl-btn--buy:not(:disabled):hover,
+.sl-btn--buy.is-hover:not(:disabled) {
+  --btn-bg: linear-gradient(var(--ui-buy-hover-top), var(--ui-buy-face) 4px, var(--ui-buy-hover-bottom));
+  box-shadow: none;
+}
+.sl-btn--danger {
+  --btn-bg: linear-gradient(var(--ui-btn-danger-bg), var(--ui-danger) 50%, var(--ui-btn-danger-bg-2));
+  --btn-fg: var(--ui-btn-danger-fg);
+  --btn-edge: var(--ui-btn-danger-edge);
+}
+/* "Complete Preparations" (ss_01): the measured objective olive on a dark face reads 3.8 : 1, so it is only ever a
+   large (20 px bold) label. */
+.sl-btn--objective {
+  --btn-bg: var(--ui-btn-objective-bg);
+  --btn-fg: var(--ui-objective);
+  --btn-edge: var(--ui-btn-objective-edge);
+  box-shadow: none;
+  font-size: var(--ui-fs-title);
+  letter-spacing: var(--ui-track-button);
+}
+.sl-btn--ghost {
+  --btn-bg: var(--ui-btn-ghost-bg);
+  --btn-fg: var(--ui-text-dim);
+  --btn-edge: var(--ui-btn-ghost-edge);
+  box-shadow: none;
+  font-weight: var(--ui-fw-medium);
+}
+.sl-btn:disabled,
+.sl-btn.is-disabled {
+  --btn-bg: var(--ui-btn-disabled-bg);
+  --btn-fg: var(--ui-btn-disabled-fg);
+  --btn-edge: var(--ui-btn-disabled-edge);
+  box-shadow: none;
+  filter: none;
+  transform: none;
+  cursor: default;
+}
+
+/* ---- tabs ------------------------------------------------------------------------------------------------------ */
+.sl-tabs {
+  display: flex;
+  gap: var(--ui-space-2);
+}
+.sl-tab {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ui-space-2);
+  height: 44px;
+  padding: 0 var(--ui-space-4);
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-slot);
+  background: var(--ui-tab-bg);
+  color: var(--ui-text-dim);
+  font-size: var(--ui-fs-hud);
+  font-weight: var(--ui-fw-bold);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color var(--ui-dur-hover) var(--ui-ease-out),
+    border-color var(--ui-dur-hover) var(--ui-ease-out);
+}
+.sl-tab:hover,
+.sl-tab.is-hover {
+  color: var(--ui-text);
+  border-color: var(--ui-tab-hover-edge);
+}
+.sl-tab[aria-selected='true'] {
+  background: var(--ui-tab-on-bg);
+  border-color: var(--ui-tab-aria-selected-true-edge);
+  color: var(--ui-gold-pale);
+  box-shadow: inset 0 0 12px var(--ui-tab-aria-selected-true-shadow);
+}
+.sl-tab__count {
+  color: var(--ui-text-dim);
+  font-weight: var(--ui-fw-medium);
+}
+.sl-tabs--fill .sl-tab {
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-tabs-fill-tab-bg);
+}
+.sl-tabs--fill .sl-tab[aria-selected='true'] {
+  background: linear-gradient(var(--ui-tabs-fill-tab-aria-selected-true-bg), var(--ui-tabs-fill-tab-aria-selected-true-bg-2));
+  border-color: var(--ui-tabs-fill-tab-aria-selected-true-edge);
+  color: var(--ui-text-on-light);
+  box-shadow: none;
+}
+
+/* ---- chips (HUD quick actions) and tags -------------------------------------------------------------------------- */
+.sl-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  height: 40px;
+  padding: 0 var(--ui-space-3);
+  border: 1px solid var(--ui-hud-edge);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-hud-bg-strong);
+  color: var(--ui-text);
+  font-size: var(--ui-fs-hud);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color var(--ui-dur-hover) var(--ui-ease-out);
+}
+.sl-chip:hover,
+.sl-chip.is-hover {
+  border-color: var(--ui-chip-hover-edge);
+}
+.sl-chip .sl-glyph {
+  color: var(--ui-text-strong);
+}
+.sl-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-1);
+  height: 24px;
+  padding: 0 var(--ui-space-2);
+  border-radius: var(--ui-radius-control);
+  font-size: var(--ui-fs-body);
+  line-height: 1;
+  font-weight: var(--ui-fw-bold);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.sl-tag--must {
+  background: var(--ui-tag-must);
+  color: var(--ui-tag-must-text);
+  box-shadow: inset 0 0 0 1px var(--ui-tag-must-shadow);
+}
+.sl-tag--must .sl-glyph {
+  color: var(--ui-gold);
+}
+.sl-tag--gold {
+  background: var(--ui-gold-chip);
+  color: var(--ui-gold);
+  box-shadow: inset 0 0 0 1px var(--ui-tag-gold-shadow);
+}
+.sl-tag--outline {
+  background: var(--ui-tag-outline-bg);
+  color: var(--ui-gold);
+  box-shadow: inset 0 0 0 1px var(--ui-tag-outline-shadow);
+}
+.sl-tag--quiet {
+  background: var(--ui-tag-quiet-bg);
+  color: var(--ui-tag-quiet-fg);
+}
+
+/* ---- status badges (HUD) and counts ------------------------------------------------------------------------------ */
+.sl-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 var(--ui-space-3);
+  border-radius: var(--ui-radius-control);
+  font-size: var(--ui-fs-body);
+  line-height: 1;
+  font-weight: var(--ui-fw-bold);
+  white-space: nowrap;
+}
+.sl-badge--lg {
+  height: 30px;
+  font-size: var(--ui-fs-hud);
+}
+.sl-badge--danger {
+  background: var(--ui-danger-badge);
+  color: var(--ui-badge-danger-fg);
+  box-shadow: inset 0 0 0 1px var(--ui-badge-danger-shadow);
+}
+.sl-badge--good {
+  background: var(--ui-badge-good-bg);
+  color: var(--ui-badge-good-fg);
+  box-shadow: inset 0 0 0 1px var(--ui-badge-good-shadow);
+}
+.sl-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 26px;
+  height: 22px;
+  padding: 0 var(--ui-space-2);
+  border-radius: var(--ui-radius-pill);
+  background: var(--ui-count-bg);
+  color: var(--ui-count-fg);
+  font-size: var(--ui-fs-body);
+  line-height: 1;
+  font-weight: var(--ui-fw-bold);
+}
+.sl-count--gold {
+  background: var(--ui-gold);
+  color: var(--ui-text-on-light);
+}
+/* set for one frame when a count or badge changes */
+.sl-count.is-bump,
+.sl-badge.is-bump {
+  animation: sl-bump var(--ui-dur-toast) var(--ui-ease-pop);
+}
+@keyframes sl-bump {
+  40% {
+    transform: scale(1.18);
+  }
+}
+
+/* ---- tooltips ------------------------------------------------------------------------------------------------- */
+.sl-tip {
+  position: absolute;
+  z-index: var(--ui-z-tip);
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-tip-bg);
+  box-shadow: var(--ui-shadow-pop);
+  color: var(--ui-tip-fg);
+  font-size: var(--ui-fs-hud);
+  line-height: var(--ui-lh-hud);
+  font-weight: var(--ui-fw-bold);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: sl-tip-in var(--ui-dur-tip) var(--ui-ease-out) var(--ui-delay-tip) both;
+}
+.sl-tip::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -6px;
+  margin-top: -6px;
+  border: 6px solid transparent;
+  border-left: 0;
+  border-right-color: var(--ui-tip-before-border-right-color);
+}
+.sl-tip--rich {
+  width: 340px;
+  padding: var(--ui-space-3) var(--ui-space-4) var(--ui-space-4);
+  border: 1px solid var(--ui-tip-rich-edge);
+  border-radius: var(--ui-radius-slot);
+  background: var(--ui-tip-rich-bg);
+  color: var(--ui-text);
+  font-size: var(--ui-fs-body);
+  line-height: var(--ui-lh-body);
+  font-weight: var(--ui-fw-regular);
+  white-space: normal;
+}
+.sl-tip--rich::before {
+  display: none;
+}
+/* placed by placeItemTip: the arrow points at the slot's centre from the side the tip is on */
+.sl-tip--rich[data-side]::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--tip-arrow, 24px) - 8px);
+  border: 8px solid transparent;
+}
+.sl-tip--rich[data-side='left']::after {
+  right: -8px;
+  border-right: 0;
+  border-left-color: var(--ui-tip-edge);
+}
+.sl-tip--rich[data-side='right']::after {
+  left: -8px;
+  border-left: 0;
+  border-right-color: var(--ui-tip-edge);
+}
+.sl-tip__title {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  color: var(--ui-gold);
+  font-size: var(--ui-fs-hud);
+  line-height: var(--ui-lh-hud);
+  font-weight: var(--ui-fw-bold);
+}
+.sl-tip__sub {
+  color: var(--ui-text-dim);
+  margin-bottom: var(--ui-space-2);
+}
+.sl-tip__gains {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ui-space-1) var(--ui-space-4);
+  color: var(--ui-text-dim);
+}
+.sl-tip__gains b {
+  font-variant-numeric: tabular-nums;
+}
+.sl-tip__rule {
+  height: 1px;
+  margin: var(--ui-space-2) 0;
+  background: var(--ui-line);
+}
+.sl-tip__desc {
+  color: var(--ui-tip-desc-fg);
+}
+@keyframes sl-tip-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+}
+
+/* ---- bars ------------------------------------------------------------------------------------------------------ */
+/* --v is the fill fraction 0 … 1. */
+.sl-bar {
+  --v: 1;
+  --fill: var(--ui-gold-deep);
+  position: relative;
+  height: 6px;
+  border-radius: var(--ui-radius-bar);
+  background: var(--ui-track);
+  overflow: hidden;
+}
+.sl-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--v) * 100%);
+  border-radius: inherit;
+  background: var(--fill);
+  transition: width var(--ui-dur-bar) var(--ui-ease-out);
+}
+.sl-bar--thick {
+  height: 10px;
+  border-radius: var(--ui-radius-pill);
+}
+.sl-bar--danger {
+  --fill: var(--ui-danger);
+}
+.sl-bar--alert {
+  --fill: var(--ui-alert);
+  height: 12px;
+}
+.sl-bar--primary {
+  --fill: linear-gradient(90deg, var(--ui-bar-primary-fill), var(--ui-primary));
+}
+.sl-bar--fresh {
+  --fill: var(--ui-fresh);
+}
+.sl-bar--info {
+  --fill: var(--ui-info);
+}
+
+/* ---- list rows (shop, owned items, recipes) --------------------------------------------------------------------- */
+.sl-list {
+  display: flex;
+  flex-direction: column;
+}
+/* A shop or list row (ss_01): icon, name over mono facts, then stock over price and action. The icon is the square
+   render at --row-icon (the item fills 66 % of it, so 96 px shows the source's ~64 px item); its layout box is the
+   80 × 64 cell, and the transparent margin of the render overhangs it. Rows are 112 px (the source's pitch is 114). */
+.sl-row {
+  --row-icon: 96px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--ui-space-3);
+  min-height: 112px;
+  padding: var(--ui-space-3) var(--ui-space-4) var(--ui-space-3) var(--ui-space-2);
+  border-radius: var(--ui-radius-slot);
+  transition: background-color var(--ui-dur-hover) var(--ui-ease-out);
+}
+.sl-row + .sl-row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--ui-space-2);
+  right: var(--ui-space-2);
+  height: 1px;
+  background: var(--ui-line);
+}
+.sl-row:hover,
+.sl-row.is-hover {
+  background: var(--ui-row-hover);
+}
+.sl-row.is-selected {
+  background: var(--ui-row-selected);
+  box-shadow: inset 3px 0 0 var(--ui-gold);
+}
+.sl-row__icon {
+  width: 80px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+}
+.sl-row__icon img {
+  width: var(--row-icon);
+  height: var(--row-icon);
+  margin: calc((64px - var(--row-icon)) / 2) calc((80px - var(--row-icon)) / 2);
+}
+.sl-row__main {
+  min-width: 0;
+}
+.sl-row__name {
+  color: var(--ui-text-strong);
+  font-size: var(--ui-fs-hud);
+  line-height: var(--ui-lh-hud);
+  font-weight: var(--ui-fw-bold);
+}
+.sl-row__meta {
+  margin-top: var(--ui-space-1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ui-space-2) var(--ui-space-3);
+  color: var(--ui-text-dim);
+}
+.sl-row__aside {
+  display: grid;
+  justify-items: end;
+  row-gap: var(--ui-space-1);
+}
+.sl-row__buy {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-3);
+}
+.sl-price {
+  color: var(--ui-gold);
+  font-size: var(--ui-fs-title);
+  line-height: var(--ui-lh-title);
+  font-weight: var(--ui-fw-bold);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.sl-price--lg {
+  font-size: var(--ui-fs-heading);
+  line-height: var(--ui-lh-heading);
+}
+.sl-price--muted {
+  color: var(--ui-text-dim);
+}
+
+/* ---- key / value rows (item details, specs) -------------------------------------------------------------------- */
+.sl-kv {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: var(--ui-space-4);
+  row-gap: var(--ui-space-1);
+  align-items: baseline;
+}
+.sl-kv > dt {
+  color: var(--ui-text-dim);
+  font-weight: var(--ui-fw-medium);
+}
+.sl-kv > dd {
+  margin: 0;
+  text-align: right;
+  color: var(--ui-positive);
+  font-weight: var(--ui-fw-bold);
+  font-variant-numeric: tabular-nums;
+}
+.sl-kv > dd.is-plain {
+  color: var(--ui-text-strong);
+}
+.sl-kv > dd.is-warn {
+  color: var(--ui-expiring);
+}
+.sl-kv > dd.is-bad {
+  color: var(--ui-danger-text);
+}
+/* the stockpile tip's "• Sufficient" / "○ Insufficient" (t014) */
+.sl-kv > dd.is-gold {
+  color: var(--ui-amber);
+}
+.sl-kv > dd.is-dim {
+  color: var(--ui-text-dim);
+  font-weight: var(--ui-fw-medium);
+}
+
+/* ---- toasts ---------------------------------------------------------------------------------------------------- */
+.sl-toasts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ui-space-2);
+  pointer-events: none;
+}
+.sl-toast {
+  --accent: var(--ui-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-3);
+  min-height: 44px;
+  padding: var(--ui-space-2) var(--ui-space-4) var(--ui-space-2) var(--ui-space-3);
+  border: 1px solid var(--ui-panel-edge);
+  border-radius: var(--ui-radius-slot);
+  background: var(--ui-toast-bg);
+  box-shadow: var(--ui-shadow-pop);
+  color: var(--ui-text);
+  font-size: var(--ui-fs-hud);
+  line-height: var(--ui-lh-hud);
+  white-space: nowrap;
+  pointer-events: auto;
+  animation: sl-toast-in var(--ui-dur-toast) var(--ui-ease-out) both;
+}
+/* The default toast is plain, as ss_07's "Crafting Proficiency +28"; the kinds add a 3 px accent on the left. */
+.sl-toast--good,
+.sl-toast--bad,
+.sl-toast--info {
+  border-left: 3px solid var(--accent);
+}
+.sl-toast--good {
+  --accent: var(--ui-fresh);
+}
+.sl-toast--bad {
+  --accent: var(--ui-danger);
+}
+.sl-toast--info {
+  --accent: var(--ui-info);
+}
+.sl-toast__icon {
+  width: 36px;
+  height: 36px;
+  flex: none;
+}
+.sl-toast__gain {
+  color: var(--ui-success);
+  font-weight: var(--ui-fw-bold);
+  font-variant-numeric: tabular-nums;
+}
+.sl-toast.is-leaving {
+  animation: sl-toast-out var(--ui-dur-modal) var(--ui-ease-in) both;
+}
+@keyframes sl-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+@keyframes sl-toast-out {
+  to {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+/* ---- modal ----------------------------------------------------------------------------------------------------- */
+.sl-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: var(--ui-z-modal);
+  display: grid;
+  place-items: center;
+  background: var(--ui-scrim);
+  animation: sl-fade-in var(--ui-dur-modal) var(--ui-ease-out) both;
+}
+.sl-modal {
+  width: 560px;
+  max-width: calc(100% - 2 * var(--ui-space-8));
+  border: 1px solid var(--ui-panel-edge);
+  border-radius: var(--ui-radius-modal);
+  background: var(--ui-panel-solid);
+  box-shadow: var(--ui-shadow-modal);
+  color: var(--ui-text);
+  animation: sl-modal-in var(--ui-dur-modal) var(--ui-ease-out) both;
+}
+.sl-modal__head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ui-space-4);
+  padding: var(--ui-space-6) var(--ui-space-6) var(--ui-space-4);
+  border-bottom: 1px solid var(--ui-line);
+}
+.sl-modal__titles {
+  flex: 1;
+  min-width: 0;
+}
+.sl-modal__sub {
+  color: var(--ui-positive);
+}
+.sl-modal__body {
+  padding: var(--ui-space-5) var(--ui-space-6);
+}
+.sl-modal__foot {
+  display: flex;
+  gap: var(--ui-space-3);
+  padding: var(--ui-space-4) var(--ui-space-6) var(--ui-space-6);
+  border-top: 1px solid var(--ui-line);
+}
+@keyframes sl-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes sl-open {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+@keyframes sl-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.97);
+  }
+}

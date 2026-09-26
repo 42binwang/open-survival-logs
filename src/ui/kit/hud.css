@@ -1,0 +1,572 @@
+/*
+ * HUD pieces (docs/UI.md §4.9): the day and clock bar, the right-hand column (navigation, floors, power,
+ * temperature, stats), objectives, and the toolbar (tool buttons, quick actions, action queue, speed, wish, alerts).
+ * HUD text sits on the scene, so every cluster carries its own scrim; text over the scene also gets a shadow.
+ */
+.sl-hud-text {
+  text-shadow: var(--ui-text-shadow-hud);
+}
+
+/* ---- day and clock bar (ss_02, ss_04) --------------------------------------------------------------------------- */
+/* Offsets from ss_02, relative to the dial's top: the dark band at 17–65 px holds the day count's caps exactly, the
+   weather orb is centred on it, and the loop pill hangs just below it. */
+.sl-daybar {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: start;
+}
+.sl-daybar::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: -64px;
+  right: -40px;
+  top: 17px;
+  height: 48px;
+  background: linear-gradient(90deg, transparent, var(--ui-daybar-before-bg) 18%, var(--ui-daybar-before-bg));
+}
+.sl-weather {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin: var(--ui-space-5) var(--ui-space-10) 0 0;
+  border-radius: 50%;
+  background: var(--ui-weather-bg);
+  box-shadow: inset 0 0 0 1px var(--ui-weather-shadow);
+  color: var(--ui-gold);
+  font-size: 32px;
+}
+.sl-day {
+  display: grid;
+  justify-items: center;
+  row-gap: var(--ui-space-1);
+  margin: var(--ui-space-2) 36px 0 0;
+}
+/* The line box holds the display face's whole ascent and descent (Arial Black: 1.41 em), so no text box overflows;
+   the negative margins pull the layout back to the glyphs. */
+.sl-day__count {
+  margin: -16px 0 -12px;
+  font-family: var(--ui-font-display);
+  font-size: var(--ui-fs-display);
+  line-height: 1.42;
+  font-weight: var(--ui-fw-black);
+  color: var(--ui-day-count-fg);
+  white-space: nowrap;
+  text-shadow: 0 2px 6px var(--ui-day-count-text-shadow);
+}
+/* No system CJK face has a black weight: set the whole count (digit included) in the CJK face and thicken it with a
+   stroke, so 第, 7 and 天 share one weight. */
+.sl-root:lang(zh) .sl-day__count {
+  font-family: var(--ui-font-cjk), sans-serif;
+  -webkit-text-stroke: 2px currentColor;
+  letter-spacing: 0.02em;
+}
+.sl-loop {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 var(--ui-space-3);
+  border-radius: var(--ui-radius-pill);
+  background: var(--ui-loop-bg);
+  color: var(--ui-gold);
+  font-size: var(--ui-fs-hud);
+  font-weight: var(--ui-fw-bold);
+  white-space: nowrap;
+}
+.sl-clock {
+  display: grid;
+  justify-items: center;
+  row-gap: var(--ui-space-2);
+}
+.sl-clock__dial {
+  width: 144px;
+  height: 144px;
+  overflow: visible;
+}
+/* The source's digits glow straight over the scene; a soft vignette (no edge) keeps them 3 : 1 over a bright wall. */
+.sl-clock__digits {
+  padding: var(--ui-space-1) var(--ui-space-5);
+  background: radial-gradient(closest-side, var(--ui-clock-digits-bg), var(--ui-clock-digits-bg-2) 66%, var(--ui-clock-digits-bg-3));
+  font-family: var(--ui-font-mono);
+  font-size: var(--ui-fs-clock);
+  line-height: 36px;
+  font-weight: var(--ui-fw-bold);
+  letter-spacing: 0.06em;
+  color: var(--ui-info);
+  text-shadow:
+    0 0 6px var(--ui-clock-digits-text-shadow),
+    0 0 14px var(--ui-clock-digits-text-shadow-2);
+}
+
+/* ---- right column: navigation, floors, power, temperature ------------------------------------------------------ */
+/* The labels stand on the scene as in the source; one soft shade behind the whole column, fading out left and at
+   both ends, keeps them 3 : 1 over a bright wall without a blotch per label. */
+.sl-nav {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  row-gap: var(--ui-space-6);
+  justify-items: end;
+}
+.sl-nav::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -32px -16px -32px -96px;
+  background: linear-gradient(90deg, transparent, var(--ui-nav-shade) 45%, var(--ui-nav-shade-deep));
+  mask-image: linear-gradient(transparent, var(--ui-nav-before-mask) 12%, var(--ui-nav-before-mask) 88%, transparent);
+}
+.sl-nav__item {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ui-text-dim);
+  font-size: var(--ui-fs-hud-lg);
+  line-height: var(--ui-lh-hud-lg);
+  font-weight: var(--ui-fw-bold);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color var(--ui-dur-hover) var(--ui-ease-out);
+}
+/* The label stands on the scene as in the source, over a soft shadow rather than a pill. */
+.sl-nav__label {
+  padding: 0 var(--ui-space-4) 0 0;
+  text-shadow: var(--ui-text-shadow-hud);
+}
+.sl-nav__item:hover,
+.sl-nav__item.is-hover {
+  color: var(--ui-text-strong);
+}
+.sl-nav__icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--ui-nav-icon-bg);
+  box-shadow: inset 0 0 0 2px var(--ui-nav-icon-shadow);
+  color: var(--ui-nav-icon-fg);
+  font-size: 22px;
+  transition: box-shadow var(--ui-dur-hover) var(--ui-ease-out);
+}
+.sl-nav__item:hover .sl-nav__icon,
+.sl-nav__item.is-hover .sl-nav__icon {
+  box-shadow: inset 0 0 0 2px var(--ui-nav-item-hover-nav-icon-shadow);
+}
+.sl-floors {
+  display: grid;
+  width: 140px;
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-floors-bg);
+  overflow: hidden;
+}
+.sl-floor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ui-space-2);
+  height: 52px;
+  border: 0;
+  background: transparent;
+  color: var(--ui-floor-fg);
+  font-size: var(--ui-fs-floor);
+  line-height: var(--ui-lh-title);
+  font-weight: var(--ui-fw-bold);
+  white-space: nowrap;
+  cursor: pointer;
+}
+/* The current floor: a gold wash that deepens to the right, and the green "you are here" dot (ss_02). */
+.sl-floor[aria-current='true'] {
+  background: linear-gradient(90deg, var(--ui-floor-aria-current-true-bg), var(--ui-floor-aria-current-true-bg-2));
+  color: var(--ui-gold);
+}
+.sl-floor[aria-current='true']::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ui-online);
+  box-shadow: 0 0 6px var(--ui-online);
+}
+.sl-floor:disabled {
+  color: var(--ui-text-faint);
+  cursor: default;
+}
+.sl-hudrow {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  height: 40px;
+  padding: 0 var(--ui-space-3);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-hud-bg-strong);
+  color: var(--ui-hudrow-fg);
+  font-size: var(--ui-fs-title);
+  line-height: var(--ui-lh-title);
+  font-weight: var(--ui-fw-bold);
+  white-space: nowrap;
+}
+.sl-hudrow__value {
+  margin-left: auto;
+  color: var(--ui-text);
+  font-weight: var(--ui-fw-medium);
+}
+/* The power source reads blue-grey in the source (ss_06 "Grid Power" #a1acb5). */
+.sl-hudrow--power {
+  color: var(--ui-hudrow-power-fg);
+}
+
+/* ---- stats (ss_02): label and value over the fill; the fill is the stat's share of its maximum ---------------------- */
+.sl-stats {
+  display: grid;
+  row-gap: var(--ui-space-4);
+}
+.sl-stat {
+  --v: 1;
+  --fill: var(--ui-stat-good);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  height: 38px;
+  padding: 0 var(--ui-space-3);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-stat-bg);
+  box-shadow: inset 0 0 0 1px var(--ui-stat-shadow);
+  color: var(--ui-stat-fg);
+  font-size: var(--ui-fs-hud-lg);
+  line-height: var(--ui-lh-hud-lg);
+  font-weight: var(--ui-fw-bold);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.sl-stat::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--v) * 100%);
+  background: var(--fill);
+  transition: width var(--ui-dur-bar) var(--ui-ease-out);
+}
+.sl-stat > * {
+  position: relative;
+}
+.sl-stat--warn {
+  --fill: var(--ui-stat-warn);
+}
+.sl-stat--bad {
+  --fill: var(--ui-stat-bad);
+}
+.sl-stat__icon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  color: var(--stat-icon, var(--ui-text-strong));
+  font-size: 20px;
+  filter: drop-shadow(0 0 1px var(--ui-stat-icon-glow)) drop-shadow(0 1px 1px var(--ui-stat-icon-glow-2));
+}
+.sl-stat > span:not(.sl-stat__icon) {
+  text-shadow: 0 1px 2px var(--ui-stat-span-text-shadow);
+}
+.sl-stat--sat {
+  --stat-icon: var(--ui-stat-sat);
+}
+.sl-stat--mor {
+  --stat-icon: var(--ui-stat-mor);
+}
+.sl-stat--sta {
+  --stat-icon: var(--ui-stat-sta);
+}
+.sl-stat--life {
+  --stat-icon: var(--ui-stat-life);
+}
+.sl-stat__value {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- objectives (ss_06) ---------------------------------------------------------------------------------------- */
+/* The source darkens the scene's top-left corner rather than drawing a box: the scrim fades out to the right and
+   below, so it has no edge. */
+.sl-objectives {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  row-gap: var(--ui-space-1);
+  width: 520px;
+  padding: var(--ui-space-8) var(--ui-space-8) var(--ui-space-4) var(--ui-space-6);
+}
+.sl-objectives::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 -40px;
+  background: linear-gradient(90deg, var(--ui-objectives-before-bg), var(--ui-objectives-before-bg-2) 55%, var(--ui-objectives-before-bg-3));
+  mask-image: linear-gradient(180deg, var(--ui-objectives-before-mask) 72%, transparent);
+}
+.sl-obj-head {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  height: 34px;
+  border-bottom: 1px solid var(--ui-obj-head-edge);
+  color: var(--ui-obj-head-fg);
+  font-size: var(--ui-fs-hud-lg);
+  line-height: var(--ui-lh-hud-lg);
+  font-weight: var(--ui-fw-bold);
+}
+.sl-obj-head--main {
+  color: var(--ui-gold);
+}
+.sl-obj-head + .sl-obj,
+.sl-obj + .sl-obj-head {
+  margin-top: var(--ui-space-1);
+}
+.sl-obj {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  min-height: 34px;
+  padding-left: var(--ui-space-1);
+  color: var(--ui-obj-fg);
+  font-size: var(--ui-fs-hud-lg);
+  line-height: var(--ui-lh-hud-lg);
+  font-weight: var(--ui-fw-bold);
+}
+.sl-obj::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  flex: none;
+  margin-right: var(--ui-space-1);
+  border-radius: 1px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+.sl-obj--main {
+  color: var(--ui-gold);
+}
+.sl-obj--done {
+  color: var(--ui-text-dim);
+}
+.sl-obj__timer {
+  margin-left: var(--ui-space-2);
+  color: var(--ui-obj-timer-fg);
+  font-family: var(--ui-font-mono);
+  font-size: var(--ui-fs-body);
+  font-weight: var(--ui-fw-bold);
+}
+.sl-quest {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--ui-space-3);
+  row-gap: var(--ui-space-2);
+  margin-top: var(--ui-space-2);
+  padding: var(--ui-space-3);
+  border-radius: var(--ui-radius-slot);
+  background: var(--ui-quest-bg);
+}
+.sl-quest__title {
+  color: var(--ui-gold);
+  font-size: var(--ui-fs-hud);
+  font-weight: var(--ui-fw-bold);
+}
+.sl-quest__tags {
+  display: grid;
+  justify-items: end;
+  gap: var(--ui-space-1);
+}
+.sl-quest__prog {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--ui-space-1) var(--ui-space-3);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-quest-prog-bg);
+  color: var(--ui-quest-prog-fg);
+  font-family: var(--ui-font-mono);
+  font-size: var(--ui-fs-body);
+  font-weight: var(--ui-fw-bold);
+}
+
+/* ---- toolbar (ss_02): tool buttons, main action, quick actions, queue, speed ------------------------------------ */
+.sl-toolbtn {
+  display: grid;
+  place-items: center;
+  width: var(--ui-hud-button);
+  height: var(--ui-hud-button);
+  border: 0;
+  border-radius: var(--ui-radius-panel);
+  background: var(--ui-toolbtn-bg);
+  box-shadow: inset 0 0 0 1px var(--ui-toolbtn-shadow);
+  color: var(--ui-toolbtn-fg);
+  font-size: 30px;
+  cursor: pointer;
+  transition: box-shadow var(--ui-dur-hover) var(--ui-ease-out);
+}
+.sl-toolbtn:hover,
+.sl-toolbtn.is-hover {
+  box-shadow: inset 0 0 0 1px var(--ui-toolbtn-hover-shadow);
+}
+.sl-toolbtn--main {
+  width: var(--ui-hud-button-lg);
+  height: var(--ui-hud-button-lg);
+  background: var(--ui-toolbtn-main-bg);
+  font-size: 48px;
+}
+.sl-chips {
+  display: flex;
+  gap: var(--ui-space-2);
+}
+.sl-queue {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+}
+.sl-queue__back {
+  color: var(--ui-gold);
+  font-size: 20px;
+}
+.sl-queue__slots {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--ui-radius-slot);
+  background: var(--ui-queue-slots-bg);
+  box-shadow: inset 0 0 0 1px var(--ui-queue-slots-shadow);
+}
+.sl-queue__slot {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-queue-slot-bg);
+  color: var(--ui-text-strong);
+  font-size: 26px;
+}
+.sl-queue__slot.is-current {
+  box-shadow: inset 0 0 0 1px var(--ui-queue-slot-current-shadow);
+}
+.sl-queue__slot .sl-bar {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  height: 4px;
+}
+.sl-speed {
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+  border-radius: var(--ui-radius-slot);
+  background: var(--ui-speed-bg);
+  box-shadow: inset 0 0 0 1px var(--ui-speed-shadow);
+}
+.sl-speed__btn {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-control);
+  background: transparent;
+  color: var(--ui-speed-btn-fg);
+  font-size: 22px;
+  cursor: pointer;
+  transition:
+    color var(--ui-dur-hover) var(--ui-ease-out),
+    border-color var(--ui-dur-hover) var(--ui-ease-out);
+}
+.sl-speed__btn:hover,
+.sl-speed__btn.is-hover {
+  color: var(--ui-text-strong);
+}
+.sl-speed__btn[aria-pressed='true'] {
+  border-color: var(--ui-speed-btn-aria-pressed-true-edge);
+  background: var(--ui-speed-btn-aria-pressed-true-bg);
+  color: var(--ui-speed-btn-aria-pressed-true-fg);
+}
+
+/* ---- wish bar and event alerts (ss_02) --------------------------------------------------------------------------- */
+.sl-wish {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-3);
+  height: 40px;
+  padding: 0 var(--ui-space-2) 0 var(--ui-space-5);
+  border-radius: var(--ui-radius-pill);
+  background: var(--ui-wish-bg);
+  box-shadow: inset 0 0 0 1px var(--ui-wish-shadow);
+  color: var(--ui-text-strong);
+  font-size: var(--ui-fs-hud);
+  font-weight: var(--ui-fw-bold);
+  white-space: nowrap;
+}
+.sl-wish__label {
+  color: var(--ui-gold);
+}
+.sl-wish__timer {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 var(--ui-space-2);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-wish-timer-bg);
+  color: var(--ui-wish-timer-fg);
+  font-family: var(--ui-font-mono);
+  font-size: var(--ui-fs-body);
+  font-weight: var(--ui-fw-bold);
+}
+.sl-alerts {
+  display: flex;
+  gap: var(--ui-space-4);
+}
+.sl-alert {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-alert-bg);
+  box-shadow: inset 0 0 0 1px var(--ui-alert-shadow);
+  color: var(--ui-alert-fg);
+  font-size: 32px;
+  cursor: pointer;
+}
+.sl-alert--new {
+  background: var(--ui-alert-new-bg);
+  animation: sl-alert-pulse 1.6s var(--ui-ease-inout) infinite;
+}
+@keyframes sl-alert-pulse {
+  50% {
+    box-shadow:
+      inset 0 0 0 1px var(--ui-alert-pulse-50-shadow),
+      0 0 12px var(--ui-alert-pulse-50-shadow-2);
+  }
+}
+
+/* ---- crisis banner (ss_02, ss_05) ------------------------------------------------------------------------------ */
+.sl-crisis {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-3);
+  height: 64px;
+  padding: 0 var(--ui-space-8) 0 var(--ui-space-5);
+  background: linear-gradient(90deg, var(--ui-crisis-bg), var(--ui-crisis-bg-2) 45%, var(--ui-crisis-bg-3));
+  color: var(--ui-crisis-fg);
+  font-size: var(--ui-fs-heading);
+  font-weight: var(--ui-fw-black);
+  white-space: nowrap;
+  text-shadow: 0 2px 4px var(--ui-crisis-text-shadow);
+}

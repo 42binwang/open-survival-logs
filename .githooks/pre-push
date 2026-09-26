@@ -1,0 +1,29 @@
+#!/bin/sh
+# Pre-push (AGENTS.md, "Gate before you push"): git-lfs's upload, then the quick gate on the commit being pushed.
+# A push goes out only when the gate prints "PASS quick". There is no bypass: `git push --no-verify` is against the
+# rules of this repository.
+command -v git-lfs >/dev/null 2>&1 || { echo >&2 "git-lfs not found on PATH: install it (README.md, Requirements)"; exit 2; }
+# git-lfs and the check below both read the refs being pushed from stdin: keep a copy
+refs=$(cat)
+printf '%s\n' "$refs" | git lfs pre-push "$@" || exit $?
+
+# a push that only deletes branches carries no commit to judge
+zero=0000000000000000000000000000000000000000
+if [ -n "$refs" ] && ! printf '%s\n' "$refs" | awk -v z="$zero" '$2 != z { found = 1 } END { exit !found }'; then
+  exit 0
+fi
+
+# the gate judges the working tree, so it has to be the commit being pushed
+if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
+  echo >&2 "pre-push: the working tree has uncommitted changes to tracked files; commit or set them aside, then push"
+  exit 1
+fi
+log=$(mktemp -t survival-logs-gate.XXXXXX)
+echo >&2 "pre-push: running the quick gate (log: $log)"
+node tools/gate.mjs --quick >"$log" 2>&1
+status=$?
+tail -n 25 "$log" >&2
+if [ $status -ne 0 ] || ! grep -q '^PASS quick' "$log"; then
+  echo >&2 "pre-push: the quick gate did not pass (exit $status); nothing was pushed"
+  exit 1
+fi
